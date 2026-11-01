@@ -8,7 +8,7 @@ Live: https://yy5652-hash.github.io/bibproof/
 
 ## Why
 
-AI writing tools invent references, and the fakes are good. GPTZero found [100 hallucinated citations in accepted NeurIPS 2025 papers](https://gptzero.me/news/neurips/), past several peer reviewers each. The worst ones are chimeras: real authors on an invented title, or a real DOI that points at a different paper. Checking by hand is slow enough that nobody does it.
+AI writing tools invent references, and the fakes are good. GPTZero found [100 hallucinated citations in accepted NeurIPS 2025 papers](https://gptzero.me/news/neurips/). The worst ones are chimeras: real authors on an invented title, or a real DOI that points at a different paper. Checking by hand is slow enough that nobody does it.
 
 ## What it does
 
