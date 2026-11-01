@@ -1,0 +1,375 @@
+{
+  "seed": 1729,
+  "disciplines": [
+    "machine learning",
+    "molecular biology",
+    "quantum physics",
+    "cognitive psychology",
+    "economic history",
+    "climate science"
+  ],
+  "genuineWorks": 12,
+  "fabricationDonorWorks": 12,
+  "trials": [
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.mlwa.2021.100106",
+      "raw": "Bishop, T. R. P., von Hinke, S., Hollingsworth, B., Lake, A. A., Brown, H., & Burgoine, T. (2021). Automatic classification of takeaway food outlet cuisine type using machine (deep) learning. Machine Learning with Applications, 6, 100106. https://doi.org/10.1016/j.mlwa.2021.100106"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.mlwa.2021.100106",
+      "raw": "Bishop, Tom R. P., et al. “Automatic Classification of Takeaway Food Outlet Cuisine Type Using Machine (Deep) Learning.” Machine Learning with Applications, vol. 6, 2021, p. 100106, https://doi.org/10.1016/j.mlwa.2021.100106."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.mlwa.2021.100106",
+      "raw": "[1] T. R. P. Bishop, S. von Hinke, B. Hollingsworth, A. A. Lake, H. Brown, and T. Burgoine, “Automatic classification of takeaway food outlet cuisine type using machine (deep) learning,” Machine Learning with Applications, vol. 6, p. 100106, 2021, doi: 10.1016/j.mlwa.2021.100106."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.mlwa.2021.100106",
+      "raw": "1. Bishop TRP, von Hinke S, Hollingsworth B, Lake AA, Brown H, Burgoine T. Automatic classification of takeaway food outlet cuisine type using machine (deep) learning. Machine Learning with Applications. 2021;6:100106. doi:10.1016/j.mlwa.2021.100106"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1007601113994",
+      "raw": "Freitag, D. (2000). Machine Learning for Information Extraction in Informal Domains. Machine Learning, 39(2–3), 169–202. https://doi.org/10.1023/a:1007601113994"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1007601113994",
+      "raw": "Freitag, Dayne. “Machine Learning for Information Extraction in Informal Domains.” Machine Learning, vol. 39, nos. 2–3, 2000, pp. 169–202, https://doi.org/10.1023/a:1007601113994."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1007601113994",
+      "raw": "[1] D. Freitag, “Machine Learning for Information Extraction in Informal Domains,” Machine Learning, vol. 39, no. 2–3, pp. 169–202, 2000, doi: 10.1023/a:1007601113994."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1007601113994",
+      "raw": "1. Freitag D. Machine Learning for Information Extraction in Informal Domains. Machine Learning. 2000;39(2–3):169–202. doi:10.1023/a:1007601113994"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1093/molbev/msu133",
+      "raw": "Nei, M. (2014). My Memory of Walter Fitch (1929-2011) and Starting Molecular Biology and Evolution. Molecular Biology and Evolution, 31(6), 1329–1332. https://doi.org/10.1093/molbev/msu133"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1093/molbev/msu133",
+      "raw": "Nei, M. “My Memory of Walter Fitch (1929-2011) and Starting Molecular Biology and Evolution.” Molecular Biology and Evolution, vol. 31, no. 6, 2014, pp. 1329–32, https://doi.org/10.1093/molbev/msu133."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1093/molbev/msu133",
+      "raw": "[1] M. Nei, “My Memory of Walter Fitch (1929-2011) and Starting Molecular Biology and Evolution,” Molecular Biology and Evolution, vol. 31, no. 6, pp. 1329–1332, 2014, doi: 10.1093/molbev/msu133."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1093/molbev/msu133",
+      "raw": "1. Nei M. My Memory of Walter Fitch (1929-2011) and Starting Molecular Biology and Evolution. Molecular Biology and Evolution. 2014;31(6):1329–32. doi:10.1093/molbev/msu133"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.5376/2011.cmb.01.0001",
+      "raw": "Zhang, Y., & Min, J. (2011). Computational Molecular Biology: an Integration of Experimental Molecular and Genome Biology with Computational Technology. Computational Molecular Biology. https://doi.org/10.5376/2011.cmb.01.0001"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.5376/2011.cmb.01.0001",
+      "raw": "Zhang, Yan, and Jack Min. “Computational Molecular Biology: An Integration of Experimental Molecular and Genome Biology with Computational Technology.” Computational Molecular Biology, 2011, https://doi.org/10.5376/2011.cmb.01.0001."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.5376/2011.cmb.01.0001",
+      "raw": "[1] Y. Zhang and J. Min, “Computational Molecular Biology: an Integration of Experimental Molecular and Genome Biology with Computational Technology,” Computational Molecular Biology, 2011, doi: 10.5376/2011.cmb.01.0001."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.5376/2011.cmb.01.0001",
+      "raw": "1. Zhang Y, Min J. Computational Molecular Biology: an Integration of Experimental Molecular and Genome Biology with Computational Technology. Computational Molecular Biology. 2011. doi:10.5376/2011.cmb.01.0001"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.17.128",
+      "raw": "Schirber, M. (2024). New Quantum Effect in Textbook Chemistry Law. Physics, 17. https://doi.org/10.1103/physics.17.128"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.17.128",
+      "raw": "Schirber, Michael. “New Quantum Effect in Textbook Chemistry Law.” Physics, vol. 17, 2024, https://doi.org/10.1103/physics.17.128."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.17.128",
+      "raw": "[1] M. Schirber, “New Quantum Effect in Textbook Chemistry Law,” Physics, vol. 17, 2024, doi: 10.1103/physics.17.128."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.17.128",
+      "raw": "1. Schirber M. New Quantum Effect in Textbook Chemistry Law. Physics. 2024;17. doi:10.1103/physics.17.128"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/0375-9601(91)90351-8",
+      "raw": "Cerveró, J. M. (1991). Supersymmetric quantum mechanics: another nontrivial quantum superpotential. Physics Letters A, 153(1), 1–4. https://doi.org/10.1016/0375-9601(91)90351-8"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/0375-9601(91)90351-8",
+      "raw": "Cerveró, Jose M. “Supersymmetric Quantum Mechanics: Another Nontrivial Quantum Superpotential.” Physics Letters A, vol. 153, no. 1, 1991, pp. 1–4, https://doi.org/10.1016/0375-9601(91)90351-8."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/0375-9601(91)90351-8",
+      "raw": "[1] J. M. Cerveró, “Supersymmetric quantum mechanics: another nontrivial quantum superpotential,” Physics Letters A, vol. 153, no. 1, pp. 1–4, 1991, doi: 10.1016/0375-9601(91)90351-8."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/0375-9601(91)90351-8",
+      "raw": "1. Cerveró JM. Supersymmetric quantum mechanics: another nontrivial quantum superpotential. Physics Letters A. 1991;153(1):1–4. doi:10.1016/0375-9601(91)90351-8"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1006/cogp.1995.1005",
+      "raw": "Pennington, N., Nicolich, R., & Rahm, J. (1995). Transfer of Training Between Cognitive Subskills: Is Knowledge Use Specific? Cognitive Psychology, 28(2), 175–224. https://doi.org/10.1006/cogp.1995.1005"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1006/cogp.1995.1005",
+      "raw": "Pennington, N., et al. “Transfer of Training Between Cognitive Subskills: Is Knowledge Use Specific?” Cognitive Psychology, vol. 28, no. 2, 1995, pp. 175–224, https://doi.org/10.1006/cogp.1995.1005."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1006/cogp.1995.1005",
+      "raw": "[1] N. Pennington, R. Nicolich, and J. Rahm, “Transfer of Training Between Cognitive Subskills: Is Knowledge Use Specific?,” Cognitive Psychology, vol. 28, no. 2, pp. 175–224, 1995, doi: 10.1006/cogp.1995.1005."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1006/cogp.1995.1005",
+      "raw": "1. Pennington N, Nicolich R, Rahm J. Transfer of Training Between Cognitive Subskills: Is Knowledge Use Specific? Cognitive Psychology. 1995;28(2):175–224. doi:10.1006/cogp.1995.1005"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.cogpsych.2018.03.001",
+      "raw": "Dai, J., Pleskac, T. J., & Pachur, T. (2018). Dynamic cognitive models of intertemporal choice. Cognitive Psychology, 104, 29–56. https://doi.org/10.1016/j.cogpsych.2018.03.001"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.cogpsych.2018.03.001",
+      "raw": "Dai, Junyi, et al. “Dynamic Cognitive Models of Intertemporal Choice.” Cognitive Psychology, vol. 104, 2018, pp. 29–56, https://doi.org/10.1016/j.cogpsych.2018.03.001."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.cogpsych.2018.03.001",
+      "raw": "[1] J. Dai, T. J. Pleskac, and T. Pachur, “Dynamic cognitive models of intertemporal choice,” Cognitive Psychology, vol. 104, pp. 29–56, 2018, doi: 10.1016/j.cogpsych.2018.03.001."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.cogpsych.2018.03.001",
+      "raw": "1. Dai J, Pleskac TJ, Pachur T. Dynamic cognitive models of intertemporal choice. Cognitive Psychology. 2018;104:29–56. doi:10.1016/j.cogpsych.2018.03.001"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.7227/iesh.34.8",
+      "raw": "Bhreatnach, A. (2007). Economic and Social History Society of Ireland. Irish Economic and Social History, 34(1), 163–164. https://doi.org/10.7227/iesh.34.8"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.7227/iesh.34.8",
+      "raw": "Bhreatnach, Aoife. “Economic and Social History Society of Ireland.” Irish Economic and Social History, vol. 34, no. 1, 2007, pp. 163–64, https://doi.org/10.7227/iesh.34.8."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.7227/iesh.34.8",
+      "raw": "[1] A. Bhreatnach, “Economic and Social History Society of Ireland,” Irish Economic and Social History, vol. 34, no. 1, pp. 163–164, 2007, doi: 10.7227/iesh.34.8."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.7227/iesh.34.8",
+      "raw": "1. Bhreatnach A. Economic and Social History Society of Ireland. Irish Economic and Social History. 2007;34(1):163–4. doi:10.7227/iesh.34.8"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1080/20780389.2010.527685",
+      "raw": "Jerven, M. (2010). AFRICAN GROWTH RECURRING: AN ECONOMIC HISTORY PERSPECTIVE ON AFRICAN GROWTH EPISODES, 1690–2010. Economic History of Developing Regions, 25(2), 127–154. https://doi.org/10.1080/20780389.2010.527685"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1080/20780389.2010.527685",
+      "raw": "Jerven, Morten. “AFRICAN GROWTH RECURRING: AN ECONOMIC HISTORY PERSPECTIVE ON AFRICAN GROWTH EPISODES, 1690–2010.” Economic History of Developing Regions, vol. 25, no. 2, 2010, pp. 127–54, https://doi.org/10.1080/20780389.2010.527685."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1080/20780389.2010.527685",
+      "raw": "[1] M. Jerven, “AFRICAN GROWTH RECURRING: AN ECONOMIC HISTORY PERSPECTIVE ON AFRICAN GROWTH EPISODES, 1690–2010,” Economic History of Developing Regions, vol. 25, no. 2, pp. 127–154, 2010, doi: 10.1080/20780389.2010.527685."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1080/20780389.2010.527685",
+      "raw": "1. Jerven M. AFRICAN GROWTH RECURRING: AN ECONOMIC HISTORY PERSPECTIVE ON AFRICAN GROWTH EPISODES, 1690–2010. Economic History of Developing Regions. 2010;25(2):127–54. doi:10.1080/20780389.2010.527685"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1002/wcc.755",
+      "raw": "Gardezi, M., Michael, S., Stock, R., Vij, S., Ogunyiola, A., & Ishtiaque, A. (2021). Prioritizing climate‐smart agriculture: An organizational and temporal review. WIREs Climate Change, 13(2). https://doi.org/10.1002/wcc.755"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1002/wcc.755",
+      "raw": "Gardezi, Maaz, et al. “Prioritizing Climate‐smart Agriculture: An Organizational and Temporal Review.” WIREs Climate Change, vol. 13, no. 2, 2021, https://doi.org/10.1002/wcc.755."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1002/wcc.755",
+      "raw": "[1] M. Gardezi, S. Michael, R. Stock, S. Vij, A. Ogunyiola, and A. Ishtiaque, “Prioritizing climate‐smart agriculture: An organizational and temporal review,” WIREs Climate Change, vol. 13, no. 2, 2021, doi: 10.1002/wcc.755."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1002/wcc.755",
+      "raw": "1. Gardezi M, Michael S, Stock R, Vij S, Ogunyiola A, Ishtiaque A. Prioritizing climate‐smart agriculture: An organizational and temporal review. WIREs Climate Change. 2021;13(2). doi:10.1002/wcc.755"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1029/2022csj000020",
+      "raw": "Clark, S., Roop, H. A., Gonzales, K. R., Mohr, C., Dybsetter, A., & Kingery, L. (2023). A Community‐Based Approach to Climate Science Communication: Results From a Pilot Climate Extension Program. Community Science, 2(4). https://doi.org/10.1029/2022csj000020"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1029/2022csj000020",
+      "raw": "Clark, Suzanna, et al. “A Community‐Based Approach to Climate Science Communication: Results From a Pilot Climate Extension Program.” Community Science, vol. 2, no. 4, 2023, https://doi.org/10.1029/2022csj000020."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1029/2022csj000020",
+      "raw": "[1] S. Clark, H. A. Roop, K. R. Gonzales, C. Mohr, A. Dybsetter, and L. Kingery, “A Community‐Based Approach to Climate Science Communication: Results From a Pilot Climate Extension Program,” Community Science, vol. 2, no. 4, 2023, doi: 10.1029/2022csj000020."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1029/2022csj000020",
+      "raw": "1. Clark S, Roop HA, Gonzales KR, Mohr C, Dybsetter A, Kingery L. A Community‐Based Approach to Climate Science Communication: Results From a Pilot Climate Extension Program. Community Science. 2023;2(4). doi:10.1029/2022csj000020"
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1022611825350",
+      "raw": "Pagallo, G., & Haussler, D. (1990). maritime crystalline orchards in velvet cartography. Machine Learning, 5(1), 71–99."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.67228/3142788x/ijmlpa-2022p2t9w",
+      "raw": "Waldenström, Daniel. “Software Quality Assessment Using Explainable Machine Learning.” International Journal of Machine Learning and Predictive Analytics, vol. 5, 2022, pp. 01–09."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1007420632517",
+      "raw": "[1] E. Balázs and D. Dudits, “Hungarian Kaleidoscope of Plant Molecular Biology and Biotechnology,” Plant Molecular Biology Reporter, vol. 15, no. 4, pp. 398–406, 1997, doi: 10.1177/033248930503200147."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.jmb.2016.12.018",
+      "raw": "1. Ostankovitch MI, Sternberg MJE. velvet cartography for Molecular Biology: Special Issue 2017. Journal of Molecular Biology. 2024;429(3):345–7."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1016/s0375-9601(03)00973-3",
+      "raw": "Zhu, K.-D., & Li, W.-S. (2003). cartography of subterranean tapestries lunar on ceramics harpsichord archipelago in a mosaic maritime crystalline dot-orchards velvet. Physics Letters A, 314(5–6), 380–385."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1016/s0550-3213(01)00308-x",
+      "raw": "Pagallo, Giulia, and David Haussler. “Quantum Groups and Non-Abelian Braiding in Quantum Hall Systems.” Nuclear Physics B, vol. 612, no. 3, 2001, pp. 229–90."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1002/acp.1772",
+      "raw": "[1] G. M. Davies, “25 years of Applied Cognitive Psychology,” Applied Cognitive Psychology, vol. 25, no. S1, 2011, doi: 10.67228/3142788x/ijmlpa-2022p2t9w."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1080/09541449108406226",
+      "raw": "1. Shanon B. lunar ceramics and modern physics: Some analogies. European Journal of Cognitive Psychology. 1998;3(2):201–34."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1080/03585522.2005.10414261",
+      "raw": "Waldenström, D. (2005). ceramics harpsichord archipelago is a mosaic for maritime and crystalline orchards in velvet cartography. Scandinavian Economic History Review, 53(3), 85–92."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1177/033248930503200147",
+      "raw": "Zhu, Ka-Di, and Wai-Sang Li. “Economic and Social History Society of Ireland.” Irish Economic and Social History, vol. 32, no. 1, 2005, pp. 208–208."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1177/0306312717725205",
+      "raw": "[1] Z. Baker, “Climate state: Science-state struggles and the formation of climate science in the US from the 1930s to 1960s,” Social Studies of Science, vol. 47, no. 6, pp. 861–887, 2017, doi: 10.1016/s0550-3213(01)00308-x."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.3390/cli9020018",
+      "raw": "1. Sarathchandra D, Haltinner K. A mosaic maritime to Measure Skeptics’ (Dis)Trust in Climate Science. Climate. 2028;9(2):18."
+    }
+  ]
+}

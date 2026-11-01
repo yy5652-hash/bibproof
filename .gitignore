@@ -1,0 +1,9 @@
+node_modules/
+dist/
+eval/cache/
+playwright-report/
+test-results/
+*.log
+.DS_Store
+# GPTZero's published table stays at its source; `npm run eval` fetches it.
+eval/real-world-*.json

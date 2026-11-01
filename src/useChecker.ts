@@ -1,0 +1,55 @@
+import { useCallback, useRef, useState } from 'react';
+import type { CheckResult } from './core/types';
+import { IndexClient } from './core/http';
+import { verifyReference } from './core/verify';
+import { parseReference } from './core/parse';
+import { BrowserCache } from './browser/cache';
+
+export type RowState = { id: number; raw: string; state: 'queued' | 'running' | 'done' | 'skipped'; result?: CheckResult };
+export type Phase = 'idle' | 'running' | 'done' | 'cancelled';
+const CONCURRENCY = 3;
+
+function unreadable(raw: string, message: string): CheckResult {
+  return { reference: parseReference(raw), verdict: 'Could not check', explanation: `The check failed before an answer was available (${message}). No conclusion about existence is possible; try again.`, evidence: [], checkedAt: new Date().toISOString() };
+}
+
+export function useChecker() {
+  const client = useRef<IndexClient>(undefined);
+  const run = useRef(0);
+  const [rows, setRows] = useState<RowState[]>([]);
+  const [phase, setPhase] = useState<Phase>('idle');
+
+  const start = useCallback(async (entries: string[]) => {
+    const mine = ++run.current;
+    client.current ??= new IndexClient(new BrowserCache());
+    const http = client.current;
+    setRows(entries.map((raw, id) => ({ id, raw, state: 'queued' })));
+    setPhase('running');
+    const patch = (id: number, change: Partial<RowState>) => setRows(prev => prev.map(r => (r.id === id ? { ...r, ...change } : r)));
+    let next = 0;
+    const worker = async () => {
+      while (mine === run.current) {
+        const id = next++;
+        if (id >= entries.length) return;
+        patch(id, { state: 'running' });
+        let result: CheckResult;
+        try { result = await verifyReference(entries[id], http); }
+        catch (e) { result = unreadable(entries[id], e instanceof Error ? e.message : 'unexpected error'); }
+        if (mine !== run.current) return;
+        patch(id, { state: 'done', result });
+      }
+    };
+    await Promise.all(Array.from({ length: Math.min(CONCURRENCY, entries.length) }, worker));
+    if (mine === run.current) setPhase('done');
+  }, []);
+
+  const cancel = useCallback(() => {
+    run.current++;
+    setRows(prev => prev.map(r => (r.state === 'done' ? r : { ...r, state: 'skipped' })));
+    setPhase('cancelled');
+  }, []);
+
+  const reset = useCallback(() => { run.current++; setRows([]); setPhase('idle'); }, []);
+  const clearCache = useCallback(async () => { client.current ??= new IndexClient(new BrowserCache()); await client.current.cache.clear?.(); }, []);
+  return { rows, phase, start, cancel, reset, clearCache };
+}

@@ -1,0 +1,683 @@
+{
+  "method": "One deposited unstructured reference per citing article, Crossref topical query, fixed seed; identifiers stripped.",
+  "rows": [
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.51483/ijaiml.2.2.2022.12-20",
+      "doi": "10.1109/icsc45622.2019.8938211",
+      "raw": "Singh, N., Chaturvedi, S. and Akhter, S. (2019). Weather fOrecasting Using Machine Learning Algorithm. In 2019 International Conference on Signal Processing and Communication (ICSC), 171-174, IEEE."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2025.100744",
+      "doi": "10.1109/bigdata50022.2020.9378205",
+      "raw": "Zhang, Y., Zhao, H., Li, X., Gao, S., Kong, K., & Chen, Y. (2020). Exchange traded fund clustering via metric learning. In 2020 IEEE international conference on big data (pp. 5486–5495). Atlanta, GA, USA:"
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2024.100550",
+      "doi": "10.1609/icwsm.v16i1.19278",
+      "raw": "Danilchenko, K., Segal, M., & Vilenchik, D. (2022). Opinion spam detection: A new approach using machine learning and network-based algorithms. In Proceedings of the international AAAI conference on web and social media, vol. 16 (pp. 125–134)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.51483/ijaiml.1.1.2021.24-30",
+      "doi": "10.4067/s0718-18762013000200004",
+      "raw": "Noraswaliza, Abdullah., Yue, Xu., and Shlomo, Geva. (2013). Integrating collaborative filtering and matching-based search for product recommendations. Journal of Theoretical and Applied Electronic Commerce Research, 8(2), 34-48."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2022.100418",
+      "doi": "10.1109/ichi.2019.8904771",
+      "raw": "Yang, Y., Tong, W.-W., & Liu, Z. (2019). A machine learning model to characterize Chronic Kidney Disease with metabolomics data. In 2019 IEEE international conference on healthcare informatics (ICHI)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2022.100361",
+      "doi": "10.1145/2020408.2020496",
+      "raw": "Kaufman, S., Rosset, S., & Perlich, C. (2011). Leakage in data mining: Formulation, detection, and avoidance. 6, 556–563."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2025.100755",
+      "doi": "10.1109/cvpr.2016.308",
+      "raw": "Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., & Wojna, Z. (2016). Rethinking the inception architecture for computer vision. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2818–2826)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2024.100567",
+      "doi": "10.1609/aaai.v35i1.16097",
+      "raw": "Ji, H., Zhu, J., Wang, X., Shi, C., Wang, B., Tan, X., et al. (2021). Who you would like to share with? a study of share recommendation in social e-commerce. In Proceedings of the AAAI conference on artificial intelligence, vol. 35, no. 1 (pp. 232–239)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.48001/joitml.2024.1224-27",
+      "doi": "10.1002/widm.1228",
+      "raw": "Yildirim, P., Birant, D., & Alpyildiz, T. (2018). Data mining and machine learning in textile industry. Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, 8(1), e1228."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.3390/make7030075",
+      "doi": "10.1109/sysmart.2016.7894533",
+      "raw": "Singh, J., and Singh, M. (2016, January 25–27). Evolution in Quantum Computing. Proceedings of the 2016 International Conference System Modeling & Advancement in Research Trends (SMART), Moradabad, India."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2025.100695",
+      "doi": "10.1609/aaai.v32i1.11263",
+      "raw": "Zhang, J., Peng, Y., & Yuan, M. (2018). Unsupervised generative adversarial cross-modal hashing. In Thirty-second AAAI conference on artificial intelligence."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2022.100261",
+      "doi": "10.1080/10408398.2020.1762535",
+      "raw": "Longo, R., Carew, A., Sawyer, S., Kemp, B., & Kerslake, F. (2020). A review on the aroma composition of Vitis vinifera L. Pinot noir wines: origins and influencing factors. 61 (10) 1589–1604."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2023.100503",
+      "doi": "10.25080/majora-7b98e3ed-003",
+      "raw": "McFee, B., Raffel, C., Liang, D., Ellis, D. P., McVicar, M., Battenberg, E., et al. (2015). librosa: Audio and music signal analysis in python. In Proceedings of the 14th python in science conference, vol. 8 (pp. 18–25)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2025.100820",
+      "doi": "10.1109/cvpr52729.2023.01932",
+      "raw": "Zhang, T., Xue, M., Zhang, J., Zhang, H., Wang, Y., Cheng, L., Song, J., & Song, M. (2023). Generalization matters: Loss minima flattening via parameter hybridization for efficient online knowledge distillation. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 20176–20185)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2022.100353",
+      "doi": "10.1007/s10877-013-9473-2",
+      "raw": "Smith, A. L., Owen, H., & Reynolds, K. (2013). Heart rate variability indices for very short-term (30 beat) analysis. Part 2 : Validation | SpringerLink. 27(5), 577–585."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2025.100821",
+      "doi": "10.1145/2939672.2939778",
+      "raw": "Ribeiro, M. T., Singh, S. Guestrin, C. (2016). Why should I trust you? Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135–1144)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2026.101014",
+      "doi": "10.1109/cvpr.2018.00621",
+      "raw": "Park, J., Lee, J.-Y., Yoo, D., & Kweon, I. S. (2018). Distort-and-Recover: Color Enhancement Using Deep Reinforcement Learning. In Proceedings of the IEEE conference on computer vision and pattern recognition."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2025.100673",
+      "doi": "10.1145/2939672.2939778",
+      "raw": "Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). ” Why should i trust you?” Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135–1144)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2026.100849",
+      "doi": "10.1145/1772690.1772761",
+      "raw": "Lu, Y., Tsaparas, P., Ntoulas, A., & Polanyi, L. (2010). Exploiting social context for review quality prediction. In Proceedings of the 19th international conference on world wide web (pp. 691–700)."
+    },
+    {
+      "discipline": "machine learning",
+      "citingDoi": "10.1016/j.mlwa.2025.100685",
+      "doi": "10.18653/v1/2025.emnlp-main.965",
+      "raw": "Kharrat, S., Fourati, F., & Canini, M. (2024). ACING: actor-critic for instruction learning in black-box large language models (No. arXiv:2411.12736). arXiv."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2021.166837",
+      "doi": "10.1101/841577",
+      "raw": "J. Aarum, C.P. Cabrera, T.A. Jones, S. Rajendran, R. Adiutori, G. Giovannoni, et al. Enzymatic degradation of RNA causes widespread protein aggregation in cell and tissue lysates. EMBO Rep. 2020:e49585."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2022.167566",
+      "doi": "10.1016/s0022-2836(63)80023-6",
+      "raw": "G.N. Ramachandran, C. Ramakrishnan, V. Sasisekharan, Stereochemistry of polypeptide chain configurations 7(1) (1963) 95–99."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2016.02.001",
+      "doi": "10.1016/j.jmb.2015.09.019",
+      "raw": "Shivakumar Keerthikumar, David Chisanga, Dinuka Ariyaratne, Haidar Al Saffar, Sushma Anand, Kening Zhao, Monisha Samuel, Mohashin Pathan, Markandeya Jois, Naveen Chilamkurti, Lahiru Gangoda, Suresh Mathivanan, ExoCarta: A Web-Based Compendium of Exosomal Cargo, J. Mol. Biol.,"
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2023.167998",
+      "doi": "10.1126/scitranslmed.aav0820",
+      "raw": "Baptista, M. A. S., Merchant, K., Barrett, T., Bhargava, S., Bryce, D. K., Ellis, J. M., Estrada, A. A., Fell, M. J., et al. (n.d.), LRRK2 inhibitors induce reversible changes in nonhuman primate lungs without measurable pulmonary deficits. 7915."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.3390/cimb48020133",
+      "doi": "10.3390/cimb47040287",
+      "raw": "Kostadinova, M., Raykovska, M., Simeonov, R., Lolov, S., and Mourdjeva, M. (2025). Recent Advances in Bone Tissue Engineering: Enhancing the Potential of Mesenchymal Stem Cells for Regenerative Therapies. Curr. Issues Mol. Biol., 47."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1111/imb.12601",
+      "doi": "10.1109/urai.2017.7992722",
+      "raw": "Le Q.S. Kim J. Kim J.andSon H.I.(2017).Report on work in progress of small insect tracking system using autonomous UAV. In: 14th International Conference on Ubiquitous Robots and Ambient Intelligence (URAI) Jeju 2 28 June‐1 July 2017 pp. 242–243. Available at: 1 November 2018]. doi:"
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.pbiomolbio.2017.09.009",
+      "doi": "10.1093/brain/awq010",
+      "raw": "Carhart-Harris RL and Friston KJ. Brain 2010; 133(4): 1265–1283."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1371/journal.pcbi.1008561",
+      "doi": "10.1101/2020.05.05.078758",
+      "raw": "Dellicour S, Durkin K, Hong SL, Vanmechelen B, Martí-Carreras J, Gill MS, et al. A phylodynamic workflow to rapidly gain insights into the dispersal history and dynamics of SARS-CoV-2 lineages. BioRxiv. 2020."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.3109/09687688.2015.1006275",
+      "doi": "10.1002/prot.22595",
+      "raw": "Wang Y, Tajkhorshid E. 2010. Nitric oxide conduction by the brain aquaporin AQP4. Proteins: Struct Funct Bioinformat 78:661–670"
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.molcel.2025.09.002",
+      "doi": "10.2210/pdb1atp/pdb",
+      "raw": "Zheng, J., Trafny, E.A., Knighton, D.R., Xuong, N.-H., Taylor, S.S., Teneyck, L.F., and Sowadski, J.M. (1993). 2.2 angstrom refined crystal structure of the catalytic subunit of cAMP-dependent protein kinase complexed with MNATP and a peptide inhibitor."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2022.167517",
+      "doi": "10.1093/nar/gki524",
+      "raw": "Z. Y, S. J, TM-align: a protein structure alignment algorithm based on the TM-score, Nucleic Acids Res. 33 (2005) 2302–2309."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1126/science.aej0483",
+      "doi": "10.1109/isbi.2016.7493463",
+      "raw": "J. A. Bogovic P. Hanslovsky A. Wong S. Saalfeld “Robust Registration of Calcium Images by Learned Contrast Synthesis” in 2016 IEEE 13th International Symposium on Biomedical Imaging (ISBI); pp. 1123–1126 (2016)."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2019.03.006",
+      "doi": "10.1016/j.cell.2017.07.023",
+      "raw": "Ulland TK, Song WM, Huang SC, Ulrich JD, Sergushichev A, Beatty WL, et al. TREM2 maintains microglial metabolic fitness in Alzheimer's disease. Cell. 2017;170:649-63 e13."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.3390/ijms25179522",
+      "doi": "10.3389/fcell.2023.1125233",
+      "raw": "Wang, S., Zhu, H., Pan, L., Zhang, M., Wan, X., Xu, H., Hua, R., Zhu, M., and Gao, P. (2023). Systemic inflammatory regulators and risk of acute-on-chronic liver failure: A bidirectional mendelian-randomization study. Front. Cell Dev. Biol., 11."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.pbiomolbio.2017.08.016",
+      "doi": "10.1163/9789047407850_005",
+      "raw": "Assmann, J.. Axial breakthroughs and semantic relocations in ancient Egypt and Israel. In: Giesen, B., Daniel Šuber, D. (Eds.), Religion and Politics. Cultural Perspectives (International Studies in Religion and Society 3), Leiden; Boston, S. 39-53."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2016.07.019",
+      "doi": "10.5040/9798400647277.0008",
+      "raw": "Koch, R., The etiology of tuberculosis (Die Atiologie der Tuberkulose, Berliner Kliniscben Wocbenschift, 1882). (Carter KC, translator), Essays of Robert Koch. Connecticut: Greenwood Press, 1987: p. 83–96."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.pbiomolbio.2015.08.014",
+      "doi": "10.1093/acprof:oso/9780199790807.003.0011",
+      "raw": "Ney, A., 2013. Introduction, in Ney, A., and Albert, D., (eds)."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1038/s41388-019-0727-4",
+      "doi": "10.1083/jcb.201601083",
+      "raw": "Balachandran RS, Heighington CS, Starostina NG, Anderson JW, Owen DL, Vasudevan S, et al. The ubiquitin ligase CRL2(ZYG11) targets cyclin B1 for degradation in a conserved pathway that facilitates mitotic slippage. J Cell Biol. 2016;215:151–66."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1016/j.jmb.2023.168322",
+      "doi": "10.1101/2023.04.13.23288227",
+      "raw": "Lindeboom, R. G. H., Worlock, K. B., Dratva, L. M., Yoshida, M., Scobie, D., Wagstaffe, H. R., et al. (2023). Human SARS-CoV-2 challenge resolves local and systemic response dynamics. medRxiv. 2023.2004.2013.23288227."
+    },
+    {
+      "discipline": "molecular biology",
+      "citingDoi": "10.1038/s41598-022-20906-0",
+      "doi": "10.1016/j.stem.2010.07.016",
+      "raw": "Wilson, N. K. et al. Combinatorial transcriptional control in blood stem/progenitor cells: genome-wide analysis of ten major transcriptional regulators. Cell Stem Cell 7, 532–544 (2010)."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1016/j.aop.2017.04.006",
+      "doi": "10.1364/icqi.2001.pb28",
+      "raw": "M. Mosca, P. Kaye, Quantum Networks for Generating Arbitrary Quantum States OSA, 2001, p. PB28."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1016/j.rinp.2021.103943",
+      "doi": "10.1063/1.2805197",
+      "raw": "Li Y-L, Huang Y-R, Lai Y-H. Efficiency droop behaviors of InGaN/GaN multiple-quantum-well light-emitting diodes with varying quantum well thickness. Appl Phys Lett 2007;91 (18). Pubmed: 181113-1 – 181113-3."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1007/s11128-023-04146-3",
+      "doi": "10.1103/physreva.98.062318",
+      "raw": "Chabaud, U., Diamanti, E., Markham, D., Kashefi, E., Joux, A.: Optimal quantum-programmable projective measurement with linear optics. Phys. Rev. A 98, 062318 (2018)."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.3390/quantum5020031",
+      "doi": "10.4159/9780674020146",
+      "raw": "Albert, D.Z. (1992). Quantum Mechanics and Experience, Harvard University Press."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1080/00107514.2026.2745419",
+      "doi": "10.1007/3-540-44998-1",
+      "raw": "Holevo AS. Statistical structure of quantum theory. Berlin: Springer; 2001."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.3390/quantum8030065",
+      "doi": "10.1201/9781315365527",
+      "raw": "Krasnoholovets, V. (2017). Structure of Space and the Submicroscopic Deterministic Concept of Physics, CRC Press."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.33140/atcp/01/02/00002",
+      "doi": "10.1103/revmodphys.55.245",
+      "raw": "with phase-space distributions. Rev, Mod. Phys 55: 245."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.22331/q-2025-06-24-1782",
+      "doi": "10.1103/revmodphys.54.913",
+      "raw": "J. W. Negele. ``The mean-field theory of nuclear structure and dynamics&apos;&apos;. Reviews of Modern Physics 54, 913–1015 (1982)."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1016/j.chemphys.2022.111506",
+      "doi": "10.22331/q-2019-10-07-191",
+      "raw": "X. Yuan, S. Endo, Q. Zhao, Y. Li, S. Benjamin, Theory of variational quantum simulation, arXiv e-prints (2018), arXiv:1812.08767 [quant-ph]."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1016/j.physleta.2026.132251",
+      "doi": "10.1103/physreva.85.010301",
+      "raw": "C. Branciard, E. G. Cavalcanti, S. P. Walborn, V. Scarani, H. M. Wiseman, One-sided device-independent quantum key distribution: security, feasibility, and the connection with steering, 85(1) (2012)."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1007/s10867-018-9504-9",
+      "doi": "10.1038/nrn.2016.141",
+      "raw": "Palop, J.J., Mucke, L.: Network abnormalities and interneuron dysfunction in Alzheimer disease. Nat. Rev. Neurosci. 17, 777–792 (2016)."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.1038/s41567-024-02622-w",
+      "doi": "10.1007/jhep04(2015)163",
+      "raw": "Almheiri, A., Dong, X. & Harlow, D. Bulk locality and quantum error correction in AdS/CFT. J. High Energy Phys. 2015, 163 (2015). This paper posits a fundamental connection between AdS/CFT and quantum error correction."
+    },
+    {
+      "discipline": "quantum physics",
+      "citingDoi": "10.3390/physics5040072",
+      "doi": "10.1515/9781400876686",
+      "raw": "Lefschetz, S. (1953). Algebraic Geometry, Princeton University Press."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2016.04.002",
+      "doi": "10.1007/978-94-015-6932-3",
+      "raw": "Cooper, R. (1983). Quantification and syntactic theory. In D. Reidel (Ed.), Synthese language library (Vol. 21). Dordrecht, Netherlands."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2023.101561",
+      "doi": "10.1016/s0364-0213(80)80017-6",
+      "raw": "Lakoff, G., & Johnson, M. (1980). The metaphorical structure of the human conceptual system. Cognitive Science, 4(2), 195–208. 8:958."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2017.12.003",
+      "doi": "10.1017/s1366728998000133",
+      "raw": "Green, D. W. (1998). Mental control of the bilingual lexico-semantic system. Bilingualism: Language and Cognition, 1, 67–81."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1002/acp.4190",
+      "doi": "10.1080/1068316x.2024.2329707",
+      "raw": "Pennekamp P. &Mansour J. K.(2024).Laypeople's Interpretations of \"High Confidence\".Psychology Crime and Law."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1002/acp.3458",
+      "doi": "10.2139/ssrn.876590",
+      "raw": "Vantomme D. Geuens M. &Dewitte S.(2005).How to portray men and women in advertisements? Explicit and implicit evaluations of ads depicting different gender roles. Working Papers of Faculty of Economics and Business Administration Ghent University Faculty of Economics and Business Administration p.319"
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1002/acp.70196",
+      "doi": "10.1007/bf01109906",
+      "raw": "Malloy V. Hogan.1964.378 US 1 84 S. Ct. 1489 12 L. Ed. 2d 653."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1080/20445911.2024.2361958",
+      "doi": "10.1002/ana.410300408",
+      "raw": "Singer, H. S., Hahn, I. H., & Moran, T. H. (1991). Abnormal dopamine uptake sites in postmortem striatum from patients with Tourette's syndrome. Annals of Neurology: Official Journal of the American Neurological Association and the Child Neurology Society, 30(4), 558–562."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.53841/bpscog.2018.1.3.5",
+      "doi": "10.1177/0956797617723724",
+      "raw": "Anderson, S.F. , Kelley, K. & Maxwell, S.E. (2017). Sample-size planning for more accurate statistical power: a method adjusting sample effect sizes for publication bias and uncertainty. Psychological Science, 0956797617723724."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1080/20445911.2024.2313354",
+      "doi": "10.4324/9781003009351-9",
+      "raw": "Barr, N., Klein, L., McNamara, M. J., & Peters, K. (2023). Creative cognition: From ideation to innovation. In L. J. Ball, & F. Vallée-Tourangeau (Eds.), The Routledge international handbook of creative cognition (pp. 109–126). Routledge."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1002/acp.70037",
+      "doi": "10.1109/icip51287.2024.10647924",
+      "raw": "Hassanpour A. Y.Kowsari H. O.Shahreza B.Yang andS.Marcel.2024.“ChatGPT and Biometrics: An Assessment of Face Recognition Gender Detection and Age Estimation Capabilities.”arXiv. arXiv:2403.02965."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2019.101261",
+      "doi": "10.1101/258665",
+      "raw": "Wu, C. M., Schulz, E., Garvert, M. M., Meder, B., & Schuck, N. W. (2018). Connecting conceptual and spatial search via a model of generalization. bioRxiv, 258665."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2019.03.002",
+      "doi": "10.7554/elife.33468.024",
+      "raw": "Nieuwland, M. S., Politzer-Ahles, S., Heyselaar, E., Segaert, K., Darley, E., Kazanina, N., …, Huettig, F. (2018). Large-scale replication study reveals a limit on probabilistic prediction in language comprehension. eLife."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.5114/hpr.2021.109537",
+      "doi": "10.1037/0033-2909.101.2.171",
+      "raw": "Flynn, J. R. (1987). Massive IQ gains in 14 nations: What IQ tests really measure. Psychological Bulletin, 101, 171–191."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2022.101473",
+      "doi": "10.1037/0000012-029",
+      "raw": "Völter, C. J., & Call, J. (2017). Causal and inferential reasoning in animals. APA Handbook of Comparative Psychology: Perception, Learning, and Cognition, Vol. 2, 643–671."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2023.101573",
+      "doi": "10.1093/oso/9780199211616.003.0007",
+      "raw": "Kennedy, C., & Levin, B. (2008). Measure of change: the adjectival core of degree achievements. In: L. McNally. & C. Kennedy (Eds.), Adjectives and adverbs: Syntax, semantics and discourse. Oxford University Press."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.24193/subbpsyped.2024.2.04",
+      "doi": "10.3389/fpsyg.2015.01336",
+      "raw": "66. Wierzba M., Riegel M., Pucz A., Leśniewska Z., Dragan W. Ł., Gola M., Jednoróg K., Marchewka A. (2015) Erotic subset for the Nencki Affective Picture System (NAPS ERO): cross-sexual comparison study. Frontiers in Psychology, 6:1336."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1002/acp.4217",
+      "doi": "10.31234/osf.io/42mxw",
+      "raw": "Ball H. Peper P. Alakbarova D. Gilbert S. Brewer G. A. &Brewer G. A.(2021).Individual differences in prospective memory offloading in laboratory and naturalistic settings (version 1).PsyArXiv Preprints."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1016/j.cogpsych.2021.101396",
+      "doi": "10.2139/ssrn.3272468",
+      "raw": "Kennedy, R., Clifford, S., Burleigh, T., Waggoner, P., & Jewell, R. (2018). The shape of and solutions to the MTurk quality crisis. Unpublished manuscript."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1080/20445911.2025.2485203",
+      "doi": "10.4324/9781003009351-14",
+      "raw": "Pearson, D. G. (2023). Mental imagery and creative cognition. In L. J. Ball & F. Vallee-Tourangeau (Eds.), The Routledge international handbook of creative cognition (pp. 180–198). Routledge."
+    },
+    {
+      "discipline": "cognitive psychology",
+      "citingDoi": "10.1002/acp.3913",
+      "doi": "10.31234/osf.io/tevj6",
+      "raw": "Meyerhoff H. S. &Papenmeier F.(2020).Individual differences in visual attention: A short reliable open source and multilingual test of multiple object tracking in psychopy. PsyArXiv."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1080/09672567.2026.2750531",
+      "doi": "10.7312/hart20312",
+      "raw": "Hartog, François. 2022. Chronos: The West Confronts Time. New York: Columbia University Press."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2020.101381",
+      "doi": "10.21033/wp-2020-11",
+      "raw": "Velde, François. 2020. What happened to the US economy during the 1918 influenza pandemic? A view through high-frequency data. Federal Reserve Bank of Chicago Working Paper #2020-11."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2024.101602",
+      "doi": "10.2139/ssrn.4595173",
+      "raw": "Becker, S.O., Rubin, J. and Woessmann, L. (2023), “Religion and Growth”, CAGE Working Paper No. 684, University of Warwick,"
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2015.09.002",
+      "doi": "10.1596/1813-9450-6481",
+      "raw": "Henderson, Vernon, Mark Roberts, and Adam Storeygard. 2013. “Is Urbanization in Sub-Saharan Africa Different?” Unpublished manuscript, Department of Economics, Brown Univerisity."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2024.101629",
+      "doi": "10.1093/qje/qjae023",
+      "raw": "Althoff, Lukas, Reichardt, Hugo, 2024. Jim Crow and Black Economic Progress After Slavery. Working Paper."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2016.12.001",
+      "doi": "10.2139/ssrn.2688318",
+      "raw": "Bernhofena, Daniel, Markus Eberhardt, Jianan Li, Stephen Morgan. 2015. Assessing market (dis)integration in pre-modern China. American University (Working paper)"
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1111/ehr.12938",
+      "doi": "10.3386/w21608",
+      "raw": "Acemoglu D.andÜçer M. ‘The ups and downs of Turkish growth 2002–2015: political dynamics the European Union and the institutional slide’ National Bureau of Economic Research working paper no. 21608 (2015)."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1111/ehr.70151",
+      "doi": "10.2139/ssrn.5750762",
+      "raw": "Zhai R.andGao Y. ‘Two millennia of Chinese economic growth’ CQH Working Paper No. 0007 HKU Business School (2025)."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2016.11.002",
+      "doi": "10.1016/b978-0-444-53538-2.00008-3",
+      "raw": "Ogilvie, Sheilagh, Carus, A.W., 2014. Institutions and economic growth in historical perspective. CESifo Working Paper No. 4861."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1080/20780389.2022.2103306",
+      "doi": "10.2139/ssrn.3946708",
+      "raw": "Okoye, Dozie, and Roland Pongou. 2021. “Missions and Heterogeneous Social Change: Evidence from Border Discontinuities in the Emirates of Nigeria.” Available at SSRN:"
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.17150/2308-2488.2022.23(1).190-203",
+      "doi": "10.38050/2078-3809-2019-11-3-70-78",
+      "raw": "Khudokormov A.G. Useful, Informative Book on Nobel Prize Winners in Economics. Nauchnye issledovaniya ekonomicheskogo fakul'teta. Elektronnyi zhurnal = Scientific Research of Faculty of Economics. Electronic Journal, 2019, vol. 11, no. 3, pp. 70–78. Available at: (In Russian)."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2023.101514",
+      "doi": "10.1162/rest.91.2.332",
+      "raw": "Coleman, A. (2009). Storage, slow transport, and the law of one price: theory with evidence from nineteenth-century U.S. corn markets. The Review of Economic Statistics."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1111/ehr.12874",
+      "doi": "10.1088/2058-7058/31/11/13",
+      "raw": "Johnston L. D.andWilliamson S. H. ‘What was the US GDP then?’ (2018) on 31 Aug. 2018)."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.17150/2308-2488.2023.24(2).327-348",
+      "doi": "10.1007/bf02903300",
+      "raw": "Kalashnikov N.I. Singapore: Problems of the City-State. Moscow, Znanie Publ., 1981. 64 p."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1111/ehr.13378",
+      "doi": "10.3386/w31155",
+      "raw": "McLaughlin E. DucoingC.andOxley L. ‘Tracing sustainability in the long run: genuine savings estimates 1850–2018’ National Bureau of Economic Research Working Paper 31155(2023)."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2023.101516",
+      "doi": "10.1484/j.cde.2.309326",
+      "raw": "Nachtergael, G. De quelques comptes d'un grand domaine de haute-Egypte au IIe siècle p.C., Chronique d'Egypte 82 (2007); 281–92."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1016/j.eeh.2020.101363",
+      "doi": "10.1016/j.eeh.2020.101363",
+      "raw": "Rose, J., 2020. Replication - Short term residential mortgage contracts in American economic history."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1080/03585522.2017.1397314",
+      "doi": "10.2307/1858587",
+      "raw": "Lindegren, J. (1980). Utskrivning och utsugning: Produktion och reproduktion i Bygdea 1620–1640 (Doctoral dissertation). Studia Historica Upsaliensia, 117. Uppsala: Uppsala University."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.17150/2308-2488.2022.23(3).481-507",
+      "doi": "10.1017/cbo9780511808678",
+      "raw": "North D.C. Institutions, Institutional Change and Economic Performance. Cambridge University Press, 1990. 152 p. (Russ. ed.: North D.C. Institutions, Institutional Change and Economic Performance. Moscow, Nachala Publ., 1997. 180 p. EDN: YQDVYE)."
+    },
+    {
+      "discipline": "economic history",
+      "citingDoi": "10.1080/09672567.2026.2699388",
+      "doi": "10.1017/s1053837214000340",
+      "raw": "Medema, Steven G. 2014a. “1966 and All That: The Birth of the Coase Theorem Controversy.” Journal of the History of Economic Thought 36 (3): 271–303."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.3390/urbansci6040065",
+      "doi": "10.1002/0470020997",
+      "raw": "Benenson, I., and Torrens, P. (2004). Geosimulation: Automata-Based Modeling of Urban Phenomena, John Wiley & Sons."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1177/29768659261461787",
+      "doi": "10.31234/osf.io/xz25v",
+      "raw": "Hawkins S Yudkin D Juan-Torres M et al. (2018) Hidden Tribes: A Study of America’s Polarized Landscape. More in Common. g/hidden_tribes_report.pdf."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.wace.2015.11.008",
+      "doi": "10.1063/pt.3.1296",
+      "raw": "Somerville, R., and S.J. Hassol (2011), Communicating the science of climate change, Phys. Today."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1175/jcli-d-18-0742.1",
+      "doi": "10.1007/s40641-018-0100-7",
+      "raw": "Albani, S., Y. Balkanski, N. Mahowald, G. Winckler, V. Maggi, and B. Delmonte, 2018: Aerosol–climate interactions during the Last Glacial Maximum. Curr. Climate Change Rep., 4, 99–114,"
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.uclim.2021.101079",
+      "doi": "10.5040/9798881818463.ch-009",
+      "raw": "York, Abigail M., Boone, Christopher G. (2018). Inventing Phoenix: Land use, politics, and environmental justice. 161–180 The American Environment Revisited. The American Environment Revisited. Eds. Geoffrey L. Buckley and Yolanda Youngs. Rowman and Littlefield, Lanham, pp. 161–180."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.cliser.2021.100237",
+      "doi": "10.1002/qj.3482",
+      "raw": "Fundel, V.J., Fleischhut, N., Herzog, S.M., Göber, M., and Hagedorn, R. 2019. Promoting the use of probabilistic weather forecasts through a dialogue between scientists, developers, and end-users. Q. J. R. Meteorol. Soc., 145, 210–231."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.3390/cli11060119",
+      "doi": "10.3390/su9101717",
+      "raw": "Masud, M., Bae, S., and Kim, J. (2017). Analysis of Environmental Accounting and Reporting Practices of Listed Banking Companies in Bangladesh. Sustainability, 9."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.3390/su141710554",
+      "doi": "10.2737/nrs-gtr-p-185",
+      "raw": "Campbell, L.K., Svendsen, E., Sonti, N.F., Hines, S.J., and Maddox, D. (2019). A Proposed Multi-Agency Program for Stewardship Science, Green Readiness, Response, and Recovery: A Collaborative Synthesis, General Technical Report MRS-P-185."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.egycc.2026.100256",
+      "doi": "10.2495/eq-v6-n1-94-104",
+      "raw": "Tripathi, Falling capacity utilization of thermal power plants in India: Projection of future scenarios. International Journal of Energy Production and Management. Vol 6, issue 1, (2021). 94 – 104."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1002/wcc.452",
+      "doi": "10.1080/10572252.2015.1001296",
+      "raw": "CagleLE TilleryD. Climate change research across disciplines: the value and uses of multidisciplinary research reviews for technical communication.Tech Commun Q2015. Another useful collection that explores climate argumentation from a communication‐studies perspective is Moser SC Dilling L.Creating a Climate for Change. Cambridge UK: Cambridge University Press; 2006."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.crm.2025.100687",
+      "doi": "10.1007/978-3-540-24728-9",
+      "raw": "Winkelmann, R. (2003). Econometric Analysis of Count Data. New York: Springer."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1038/s41612-024-00881-1",
+      "doi": "10.3390/atmos9040138",
+      "raw": "Adler, R. et al. The Global Precipitation Climatology Project (GPCP) Monthly Analysis (New Version 2.3) and a Review of 2017 Global Precipitation. Atmosphere 9, 138 (2018)."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1080/17565529.2026.2682403",
+      "doi": "10.1186/s40878-020-00210-4",
+      "raw": "de Haas, H. (2021). A theory of migration: The aspirations-capabilities framework. Comparative Migration Studies, 9(1), 135."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.3390/cli10050073",
+      "doi": "10.1093/oso/9780198506942.001.0001",
+      "raw": "McComb, D. (2004). Renormalization Methods: A Guide for Beginners, Oxford U. Press."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.crm.2018.09.002",
+      "doi": "10.3133/ofr20141200",
+      "raw": "Wockner, G., Boone, R., Schoenecker, K.A., Zeigenfuss, L.C., 2015. Modeling Elk and Bison Carrying Capacity for Great Sand Dunes National Park, Baca National Wildlife Refuge, and The Nature Conservancy’s Medano Ranch, Colorado (No. 2014–1200), Open-File Report. US Geological Survey, Reston, VA."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.crm.2024.100614",
+      "doi": "10.1596/36403",
+      "raw": "Rigaud, K.K., de Sherbinin, A., Jones, B., Adamo, S., Maleki, D., Arora, A., Casals Fernandez, A.T., Chai-Onn, T., Mills, B., 2021. Groundswell Africa: Internal climate migration in the Lake Victoria Basin countries. World Bank Open Knowledge Repository. Accessed 14 April 2023. URL:"
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.esd.2021.10.006",
+      "doi": "10.1017/s1355770x98280193",
+      "raw": "Parikh Jyoti and Parikh Kirit S., (1998), “Free ride through delay: Risk and accountability for climate change”, Journal of Environment and Development Economics, Vol. 3 No. 3, pp. 384–389, 1998."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1016/j.csag.2025.100083",
+      "doi": "10.19103/as.2019.0061.10",
+      "raw": "G. Hoogenboom, C.H. Porter, K.J. Boote, V. Shelia, G.Y. Tsuji, Advances in crop modelling for a sustainable agriculture E-CHAPTER FROM THIS BOOK the DSSAT crop modeling ecosystem, (n.d.),"
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1002/wcc.801",
+      "doi": "10.1063/pt.5.022972",
+      "raw": "Connor S. &Green C.(2009 February 1).Climate scientists: It's time for “Plan B.”The Independent."
+    },
+    {
+      "discipline": "climate science",
+      "citingDoi": "10.1007/s00382-024-07220-3",
+      "doi": "10.1007/s00704-021-03746-2",
+      "raw": "Shiru MS, Chung E-S (2021) Performance evaluation of CMIP6 global climate models for selecting models for climate projection over Nigeria. Theor Appl Climatol 146:599–615."
+    }
+  ]
+}

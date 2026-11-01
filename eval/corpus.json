@@ -1,0 +1,1815 @@
+{
+  "seed": 88421,
+  "disciplines": [
+    "machine learning",
+    "molecular biology",
+    "quantum physics",
+    "cognitive psychology",
+    "economic history",
+    "climate science"
+  ],
+  "genuineWorks": 60,
+  "fabricationDonorWorks": 60,
+  "trials": [
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1007/bf00115892",
+      "raw": "Dietterich, T. G. (1990). Editorial Exploratory research in machine learning. Machine Learning, 5(1), 5–9. https://doi.org/10.1007/bf00115892"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1007/bf00115892",
+      "raw": "Dietterich, Thomas G. “Editorial Exploratory Research in Machine Learning.” Machine Learning, vol. 5, no. 1, 1990, pp. 5–9, https://doi.org/10.1007/bf00115892."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1007/bf00115892",
+      "raw": "[1] T. G. Dietterich, “Editorial Exploratory research in machine learning,” Machine Learning, vol. 5, no. 1, pp. 5–9, 1990, doi: 10.1007/bf00115892."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1007/bf00115892",
+      "raw": "1. Dietterich TG. Editorial Exploratory research in machine learning. Machine Learning. 1990;5(1):5–9. doi:10.1007/bf00115892"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.mlwa.2022.100363",
+      "raw": "Mostafa, N., Ramadan, H. S. M., & Elfarouk, O. (2022). Renewable energy management in smart grids by using big data analytics and machine learning. Machine Learning with Applications, 9, 100363. https://doi.org/10.1016/j.mlwa.2022.100363"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.mlwa.2022.100363",
+      "raw": "Mostafa, Noha, et al. “Renewable Energy Management in Smart Grids by Using Big Data Analytics and Machine Learning.” Machine Learning with Applications, vol. 9, 2022, p. 100363, https://doi.org/10.1016/j.mlwa.2022.100363."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.mlwa.2022.100363",
+      "raw": "[1] N. Mostafa, H. S. M. Ramadan, and O. Elfarouk, “Renewable energy management in smart grids by using big data analytics and machine learning,” Machine Learning with Applications, vol. 9, p. 100363, 2022, doi: 10.1016/j.mlwa.2022.100363."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.mlwa.2022.100363",
+      "raw": "1. Mostafa N, Ramadan HSM, Elfarouk O. Renewable energy management in smart grids by using big data analytics and machine learning. Machine Learning with Applications. 2022;9:100363. doi:10.1016/j.mlwa.2022.100363"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1022689909846",
+      "raw": "Kaelbling, L. P. (1994). Associative Reinforcement Learning: Functions in k-DNF. Machine Learning, 15(3), 279–298. https://doi.org/10.1023/a:1022689909846"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1022689909846",
+      "raw": "Kaelbling, Leslie Pack. “Associative Reinforcement Learning: Functions in k-DNF.” Machine Learning, vol. 15, no. 3, 1994, pp. 279–98, https://doi.org/10.1023/a:1022689909846."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1022689909846",
+      "raw": "[1] L. P. Kaelbling, “Associative Reinforcement Learning: Functions in k-DNF,” Machine Learning, vol. 15, no. 3, pp. 279–298, 1994, doi: 10.1023/a:1022689909846."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1022689909846",
+      "raw": "1. Kaelbling LP. Associative Reinforcement Learning: Functions in k-DNF. Machine Learning. 1994;15(3):279–98. doi:10.1023/a:1022689909846"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.mlwa.2022.100361",
+      "raw": "Ahmed, J., & Green II, R. C. (2022). Predicting severely imbalanced data disk drive failures with machine learning models. Machine Learning with Applications, 9, 100361. https://doi.org/10.1016/j.mlwa.2022.100361"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.mlwa.2022.100361",
+      "raw": "Ahmed, Jishan, and Robert C. Green II. “Predicting Severely Imbalanced Data Disk Drive Failures with Machine Learning Models.” Machine Learning with Applications, vol. 9, 2022, p. 100361, https://doi.org/10.1016/j.mlwa.2022.100361."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.mlwa.2022.100361",
+      "raw": "[1] J. Ahmed and R. C. Green II, “Predicting severely imbalanced data disk drive failures with machine learning models,” Machine Learning with Applications, vol. 9, p. 100361, 2022, doi: 10.1016/j.mlwa.2022.100361."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.mlwa.2022.100361",
+      "raw": "1. Ahmed J, Green II RC. Predicting severely imbalanced data disk drive failures with machine learning models. Machine Learning with Applications. 2022;9:100361. doi:10.1016/j.mlwa.2022.100361"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1018396106080",
+      "raw": "Goldberg, P. W., Goldman, S. A., & Scott, S. D. (1996). PAC Learning of One-Dimensional Patterns. Machine Learning, 25(1), 51–70. https://doi.org/10.1023/a:1018396106080"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1018396106080",
+      "raw": "Goldberg, Paul W., et al. “PAC Learning of One-Dimensional Patterns.” Machine Learning, vol. 25, no. 1, 1996, pp. 51–70, https://doi.org/10.1023/a:1018396106080."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1018396106080",
+      "raw": "[1] P. W. Goldberg, S. A. Goldman, and S. D. Scott, “PAC Learning of One-Dimensional Patterns,” Machine Learning, vol. 25, no. 1, pp. 51–70, 1996, doi: 10.1023/a:1018396106080."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1018396106080",
+      "raw": "1. Goldberg PW, Goldman SA, Scott SD. PAC Learning of One-Dimensional Patterns. Machine Learning. 1996;25(1):51–70. doi:10.1023/a:1018396106080"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.mlwa.2022.100359",
+      "raw": "Stepinski, T. F., & Dmowska, A. (2022). Machine-learning models for spatially-explicit forecasting of future racial segregation in US cities. Machine Learning with Applications, 9, 100359. https://doi.org/10.1016/j.mlwa.2022.100359"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.mlwa.2022.100359",
+      "raw": "Stepinski, Tomasz F., and Anna Dmowska. “Machine-Learning Models for Spatially-Explicit Forecasting of Future Racial Segregation in US Cities.” Machine Learning with Applications, vol. 9, 2022, p. 100359, https://doi.org/10.1016/j.mlwa.2022.100359."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.mlwa.2022.100359",
+      "raw": "[1] T. F. Stepinski and A. Dmowska, “Machine-learning models for spatially-explicit forecasting of future racial segregation in US cities,” Machine Learning with Applications, vol. 9, p. 100359, 2022, doi: 10.1016/j.mlwa.2022.100359."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.mlwa.2022.100359",
+      "raw": "1. Stepinski TF, Dmowska A. Machine-learning models for spatially-explicit forecasting of future racial segregation in US cities. Machine Learning with Applications. 2022;9:100359. doi:10.1016/j.mlwa.2022.100359"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.58496/bjml/2024/015",
+      "raw": "Mahmoud, A. S., Lamouchi, O., & Belghith, S. (2024). Advancements in Machine Learning and Deep Learning for Early Diagnosis of Chronic Kidney Diseases: A Comprehensive Review. Babylonian Journal of Machine Learning, 2024, 149–156. https://doi.org/10.58496/bjml/2024/015"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.58496/bjml/2024/015",
+      "raw": "Mahmoud, Akeel Shaker, et al. “Advancements in Machine Learning and Deep Learning for Early Diagnosis of Chronic Kidney Diseases: A Comprehensive Review.” Babylonian Journal of Machine Learning, vol. 2024, 2024, pp. 149–56, https://doi.org/10.58496/bjml/2024/015."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.58496/bjml/2024/015",
+      "raw": "[1] A. S. Mahmoud, O. Lamouchi, and S. Belghith, “Advancements in Machine Learning and Deep Learning for Early Diagnosis of Chronic Kidney Diseases: A Comprehensive Review,” Babylonian Journal of Machine Learning, vol. 2024, pp. 149–156, 2024, doi: 10.58496/bjml/2024/015."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.58496/bjml/2024/015",
+      "raw": "1. Mahmoud AS, Lamouchi O, Belghith S. Advancements in Machine Learning and Deep Learning for Early Diagnosis of Chronic Kidney Diseases: A Comprehensive Review. Babylonian Journal of Machine Learning. 2024;2024:149–56. doi:10.58496/bjml/2024/015"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1063/5.0159502",
+      "raw": "Rickert, C. A., Henkel, F., & Lieleg, O. (2023). Unsupervised machine learning to analyze corneal tissue surfaces. APL Machine Learning, 1(4). https://doi.org/10.1063/5.0159502"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1063/5.0159502",
+      "raw": "Rickert, Carolin A., et al. “Unsupervised Machine Learning to Analyze Corneal Tissue Surfaces.” APL Machine Learning, vol. 1, no. 4, 2023, https://doi.org/10.1063/5.0159502."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1063/5.0159502",
+      "raw": "[1] C. A. Rickert, F. Henkel, and O. Lieleg, “Unsupervised machine learning to analyze corneal tissue surfaces,” APL Machine Learning, vol. 1, no. 4, 2023, doi: 10.1063/5.0159502."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1063/5.0159502",
+      "raw": "1. Rickert CA, Henkel F, Lieleg O. Unsupervised machine learning to analyze corneal tissue surfaces. APL Machine Learning. 2023;1(4). doi:10.1063/5.0159502"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1007609817671",
+      "raw": "Tadić, V. (2001). On the Convergence of Temporal-Difference Learning with Linear Function Approximation. Machine Learning, 42(3), 241–267. https://doi.org/10.1023/a:1007609817671"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1007609817671",
+      "raw": "Tadić, Vladislav. “On the Convergence of Temporal-Difference Learning with Linear Function Approximation.” Machine Learning, vol. 42, no. 3, 2001, pp. 241–67, https://doi.org/10.1023/a:1007609817671."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1007609817671",
+      "raw": "[1] V. Tadić, “On the Convergence of Temporal-Difference Learning with Linear Function Approximation,” Machine Learning, vol. 42, no. 3, pp. 241–267, 2001, doi: 10.1023/a:1007609817671."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1007609817671",
+      "raw": "1. Tadić V. On the Convergence of Temporal-Difference Learning with Linear Function Approximation. Machine Learning. 2001;42(3):241–67. doi:10.1023/a:1007609817671"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1018274104280",
+      "raw": "Bennett, S. W., & DeJong, G. F. (1996). Real-World Robotics: Learning to Plan for Robust Execution. Machine Learning, 23(2–3), 121–161. https://doi.org/10.1023/a:1018274104280"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1018274104280",
+      "raw": "Bennett, Scott W., and Gerald F. DeJong. “Real-World Robotics: Learning to Plan for Robust Execution.” Machine Learning, vol. 23, nos. 2–3, 1996, pp. 121–61, https://doi.org/10.1023/a:1018274104280."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1018274104280",
+      "raw": "[1] S. W. Bennett and G. F. DeJong, “Real-World Robotics: Learning to Plan for Robust Execution,” Machine Learning, vol. 23, no. 2–3, pp. 121–161, 1996, doi: 10.1023/a:1018274104280."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1018274104280",
+      "raw": "1. Bennett SW, DeJong GF. Real-World Robotics: Learning to Plan for Robust Execution. Machine Learning. 1996;23(2–3):121–61. doi:10.1023/a:1018274104280"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.celrep.2023.112110",
+      "raw": "Rheinberger, M., Costa, A. L., Kampmann, M., Glavas, D., Shytaj, I. L., Sreeram, S., Penzo, C., Tibroni, N., Garcia-Mesa, Y., Leskov, K., Fackler, O. T., Vlahovicek, K., Karn, J., Lucic, B., Herrmann, C., & Lusic, M. (2023). Genomic profiling of HIV-1 integration in microglia cells links viral integration to the topologically associated domains. Cell Reports, 42(2), 112110. https://doi.org/10.1016/j.celrep.2023.112110"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.celrep.2023.112110",
+      "raw": "Rheinberger, Mona, et al. “Genomic Profiling of HIV-1 Integration in Microglia Cells Links Viral Integration to the Topologically Associated Domains.” Cell Reports, vol. 42, no. 2, 2023, p. 112110, https://doi.org/10.1016/j.celrep.2023.112110."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.celrep.2023.112110",
+      "raw": "[1] M. Rheinberger et al., “Genomic profiling of HIV-1 integration in microglia cells links viral integration to the topologically associated domains,” Cell Reports, vol. 42, no. 2, p. 112110, 2023, doi: 10.1016/j.celrep.2023.112110."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.celrep.2023.112110",
+      "raw": "1. Rheinberger M, Costa AL, Kampmann M, Glavas D, Shytaj IL, Sreeram S, et al. Genomic profiling of HIV-1 integration in microglia cells links viral integration to the topologically associated domains. Cell Reports. 2023;42(2):112110. doi:10.1016/j.celrep.2023.112110"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.jmb.2020.04.010",
+      "raw": "Lenhard, B., & Sternberg, M. J. E. (2020). Computational Resources for Molecular Biology: Special Issue 2020. Journal of Molecular Biology, 432(11), 3361–3363. https://doi.org/10.1016/j.jmb.2020.04.010"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.jmb.2020.04.010",
+      "raw": "Lenhard, Boris, and Michael J. E. Sternberg. “Computational Resources for Molecular Biology: Special Issue 2020.” Journal of Molecular Biology, vol. 432, no. 11, 2020, pp. 3361–63, https://doi.org/10.1016/j.jmb.2020.04.010."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.jmb.2020.04.010",
+      "raw": "[1] B. Lenhard and M. J. E. Sternberg, “Computational Resources for Molecular Biology: Special Issue 2020,” Journal of Molecular Biology, vol. 432, no. 11, pp. 3361–3363, 2020, doi: 10.1016/j.jmb.2020.04.010."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.jmb.2020.04.010",
+      "raw": "1. Lenhard B, Sternberg MJE. Computational Resources for Molecular Biology: Special Issue 2020. Journal of Molecular Biology. 2020;432(11):3361–3. doi:10.1016/j.jmb.2020.04.010"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1007420808666",
+      "raw": "Pental, D. (1998). Plant Molecular Biology and Biotechnology in India. Plant Molecular Biology Reporter, 16(1), 93–97. https://doi.org/10.1023/a:1007420808666"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1007420808666",
+      "raw": "Pental, Deepak. “Plant Molecular Biology and Biotechnology in India.” Plant Molecular Biology Reporter, vol. 16, no. 1, 1998, pp. 93–97, https://doi.org/10.1023/a:1007420808666."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1007420808666",
+      "raw": "[1] D. Pental, “Plant Molecular Biology and Biotechnology in India,” Plant Molecular Biology Reporter, vol. 16, no. 1, pp. 93–97, 1998, doi: 10.1023/a:1007420808666."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1007420808666",
+      "raw": "1. Pental D. Plant Molecular Biology and Biotechnology in India. Plant Molecular Biology Reporter. 1998;16(1):93–7. doi:10.1023/a:1007420808666"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1006/jmbi.1999.3173",
+      "raw": "Picknett, T. (1999). Journal of molecular biology: a publishers perspective. Journal of Molecular Biology, 293(2), 165–171. https://doi.org/10.1006/jmbi.1999.3173"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1006/jmbi.1999.3173",
+      "raw": "Picknett, Tessa. “Journal of Molecular Biology: A Publishers Perspective.” Journal of Molecular Biology, vol. 293, no. 2, 1999, pp. 165–71, https://doi.org/10.1006/jmbi.1999.3173."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1006/jmbi.1999.3173",
+      "raw": "[1] T. Picknett, “Journal of molecular biology: a publishers perspective,” Journal of Molecular Biology, vol. 293, no. 2, pp. 165–171, 1999, doi: 10.1006/jmbi.1999.3173."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1006/jmbi.1999.3173",
+      "raw": "1. Picknett T. Journal of molecular biology: a publishers perspective. Journal of Molecular Biology. 1999;293(2):165–71. doi:10.1006/jmbi.1999.3173"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1111/imb.12105",
+      "raw": "Eggleston, P., & O’Brochta, D. (2014). Publication interests and priorities for\n                    Insect Molecular Biology. Insect Molecular Biology, 23(4), 405–406. https://doi.org/10.1111/imb.12105"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1111/imb.12105",
+      "raw": "Eggleston, Paul, and David O’Brochta. “Publication Interests and Priorities for\n                    Insect Molecular Biology.” Insect Molecular Biology, vol. 23, no. 4, 2014, pp. 405–06, https://doi.org/10.1111/imb.12105."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1111/imb.12105",
+      "raw": "[1] P. Eggleston and D. O’Brochta, “Publication interests and priorities for\n                    Insect Molecular Biology,” Insect Molecular Biology, vol. 23, no. 4, pp. 405–406, 2014, doi: 10.1111/imb.12105."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1111/imb.12105",
+      "raw": "1. Eggleston P, O’Brochta D. Publication interests and priorities for\n                    Insect Molecular Biology. Insect Molecular Biology. 2014;23(4):405–6. doi:10.1111/imb.12105"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1002/0471142727.mba01ks59",
+      "raw": "Cole, N. B. (2002). Compendium of Drugs Commonly Used in Molecular Biology Research. Current Protocols in Molecular Biology, 59(1). https://doi.org/10.1002/0471142727.mba01ks59"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1002/0471142727.mba01ks59",
+      "raw": "Cole, Nelson B. “Compendium of Drugs Commonly Used in Molecular Biology Research.” Current Protocols in Molecular Biology, vol. 59, no. 1, 2002, https://doi.org/10.1002/0471142727.mba01ks59."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1002/0471142727.mba01ks59",
+      "raw": "[1] N. B. Cole, “Compendium of Drugs Commonly Used in Molecular Biology Research,” Current Protocols in Molecular Biology, vol. 59, no. 1, 2002, doi: 10.1002/0471142727.mba01ks59."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1002/0471142727.mba01ks59",
+      "raw": "1. Cole NB. Compendium of Drugs Commonly Used in Molecular Biology Research. Current Protocols in Molecular Biology. 2002;59(1). doi:10.1002/0471142727.mba01ks59"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.jmb.2017.05.016",
+      "raw": "Waksman, G. (2017). Structural and Molecular Biology of a Protein-Polymerizing Nanomachine for Pilus Biogenesis. Journal of Molecular Biology, 429(17), 2654–2666. https://doi.org/10.1016/j.jmb.2017.05.016"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.jmb.2017.05.016",
+      "raw": "Waksman, Gabriel. “Structural and Molecular Biology of a Protein-Polymerizing Nanomachine for Pilus Biogenesis.” Journal of Molecular Biology, vol. 429, no. 17, 2017, pp. 2654–66, https://doi.org/10.1016/j.jmb.2017.05.016."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.jmb.2017.05.016",
+      "raw": "[1] G. Waksman, “Structural and Molecular Biology of a Protein-Polymerizing Nanomachine for Pilus Biogenesis,” Journal of Molecular Biology, vol. 429, no. 17, pp. 2654–2666, 2017, doi: 10.1016/j.jmb.2017.05.016."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.jmb.2017.05.016",
+      "raw": "1. Waksman G. Structural and Molecular Biology of a Protein-Polymerizing Nanomachine for Pilus Biogenesis. Journal of Molecular Biology. 2017;429(17):2654–66. doi:10.1016/j.jmb.2017.05.016"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.23880/aemb-16000121",
+      "raw": "D, B. (2024). Innovations in Molecular Biology-Cutting-Edge Breakthroughs in Molecular Genetics. Annals of Experimental and Molecular Biology, 6(1), 1–4. https://doi.org/10.23880/aemb-16000121"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.23880/aemb-16000121",
+      "raw": "D, Bhuvana. “Innovations in Molecular Biology-Cutting-Edge Breakthroughs in Molecular Genetics.” Annals of Experimental and Molecular Biology, vol. 6, no. 1, 2024, pp. 1–4, https://doi.org/10.23880/aemb-16000121."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.23880/aemb-16000121",
+      "raw": "[1] B. D, “Innovations in Molecular Biology-Cutting-Edge Breakthroughs in Molecular Genetics,” Annals of Experimental and Molecular Biology, vol. 6, no. 1, pp. 1–4, 2024, doi: 10.23880/aemb-16000121."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.23880/aemb-16000121",
+      "raw": "1. D B. Innovations in Molecular Biology-Cutting-Edge Breakthroughs in Molecular Genetics. Annals of Experimental and Molecular Biology. 2024;6(1):1–4. doi:10.23880/aemb-16000121"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.jmb.2024.168817",
+      "raw": "Kollmann, T. R., Sadarangani, M., & Kennedy, R. B. (2024). From space vaccinology to molecular mechanisms of choice, vaccinology needs molecular biology. Journal of Molecular Biology, 436(22), 168817. https://doi.org/10.1016/j.jmb.2024.168817"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.jmb.2024.168817",
+      "raw": "Kollmann, Tobias R., et al. “From Space Vaccinology to Molecular Mechanisms of Choice, Vaccinology Needs Molecular Biology.” Journal of Molecular Biology, vol. 436, no. 22, 2024, p. 168817, https://doi.org/10.1016/j.jmb.2024.168817."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.jmb.2024.168817",
+      "raw": "[1] T. R. Kollmann, M. Sadarangani, and R. B. Kennedy, “From space vaccinology to molecular mechanisms of choice, vaccinology needs molecular biology,” Journal of Molecular Biology, vol. 436, no. 22, p. 168817, 2024, doi: 10.1016/j.jmb.2024.168817."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.jmb.2024.168817",
+      "raw": "1. Kollmann TR, Sadarangani M, Kennedy RB. From space vaccinology to molecular mechanisms of choice, vaccinology needs molecular biology. Journal of Molecular Biology. 2024;436(22):168817. doi:10.1016/j.jmb.2024.168817"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1038/s41598-022-20906-0",
+      "raw": "Serina Secanechia, Y. N., Bergiers, I., Rogon, M., Arnold, C., Descostes, N., Le, S., López-Anguita, N., Ganter, K., Kapsali, C., Bouilleau, L., Gut, A., Uzuotaite, A., Aliyeva, A., Zaugg, J. B., & Lancrin, C. (2022). Identifying a novel role for the master regulator Tal1 in the Endothelial to Hematopoietic Transition. Scientific Reports, 12(1). https://doi.org/10.1038/s41598-022-20906-0"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1038/s41598-022-20906-0",
+      "raw": "Serina Secanechia, Yasmin Natalia, et al. “Identifying a Novel Role for the Master Regulator Tal1 in the Endothelial to Hematopoietic Transition.” Scientific Reports, vol. 12, no. 1, 2022, https://doi.org/10.1038/s41598-022-20906-0."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1038/s41598-022-20906-0",
+      "raw": "[1] Y. N. Serina Secanechia et al., “Identifying a novel role for the master regulator Tal1 in the Endothelial to Hematopoietic Transition,” Scientific Reports, vol. 12, no. 1, 2022, doi: 10.1038/s41598-022-20906-0."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1038/s41598-022-20906-0",
+      "raw": "1. Serina Secanechia YN, Bergiers I, Rogon M, Arnold C, Descostes N, Le S, et al. Identifying a novel role for the master regulator Tal1 in the Endothelial to Hematopoietic Transition. Scientific Reports. 2022;12(1). doi:10.1038/s41598-022-20906-0"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.14.s136",
+      "raw": "Rodriguez-Vega, M. (2021). Quantum Oscillations Appear at High Temperatures. Physics, 14. https://doi.org/10.1103/physics.14.s136"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.14.s136",
+      "raw": "Rodriguez-Vega, Martin. “Quantum Oscillations Appear at High Temperatures.” Physics, vol. 14, 2021, https://doi.org/10.1103/physics.14.s136."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.14.s136",
+      "raw": "[1] M. Rodriguez-Vega, “Quantum Oscillations Appear at High Temperatures,” Physics, vol. 14, 2021, doi: 10.1103/physics.14.s136."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.14.s136",
+      "raw": "1. Rodriguez-Vega M. Quantum Oscillations Appear at High Temperatures. Physics. 2021;14. doi:10.1103/physics.14.s136"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.16.s90",
+      "raw": "Wilkinson, R. (2023). Design for a Molecule-Based Quantum Processor. Physics, 16. https://doi.org/10.1103/physics.16.s90"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.16.s90",
+      "raw": "Wilkinson, Ryan. “Design for a Molecule-Based Quantum Processor.” Physics, vol. 16, 2023, https://doi.org/10.1103/physics.16.s90."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.16.s90",
+      "raw": "[1] R. Wilkinson, “Design for a Molecule-Based Quantum Processor,” Physics, vol. 16, 2023, doi: 10.1103/physics.16.s90."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.16.s90",
+      "raw": "1. Wilkinson R. Design for a Molecule-Based Quantum Processor. Physics. 2023;16. doi:10.1103/physics.16.s90"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.10.42",
+      "raw": "Benson, O. (2017). Linking Two Quantum Dots with Single Photons. Physics, 10. https://doi.org/10.1103/physics.10.42"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.10.42",
+      "raw": "Benson, Oliver. “Linking Two Quantum Dots with Single Photons.” Physics, vol. 10, 2017, https://doi.org/10.1103/physics.10.42."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.10.42",
+      "raw": "[1] O. Benson, “Linking Two Quantum Dots with Single Photons,” Physics, vol. 10, 2017, doi: 10.1103/physics.10.42."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.10.42",
+      "raw": "1. Benson O. Linking Two Quantum Dots with Single Photons. Physics. 2017;10. doi:10.1103/physics.10.42"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.16.183",
+      "raw": "Simon, S. H. (2023). Fractional Jumps in Quantum Hall Interferometer. Physics, 16. https://doi.org/10.1103/physics.16.183"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.16.183",
+      "raw": "Simon, Steven H. “Fractional Jumps in Quantum Hall Interferometer.” Physics, vol. 16, 2023, https://doi.org/10.1103/physics.16.183."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.16.183",
+      "raw": "[1] S. H. Simon, “Fractional Jumps in Quantum Hall Interferometer,” Physics, vol. 16, 2023, doi: 10.1103/physics.16.183."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.16.183",
+      "raw": "1. Simon SH. Fractional Jumps in Quantum Hall Interferometer. Physics. 2023;16. doi:10.1103/physics.16.183"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.physleta.2015.06.031",
+      "raw": "Koide, T. (2015). Classicalization of quantum variables and quantum–classical hybrids. Physics Letters A, 379(36), 2007–2012. https://doi.org/10.1016/j.physleta.2015.06.031"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.physleta.2015.06.031",
+      "raw": "Koide, T. “Classicalization of Quantum Variables and Quantum–Classical Hybrids.” Physics Letters A, vol. 379, no. 36, 2015, pp. 2007–12, https://doi.org/10.1016/j.physleta.2015.06.031."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.physleta.2015.06.031",
+      "raw": "[1] T. Koide, “Classicalization of quantum variables and quantum–classical hybrids,” Physics Letters A, vol. 379, no. 36, pp. 2007–2012, 2015, doi: 10.1016/j.physleta.2015.06.031."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.physleta.2015.06.031",
+      "raw": "1. Koide T. Classicalization of quantum variables and quantum–classical hybrids. Physics Letters A. 2015;379(36):2007–12. doi:10.1016/j.physleta.2015.06.031"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.rinp.2021.103943",
+      "raw": "Althib, H. (2021). Effect of quantum barrier width and quantum resonant tunneling through InGaN/GaN parabolic quantum well-LED structure on LED efficiency. Results in Physics, 22, 103943. https://doi.org/10.1016/j.rinp.2021.103943"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.rinp.2021.103943",
+      "raw": "Althib, Hind. “Effect of Quantum Barrier Width and Quantum Resonant Tunneling through InGaN/GaN Parabolic Quantum Well-LED Structure on LED Efficiency.” Results in Physics, vol. 22, 2021, p. 103943, https://doi.org/10.1016/j.rinp.2021.103943."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.rinp.2021.103943",
+      "raw": "[1] H. Althib, “Effect of quantum barrier width and quantum resonant tunneling through InGaN/GaN parabolic quantum well-LED structure on LED efficiency,” Results in Physics, vol. 22, p. 103943, 2021, doi: 10.1016/j.rinp.2021.103943."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.rinp.2021.103943",
+      "raw": "1. Althib H. Effect of quantum barrier width and quantum resonant tunneling through InGaN/GaN parabolic quantum well-LED structure on LED efficiency. Results in Physics. 2021;22:103943. doi:10.1016/j.rinp.2021.103943"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.12.105",
+      "raw": "Lindley, D. (2019). “Quantum Foam” Scrubs Away Gigantic Cosmic Energy. Physics, 12. https://doi.org/10.1103/physics.12.105"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.12.105",
+      "raw": "Lindley, David. “‘Quantum Foam’ Scrubs Away Gigantic Cosmic Energy.” Physics, vol. 12, 2019, https://doi.org/10.1103/physics.12.105."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.12.105",
+      "raw": "[1] D. Lindley, “‘Quantum Foam’ Scrubs Away Gigantic Cosmic Energy,” Physics, vol. 12, 2019, doi: 10.1103/physics.12.105."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.12.105",
+      "raw": "1. Lindley D. “Quantum Foam” Scrubs Away Gigantic Cosmic Energy. Physics. 2019;12. doi:10.1103/physics.12.105"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.24297/jap.v20i.9268",
+      "raw": "Boyd, J. (2022). A Unifying Theory for Quantum Physics, Part 2: JOURNAL OF ADVANCES IN PHYSICS, 20, 215–291. https://doi.org/10.24297/jap.v20i.9268"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.24297/jap.v20i.9268",
+      "raw": "Boyd, Jeffrey. “A Unifying Theory for Quantum Physics, Part 2:” JOURNAL OF ADVANCES IN PHYSICS, vol. 20, 2022, pp. 215–91, https://doi.org/10.24297/jap.v20i.9268."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.24297/jap.v20i.9268",
+      "raw": "[1] J. Boyd, “A Unifying Theory for Quantum Physics, Part 2:,” JOURNAL OF ADVANCES IN PHYSICS, vol. 20, pp. 215–291, 2022, doi: 10.24297/jap.v20i.9268."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.24297/jap.v20i.9268",
+      "raw": "1. Boyd J. A Unifying Theory for Quantum Physics, Part 2: JOURNAL OF ADVANCES IN PHYSICS. 2022;20:215–91. doi:10.24297/jap.v20i.9268"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.9.148",
+      "raw": "Sauls, J. A. (2016). Half-Quantum Vortices in Superfluid Helium. Physics, 9. https://doi.org/10.1103/physics.9.148"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.9.148",
+      "raw": "Sauls, James A. “Half-Quantum Vortices in Superfluid Helium.” Physics, vol. 9, 2016, https://doi.org/10.1103/physics.9.148."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.9.148",
+      "raw": "[1] J. A. Sauls, “Half-Quantum Vortices in Superfluid Helium,” Physics, vol. 9, 2016, doi: 10.1103/physics.9.148."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.9.148",
+      "raw": "1. Sauls JA. Half-Quantum Vortices in Superfluid Helium. Physics. 2016;9. doi:10.1103/physics.9.148"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1103/physics.7.s91",
+      "raw": "Anonymous. (2014). Measuring Millikelvin Temperatures with Quantum Dots. Physics, 7. https://doi.org/10.1103/physics.7.s91"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.7.s91",
+      "raw": "Anonymous. “Measuring Millikelvin Temperatures with Quantum Dots.” Physics, vol. 7, 2014, https://doi.org/10.1103/physics.7.s91."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.7.s91",
+      "raw": "[1] Anonymous, “Measuring Millikelvin Temperatures with Quantum Dots,” Physics, vol. 7, 2014, doi: 10.1103/physics.7.s91."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.7.s91",
+      "raw": "1. Anonymous. Measuring Millikelvin Temperatures with Quantum Dots. Physics. 2014;7. doi:10.1103/physics.7.s91"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.5709/acp-0430-2",
+      "raw": "Zabielska-Mendyk, E., & Zając-Lamparska, L. (2024). Editorial: EEG Signal Processing in Cognitive Psychology and Cognitive Neuroscience. Advances in Cognitive Psychology, 20(3). https://doi.org/10.5709/acp-0430-2"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.5709/acp-0430-2",
+      "raw": "Zabielska-Mendyk, Emilia, and Ludmiła Zając-Lamparska. “Editorial: EEG Signal Processing in Cognitive Psychology and Cognitive Neuroscience.” Advances in Cognitive Psychology, vol. 20, no. 3, 2024, https://doi.org/10.5709/acp-0430-2."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.5709/acp-0430-2",
+      "raw": "[1] E. Zabielska-Mendyk and L. Zając-Lamparska, “Editorial: EEG Signal Processing in Cognitive Psychology and Cognitive Neuroscience,” Advances in Cognitive Psychology, vol. 20, no. 3, 2024, doi: 10.5709/acp-0430-2."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.5709/acp-0430-2",
+      "raw": "1. Zabielska-Mendyk E, Zając-Lamparska L. Editorial: EEG Signal Processing in Cognitive Psychology and Cognitive Neuroscience. Advances in Cognitive Psychology. 2024;20(3). doi:10.5709/acp-0430-2"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.cogpsych.2023.101573",
+      "raw": "Papafragou, A., & Ji, Y. (2023). Events and objects are similar cognitive entities. Cognitive Psychology, 143, 101573. https://doi.org/10.1016/j.cogpsych.2023.101573"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.cogpsych.2023.101573",
+      "raw": "Papafragou, Anna, and Yue Ji. “Events and Objects Are Similar Cognitive Entities.” Cognitive Psychology, vol. 143, 2023, p. 101573, https://doi.org/10.1016/j.cogpsych.2023.101573."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.cogpsych.2023.101573",
+      "raw": "[1] A. Papafragou and Y. Ji, “Events and objects are similar cognitive entities,” Cognitive Psychology, vol. 143, p. 101573, 2023, doi: 10.1016/j.cogpsych.2023.101573."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.cogpsych.2023.101573",
+      "raw": "1. Papafragou A, Ji Y. Events and objects are similar cognitive entities. Cognitive Psychology. 2023;143:101573. doi:10.1016/j.cogpsych.2023.101573"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/s0010-0285(02)00012-9",
+      "raw": "Sikström, S. (2002). Forgetting curves: implications for connectionist models. Cognitive Psychology, 45(1), 95–152. https://doi.org/10.1016/s0010-0285(02)00012-9"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/s0010-0285(02)00012-9",
+      "raw": "Sikström, Sverker. “Forgetting Curves: Implications for Connectionist Models.” Cognitive Psychology, vol. 45, no. 1, 2002, pp. 95–152, https://doi.org/10.1016/s0010-0285(02)00012-9."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/s0010-0285(02)00012-9",
+      "raw": "[1] S. Sikström, “Forgetting curves: implications for connectionist models,” Cognitive Psychology, vol. 45, no. 1, pp. 95–152, 2002, doi: 10.1016/s0010-0285(02)00012-9."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/s0010-0285(02)00012-9",
+      "raw": "1. Sikström S. Forgetting curves: implications for connectionist models. Cognitive Psychology. 2002;45(1):95–152. doi:10.1016/s0010-0285(02)00012-9"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1002/acp.2350050202",
+      "raw": "Davies, G. (1991). New North American Editor for applied cognitive psychology. Applied Cognitive Psychology, 5(2), 87–87. https://doi.org/10.1002/acp.2350050202"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1002/acp.2350050202",
+      "raw": "Davies, Graham. “New North American Editor for Applied Cognitive Psychology.” Applied Cognitive Psychology, vol. 5, no. 2, 1991, pp. 87–87, https://doi.org/10.1002/acp.2350050202."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1002/acp.2350050202",
+      "raw": "[1] G. Davies, “New North American Editor for applied cognitive psychology,” Applied Cognitive Psychology, vol. 5, no. 2, pp. 87–87, 1991, doi: 10.1002/acp.2350050202."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1002/acp.2350050202",
+      "raw": "1. Davies G. New North American Editor for applied cognitive psychology. Applied Cognitive Psychology. 1991;5(2):87–87. doi:10.1002/acp.2350050202"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1006/cogp.1998.0682",
+      "raw": "Irwin, D. E. (1998). Lexical Processing during Saccadic Eye Movements. Cognitive Psychology, 36(1), 1–27. https://doi.org/10.1006/cogp.1998.0682"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1006/cogp.1998.0682",
+      "raw": "Irwin, David E. “Lexical Processing during Saccadic Eye Movements.” Cognitive Psychology, vol. 36, no. 1, 1998, pp. 1–27, https://doi.org/10.1006/cogp.1998.0682."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1006/cogp.1998.0682",
+      "raw": "[1] D. E. Irwin, “Lexical Processing during Saccadic Eye Movements,” Cognitive Psychology, vol. 36, no. 1, pp. 1–27, 1998, doi: 10.1006/cogp.1998.0682."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1006/cogp.1998.0682",
+      "raw": "1. Irwin DE. Lexical Processing during Saccadic Eye Movements. Cognitive Psychology. 1998;36(1):1–27. doi:10.1006/cogp.1998.0682"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.cogpsych.2008.01.001",
+      "raw": "Laming, D. (2008). An improved algorithm for predicting free recalls. Cognitive Psychology, 57(3), 179–219. https://doi.org/10.1016/j.cogpsych.2008.01.001"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.cogpsych.2008.01.001",
+      "raw": "Laming, Donald. “An Improved Algorithm for Predicting Free Recalls.” Cognitive Psychology, vol. 57, no. 3, 2008, pp. 179–219, https://doi.org/10.1016/j.cogpsych.2008.01.001."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.cogpsych.2008.01.001",
+      "raw": "[1] D. Laming, “An improved algorithm for predicting free recalls,” Cognitive Psychology, vol. 57, no. 3, pp. 179–219, 2008, doi: 10.1016/j.cogpsych.2008.01.001."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.cogpsych.2008.01.001",
+      "raw": "1. Laming D. An improved algorithm for predicting free recalls. Cognitive Psychology. 2008;57(3):179–219. doi:10.1016/j.cogpsych.2008.01.001"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.cogpsych.2012.06.001",
+      "raw": "Creel, S. C. (2012). Corrigendum to “Similarity-based restoration of metrical information: Different listening experiences result in different perceptual inferences” [Cognitive Psychology 65 (2012) 321–351]. Cognitive Psychology, 65(2), 380. https://doi.org/10.1016/j.cogpsych.2012.06.001"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.cogpsych.2012.06.001",
+      "raw": "Creel, Sarah C. “Corrigendum to ‘Similarity-Based Restoration of Metrical Information: Different Listening Experiences Result in Different Perceptual Inferences’ [Cognitive Psychology 65 (2012) 321–351].” Cognitive Psychology, vol. 65, no. 2, 2012, p. 380, https://doi.org/10.1016/j.cogpsych.2012.06.001."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.cogpsych.2012.06.001",
+      "raw": "[1] S. C. Creel, “Corrigendum to ‘Similarity-based restoration of metrical information: Different listening experiences result in different perceptual inferences’ [Cognitive Psychology 65 (2012) 321–351],” Cognitive Psychology, vol. 65, no. 2, p. 380, 2012, doi: 10.1016/j.cogpsych.2012.06.001."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.cogpsych.2012.06.001",
+      "raw": "1. Creel SC. Corrigendum to “Similarity-based restoration of metrical information: Different listening experiences result in different perceptual inferences” [Cognitive Psychology 65 (2012) 321–351]. Cognitive Psychology. 2012;65(2):380. doi:10.1016/j.cogpsych.2012.06.001"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.46867/c45g65",
+      "raw": "Smith, D. J. (2003). Why Cognitive Psychologists Should Know Comparative Psychology; Why Comparative Psychologists Should Know Cognitive Psychology. International Journal of Comparative Psychology, 16(1). https://doi.org/10.46867/c45g65"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.46867/c45g65",
+      "raw": "Smith, David J. “Why Cognitive Psychologists Should Know Comparative Psychology; Why Comparative Psychologists Should Know Cognitive Psychology.” International Journal of Comparative Psychology, vol. 16, no. 1, 2003, https://doi.org/10.46867/c45g65."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.46867/c45g65",
+      "raw": "[1] D. J. Smith, “Why Cognitive Psychologists Should Know Comparative Psychology; Why Comparative Psychologists Should Know Cognitive Psychology,” International Journal of Comparative Psychology, vol. 16, no. 1, 2003, doi: 10.46867/c45g65."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.46867/c45g65",
+      "raw": "1. Smith DJ. Why Cognitive Psychologists Should Know Comparative Psychology; Why Comparative Psychologists Should Know Cognitive Psychology. International Journal of Comparative Psychology. 2003;16(1). doi:10.46867/c45g65"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.cogpsych.2010.12.001",
+      "raw": "Langus, A., & Nespor, M. (2011). Corrigendum to “Cognitive systems struggling for word order” [Cognitive Psychology 60 (2010) 291–318]. Cognitive Psychology, 62(3), 223–224. https://doi.org/10.1016/j.cogpsych.2010.12.001"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.cogpsych.2010.12.001",
+      "raw": "Langus, Alan, and Marina Nespor. “Corrigendum to ‘Cognitive Systems Struggling for Word Order’ [Cognitive Psychology 60 (2010) 291–318].” Cognitive Psychology, vol. 62, no. 3, 2011, pp. 223–24, https://doi.org/10.1016/j.cogpsych.2010.12.001."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.cogpsych.2010.12.001",
+      "raw": "[1] A. Langus and M. Nespor, “Corrigendum to ‘Cognitive systems struggling for word order’ [Cognitive Psychology 60 (2010) 291–318],” Cognitive Psychology, vol. 62, no. 3, pp. 223–224, 2011, doi: 10.1016/j.cogpsych.2010.12.001."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.cogpsych.2010.12.001",
+      "raw": "1. Langus A, Nespor M. Corrigendum to “Cognitive systems struggling for word order” [Cognitive Psychology 60 (2010) 291–318]. Cognitive Psychology. 2011;62(3):223–4. doi:10.1016/j.cogpsych.2010.12.001"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1002/acp.1841",
+      "raw": "Aldert, V. (2011). How I Got Started: From Applied Social Psychology to Applied Cognitive Psychology. Applied Cognitive Psychology, 26(5), 825–826. https://doi.org/10.1002/acp.1841"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1002/acp.1841",
+      "raw": "Aldert, Vrij. “How I Got Started: From Applied Social Psychology to Applied Cognitive Psychology.” Applied Cognitive Psychology, vol. 26, no. 5, 2011, pp. 825–26, https://doi.org/10.1002/acp.1841."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1002/acp.1841",
+      "raw": "[1] V. Aldert, “How I Got Started: From Applied Social Psychology to Applied Cognitive Psychology,” Applied Cognitive Psychology, vol. 26, no. 5, pp. 825–826, 2011, doi: 10.1002/acp.1841."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1002/acp.1841",
+      "raw": "1. Aldert V. How I Got Started: From Applied Social Psychology to Applied Cognitive Psychology. Applied Cognitive Psychology. 2011;26(5):825–6. doi:10.1002/acp.1841"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1177/0332489320969229",
+      "raw": "Stuart, R. (2020). Economic and Social History Society of Ireland: Secretary’s Report for the Year 2019. Irish Economic and Social History, 47(1), 163–164. https://doi.org/10.1177/0332489320969229"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1177/0332489320969229",
+      "raw": "Stuart, Rebecca. “Economic and Social History Society of Ireland: Secretary’s Report for the Year 2019.” Irish Economic and Social History, vol. 47, no. 1, 2020, pp. 163–64, https://doi.org/10.1177/0332489320969229."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1177/0332489320969229",
+      "raw": "[1] R. Stuart, “Economic and Social History Society of Ireland: Secretary’s Report for the Year 2019,” Irish Economic and Social History, vol. 47, no. 1, pp. 163–164, 2020, doi: 10.1177/0332489320969229."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1177/0332489320969229",
+      "raw": "1. Stuart R. Economic and Social History Society of Ireland: Secretary’s Report for the Year 2019. Irish Economic and Social History. 2020;47(1):163–4. doi:10.1177/0332489320969229"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.2307/2598291",
+      "raw": "Crafts, N. F. R., & Anderson, J. L. (1993). Explaining Long-Term Economic Change. The Economic History Review, 46(4), 846. https://doi.org/10.2307/2598291"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.2307/2598291",
+      "raw": "Crafts, N. F. R., and J. L. Anderson. “Explaining Long-Term Economic Change.” The Economic History Review, vol. 46, no. 4, 1993, p. 846, https://doi.org/10.2307/2598291."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.2307/2598291",
+      "raw": "[1] N. F. R. Crafts and J. L. Anderson, “Explaining Long-Term Economic Change.,” The Economic History Review, vol. 46, no. 4, p. 846, 1993, doi: 10.2307/2598291."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.2307/2598291",
+      "raw": "1. Crafts NFR, Anderson JL. Explaining Long-Term Economic Change. The Economic History Review. 1993;46(4):846. doi:10.2307/2598291"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.3280/spe2023-002007",
+      "raw": "Bientinesi, F. (2024). New paths in the history of economic thought: A History of European Economic Thought by Antonio Magliulo. HISTORY OF ECONOMIC THOUGHT AND POLICY, (2), 121–127. https://doi.org/10.3280/spe2023-002007"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.3280/spe2023-002007",
+      "raw": "Bientinesi, Fabrizio. “New Paths in the History of Economic Thought: A History of European Economic Thought by Antonio Magliulo.” HISTORY OF ECONOMIC THOUGHT AND POLICY, no. 2, 2024, pp. 121–27, https://doi.org/10.3280/spe2023-002007."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.3280/spe2023-002007",
+      "raw": "[1] F. Bientinesi, “New paths in the history of economic thought: A History of European Economic Thought by Antonio Magliulo,” HISTORY OF ECONOMIC THOUGHT AND POLICY, no. 2, pp. 121–127, 2024, doi: 10.3280/spe2023-002007."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.3280/spe2023-002007",
+      "raw": "1. Bientinesi F. New paths in the history of economic thought: A History of European Economic Thought by Antonio Magliulo. HISTORY OF ECONOMIC THOUGHT AND POLICY. 2024;(2):121–7. doi:10.3280/spe2023-002007"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.2307/2597662",
+      "raw": "Pamuk, S., & Sabagh, G. (1992). The Modern Economic and Social History of the Middle East in Its World Context. The Economic History Review, 45(2), 444. https://doi.org/10.2307/2597662"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.2307/2597662",
+      "raw": "Pamuk, Sevket, and Georges Sabagh. “The Modern Economic and Social History of the Middle East in Its World Context.” The Economic History Review, vol. 45, no. 2, 1992, p. 444, https://doi.org/10.2307/2597662."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.2307/2597662",
+      "raw": "[1] S. Pamuk and G. Sabagh, “The Modern Economic and Social History of the Middle East in Its World Context.,” The Economic History Review, vol. 45, no. 2, p. 444, 1992, doi: 10.2307/2597662."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.2307/2597662",
+      "raw": "1. Pamuk S, Sabagh G. The Modern Economic and Social History of the Middle East in Its World Context. The Economic History Review. 1992;45(2):444. doi:10.2307/2597662"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1080/09672567.2023.2265518",
+      "raw": "Rothschild, E. (2023). Wartime in the history of economic thought: episodes in European history. The European Journal of the History of Economic Thought, 30(6), 1003–1015. https://doi.org/10.1080/09672567.2023.2265518"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1080/09672567.2023.2265518",
+      "raw": "Rothschild, Emma. “Wartime in the History of Economic Thought: Episodes in European History.” The European Journal of the History of Economic Thought, vol. 30, no. 6, 2023, pp. 1003–15, https://doi.org/10.1080/09672567.2023.2265518."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1080/09672567.2023.2265518",
+      "raw": "[1] E. Rothschild, “Wartime in the history of economic thought: episodes in European history,” The European Journal of the History of Economic Thought, vol. 30, no. 6, pp. 1003–1015, 2023, doi: 10.1080/09672567.2023.2265518."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1080/09672567.2023.2265518",
+      "raw": "1. Rothschild E. Wartime in the history of economic thought: episodes in European history. The European Journal of the History of Economic Thought. 2023;30(6):1003–15. doi:10.1080/09672567.2023.2265518"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.2307/2597868",
+      "raw": "Solar, P. M. (1995). Poor Relief and English Economic Development before the Industrial Revolution. The Economic History Review, 48(1), 1. https://doi.org/10.2307/2597868"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.2307/2597868",
+      "raw": "Solar, Peter M. “Poor Relief and English Economic Development before the Industrial Revolution.” The Economic History Review, vol. 48, no. 1, 1995, p. 1, https://doi.org/10.2307/2597868."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.2307/2597868",
+      "raw": "[1] P. M. Solar, “Poor Relief and English Economic Development before the Industrial Revolution,” The Economic History Review, vol. 48, no. 1, p. 1, 1995, doi: 10.2307/2597868."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.2307/2597868",
+      "raw": "1. Solar PM. Poor Relief and English Economic Development before the Industrial Revolution. The Economic History Review. 1995;48(1):1. doi:10.2307/2597868"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1080/03585522.2018.1437681",
+      "raw": "Ojala, J., Hemminki, T., & Nevalainen, P. (2018). Dissertations in economic and business history in Nordic countries in 2016. Scandinavian Economic History Review, 66(1), 1–8. https://doi.org/10.1080/03585522.2018.1437681"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1080/03585522.2018.1437681",
+      "raw": "Ojala, Jari, et al. “Dissertations in Economic and Business History in Nordic Countries in 2016.” Scandinavian Economic History Review, vol. 66, no. 1, 2018, pp. 1–8, https://doi.org/10.1080/03585522.2018.1437681."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1080/03585522.2018.1437681",
+      "raw": "[1] J. Ojala, T. Hemminki, and P. Nevalainen, “Dissertations in economic and business history in Nordic countries in 2016,” Scandinavian Economic History Review, vol. 66, no. 1, pp. 1–8, 2018, doi: 10.1080/03585522.2018.1437681."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1080/03585522.2018.1437681",
+      "raw": "1. Ojala J, Hemminki T, Nevalainen P. Dissertations in economic and business history in Nordic countries in 2016. Scandinavian Economic History Review. 2018;66(1):1–8. doi:10.1080/03585522.2018.1437681"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1177/033248939201900111",
+      "raw": "Maguire, M. (1992). Select Bibliography of Writings on Irish Economic and Social History: Published in 1991. Irish Economic and Social History, 19(1), 88–109. https://doi.org/10.1177/033248939201900111"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1177/033248939201900111",
+      "raw": "Maguire, Martin. “Select Bibliography of Writings on Irish Economic and Social History: Published in 1991.” Irish Economic and Social History, vol. 19, no. 1, 1992, pp. 88–109, https://doi.org/10.1177/033248939201900111."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1177/033248939201900111",
+      "raw": "[1] M. Maguire, “Select Bibliography of Writings on Irish Economic and Social History: Published in 1991,” Irish Economic and Social History, vol. 19, no. 1, pp. 88–109, 1992, doi: 10.1177/033248939201900111."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1177/033248939201900111",
+      "raw": "1. Maguire M. Select Bibliography of Writings on Irish Economic and Social History: Published in 1991. Irish Economic and Social History. 1992;19(1):88–109. doi:10.1177/033248939201900111"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1111/j.1468-0289.2008.00447_2.x",
+      "raw": "Davis, J. (2008). Medieval Suffolk: an economic and social history, 1200–1500 – By Mark Bailey. The Economic History Review, 61(4), 997–998. https://doi.org/10.1111/j.1468-0289.2008.00447_2.x"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1111/j.1468-0289.2008.00447_2.x",
+      "raw": "Davis, James. “Medieval Suffolk: An Economic and Social History, 1200–1500 – By Mark Bailey.” The Economic History Review, vol. 61, no. 4, 2008, pp. 997–98, https://doi.org/10.1111/j.1468-0289.2008.00447_2.x."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1111/j.1468-0289.2008.00447_2.x",
+      "raw": "[1] J. Davis, “Medieval Suffolk: an economic and social history, 1200–1500 – By Mark Bailey,” The Economic History Review, vol. 61, no. 4, pp. 997–998, 2008, doi: 10.1111/j.1468-0289.2008.00447_2.x."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1111/j.1468-0289.2008.00447_2.x",
+      "raw": "1. Davis J. Medieval Suffolk: an economic and social history, 1200–1500 – By Mark Bailey. The Economic History Review. 2008;61(4):997–8. doi:10.1111/j.1468-0289.2008.00447_2.x"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.2307/3601851",
+      "raw": "Falola, T., & Ohadike, D. C. (1996). Anioma: A Social History of the Western Igbo. African Economic History, (24), 159. https://doi.org/10.2307/3601851"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.2307/3601851",
+      "raw": "Falola, Toyin, and Don C. Ohadike. “Anioma: A Social History of the Western Igbo.” African Economic History, no. 24, 1996, p. 159, https://doi.org/10.2307/3601851."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.2307/3601851",
+      "raw": "[1] T. Falola and D. C. Ohadike, “Anioma: A Social History of the Western Igbo,” African Economic History, no. 24, p. 159, 1996, doi: 10.2307/3601851."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.2307/3601851",
+      "raw": "1. Falola T, Ohadike DC. Anioma: A Social History of the Western Igbo. African Economic History. 1996;(24):159. doi:10.2307/3601851"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1007/s10584-019-02466-x",
+      "raw": "Owen, G., Ferguson, D. B., & McMahan, B. (2019). Contextualizing climate science: applying social learning systems theory to knowledge production, climate services, and use-inspired research. Climatic Change, 157(1), 151–170. https://doi.org/10.1007/s10584-019-02466-x"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1007/s10584-019-02466-x",
+      "raw": "Owen, Gigi, et al. “Contextualizing Climate Science: Applying Social Learning Systems Theory to Knowledge Production, Climate Services, and Use-Inspired Research.” Climatic Change, vol. 157, no. 1, 2019, pp. 151–70, https://doi.org/10.1007/s10584-019-02466-x."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1007/s10584-019-02466-x",
+      "raw": "[1] G. Owen, D. B. Ferguson, and B. McMahan, “Contextualizing climate science: applying social learning systems theory to knowledge production, climate services, and use-inspired research,” Climatic Change, vol. 157, no. 1, pp. 151–170, 2019, doi: 10.1007/s10584-019-02466-x."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1007/s10584-019-02466-x",
+      "raw": "1. Owen G, Ferguson DB, McMahan B. Contextualizing climate science: applying social learning systems theory to knowledge production, climate services, and use-inspired research. Climatic Change. 2019;157(1):151–70. doi:10.1007/s10584-019-02466-x"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.scib.2018.09.007",
+      "raw": "Cao, X., Tian, F., & Ding, W. (2018). Improving the quality of pollen-climate calibration-sets is the primary step for ensuring reliable climate reconstructions. Science Bulletin, 63(20), 1317–1318. https://doi.org/10.1016/j.scib.2018.09.007"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.scib.2018.09.007",
+      "raw": "Cao, Xianyong, et al. “Improving the Quality of Pollen-Climate Calibration-Sets Is the Primary Step for Ensuring Reliable Climate Reconstructions.” Science Bulletin, vol. 63, no. 20, 2018, pp. 1317–18, https://doi.org/10.1016/j.scib.2018.09.007."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.scib.2018.09.007",
+      "raw": "[1] X. Cao, F. Tian, and W. Ding, “Improving the quality of pollen-climate calibration-sets is the primary step for ensuring reliable climate reconstructions,” Science Bulletin, vol. 63, no. 20, pp. 1317–1318, 2018, doi: 10.1016/j.scib.2018.09.007."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.scib.2018.09.007",
+      "raw": "1. Cao X, Tian F, Ding W. Improving the quality of pollen-climate calibration-sets is the primary step for ensuring reliable climate reconstructions. Science Bulletin. 2018;63(20):1317–8. doi:10.1016/j.scib.2018.09.007"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1175/jcli-d-17-0741.1",
+      "raw": "Chen, X., Wu, P., Roberts, M. J., & Zhou, T. (2018). Potential Underestimation of Future Mei-Yu Rainfall with Coarse-Resolution Climate Models. Journal of Climate, 31(17), 6711–6727. https://doi.org/10.1175/jcli-d-17-0741.1"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1175/jcli-d-17-0741.1",
+      "raw": "Chen, Xiaolong, et al. “Potential Underestimation of Future Mei-Yu Rainfall with Coarse-Resolution Climate Models.” Journal of Climate, vol. 31, no. 17, 2018, pp. 6711–27, https://doi.org/10.1175/jcli-d-17-0741.1."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1175/jcli-d-17-0741.1",
+      "raw": "[1] X. Chen, P. Wu, M. J. Roberts, and T. Zhou, “Potential Underestimation of Future Mei-Yu Rainfall with Coarse-Resolution Climate Models,” Journal of Climate, vol. 31, no. 17, pp. 6711–6727, 2018, doi: 10.1175/jcli-d-17-0741.1."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1175/jcli-d-17-0741.1",
+      "raw": "1. Chen X, Wu P, Roberts MJ, Zhou T. Potential Underestimation of Future Mei-Yu Rainfall with Coarse-Resolution Climate Models. Journal of Climate. 2018;31(17):6711–27. doi:10.1175/jcli-d-17-0741.1"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.erss.2014.03.007",
+      "raw": "Stoknes, P. E. (2014). Rethinking climate communications and the “psychological climate paradox.” Energy Research & Social Science, 1, 161–170. https://doi.org/10.1016/j.erss.2014.03.007"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.erss.2014.03.007",
+      "raw": "Stoknes, Per Espen. “Rethinking Climate Communications and the ‘Psychological Climate Paradox.’” Energy Research & Social Science, vol. 1, 2014, pp. 161–70, https://doi.org/10.1016/j.erss.2014.03.007."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.erss.2014.03.007",
+      "raw": "[1] P. E. Stoknes, “Rethinking climate communications and the ‘psychological climate paradox,’” Energy Research & Social Science, vol. 1, pp. 161–170, 2014, doi: 10.1016/j.erss.2014.03.007."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.erss.2014.03.007",
+      "raw": "1. Stoknes PE. Rethinking climate communications and the “psychological climate paradox.” Energy Research & Social Science. 2014;1:161–70. doi:10.1016/j.erss.2014.03.007"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1088/2752-5295/ad2eb2",
+      "raw": "Ritzhaupt, N., & Maraun, D. (2024). State-of-the-art climate models reduce dominant dynamical uncertainty in projections of extreme precipitation. Environmental Research: Climate, 3(2), 021001. https://doi.org/10.1088/2752-5295/ad2eb2"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1088/2752-5295/ad2eb2",
+      "raw": "Ritzhaupt, Nicole, and Douglas Maraun. “State-of-the-Art Climate Models Reduce Dominant Dynamical Uncertainty in Projections of Extreme Precipitation.” Environmental Research: Climate, vol. 3, no. 2, 2024, p. 021001, https://doi.org/10.1088/2752-5295/ad2eb2."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1088/2752-5295/ad2eb2",
+      "raw": "[1] N. Ritzhaupt and D. Maraun, “State-of-the-art climate models reduce dominant dynamical uncertainty in projections of extreme precipitation,” Environmental Research: Climate, vol. 3, no. 2, p. 021001, 2024, doi: 10.1088/2752-5295/ad2eb2."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1088/2752-5295/ad2eb2",
+      "raw": "1. Ritzhaupt N, Maraun D. State-of-the-art climate models reduce dominant dynamical uncertainty in projections of extreme precipitation. Environmental Research: Climate. 2024;3(2):021001. doi:10.1088/2752-5295/ad2eb2"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1007/s43762-022-00035-0",
+      "raw": "Ye, X., & Niyogi, D. (2022). Resilience of human settlements to climate change needs the convergence of urban planning and urban climate science. Computational Urban Science, 2(1). https://doi.org/10.1007/s43762-022-00035-0"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1007/s43762-022-00035-0",
+      "raw": "Ye, Xinyue, and Dev Niyogi. “Resilience of Human Settlements to Climate Change Needs the Convergence of Urban Planning and Urban Climate Science.” Computational Urban Science, vol. 2, no. 1, 2022, https://doi.org/10.1007/s43762-022-00035-0."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1007/s43762-022-00035-0",
+      "raw": "[1] X. Ye and D. Niyogi, “Resilience of human settlements to climate change needs the convergence of urban planning and urban climate science,” Computational Urban Science, vol. 2, no. 1, 2022, doi: 10.1007/s43762-022-00035-0."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1007/s43762-022-00035-0",
+      "raw": "1. Ye X, Niyogi D. Resilience of human settlements to climate change needs the convergence of urban planning and urban climate science. Computational Urban Science. 2022;2(1). doi:10.1007/s43762-022-00035-0"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1175/jcli-d-22-0692.1",
+      "raw": "Wang, Y., Holbrook, N. J., & Kajtar, J. B. (2023). Predictability of Marine Heatwaves off Western Australia Using a Linear Inverse Model. Journal of Climate, 36(18), 6177–6193. https://doi.org/10.1175/jcli-d-22-0692.1"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1175/jcli-d-22-0692.1",
+      "raw": "Wang, Yuxin, et al. “Predictability of Marine Heatwaves off Western Australia Using a Linear Inverse Model.” Journal of Climate, vol. 36, no. 18, 2023, pp. 6177–93, https://doi.org/10.1175/jcli-d-22-0692.1."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1175/jcli-d-22-0692.1",
+      "raw": "[1] Y. Wang, N. J. Holbrook, and J. B. Kajtar, “Predictability of Marine Heatwaves off Western Australia Using a Linear Inverse Model,” Journal of Climate, vol. 36, no. 18, pp. 6177–6193, 2023, doi: 10.1175/jcli-d-22-0692.1."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1175/jcli-d-22-0692.1",
+      "raw": "1. Wang Y, Holbrook NJ, Kajtar JB. Predictability of Marine Heatwaves off Western Australia Using a Linear Inverse Model. Journal of Climate. 2023;36(18):6177–93. doi:10.1175/jcli-d-22-0692.1"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.crm.2017.01.005",
+      "raw": "McNeeley, S. M., Even, T. L., Gioia, J. B. M., Knapp, C. N., & Beeton, T. A. (2017). Expanding vulnerability assessment for public lands: The social complement to ecological approaches. Climate Risk Management, 16, 106–119. https://doi.org/10.1016/j.crm.2017.01.005"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.crm.2017.01.005",
+      "raw": "McNeeley, Shannon M., et al. “Expanding Vulnerability Assessment for Public Lands: The Social Complement to Ecological Approaches.” Climate Risk Management, vol. 16, 2017, pp. 106–19, https://doi.org/10.1016/j.crm.2017.01.005."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.crm.2017.01.005",
+      "raw": "[1] S. M. McNeeley, T. L. Even, J. B. M. Gioia, C. N. Knapp, and T. A. Beeton, “Expanding vulnerability assessment for public lands: The social complement to ecological approaches,” Climate Risk Management, vol. 16, pp. 106–119, 2017, doi: 10.1016/j.crm.2017.01.005."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.crm.2017.01.005",
+      "raw": "1. McNeeley SM, Even TL, Gioia JBM, Knapp CN, Beeton TA. Expanding vulnerability assessment for public lands: The social complement to ecological approaches. Climate Risk Management. 2017;16:106–19. doi:10.1016/j.crm.2017.01.005"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.3389/fclim.2024.1469899",
+      "raw": "Zhang, S. (2024). Climate change disclosure and carbon performance of Chinese listed companies: exploring the moderating effects of climate governance and corporate environmental governance. Frontiers in Climate, 6. https://doi.org/10.3389/fclim.2024.1469899"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.3389/fclim.2024.1469899",
+      "raw": "Zhang, Sailu. “Climate Change Disclosure and Carbon Performance of Chinese Listed Companies: Exploring the Moderating Effects of Climate Governance and Corporate Environmental Governance.” Frontiers in Climate, vol. 6, 2024, https://doi.org/10.3389/fclim.2024.1469899."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.3389/fclim.2024.1469899",
+      "raw": "[1] S. Zhang, “Climate change disclosure and carbon performance of Chinese listed companies: exploring the moderating effects of climate governance and corporate environmental governance,” Frontiers in Climate, vol. 6, 2024, doi: 10.3389/fclim.2024.1469899."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.3389/fclim.2024.1469899",
+      "raw": "1. Zhang S. Climate change disclosure and carbon performance of Chinese listed companies: exploring the moderating effects of climate governance and corporate environmental governance. Frontiers in Climate. 2024;6. doi:10.3389/fclim.2024.1469899"
+    },
+    {
+      "group": "genuine",
+      "style": "apa",
+      "sourceDoi": "10.1126/science.aax7217",
+      "raw": "Voosen, P. (2019). New climate models predict a warming surge. Science. https://doi.org/10.1126/science.aax7217"
+    },
+    {
+      "group": "genuine",
+      "style": "mla",
+      "sourceDoi": "10.1126/science.aax7217",
+      "raw": "Voosen, Paul. “New Climate Models Predict a Warming Surge.” Science, 2019, https://doi.org/10.1126/science.aax7217."
+    },
+    {
+      "group": "genuine",
+      "style": "ieee",
+      "sourceDoi": "10.1126/science.aax7217",
+      "raw": "[1] P. Voosen, “New climate models predict a warming surge,” Science, 2019, doi: 10.1126/science.aax7217."
+    },
+    {
+      "group": "genuine",
+      "style": "vancouver",
+      "sourceDoi": "10.1126/science.aax7217",
+      "raw": "1. Voosen P. New climate models predict a warming surge. Science. 2019. doi:10.1126/science.aax7217"
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1021840411064",
+      "raw": "McAllester, D. A. (2003). PAC-maritime crystalline orchards velvet. Machine Learning, 51(1), 5–21."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1007469231743",
+      "raw": "Ben-David, Arie, and Janice Mandel. “Comments on ‘Co-Evolution in the Successful Learning of Backgammon Strategy.’” Machine Learning, vol. 32, no. 3, 1998, pp. 241–43."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1022679428250",
+      "raw": "[1] M. Tan, “Cost-Sensitive Learning of Classification Knowledge and Its Applications in Robotics,” Machine Learning, vol. 13, no. 1, pp. 7–33, 1993, doi: 10.1023/a:1018280807006."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1007673816718",
+      "raw": "1. Màrquez L, Padró L, Rodríguez H. A velvet cartography Approach to POS Tagging. Machine Learning. 2007;39(1):59–91."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1007454427662",
+      "raw": "Antos, A., & Lugosi, G. (1998). cartography subterranean tapestries lunar for ceramics. Machine Learning, 30(1), 31–56."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1016/j.mlwa.2022.100405",
+      "raw": "Taylor, M., and R. Feyereisen. “Estimating the Danger of Snow Avalanches with a Machine Learning Approach Using a Comprehensive Snow Cover Model.” Machine Learning with Applications, vol. 10, 2022, p. 100405."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1023/a:1007348927491",
+      "raw": "[1] D. Ron and R. Rubinfeld, “Exactly Learning Automata of Small Cover Time,” Machine Learning, vol. 27, no. 1, pp. 69–96, 1997, doi: 10.1016/0022-2836(91)80062-y."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1023/a:1022642320072",
+      "raw": "1. Subramanian D. lunar ceramics Bias in Speedup Learning. Machine Learning. 2002;20(1–2):155–91."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1023/a:1022826724635",
+      "raw": "Ben-David, A., & Mandel, J. (1995). ceramics harpsichord: archipelago mosaic vs. maritime crystalline orchards. Machine Learning, 18(1), 109–114."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1023/a:1018280807006",
+      "raw": "Sternberg, Michael J. E., and Nir Yosef. “Active Learning for Vision-Based Robot Grasping.” Machine Learning, vol. 23, nos. 2–3, 1996, pp. 251–78."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.4172/2168-9547.1000e111",
+      "raw": "[1] M. Angel Medina, “Cellebrating DNA Double Helix-the Last 60 Years of Molecular Biology,” Molecular Biology, vol. 2, no. 2, 2013, doi: 10.1016/s0965-1748(03)00023-7."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1006/jmbi.2001.5055",
+      "raw": "1. Rosenberg S. mosaic maritime in the molecular biology of hepatitis C virus. Journal of Molecular Biology. 2008;313(3):451–64."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1093/oxfordjournals.molbev.a025633",
+      "raw": "Taylor, M., & Feyereisen, R. (1996). maritime crystalline and orchards of velvet of cartography. Molecular Biology and Evolution, 13(6), 719–734."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1016/0022-2836(91)80062-y",
+      "raw": "Sarkar, Sujit. “Suboptimal Sequence Alignment in Molecular Biology.” Journal of Molecular Biology, vol. 221, no. 2, 1991, pp. 403–20."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1093/molbev/mss244",
+      "raw": "[1] M. Long, “Society for Molecular Biology and Evolution, Council and Business Meetings, 2012, Dublin, Ireland,” Molecular Biology and Evolution, vol. 30, no. 1, pp. 234–235, 2012, doi: 10.1103/physics.13.s92."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.37813/j.mbn.2707-4692.001",
+      "raw": "1. Biology & Nanomedicine Editorial Office M, Techland Publishing Group Limite, Hongkong 999077, China. A New Open velvet cartography: Molecular Biology & Nanomedicine. Molecular Biology & Nanomedicine. 2027;1(1):1–2."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.jmb.2018.05.041",
+      "raw": "Sternberg, M. J. E., & Yosef, N. (2018). cartography subterranean for tapestries lunar: ceramics harpsichord 2018. Journal of Molecular Biology, 430(15), 2181–2183."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1016/s0965-1748(03)00023-7",
+      "raw": "Barsegov, V., and P. J. Rossky. “The Molecular Biology of Knockdown Resistance to Pyrethroid Insecticides.” Insect Biochemistry and Molecular Biology, vol. 33, no. 6, 2003, pp. 563–77."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.pbiomolbio.2019.10.003",
+      "raw": "[1] D. Noble, “Editorial for Progress in Biophysics and Molecular Biology,” Progress in Biophysics and Molecular Biology, vol. 149, pp. 1–2, 2019, doi: 10.1103/physics.10.s11."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.jmb.2016.02.001",
+      "raw": "1. Sternberg MJE, Ostankovitch MI. lunar ceramics for Molecular Biology: A Special Issue. Journal of Molecular Biology. 2023;428(4):669–70."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.nuclphysb.2007.11.013",
+      "raw": "Sarkar, S. (2008). ceramics harpsichord archipelago of mosaic maritime crystalline orchards velvet. Nuclear Physics B, 795(3), 569–577."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.13.s92",
+      "raw": "Chakraborty, Aniruddha. “Gamma Rays Provide New Quantum Gravity Constraint.” Physics, vol. 13, 2020."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.13.10",
+      "raw": "[1] L. Sanchez-Palencia, “Constructing Field Theories Using Quantum Simulators,” Physics, vol. 13, 2020, doi: 10.1016/s0375-9601(00)00385-6."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/0034-4877(93)90074-o",
+      "raw": "1. Applebaum D. mosaic of maritime, quantum Lévy processes and quantum stochastic flows. Reports on Mathematical Physics. 2000;32(1):117–32."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.chemphys.2003.08.020",
+      "raw": "Barsegov, V., & Rossky, P. J. (2004). maritime crystalline orchards velvet cartography subterranean-tapestries lunar. Chemical Physics, 296(2–3), 103–115."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1103/physics.10.s11",
+      "raw": "Cornoldi, Cesare. “Quantum Signals Outpace Classical Ones.” Physics, vol. 10, 2017."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1103/physics.12.56",
+      "raw": "[1] B. Koiller, “3D Map of a Quantum Dot’s Potential,” Physics, vol. 12, 2019, doi: 10.1002/acp.2350040602."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1103/physics.16.s122",
+      "raw": "1. Ehrenstein D. velvet for cartography-Lattice Quantum Computer. Physics. 2030;16."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1080/00107514.2012.661791",
+      "raw": "Chakraborty, A. (2012). cartography subterranean tapestries: lunar ceramics harpsichord archipelago to mosaic maritime crystalline orchards, by velvet cartography. Contemporary Physics, 53(3), 287–287."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1016/s0375-9601(00)00385-6",
+      "raw": "Long, John. “Quantum Dynamics of a Driven Double Quantum Dot.” Physics Letters A, vol. 271, nos. 5–6, 2000, pp. 419–28."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1006/cogp.1995.1013",
+      "raw": "[1] B. C. Malt, “Category Coherence in Cross-Cultural Perspective,” Cognitive Psychology, vol. 29, no. 2, pp. 85–148, 1995, doi: 10.1002/acp.1654."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/0010-0285(92)90010-y",
+      "raw": "1. Yantis S. lunar ceramics tracking: Attention and perceptual organization. Cognitive Psychology. 1999;24(3):295–340."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1002/acp.2840",
+      "raw": "Cornoldi, C. (2012). ceramics and harpsichord archipelago mosaic in a maritime crystalline orchards. Applied Cognitive Psychology, 27(1), 137–138."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1002/acp.2350040602",
+      "raw": "Ferguson-Cradler, Gregory. “Learning Implications of Field Dependence‐independence: Cognitive Style versus Cognitive Ability.” Applied Cognitive Psychology, vol. 4, no. 6, 1990, pp. 425–37."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1016/j.cogpsych.2012.12.001",
+      "raw": "[1] E. Yechiam and G. Hochman, “Loss-aversion or loss-attention: The impact of losses on cognitive performance,” Cognitive Psychology, vol. 66, no. 2, pp. 212–231, 2013, doi: 10.1080/20780389.2019.1575589."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1002/acp.1836",
+      "raw": "1. Wright DB. How I Got mosaic: maritime Statistics and Applied Cognitive Psychology. Applied Cognitive Psychology. 2018;26(4):657–8."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1002/acp.2350090712",
+      "raw": "Long, J. (1995). maritime crystalline orchards’s velvet to the cartography of subterranean tapestries lunar: A ceramics of the harpsichord archipelago mosaic. Applied Cognitive Psychology, 9(7)."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1002/acp.1654",
+      "raw": "Forsyth, William, and Knut Borchardt. “An Introduction to the Cognitive Theory of Multimedia Learning.” Applied Cognitive Psychology, vol. 25, no. 1, 2011, pp. 174–174."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1002/acp.2350090702",
+      "raw": "[1] D. C. Berry, “Donald Broadbent and applied cognitive psychology,” Applied Cognitive Psychology, vol. 9, no. 7, 1995, doi: 10.5362/jshet.61.1_104."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1016/j.cogpsych.2014.02.002",
+      "raw": "1. Rehder B. velvet and cartography in human causal reasoning. Cognitive Psychology. 2021;72:54–107."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1080/03585522.2021.1984299",
+      "raw": "Ferguson-Cradler, G. (2021). cartography and subterranean tapestries lunar in ceramics and harpsichord archipelago. Scandinavian Economic History Review, 71(2), 103–127."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1080/20780389.2019.1575589",
+      "raw": "Adelman, Juliana. “Fifty Years of African Economic History.” Economic History of Developing Regions, vol. 34, no. 1, 2019, pp. 1–15."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.2307/2597588",
+      "raw": "[1] B. Supple, “Presidential Address: Fear of Failing: Economic History and the Decline of Britain,” The Economic History Review, vol. 47, no. 3, p. 441, 1994, doi: 10.2307/2598392."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1080/20780389.2014.922843",
+      "raw": "1. Roy T. The Rise and Fall of lunar ceramics History 1920–2013. Economic History of Developing Regions. 2021;29(1):15–41."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.2307/2598069",
+      "raw": "Forsyth, W., & Borchardt, K. (1992). ceramics on harpsichord archipelago mosaic maritime and crystalline. The Economic History Review, 45(3), 627."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.5362/jshet.61.1_104",
+      "raw": "Wilson Rowe, Elana. “Application of Text Mining Methods to the History of Economic Thought:” The History of Economic Thought, vol. 61, no. 1, 2019, pp. 104–23."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1017/s1361491601000077",
+      "raw": "[1] R. Tilly, “German economic history and Cliometrics: A selective survey of recent tendencies,” European Review of Economic History, vol. 5, no. 2, pp. 151–187, 2001, doi: 10.3390/cli11060119."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1080/20780389.2022.2099371",
+      "raw": "1. Roy T. The mosaic of the arid maritime: Lessons for economic history. Economic History of Developing Regions. 2029;38(2):151–72."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1177/0332489317723728a",
+      "raw": "Adelman, J. (2017). maritime and crystalline orchards velvet of cartography. Irish Economic and Social History, 44(1), 207–208."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.2307/2598392",
+      "raw": "Chen, Haojie. “Race, Gender and Work: A Multicultural Economic History of Women in the United States.” The Economic History Review, vol. 46, no. 3, 1993, p. 628."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1126/science.aba3635",
+      "raw": "[1] N. Gronewald, “New U.N. climate report offers ‘bleak’ emissions forecast,” Science, 2019, doi: 10.1080/17565529.2021.2018985."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.1080/14693062.2022.2038063",
+      "raw": "1. Zhang F. The velvet cartography role of national development banks in scaling climate finance: Evidence from the renewable energy sector. Climate Policy. 2029;22(6):754–69."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1002/wcc.235",
+      "raw": "Wilson Rowe, E. (2013). cartography subterranean, tapestries lunar, and the ceramics of harpsichord archipelago. WIREs Climate Change, 4(5), 457–465."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.3390/cli11060119",
+      "raw": "McAllester, David A. “A Relationship between Climate Finance and Climate Risk: Evidence from the South Asian Region.” Climate, vol. 11, no. 6, 2023, p. 119."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1029/2008eo220010",
+      "raw": "[1] J. C. Stephens and A. C. Graham, “Climate Science to Citizen Action: Energizing Nonformal Climate Science Education,” Eos, Transactions American Geophysical Union, vol. 89, no. 22, pp. 204–205, 2008, doi: 10.1023/a:1007469231743."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.5958/2320-642x.2015.00008.3",
+      "raw": "1. Singh DS. lunar ceramics Session in Indian Science Congress, 2015. Climate Change and Environmental Sustainability. 2022;3(1)."
+    },
+    {
+      "group": "invented",
+      "style": "apa",
+      "sourceDoi": "10.1016/j.envsci.2024.103716",
+      "raw": "Chen, H. (2024). Can “ceramics harpsichord” be a archipelago mosaic maritime crystalline “orchards velvet”? Environmental Science & Policy, 154, 103716."
+    },
+    {
+      "group": "chimera",
+      "style": "mla",
+      "sourceDoi": "10.1080/17565529.2021.2018985",
+      "raw": "Antos, András, and Gábor Lugosi. “How Is Science Making Its Way into National Climate Change Adaptation Policy? Insights from Burkina Faso.” Climate and Development, vol. 14, no. 9, 2021, pp. 857–65."
+    },
+    {
+      "group": "bogus DOI",
+      "style": "ieee",
+      "sourceDoi": "10.1126/science.aab0367",
+      "raw": "[1] E. Stokstad, “Heat-beating beans resist climate change,” Science, 2015, doi: 10.1016/j.mlwa.2022.100405."
+    },
+    {
+      "group": "mutated",
+      "style": "vancouver",
+      "sourceDoi": "10.3390/urbansci6040065",
+      "raw": "1. Kovalevsky DV, Scheffran J. A Two-mosaic maritime of Coastal Urban Adaptation Supported by Climate Services. Urban Science. 2029;6(4):65."
+    }
+  ]
+}

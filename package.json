@@ -1,0 +1,6 @@
+{
+  "name": "bibproof", "version": "1.0.0", "private": true, "type": "module",
+  "scripts": {"dev":"vite --host 127.0.0.1", "build":"tsc --noEmit && vite build", "preview":"vite preview --host 127.0.0.1", "test":"vitest run && playwright test", "test:unit":"vitest run", "test:e2e":"playwright test", "eval":"tsx eval/run.ts", "eval:tune":"tsx eval/run.ts --tune", "sample:check":"tsx eval/sample.ts"},
+  "dependencies": {"react":"19.3.1", "react-dom":"19.3.1", "pdfjs-dist":"6.4.299", "mammoth":"1.13.0", "@citation-js/core":"0.9.0", "@citation-js/plugin-csl":"0.9.0", "@citation-js/plugin-bibtex":"0.9.0", "@citation-js/plugin-ris":"0.9.0", "@fontsource/inter":"^5.3.0", "@fontsource/newsreader":"^5.2.0"},
+  "devDependencies": {"vite":"8.3.5", "@vitejs/plugin-react":"6.1.2", "typescript":"7.0.2", "vitest":"5.0.5", "@playwright/test":"1.64.1", "@types/react":"^19.2.0", "@types/react-dom":"^19.2.0", "@types/node":"^24.0.0", "tsx":"^4.20.0"}
+}
