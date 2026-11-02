@@ -26,7 +26,7 @@ export default function CrossPanel({ extraction }: { extraction: Extraction }) {
           </div>
           <div>
             <h4>{t('cross.uncited')} <span className="count">{cross.uncited.length}</span></h4>
-            {cross.uncited.length ? <ul className="uncited" data-testid="cross-uncited">{cross.uncited.map(n => <li key={n}><span className="row-n">{n}</span><span>{extraction.entries[n - 1]}</span></li>)}</ul> : <p className="muted">{t('cross.noneLine')}</p>}
+            {cross.uncited.length ? <ul className="uncited" data-testid="cross-uncited">{cross.uncited.map(n => <li key={n}><span className="row-n">{n}</span><span translate="no">{extraction.entries[n - 1]}</span></li>)}</ul> : <p className="muted">{t('cross.noneLine')}</p>}
           </div>
         </div>
       )}

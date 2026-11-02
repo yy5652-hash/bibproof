@@ -57,7 +57,7 @@ export default function Bibliography({ open, onOpenChange, rows, decisions, styl
               {verifiedLeft && <p><button className="button small" onClick={() => { onVerifiedAll(); setBulkDone(true); }}>{t('bib.verifiedAll')}</button></p>}
               {bulkDone && !verifiedLeft && <p className="ok-line" role="status">{t('bib.verifiedDone')}</p>}
               {kept.length ? <ol className="bib-list" data-testid="bib-list">{kept.map((i, n) => <li key={i.id}>
-                <span className="bib-text">{lines[n]}</span>
+                <span className="bib-text" translate="no">{lines[n]}</span>
                 <small className={i.action === 'record' ? (i.candidate ? 'tag cand' : 'tag rec') : 'tag'}>{i.action === 'record' ? (i.candidate ? t('bib.candidate') : t('dec.tag.record')) : t('bib.original')}</small>
               </li>)}</ol> : <p className="muted">{t('bib.empty')}</p>}
               <div className="bib-actions">
@@ -74,7 +74,7 @@ export default function Bibliography({ open, onOpenChange, rows, decisions, styl
               {log.length ? groups.map(([kind, head]) => { const entries = log.filter(l => l.kind === kind); return entries.length ? (
                 <div key={kind} className={`log-group log-${kind}`}>
                   <h4>{head} <span className="count">{entries.length}</span></h4>
-                  <ul>{entries.map(l => <li key={l.id}><span className="row-n">{l.id + 1}</span><span>{stripLabel(l.raw)}{l.work && <small>{l.work.title}{l.candidate ? ` · ${t('bib.candidate')}` : ''}</small>}</span></li>)}</ul>
+                  <ul>{entries.map(l => <li key={l.id}><span className="row-n">{l.id + 1}</span><span translate="no">{stripLabel(l.raw)}{l.work && <small>{l.work.title}{l.candidate ? ` · ${t('bib.candidate')}` : ''}</small>}</span></li>)}</ul>
                 </div>) : null; }) : <p className="muted">{t('bib.log.empty')}</p>}
             </section>
           </div>

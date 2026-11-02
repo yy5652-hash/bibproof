@@ -21,7 +21,7 @@ export default function PrintReport({ rows, extraction }: { rows: RowState[]; ex
         {done.map(row => { const r: CheckResult = row.result!; const rec = r.verdict === 'Identifier conflict' ? r.identifierRecord : r.match ?? (r.nearest && closeWording(r.reference, r.nearest) ? r.nearest : undefined); return (
           <li key={row.id}>
             <strong>{verdict(r.verdict)}</strong>
-            <p>{row.raw}</p>
+            <p translate="no">{row.raw}</p>
             <p>{explain(r.explanation)}</p>
             {rec && <p>{r.match ? t('print.record') : r.verdict === 'Identifier conflict' ? t('print.idPoints') : t('print.nearest')}: {rec.title} ({rec.authors.slice(0, 3).map(a => a.family).join(', ')}{rec.authors.length > 3 ? ' et al.' : ''}, {rec.year ?? 'n.d.'}) · {rec.url}</p>}
             {r.score && <p>{r.score.fields.filter(f => f.status !== 'unknown').map(f => `${explain(f.field)}: ${f.status === 'agree' ? t('print.agrees') : t('print.differs', { w: f.written, r: f.record })}`).join(' · ')}</p>}

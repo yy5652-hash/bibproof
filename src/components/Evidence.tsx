@@ -30,7 +30,7 @@ export function authorsLine(work: Work) { return `${work.authors.slice(0, 6).map
 
 function Record({ work, label }: { work: Work; label: string }) {
   const { t } = useI18n();
-  return <div className="record"><span className="eyebrow">{label}</span><p><SourceLink url={work.url}>{work.title}</SourceLink></p><small>{authorsLine(work)} · {work.year ?? t('ev.noDoi')} · {work.source}</small></div>;
+  return <div className="record"><span className="eyebrow">{label}</span><p translate="no"><SourceLink url={work.url}>{work.title}</SourceLink></p><small translate="no">{authorsLine(work)} · {work.year ?? t('ev.noDoi')} · {work.source}</small></div>;
 }
 
 export function DecisionBar({ result, decision, onDecide }: { result: CheckResult; decision?: Decision; onDecide: (d: Decision | undefined) => void }) {
@@ -73,7 +73,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
     <div className="evidence" data-testid="evidence">
       <div className="ev-head"><span className="row-n">{index + 1}</span><VerdictBadge verdict={result.verdict} /></div>
       <p className="verdict-explanation">{explain(result.explanation)}</p>
-      <blockquote className="as-written"><span className="eyebrow">{t('ev.written')}</span>{stripLabel(raw)}</blockquote>
+      <blockquote className="as-written"><span className="eyebrow">{t('ev.written')}</span><span translate="no">{stripLabel(raw)}</span></blockquote>
       <DecisionBar result={result} decision={decision} onDecide={onDecide} />
 
       {result.identifierRecord && <Record work={result.identifierRecord} label={t('ev.identifier')} />}
@@ -88,7 +88,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
           <ul>{result.alternatives.map((w, i) => {
             const chosen = decision?.kind === 'record' && decision.alt === i;
             return <li key={w.id + i} className={chosen ? 'chosen' : ''}>
-              <div><SourceLink url={w.url}>{w.title}</SourceLink><small>{authorsLine(w)} · {w.year ?? t('ev.noDoi')} · {w.source}{w.doi ? ` · ${w.doi}` : ''}</small></div>
+              <div translate="no"><SourceLink url={w.url}>{w.title}</SourceLink><small>{authorsLine(w)} · {w.year ?? t('ev.noDoi')} · {w.source}{w.doi ? ` · ${w.doi}` : ''}</small></div>
               <button type="button" className="button small" aria-pressed={chosen} onClick={() => onDecide(chosen ? undefined : { kind: 'record', alt: i })}>{chosen ? t('alt.using') : t('alt.use')}</button>
             </li>;
           })}</ul>
@@ -100,7 +100,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
           <div className="field-row field-head" role="row"><span role="columnheader">{t('ev.field')}</span><span role="columnheader">{t('ev.wrote')}</span><span role="columnheader">{t('ev.says')}</span></div>
           {result.score.fields.map(f => <div className={`field-row ${f.status}`} role="row" key={f.field}>
             <strong role="cell">{explain(f.field)}<small>{f.status === 'agree' ? `✓ ${t('ev.agrees')}` : f.status === 'differ' ? `≠ ${t('ev.differs')}` : `– ${t('ev.uncertain')}`}</small></strong>
-            <span role="cell">{explain(f.written)}</span><span role="cell">{explain(f.record)}</span>
+            <span role="cell" translate="no">{explain(f.written)}</span><span role="cell" translate="no">{explain(f.record)}</span>
           </div>)}
         </div>
       )}
@@ -109,7 +109,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
         <section className="citing" aria-labelledby={`cit-${index}`}>
           <h4 id={`cit-${index}`}>{t('cite.title')}</h4>
           {!citing.detected ? <p className="muted">{t('cite.nodoc')}</p>
-            : sentences.length ? <><ul>{sentences.map((s, i) => <li key={i}>{s}</li>)}</ul><p className="fine-print">{t('cite.local')}{more ? ` ${t('cite.more', { n: more })}` : ''}</p></>
+            : sentences.length ? <><ul>{sentences.map((s, i) => <li key={i} translate="no">{s}</li>)}</ul><p className="fine-print">{t('cite.local')}{more ? ` ${t('cite.more', { n: more })}` : ''}</p></>
             : <p className="muted">{t('cite.none')}</p>}
         </section>
       )}
@@ -138,7 +138,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
             <h4>{t('ev.corrected')}</h4>
             <label className="select-label">{t('ev.style')}<select value={style} onChange={e => onStyle(e.target.value as CitationStyle)}>{STYLES.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}</select></label>
           </div>
-          <p className="corrected-text">{corrected || t('ev.formatting')}</p>
+          <p className="corrected-text" translate="no">{corrected || t('ev.formatting')}</p>
           <div className="section-line"><button className="button small" onClick={copy} disabled={!corrected}><IconCopy />{copied ? t('ev.copied') : t('ev.copy')}</button>{result.verdict !== 'Verified' && <small>{t('ev.review')}</small>}</div>
         </div>
       )}

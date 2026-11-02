@@ -14,6 +14,8 @@ function valid(r: unknown): r is StoredRun {
 export class HistoryStore {
   private memory = new Map<string, StoredRun>();
   private db?: Promise<IDBDatabase>;
+  /** Runs deleted in this tab. The open session may still hold one, and its later saves must not bring it back. */
+  private removed = new Set<string>();
   /** True once storage failed and the history only lives in this tab. */
   blocked = false;
   private open() {
@@ -45,6 +47,7 @@ export class HistoryStore {
     return [...merged.values()].sort((a, b) => b.at.localeCompare(a.at)).slice(0, MAX_RUNS);
   }
   async put(run: StoredRun): Promise<void> {
+    if (this.removed.has(run.id)) return;
     this.memory.set(run.id, run);
     try { await this.tx('readwrite', s => s.put(run)); this.memory.delete(run.id); }
     catch { this.blocked = true; }
@@ -53,10 +56,11 @@ export class HistoryStore {
   }
   async get(id: string): Promise<StoredRun | undefined> { return (await this.list()).find(r => r.id === id); }
   async remove(id: string): Promise<void> {
-    this.memory.delete(id);
+    this.removed.add(id); this.memory.delete(id);
     try { await this.tx('readwrite', s => s.delete(id)); } catch { /* storage blocked: memory copy already gone */ }
   }
   async clear(): Promise<void> {
+    for (const r of await this.list()) this.removed.add(r.id);
     this.memory.clear();
     try { await this.tx('readwrite', s => s.clear()); } catch { /* storage blocked: nothing persisted */ }
   }
