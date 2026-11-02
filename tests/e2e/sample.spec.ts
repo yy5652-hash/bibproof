@@ -251,7 +251,16 @@ test.describe('phone', () => {
   test('no horizontal scroll, input above the fold, evidence opens as a bottom sheet, touch targets', async ({ page }) => {
     await installMock(page);
     await page.goto('/');
-    const overflow = () => page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    // The root clips overflow, so also measure what actually sticks out: every visible box must end inside the viewport
+    // (the verdict chip row scrolls inside its own container, which is the one allowed exception).
+    const overflow = () => page.evaluate(() => {
+      const w = window.innerWidth; let worst = document.documentElement.scrollWidth - w;
+      for (const el of document.querySelectorAll('main *, header *, footer *')) {
+        if (el.closest('.filters')) continue;
+        const r = el.getBoundingClientRect(); if (r.width && r.height) worst = Math.max(worst, Math.ceil(r.right - w));
+      }
+      return worst;
+    });
     expect(await overflow()).toBeLessThanOrEqual(0);
     const fold = await page.getByRole('button', { name: 'Check references' }).boundingBox();
     expect(fold!.y + fold!.height).toBeLessThan(812);

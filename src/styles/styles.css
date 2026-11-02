@@ -197,7 +197,8 @@ select, .link-field, #doi-input { min-height: 36px; border: 1px solid var(--rule
 .wordmark-sm { font: 600 1.1rem var(--serif); color: var(--ink); }
 
 /* ---------- results workspace ---------- */
-.workspace { padding: 14px 0 32px; display: grid; gap: 12px; }
+.workspace { padding: 14px 0 32px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.workspace > *, .panes > * { min-width: 0; }
 .compact-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding: 8px 0 2px; }
 .compact-text h2 { font-size: clamp(1.35rem, 1rem + 1.6vw, 1.9rem); }
 .compact-text .live { margin: 2px 0 0; font-size: .86rem; }
