@@ -3,22 +3,40 @@ import { parseReference } from './parse';
 import { scoreCandidate, strongMatch, settled, statedWords, containment } from './score';
 import { IndexClient } from './http';
 import { lookup, crossrefSearch, type Lookup } from './indexes';
+// Real records worth offering instead of a flagged entry. Close wording only: the
+// nearest hit for an invented title is usually unrelated, and offering it would mislead.
+function alternativesFor(result:CheckResult,candidates:Work[]):Work[]{
+  if(result.verdict==='Verified')return [];
+  const ref=result.reference;const seen=new Set([result.match?.doi??result.match?.id]);
+  return candidates.map(work=>({work,score:scoreCandidate(ref,work)}))
+    .filter(({score,work})=>Math.max(score.title,containment(ref.title,work.title))>=.4&&Boolean(work.title))
+    .sort((a,b)=>b.score.total-a.score.total)
+    .filter(({work})=>{const key=work.doi??work.id;if(seen.has(key))return false;seen.add(key);return true;})
+    .slice(0,3).map(({work})=>work);
+}
 export async function verifyReference(raw:string,client:IndexClient):Promise<CheckResult>{
-  const ref=parseReference(raw);const evidence:IndexEvidence[]=[];const candidates:Work[]=[];let identifierRecord:Work|undefined;
+  const candidates:Work[]=[];const result=await decide(raw,client,candidates);
+  const alternatives=alternativesFor(result,candidates);
+  return alternatives.length?{...result,alternatives}:result;
+}
+async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<CheckResult>{
+  const ref=parseReference(raw);const evidence:IndexEvidence[]=[];let identifierRecord:Work|undefined;
   const base={reference:ref,evidence,checkedAt:new Date().toISOString()};
   // Web pages, statutes and thin entries still get one Crossref search, but a miss proves nothing.
   const limited=ref.kind==='unsupported'||ref.kind==='unknown';
   const add=(r:Lookup)=>{evidence.push(r.evidence);candidates.push(...r.works);return r.works;};
   const rank=()=>candidates.map(work=>({work,score:scoreCandidate(ref,work)})).sort((a,b)=>b.score.total-a.score.total);
   const doi=ref.doi??(ref.arxiv?`10.48550/arxiv.${ref.arxiv}`:undefined);
+  // An entry that is only an identifier has nothing to search on or compare against.
+  const bare=Boolean(doi||ref.pmid)&&ref.raw.replace(/https?:\/\/\S+|(?:doi:?\s*)?10\.\d{4,9}\/\S+|arxiv:\s*\S+|pmid:?\s*\d+/ig,'').replace(/^\s*(?:\[\d+\]|\d+[.)])\s*/,'').replace(/[^\p{L}\p{N}]/gu,'').length<3;
   if(ref.arxiv){identifierRecord=add(await lookup(client,'OpenAlex',`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi!)}`,true))[0];}
   else if(doi){
     identifierRecord=add(await lookup(client,'Crossref',`https://api.crossref.org/works/${encodeURIComponent(doi)}`,true))[0];
     if(!identifierRecord)identifierRecord=add(await lookup(client,'DataCite',`https://api.datacite.org/dois/${encodeURIComponent(doi)}`,true))[0];
   }
   if(ref.pmid && !identifierRecord)add(await lookup(client,'Europe PMC',`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent('EXT_ID:'+ref.pmid+' AND SRC:MED')}&format=json&resultType=core&pageSize=5`));
-  if(!rank().some(x=>settled(x.score)))add(await lookup(client,'Crossref',crossrefSearch(ref.raw)));
-  if(!limited&&!rank().some(x=>settled(x.score))){
+  if(!bare&&!rank().some(x=>settled(x.score)))add(await lookup(client,'Crossref',crossrefSearch(ref.raw)));
+  if(!bare&&!limited&&!rank().some(x=>settled(x.score))){
     add(await lookup(client,'OpenAlex',`https://api.openalex.org/works?search=${encodeURIComponent(ref.title||ref.raw)}&per-page=5`));
     add(await lookup(client,'Europe PMC',`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent(ref.title||ref.raw)}&format=json&resultType=core&pageSize=5`));
     if(ref.kind==='book')add(await lookup(client,'Open Library',`https://openlibrary.org/search.json?q=${encodeURIComponent(ref.title||ref.raw)}&limit=5&fields=key,title,author_name,first_publish_year`));
@@ -26,11 +44,16 @@ export async function verifyReference(raw:string,client:IndexClient):Promise<Che
   let best=rank()[0];
   // Retrieve the full Crossref record for matches found through another index,
   // and use a cheap OpenAlex singleton (never a search) to supplement retractions.
-  if(best && (best.score.title>=.65 || best.score.locator || best.work===identifierRecord)){
+  if(best && (bare || best.score.title>=.65 || best.score.locator || best.work===identifierRecord)){
     if(best.work.doi && best.work.source!=='Crossref' && best.work.doi!==doi){add(await lookup(client,'Crossref',`https://api.crossref.org/works/${encodeURIComponent(best.work.doi)}`,true));best=rank()[0];}
     if(best.work.doi && !candidates.some(w=>w.source==='OpenAlex' && w.doi===best.work.doi))add(await lookup(client,'OpenAlex',`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(best.work.doi)}`,true));
     const same=candidates.filter(w=>w.id===best.work.id || (w.doi && w.doi===best.work.doi));
     if(same.some(w=>w.retracted))best={...best,work:{...best.work,retracted:true,retractionUrls:same.flatMap(w=>w.retractionUrls??[])}};
+  }
+  if(bare){
+    if(!best)return {...base,verdict:'Could not check',explanation:'This identifier did not resolve in the registries checked. That does not make it fake, because other registries exist. Try it at doi.org.'};
+    const fields=best.score.fields.map(f=>f.field==='DOI'?f:{...f,written:'Only an identifier was given',status:'unknown' as const});
+    return {...base,verdict:best.work.retracted?'Retracted':'Verified',explanation:best.work.retracted?'This identifier resolves to a work marked as retracted in index metadata. Read the retraction notice before citing it.':'This identifier resolves to the record shown. You gave no other details to compare against it.',match:best.work,score:{...best.score,fields}};
   }
   const idScore=identifierRecord?scoreCandidate(ref,identifierRecord):undefined;
   const conflict=Boolean(identifierRecord && idScore && (idScore.title<.55 || (containment(ref.title,identifierRecord.title)<.55 && idScore.authors<.5)) && ref.title.split(/\s+/).length>=3);

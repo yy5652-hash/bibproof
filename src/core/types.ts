@@ -20,6 +20,6 @@ export interface FieldEvidence { field: string; written: string; record: string;
 export interface Score { title: number; authors: number; year: number; venue: number; locator?: boolean; total: number; fields: FieldEvidence[] }
 export interface CheckResult {
   reference: ParsedReference; verdict: Verdict; explanation: string; evidence: IndexEvidence[];
-  match?: Work; nearest?: Work; identifierRecord?: Work; score?: Score; checkedAt: string;
+  match?: Work; nearest?: Work; identifierRecord?: Work; alternatives?: Work[]; score?: Score; checkedAt: string;
 }
 export interface Cache { get(key: string): Promise<unknown | undefined>; set(key: string, value: unknown): Promise<void>; clear?(): Promise<void> }

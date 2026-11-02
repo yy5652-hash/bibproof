@@ -78,6 +78,29 @@ describe('verifyReference: the six verdicts', () => {
     expect(r.match?.doi).toBe('10.1000/pre');
   });
 
+  it('A bare DOI resolves to its record without a search', async () => {
+    const { client } = clientFor({ crossrefWork: { '10.1000/tiny': smith }, crossrefSearch: [crossrefItem({ doi: '10.1000/far', title: 'Tidal forcing of estuarine sediment', authors: [['Li', 'Wei']], year: 2005 })] });
+    const r = await verifyReference('https://doi.org/10.1000/tiny', client);
+    expect(r.verdict).toBe('Verified');
+    expect(r.match?.doi).toBe('10.1000/tiny');
+    expect(r.score!.fields.find(f => f.field === 'Title')!.status).toBe('unknown');
+  });
+
+  it('A bare DOI that resolves nowhere is not called fake', async () => {
+    const { client } = clientFor();
+    expect((await verifyReference('10.1000/nothing-here', client)).verdict).toBe('Could not check');
+  });
+
+  it('Alternatives are close real records, never unrelated nearest hits', async () => {
+    const close = crossrefItem({ doi: '10.1000/close', title: 'Graph sampling for tiny social networks', authors: [['Ana', 'Rossi']], year: 2019 });
+    const far = crossrefItem({ doi: '10.1000/far', title: 'Tidal forcing of estuarine sediment', authors: [['Li', 'Wei']], year: 2005 });
+    const fake = await verifyReference('Okafor, N. (2020). Graph sampling for tiny networks. Journal of Examples, 12, 1-10.', clientFor({ crossrefSearch: [smith, close, far] }).client);
+    const dois = (fake.alternatives ?? []).map(w => w.doi);
+    expect(dois).toContain('10.1000/close');
+    expect(dois).not.toContain('10.1000/far');
+    expect((await verifyReference(REF_PLAIN, clientFor({ crossrefSearch: [smith, close] }).client)).alternatives).toBeUndefined();
+  });
+
   it('Could not check: a web page that no index knows is never called fake', async () => {
     const { client } = clientFor();
     const r = await verifyReference('World Health Organization. (2024). Climate change. https://www.who.int/news-room/fact-sheets/detail/climate-change', client);
