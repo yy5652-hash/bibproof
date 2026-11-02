@@ -9,3 +9,8 @@ test-results/
 eval/real-world-*.json
 # Competitor screenshots are for internal comparison only
 compare/
+# Internal working notes, not part of the public project
+BRIEF.md
+CLAUDE.md
+COMPETITOR_ANALYSIS.md
+PROGRESS.md
