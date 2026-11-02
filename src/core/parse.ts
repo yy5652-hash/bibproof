@@ -17,8 +17,8 @@ function fallbackTitle(text: string): string {
   return parts.reduce((best, part) => tokens(part).length > tokens(best).length && !/^(?:[\p{Lu}][\p{L}'’-]+,\s*(?:\p{Lu}\.\s?)+,?\s*)+$/u.test(part) ? part : best, '');
 }
 export function parseReference(raw: string): ParsedReference {
-  const label = raw.match(/^\s*(?:\[(\d+)\]|(\d+)[.)])\s*/);
-  const text = raw.replace(/^\s*(?:\[\d+\]|\d+[.)])\s*/, '').replace(/\s+/g, ' ').trim();
+  const label = raw.match(/^\s*(?:\[(\d+)\]|(\d+)[.)](?!\d))\s*/);
+  const text = raw.replace(/^\s*(?:\[\d+\]|\d+[.)](?!\d))\s*/, '').replace(/\s+/g, ' ').trim();
   const doiMatch = text.match(/10\.\d{4,9}\/[^\s<>"\]}]+/i);
   const doi = doiMatch ? cleanDoi(doiMatch[0]) : undefined;
   const arxiv = text.match(/(?:arxiv[:\s/]+|arxiv\.org\/(?:abs|pdf)\/|10\.48550\/arxiv\.)(\d{4}\.\d{4,5}(?:v\d+)?|[a-z.-]+\/\d{7}(?:v\d+)?)/i)?.[1]?.replace(/v\d+$/, '');

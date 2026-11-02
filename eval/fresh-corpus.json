@@ -1,0 +1,365 @@
+{
+  "method": "One deposited unstructured reference per citing article, new topical queries, fixed seed; identifiers stripped; DOIs in the messy corpus excluded. Drawn after the verdict rules were frozen.",
+  "rows": [
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neuroscience.2019.01.027",
+      "doi": "10.1016/s0378-5955(98)00008-2",
+      "raw": "Eggermont JJ, Kenmochi M (1998) Salicylate and quinine selectively increase spontaneous firing rates in secondary auditory cortex. Hear Res 117:149–160 2015]."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neuroscience.2022.03.037",
+      "doi": "10.1093/acprof:oso/9780198745273.001.0001",
+      "raw": "Stuart, G., Spruston, N., Häusser, M. (2016). Dendrites (G. Stuart, N. Spruston, & M. Häusser (eds.); third. Oxford University Press."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.tine.2019.100113",
+      "doi": "10.1007/s10409-008-0217-3",
+      "raw": "S.J. Luck, An Introduction to Event-Related Potentials and Their Neural Origins, in: An Introd. to Event-Related Potential Tech., MIT Press, 2014: pp. 2–50."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neubiorev.2024.105598",
+      "doi": "10.2139/ssrn.2932312",
+      "raw": "Hoffman, A.J. (2016). Reflections: Academia’s Emerging Crisis of Relevance and the Consequent Role of the Engaged Scholar (SSRN Scholarly Paper No. 2932312)."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neuroscience.2023.05.022",
+      "doi": "10.18356/22202293-2022-1-5",
+      "raw": "Maina MB (2022) African neuroscience: despeately seeking diversity. The Unesco Courrier. 3 February, (accessed January 2023)."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.jneumeth.2022.109751",
+      "doi": "10.1101/2021.09.11.459894",
+      "raw": "Misquitta K.A., Codeluppi S.A., Knoch J.K., Bansal Y., Tomoda T., Ellegood J., Lerch J.P., Sibille E., Nikolova Y.S., Banasr M. Behavioral and Neurostructural changes associated with Chronic Amygdala Hyperactivation, 2021a."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neuroscience.2014.05.036",
+      "doi": "10.1007/978-3-642-58552-4_43",
+      "raw": "Ehrenstein WH, Ehrenstein A (1999) Psychophysical Methods. In: Modern Techniques in Neuroscience Research (Uwe Windhorst HJ, ed): Springer."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neuroimage.2022.119571",
+      "doi": "10.1101/2019.12.13.19014902",
+      "raw": "LaMontagne, P.J., Benzinger, T.L.S., Morris, J.C., Keefe, S., Hornbeck, R., Xiong, C., Grant, E., Hassenstab, J., Moulder, K., Vlassenko, A., Raichle, M.E., Cruchaga, C., Marcus, D., 2019. OASIS-3: longitudinal neuroimaging, clinical, and cognitive dataset for normal aging and alzheimer disease. medRxiv."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neuroscience.2021.03.005",
+      "doi": "10.1109/tbme.1976.324604",
+      "raw": "Shung, K.K., Sigelmann, R. a, Reid, J.M., 1976. Scattering of Ultrasound by Blood. IEEE Trans. Biomed. Eng. BME-23, 460–467."
+    },
+    {
+      "discipline": "neuroscience",
+      "citingDoi": "10.1016/j.neuroscience.2026.10.026",
+      "doi": "10.3390/biom15030440",
+      "raw": "The exon-based transcriptomic analysis of Parkinson's disease. Biomolecules. 2025;15(3):440. PMID: 40149977."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.commatsci.2021.110385",
+      "doi": "10.1016/j.nuclphysa.2016.02.047",
+      "raw": "J. Thäder, S. collaboration, et al., Higher moments of net-particle multiplicity distributions, Nuclear Physics A 956 (2016) 320–323."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.commatsci.2023.112503",
+      "doi": "10.1063/1.1540743",
+      "raw": "R.A. Enrique, K. Nordlund, R.S. Averback, P. Bellon, Simulations of dynamical stabilization of Ag-Cu nanocomposites by ion-beam processing, J. Appl. Phys. 93 (2003) 2917–2923,"
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.pmatsci.2025.101621",
+      "doi": "10.1002/adfm.202316542",
+      "raw": "Wang P, Zhao Z, Zhang L, Zhan S, Li Y. Revealing the role of binary distortion in PMS activation over spinel toward efficient new pollutants removal. Adv Funct Mater 2024:2316542."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.commatsci.2026.115027",
+      "doi": "10.1145/2939672.2939785",
+      "raw": "Chen T, Guestrin C (2016) XGBoost: a scalable tree boosting system, Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, ACM, New York, 2016, pp. 785–794."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.33889/pmsl.2022.1.1.001",
+      "doi": "10.1016/b978-0-08-102965-7.00002-3",
+      "raw": "Biesiekierski, A., Munir, K., Li, Y., & Wen, C. (2020). Material selection for medical devices. In Metallic Biomaterials Processing and Medical Device Manufacturing (pp. 31-94). Woodhead Publishing."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.pmatsci.2023.101132",
+      "doi": "10.1126/sciadv.aba4261",
+      "raw": "Ge Q, Chen Z, Cheng J, Zhang B, Zhang YF, Li H, He X, Yuan C, Liu J, Magdassi S, Qu S. 3D printing of highly stretchable hydrogel with diverse UV curable polymers. Sci Adv 2021;7:eaba4261."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1080/27660400.2022.2124831",
+      "doi": "10.1093/bioinformatics/btz682",
+      "raw": "Lee J, Yoon W, Kim S, et al. BioBERT: a pre-trained biomedical language representation model for biomedical text mining. arXiv:1901.08746. 2019 Oct 31. Available from:"
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.pmatsci.2019.100577",
+      "doi": "10.4271/891487",
+      "raw": "Nealy J, Wilson J, Townsend L. Preliminary analyses of space radiation protection for luner base surface systems; 1989."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.pmatsci.2017.02.005",
+      "doi": "10.1021/bk-2014-1161.ch008",
+      "raw": "Siddabattuni S, Schuman TP. In Polymer composites for energy harvesting, conversion, and storage. ACS Symposium series; 2014, p. 165–190."
+    },
+    {
+      "discipline": "materials science",
+      "citingDoi": "10.1016/j.commatsci.2023.112667",
+      "doi": "10.1073/pnas.1502870112",
+      "raw": "Zhu, H., et al., Anomalous scaling law of strength and toughness of cellulose nanopaper. Proceedings of the National Academy of Sciences, 2015. 112(29): p. 8971-8976."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.17140/phoj-5-151",
+      "doi": "10.17140/phoj-5-148",
+      "raw": "Madu E, Malik EM, Nagaraja SB, Tyagi R, Fant G. Scoping review and expert reflections: Coronavirus disease 2019-preparedness and response in selected countries of East Africa, West Africa, and Southeast Asia. Public Health Open J. 2020; 5(3): 49-57. [In Press]"
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1186/s12879-024-09716-z",
+      "doi": "10.1002/ajhb.20064",
+      "raw": "Long KZ, Nanthakumar N. Energetic and nutritional regulation of the adaptive immune response and trade-offs in ecological immunology. Am J Hum Biology: Official J Hum Biology Association. 2004;16(5):499–507."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1186/s12889-017-4896-1",
+      "doi": "10.1186/s13643-016-0337-y",
+      "raw": "Adams J, Hillier-Brown FC, Moore HJ, Lake AA, Araujo-Soares V, White M, Summerbell C. Searching and synthesising ‘grey literature’ and ‘grey information’ in public health: critical reflections on three case studies. Syst Rev. 2016;5(1):164."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1186/s12889-024-18078-9",
+      "doi": "10.1177/00380385211063359",
+      "raw": "Pope S, Williams J, Cleland J. Men’s football fandom and the performance of progressive and misogynistic masculinities in a ‘new age’ of UK women’s sport. Sociology. 2022;56(4):730–48."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1016/j.puhe.2020.05.032",
+      "doi": "10.1093/med/9780190270742.003.0004",
+      "raw": "Powers madison vulnerable populations in the context of public health emergency preparedness planning and response. In: Emergency ethics: public health preparedness and response, ed. Bruce Jennings, John Arras, Drue Barrett, and Barbara Ellis. p. 135-154. Oxford University Press."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1186/s12889-024-19441-6",
+      "doi": "10.1002/cl2.1230",
+      "raw": "Haddaway NR, Page MJ, Pritchard CC, McGuinness LA. PRISMA2020: an R package and Shiny app for producing PRISMA 2020-compliant flow diagrams, with interactivity for optimised digital transparency and open synthesis. Campbell Syst Rev. 2022;18:e1230."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.17269/s41997-019-00197-1",
+      "doi": "10.1146/annurev-soc-070308-115926",
+      "raw": "Wilkinson, R. G., & Pickett, K. E. (2009). Income inequality and social dysfunction. Annual Review of Sociology, 35(1), 493–511."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1186/s12889-022-13943-x",
+      "doi": "10.1111/j.1743-498x.2010.00384.x",
+      "raw": "Honney K, Buszewicz M, Coppola W, Griffin M. Comparison of levels of depression in medical and non-medical students. Clin Teach. 2010;7(3):180–4."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1186/s40985-015-0004-1",
+      "doi": "10.1086/292843",
+      "raw": "Klosko G. The principle of fairness and political obligation. Ethics. 1987;97:353–62."
+    },
+    {
+      "discipline": "public health",
+      "citingDoi": "10.1186/s12889-023-16021-y",
+      "doi": "10.1186/1479-5868-7-1",
+      "raw": "Page AS, Cooper AR, Griew P, Jago R. Independent mobility, perceptions of the built environment and children’s participation in play, active travel and structured exercise and sport: the PEACH Project. Int J Behav Nut Phys Act. 2010;7:1–10."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1111/soc4.12775",
+      "doi": "10.1177/000276427201500649",
+      "raw": "Eisenstadt S. N.(1972). Intellectuals and traditions.Daedalus 101 (Spring) 1‐19.American Behavioral Scientist 15(6) 946–946."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1177/00113921261426574",
+      "doi": "10.1093/oso/9780197759066.001.0001",
+      "raw": "Vallor S (2024) The AI Mirror: How to Reclaim Our Humanity in an Age of Machine Thinking. Oxford: Oxford University Press. Available at: (accessed 11 December 2024)"
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1080/03906701.2014.997969",
+      "doi": "10.1057/9781137407009_8",
+      "raw": "Fuhse, J., 2013. Social relationships between communication, network structure, and culture. In: François Dépelteau and Christopher Powell, eds. Applying relational sociology. New York: Palgrave Macmillan, 181–206."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1177/1440783318802984",
+      "doi": "10.1371/journal.pone.0105895",
+      "raw": "Gingras J., Smith S., Matson D.J., Johnson D., Nye K., et al. (2014) ‘Global Nav1.7 Knockout Mice Recapitulate the Phenotype of Human Congenital Indifference to Pain’, Plos One 9(9): 1–14,"
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1080/23251042.2021.1902665",
+      "doi": "10.2307/j.ctvcwp0dz.5",
+      "raw": "HoSang, D. M., and N. Molina. 2019. “Introduction: Toward a Relational Consciousness of Race.” In Relational Formations of Race: Theory, Method and Practice , edited by N. Molina, D. Martinez HoSang, and R. Gutiérrez, 1–18. Berkeley: University of California Press."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.26425/2658-347x-2024-7-1-14-25",
+      "doi": "10.1146/annurev-soc-073018-022457",
+      "raw": "Lynch S.M., Bartlett B. Bayesian statistics in sociology: past, present, and future. Annual Review of Sociology. 2019;45:47–68."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1111/soc4.12636",
+      "doi": "10.1080/09687599.2014.934064",
+      "raw": "Waltz M.(2014).Worlds of autism: Across the spectrum of neurological difference."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1177/02685809261490271",
+      "doi": "10.1007/978-3-030-63520-6",
+      "raw": "Blois JP (2020) Sociology in Argentina. A Long-Term Account. Palgrave Macmillan."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.1080/23251042.2026.2730412",
+      "doi": "10.4324/9781003229353-37",
+      "raw": "Knoll, Lisa 2024. “Valuation and Sustainability.” In The Routledge International Handbook of Valuation and Society, edited by A. Krüger, T. Peetz, and H. Schaefer, 316–325. London: Routledge."
+    },
+    {
+      "discipline": "sociology",
+      "citingDoi": "10.26425/2658-347x-2023-6-1-39-47",
+      "doi": "10.1109/mce.2015.2392954",
+      "raw": "Mallinson K. (2015), “Smartphone revolution: Technology patenting and licensing fosters innovation, market entry, and exceptional growth”, IEEE Consumer Electronics Magazine, vol. 4, no. 2, pp. 60–66,"
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1016/j.cviu.2026.104764",
+      "doi": "10.1109/cvpr.2018.00132",
+      "raw": "Caesar, Holger, Uijlings, Jasper, Ferrari, Vittorio, 2018. COCO-Stuff: Thing and Stuff Classes in Context. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. pp. 1209–1218."
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1016/j.cviu.2021.103247",
+      "doi": "10.1109/cvpr.2019.00787",
+      "raw": "Gur, S., Wolf, L., 2019. Single image depth estimation trained via depth from defocus cues. In: Intl. Conf. Computer Vision and Pattern Recognition, CVPR, pp. 7683–7692."
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1016/j.cviu.2022.103571",
+      "doi": "10.1109/cvpr.2005.177",
+      "raw": "Dalal, N., Triggs, B., 2005. Histograms of oriented gradients for human detection. In: 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, CVPR’05. 1, pp. 886–893 vol. 1."
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1016/j.cviu.2019.07.008",
+      "doi": "10.1109/iccv.2019.00056",
+      "raw": "Regmi, K., Shah, M., 2019. Bridging the domain gap for ground-to-aerial image matching. arXiv preprint arXiv:1904.11045."
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1049/cvi2.70073",
+      "doi": "10.1109/iccv51701.2025.01994",
+      "raw": "Y.Benigmim M.Fahes T. H.Vu et al. “FLOSS: Free Lunch in Open‐Vocabulary Semantic Segmentation ” preprint arXiv: 2504.10487 (2025)."
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1016/j.cviu.2022.103532",
+      "doi": "10.1109/cvpr.2015.7299087",
+      "raw": "Vedantam, R., Lawrence Zitnick, C., Parikh, D., 2015. Cider: Consensus-based image description evaluation. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. pp. 4566–4575."
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1049/iet-cvi.2017.0487",
+      "doi": "10.1007/978-3-319-46487-9_50",
+      "raw": "Liu J. Shahroudy A. Xu D. et al: ‘Spatio‐temporal lstm with trust gates for 3d human action recognition’.European Conf. on Computer Vision 2016 pp.816–833"
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1016/j.cviu.2022.103438",
+      "doi": "10.1109/icpr.2004.1333969",
+      "raw": "Zhang, Y., Kundu, S.J., Goldgof, D.B., Sarkar, S., Tsap, L.V., 2004. Elastic face - an anatomy-based biometrics beyond visible cue. In: Proceedings of the 17th International Conference on Pattern Recognition, Vol. 2. pp. 19–22."
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1049/cvi2.12253",
+      "doi": "10.24963/ijcai.2018/109",
+      "raw": "Li C. et al.:Co‐occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation(2018).arXiv preprint arXiv:1804.06055"
+    },
+    {
+      "discipline": "computer vision",
+      "citingDoi": "10.1049/cvi2.12299",
+      "doi": "10.1609/aaai.v36i8.20856",
+      "raw": "Xu J. et al.:Deep Incomplete Multi‐View Clustering via Mining Cluster Complementarity(2022)"
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1016/j.tree.2017.03.013",
+      "doi": "10.2139/ssrn.2277912",
+      "raw": "Bolton, B.J. (2013) Corporate Social Responsibility and Bank Performance. Published online 2013."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1186/s41610-021-00187-w",
+      "doi": "10.1007/s40823-020-00056-7",
+      "raw": "von Holle B, Yelenik S, Gornish ES. Restoration at the landscape scale as a means of mitigation and adaptation to climate change. Current Landscape Ecology Reports. 2020;5(3):85–97."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1016/j.gecco.2016.06.008",
+      "doi": "10.1126/science.opms.r1500157",
+      "raw": "Tachibana, C., (2015 September 11). Effective teaching: to be an effective educator, get active. from (Retrieved 04.13.2016)."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1002/1438-390x.12145",
+      "doi": "10.1101/819136",
+      "raw": "Kakishima S. Tuno N. Hosaka K. Okamoto T. Ito T. &Okuyama Y.(2019).A specialized deceptive pollination system based on elaborate mushroom mimicry.bioRxiv 819136."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1002/ecy.2189",
+      "doi": "10.32614/cran.package.gdistance",
+      "raw": "vanEtten J.2012.gdistance: Distances and routes on geographical grids. R package version 1.1–4."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1002/ecy.3098",
+      "doi": "10.1017/s0305004100033193",
+      "raw": "Moran P. A. P.1958.Random processes in genetics. Mathematical Proceedings of the Cambridge Philosophical Society 54:60–71."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1093/femsec/fiw220",
+      "doi": "10.1007/978-3-540-77587-4_146",
+      "raw": "Widdel F Knittel K Galushko A . Anaerobic hydrocarbon-degrading microorganisms: an overview. In: Timmis KN , editor. Handbook of Hydrocarbon and Lipid Microbiology. Berlin, Heidelberg: Springer; 2010. p. 1997-2021."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.24072/pci.ecology.100585",
+      "doi": "10.1080/02664769524757",
+      "raw": "Clobert, J. (1995). Capture-recapture and evolutionary ecology: A difficult wedding ? Journal of Applied Statistics, 22(5–6), 989–1008."
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1007/s00248-023-02206-w",
+      "doi": "10.5962/bhl.title.6958",
+      "raw": "Gale EF (1951) The Chemical Activities of Bacteria, 3rd edn. Academic Press, NY"
+    },
+    {
+      "discipline": "ecology",
+      "citingDoi": "10.1007/s42974-022-00130-6",
+      "doi": "10.1093/biolinnean/blz194",
+      "raw": "Loxdale, H. D., Balog, A., & Biron, D. G. (2020). Aphids in focus: Unravelling their complex ecology and evolution using genetic and molecular approaches. Biological Journal of the Linnean Society, 129, 507–531."
+    }
+  ]
+}

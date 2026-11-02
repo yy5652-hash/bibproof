@@ -6,7 +6,7 @@ export const hasCjk = (text: string) => /[㐀-鿿豈-﫿]/.test(text);
 
 /** The part of an entry worth searching for: its title. Handles GB/T 7714 "Author. Title[J]. Journal, 2020" entries. */
 export function handCheckTitle(ref: Pick<ParsedReference, 'raw' | 'title'>): string {
-  const text = ref.raw.replace(/^\s*(?:\[\d+\]|\d+[.)])\s*/, '').replace(/\s+/g, ' ').trim();
+  const text = ref.raw.replace(/^\s*(?:\[\d+\]|\d+[.)](?!\d))\s*/, '').replace(/\s+/g, ' ').trim();
   const book = text.match(/《([^》]{2,})》/);
   if (book) return book[1].trim();
   if (hasCjk(text)) {

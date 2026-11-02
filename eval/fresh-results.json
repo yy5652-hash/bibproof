@@ -1,0 +1,35 @@
+{
+  "runAt": "2026-11-02T15:50:40.100Z",
+  "total": 60,
+  "counts": {
+    "Verified": 53,
+    "Details differ": 5,
+    "Identifier conflict": 0,
+    "Retracted": 0,
+    "No record found": 1,
+    "Could not check": 1
+  },
+  "falseAccusations": 1,
+  "accepted": 58,
+  "abstentions": 1,
+  "misjudged": [
+    {
+      "raw": "S.J. Luck, An Introduction to Event-Related Potentials and Their Neural Origins, in: An Introd. to Event-Related Potential Tech., MIT Press, 2014: pp. 2–50.",
+      "doi": "10.1007/s10409-008-0217-3",
+      "verdict": "Could not check",
+      "explanation": "This entry has too little text to search on: it gives no clear title. Check it by hand.",
+      "failed": [
+        "Open Library"
+      ],
+      "nearest": "Electroencephalography and Event-Related Brain Potentials"
+    },
+    {
+      "raw": "Siddabattuni S, Schuman TP. In Polymer composites for energy harvesting, conversion, and storage. ACS Symposium series; 2014, p. 165–190.",
+      "doi": "10.1021/bk-2014-1161.ch008",
+      "verdict": "No record found",
+      "explanation": "No matching record in 3 indexes. Likely fabricated, check by hand.",
+      "failed": [],
+      "nearest": "Polymer−Ceramic Nanocomposite Dielectrics for Advanced Energy Storage"
+    }
+  ]
+}

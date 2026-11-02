@@ -28,7 +28,7 @@ async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<C
   const rank=()=>candidates.map(work=>({work,score:scoreCandidate(ref,work)})).sort((a,b)=>b.score.total-a.score.total);
   const doi=ref.doi??(ref.arxiv?`10.48550/arxiv.${ref.arxiv}`:undefined);
   // An entry that is only an identifier has nothing to search on or compare against.
-  const bare=Boolean(doi||ref.pmid)&&ref.raw.replace(/https?:\/\/\S+|(?:doi:?\s*)?10\.\d{4,9}\/\S+|arxiv:\s*\S+|pmid:?\s*\d+/ig,'').replace(/^\s*(?:\[\d+\]|\d+[.)])\s*/,'').replace(/[^\p{L}\p{N}]/gu,'').length<3;
+  const bare=Boolean(doi||ref.pmid)&&ref.raw.replace(/https?:\/\/\S+|(?:doi:?\s*)?10\.\d{4,9}\/\S+|arxiv:\s*\S+|pmid:?\s*\d+/ig,'').replace(/^\s*(?:\[\d+\]|\d+[.)](?!\d))\s*/,'').replace(/[^\p{L}\p{N}]/gu,'').length<3;
   if(ref.arxiv){identifierRecord=add(await lookup(client,'OpenAlex',`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi!)}`,true))[0];}
   else if(doi){
     identifierRecord=add(await lookup(client,'Crossref',`https://api.crossref.org/works/${encodeURIComponent(doi)}`,true))[0];

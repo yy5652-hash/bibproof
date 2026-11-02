@@ -86,6 +86,13 @@ describe('verifyReference: the six verdicts', () => {
     expect(r.score!.fields.find(f => f.field === 'Title')!.status).toBe('unknown');
   });
 
+  it('A DOI starting the entry is not read as a list number', async () => {
+    const { client } = clientFor({ crossrefWork: { '10.1000/tiny': smith } });
+    const r = await verifyReference('10.1000/tiny', client);
+    expect(r.verdict).toBe('Verified');
+    expect(r.match?.doi).toBe('10.1000/tiny');
+  });
+
   it('A bare DOI that resolves nowhere is not called fake', async () => {
     const { client } = clientFor();
     expect((await verifyReference('10.1000/nothing-here', client)).verdict).toBe('Could not check');

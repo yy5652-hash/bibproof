@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "held-out",
-  "runAt": "2026-11-02T00:16:35.747Z",
+  "runAt": "2026-11-02T15:50:39.133Z",
   "seed": 88421,
   "tuningSeed": 1729,
   "heldOutSeed": 88421,
@@ -144,7 +144,7 @@
     "robotsUrl": "https://gptzero.me/robots.txt",
     "robotsAllowed": true,
     "retrievedAt": "2026-11-01T01:08:11.113Z",
-    "runAt": "2026-11-02T00:16:35.180Z",
+    "runAt": "2026-11-02T15:50:38.927Z",
     "total": 100,
     "detected": 98,
     "detectionRate": 0.98,
