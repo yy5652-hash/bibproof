@@ -1,5 +1,6 @@
 import type { SVGProps } from 'react';
 import type { Verdict } from '../core/types';
+import { useI18n } from '../i18n';
 const base: SVGProps<SVGSVGElement> = { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true, focusable: false };
 type P = SVGProps<SVGSVGElement>;
 export const IconCheck = (p: P) => <svg {...base} {...p}><circle cx="12" cy="12" r="9.5" /><path d="M7.8 12.4l3 3 5.4-6.2" /></svg>;
@@ -20,6 +21,17 @@ export const IconStop = (p: P) => <svg {...base} {...p}><rect x="6" y="6" width=
 export const IconFile = (p: P) => <svg {...base} {...p}><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 13h6M9 17h6" /></svg>;
 export const IconSpinner = (p: P) => <svg {...base} {...p} className={`spin ${p.className ?? ''}`}><path d="M12 3a9 9 0 019 9" /></svg>;
 
+export const IconShare = (p: P) => <svg {...base} {...p}><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="6" r="2.5" /><circle cx="18" cy="18" r="2.5" /><path d="M8.2 10.8l7.6-3.6M8.2 13.2l7.6 3.6" /></svg>;
+export const IconKeyboard = (p: P) => <svg {...base} {...p}><rect x="2.5" y="6" width="19" height="12" rx="2" /><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10" /></svg>;
+export const IconHistory = (p: P) => <svg {...base} {...p}><path d="M3.5 12a8.5 8.5 0 108.5-8.5A8.5 8.5 0 005.6 6.4M3.5 4v3.5H7M12 8v4.5l3 1.8" /></svg>;
+export const IconTrash = (p: P) => <svg {...base} {...p}><path d="M4 7h16M9 7V4h6v3M6.5 7l1 13h9l1-13M10 11v6M14 11v6" /></svg>;
+export const IconClose = (p: P) => <svg {...base} {...p}><path d="M6 6l12 12M18 6L6 18" /></svg>;
+export const IconBook = (p: P) => <svg {...base} {...p}><path d="M4 5.5A2.5 2.5 0 016.5 3H20v15H6.5A2.5 2.5 0 004 20.5zM4 20.5A2.5 2.5 0 006.5 23H20v-5" /></svg>;
+export const IconArrowRight = (p: P) => <svg {...base} {...p}><path d="M4 12h15M13 6l6 6-6 6" /></svg>;
+export const IconBack = (p: P) => <svg {...base} {...p}><path d="M20 12H5M11 6l-6 6 6 6" /></svg>;
+export const IconSearch = (p: P) => <svg {...base} {...p}><circle cx="10.5" cy="10.5" r="6.5" /><path d="M20 20l-4.9-4.9" /></svg>;
+export const IconRefresh = (p: P) => <svg {...base} {...p}><path d="M20 11a8 8 0 00-14.5-4M4 4v4h4M4 13a8 8 0 0014.5 4M20 20v-4h-4" /></svg>;
+
 export const verdictMeta: Record<Verdict, { slug: string; Icon: (p: P) => React.JSX.Element; short: string }> = {
   'Verified': { slug: 'verified', Icon: IconCheck, short: 'Record found; title and authors agree' },
   'Details differ': { slug: 'differ', Icon: IconDiffer, short: 'The work exists; some fields disagree' },
@@ -30,5 +42,6 @@ export const verdictMeta: Record<Verdict, { slug: string; Icon: (p: P) => React.
 };
 export function VerdictBadge({ verdict }: { verdict: Verdict }) {
   const { slug, Icon } = verdictMeta[verdict];
-  return <span className={`badge v-${slug}`}><Icon /><span>{verdict}</span></span>;
+  const { verdict: label } = useI18n();
+  return <span className={`badge v-${slug}`}><Icon /><span>{label(verdict)}</span></span>;
 }

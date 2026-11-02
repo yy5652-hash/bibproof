@@ -1,5 +1,5 @@
 import type { Work, CheckResult } from './types';
-export type CitationStyle='apa'|'mla'|'chicago'|'ieee'|'vancouver';
+export type CitationStyle='apa'|'mla'|'chicago'|'ieee'|'vancouver'|'harvard1';
 let initialization:Promise<typeof import('@citation-js/core')>|undefined;
 export function citationEngine(){return initialization??= (async()=>{const core=await import('@citation-js/core');await Promise.all([import('@citation-js/plugin-csl'),import('@citation-js/plugin-bibtex'),import('@citation-js/plugin-ris')]);return core;})();}
 export function toCsl(work:Work){return {id:work.id,type:work.type==='book'?'book':'article-journal',title:work.title,author:work.authors,'container-title':work.venue,issued:work.year?{'date-parts':[[work.year]]}:undefined,DOI:work.doi,URL:work.url,volume:work.volume,issue:work.issue,page:work.pages,publisher:work.publisher};}

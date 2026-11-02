@@ -1,85 +1,270 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { INDEX_HOSTS, installMock } from './mock';
 
-// Real index responses recorded once for the eight sample entries (trimmed); the one OpenAlex search that hit the daily
-// keyless budget while recording is set to the empty result list it returned on an earlier run. The test never touches the network.
-const recorded: Record<string, { status: number; body: unknown }> = JSON.parse(readFileSync(fileURLToPath(new URL('./fixtures/sample-responses.json', import.meta.url)), 'utf8'));
-const INDEX_HOSTS = ['api.crossref.org', 'api.datacite.org', 'api.openalex.org', 'www.ebi.ac.uk', 'openlibrary.org'];
+const SEVERITY_ORDER = ['Retracted', 'Identifier conflict', 'No record found', 'Details differ', 'Details differ', 'Could not check', 'Verified', 'Verified'];
+const verdicts = (page: Page) => page.getByTestId('row').evaluateAll(rows => rows.map(r => (r as HTMLElement).dataset.verdict));
+async function runSample(page: Page) {
+  await page.getByRole('button', { name: 'Try a sample' }).click();
+  await expect(page.getByRole('status').filter({ hasText: /8 references checked/ })).toBeVisible({ timeout: 60_000 });
+}
+const row = (page: Page, verdict: string) => page.locator(`[data-testid="row"][data-verdict="${verdict}"] .row-btn`).first();
 
-test('sample: every verdict appears, evidence expands, exports download, nothing leaves except reference lookups', async ({ page }) => {
-  const outbound: string[] = [];
-  await page.route(url => !['127.0.0.1', 'localhost'].includes(url.hostname), async route => {
-    const url = route.request().url(); outbound.push(new URL(url).host);
-    const hit = recorded[url];
-    const headers = { 'access-control-allow-origin': '*', 'content-type': 'application/json' };
-    if (hit) return route.fulfill({ status: hit.status, headers, body: JSON.stringify(hit.body ?? {}) });
-    // Anything unrecorded behaves like a healthy index with nothing to say.
-    const u = new URL(url);
-    const body = u.host === 'api.crossref.org' ? (u.pathname.startsWith('/works/') ? null : { message: { items: [] } }) : u.host === 'api.openalex.org' ? (u.pathname.startsWith('/works/') ? null : { results: [] }) : u.host === 'www.ebi.ac.uk' ? { resultList: { result: [] } } : { docs: [] };
-    return route.fulfill(body ? { status: 200, headers, body: JSON.stringify(body) } : { status: 404, headers, body: '{}' });
-  });
-
+test('sample: severity order, filter, evidence, decisions by keyboard, clean bibliography, exports', async ({ page }) => {
+  const seen = await installMock(page);
   await page.goto('/');
   await expect(page).toHaveTitle(/Bibproof/);
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Every reference');
   await expect(page.getByRole('button', { name: 'Check references' })).toBeDisabled();
+  await expect(page.getByRole('tab')).toHaveCount(3);
 
-  await test.step('run the sample and see all six verdicts in order', async () => {
+  await test.step('first result appears within seconds, then all eight, most serious first', async () => {
+    const started = Date.now();
     await page.getByRole('button', { name: 'Try a sample' }).click();
+    await expect(page.locator('[data-testid="row"][data-verdict="Verified"], [data-testid="row"][data-verdict="Retracted"], [data-testid="row"][data-verdict="Details differ"]').first()).toBeVisible({ timeout: 10_000 });
+    expect(Date.now() - started).toBeLessThan(3000);
     await expect(page.getByRole('status').filter({ hasText: /8 references checked/ })).toBeVisible({ timeout: 60_000 });
-    await expect(page.locator('.row')).toHaveCount(8);
-    const verdicts = await page.locator('.row').evaluateAll(rows => rows.map(r => (r as HTMLElement).dataset.verdict));
-    expect(verdicts).toEqual(['Verified', 'Verified', 'Details differ', 'Details differ', 'Identifier conflict', 'No record found', 'Retracted', 'Could not check']);
+    await expect(page.getByRole('heading', { level: 2, name: '6 references need action.' })).toBeVisible();
+    expect(await verdicts(page)).toEqual(SEVERITY_ORDER);
+    const chips = page.getByRole('group', { name: 'Filter by verdict' });
     for (const [name, n] of [['Verified', 2], ['Details differ', 2], ['Identifier conflict', 1], ['Retracted', 1], ['No record found', 1], ['Could not check', 1]] as const)
-      await expect(page.getByRole('group', { name: 'Filter by verdict' }).getByRole('button', { name: new RegExp(`^${name} ${n}$`) })).toBeVisible();
+      await expect(chips.getByRole('button', { name: new RegExp(`^${name} ${n}$`) })).toBeVisible();
   });
 
-  await test.step('filter by verdict', async () => {
+  await test.step('document order toggle and verdict filter', async () => {
+    await page.getByRole('button', { name: 'Document order' }).click();
+    expect((await verdicts(page))[0]).toBe('Verified');
+    await page.getByRole('button', { name: 'Severity' }).click();
     await page.getByRole('group', { name: 'Filter by verdict' }).getByRole('button', { name: /^Retracted/ }).click();
-    await expect(page.locator('.row')).toHaveCount(1);
-    await expect(page.locator('.row')).toContainText('Wakefield');
+    await expect(page.getByTestId('row')).toHaveCount(1);
+    await expect(page.getByTestId('row')).toContainText('Wakefield');
     await page.getByRole('group', { name: 'Filter by verdict' }).getByRole('button', { name: /^All/ }).click();
-    await expect(page.locator('.row')).toHaveCount(8);
+    await expect(page.getByTestId('row')).toHaveCount(8);
   });
 
-  await test.step('expand field-level evidence and the corrected reference', async () => {
-    const differ = page.locator('.row').nth(2);
-    await differ.getByRole('button').click();
-    const grid = differ.getByRole('table', { name: 'Field-level evidence' });
-    await expect(grid).toBeVisible();
+  await test.step('evidence pane: field-level comparison, source record, corrected reference', async () => {
+    await row(page, 'Details differ').click();
+    const ev = page.getByTestId('evidence');
+    const grid = ev.getByRole('table', { name: 'Field-level evidence' });
     await expect(grid.locator('.field-row.differ')).toContainText('Year');
     await expect(grid.locator('.field-row.differ')).toContainText('2022');
     await expect(grid.locator('.field-row.differ')).toContainText('2015');
-    await expect(differ.locator('.index-log')).toContainText('Crossref');
-    await expect(differ.locator('.corrected-text')).toContainText('LeCun', { timeout: 15_000 });
-    await expect(differ.locator('.corrected-text')).toContainText('2015');
-    await expect(differ.locator('.record a')).toHaveAttribute('href', /doi\.org\/10\.1038\/nature14539/);
-    await differ.getByRole('button', { name: /Hide evidence/ }).click();
-    await expect(grid).toBeHidden();
+    await expect(ev.locator('.record a').first()).toHaveAttribute('href', /doi\.org\/10\.1038\/nature14539/);
+    await expect(ev.locator('.record a').first()).toHaveAttribute('rel', /noopener/);
+    await expect(ev.locator('.corrected-text')).toContainText('LeCun', { timeout: 15_000 });
+    await ev.locator('summary', { hasText: 'Index trail' }).click();
+    await expect(ev.locator('.index-log')).toContainText('Crossref');
   });
 
-  await test.step('export corrected .bib, .ris and a CSV report', async () => {
-    const grab = async (name: string) => { const [d] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name }).click()]); return { d, text: readFileSync(await d.path()!, 'utf8') }; };
-    const bib = await grab('Corrected .bib');
-    expect(bib.d.suggestedFilename()).toBe('bibproof-corrected.bib');
-    expect(bib.text).toMatch(/@article\{Vaswani2017/);
-    expect(bib.text).not.toMatch(/Wetherquill|Wakefield/); // fabricated and retracted entries are never exported as "corrected"
-    const ris = await grab('Corrected .ris');
-    expect(ris.text).toMatch(/^TY {2}- /m);
-    const csv = await grab('CSV report');
-    expect(csv.text).toContain('"Reference","Verdict"');
-    expect(csv.text).toContain('"No record found"');
+  await test.step('decisions with the keyboard: u use record, x remove, ? help', async () => {
+    await expect(page.getByTestId('fix-status')).toContainText('0 decided · 6 unresolved');
+    await page.keyboard.press('u');
+    await expect(page.getByTestId('fix-status')).toContainText('1 decided · 5 unresolved');
+    await expect(page.getByTestId('evidence').getByRole('button', { name: 'Use record' })).toHaveAttribute('aria-pressed', 'true');
+    await row(page, 'No record found').click();
+    const hand = page.getByTestId('evidence').locator('.hand-links a');
+    await expect(hand).toHaveCount(4);
+    for (const a of await hand.all()) { await expect(a).toHaveAttribute('rel', 'noopener noreferrer'); await expect(a).toHaveAttribute('href', /^https:\/\//); }
+    await expect(hand.filter({ hasText: 'CNKI' })).toHaveAttribute('href', /Chromatic/);
+    await page.keyboard.press('x');
+    await expect(page.getByTestId('fix-status')).toContainText('2 decided · 4 unresolved');
+    await page.keyboard.press('x'); // pressing again clears it
+    await expect(page.getByTestId('fix-status')).toContainText('1 decided · 5 unresolved');
+    await page.keyboard.press('x');
+    await page.keyboard.press('k'); await page.keyboard.press('j');
+    await page.keyboard.press('?');
+    await expect(page.getByTestId('shortcuts')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.getByTestId('shortcuts')).toBeHidden();
+  });
+
+  await test.step('clean bibliography and change log; .bib holds only the adopted record', async () => {
+    await page.getByRole('button', { name: 'Clean bibliography' }).click();
+    const panel = page.getByTestId('bibliography');
+    await expect(panel.getByTestId('bib-summary')).toHaveText('1 replaced · 1 removed · 6 as written');
+    await expect(panel.getByTestId('bib-list')).toContainText('(2015)');
+    await expect(panel.getByTestId('bib-list')).not.toContainText('Wetherquill');
+    await expect(panel.getByTestId('change-log')).toContainText('Unresolved, left as written');
+    const grab = async (name: string) => { const [d] = await Promise.all([page.waitForEvent('download'), panel.getByRole('button', { name }).click()]); return { d, text: readFileSync(await d.path()!, 'utf8') }; };
+    const bib = await grab('Download .bib');
+    expect(bib.d.suggestedFilename()).toBe('bibproof-bibliography.bib');
+    expect(bib.text).toMatch(/@article\{LeCun2015/);
+    expect(bib.text).not.toMatch(/Wetherquill|Wakefield/);
+    expect((await grab('Download .ris')).text).toMatch(/^TY {2}- /m);
+    expect((await grab('Download .txt')).text).toContain('Vaswani');
+    await panel.getByLabel('Style').selectOption('harvard1');
+    await expect(panel.getByTestId('bib-list')).toContainText('LeCun');
+    await page.keyboard.press('Escape');
+  });
+
+  await test.step('CSV report still downloads', async () => {
+    const [d] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'CSV report' }).click()]);
+    const csv = readFileSync(await d.path()!, 'utf8');
+    expect(csv).toContain('"Reference","Verdict"'); expect(csv).toContain('"No record found"');
   });
 
   await test.step('only scholarly index hosts were contacted', async () => {
-    expect(outbound.length).toBeGreaterThan(0);
-    expect(new Set(outbound.filter(h => !INDEX_HOSTS.includes(h)))).toEqual(new Set());
+    expect(seen.hosts.length).toBeGreaterThan(0);
+    expect(new Set(seen.hosts.filter(h => !INDEX_HOSTS.includes(h)))).toEqual(new Set());
   });
 
-  await test.step('methodology view', async () => {
+  await test.step('methodology view and trust block link', async () => {
     await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Methodology' }).click();
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Evidence, not intuition');
     await expect(page.getByText('Six verdicts. No hidden score.')).toBeVisible();
+  });
+});
+
+test('DOI tab resolves a bare DOI directly', async ({ page }) => {
+  await installMock(page);
+  await page.goto('/');
+  await page.getByRole('tab', { name: 'DOI' }).click();
+  await page.getByLabel('DOI or doi.org link').fill('https://doi.org/10.1038/nature14539');
+  await page.getByRole('button', { name: 'Check this DOI' }).click();
+  await expect(page.getByRole('status').filter({ hasText: /1 reference checked/ })).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByTestId('row')).toHaveAttribute('data-verdict', 'Verified');
+});
+
+test('citing sentences are found on the device and no document text leaves it', async ({ page }) => {
+  const seen = await installMock(page);
+  await page.goto('/');
+  const doc = `We build on earlier work [1]. The private zebra-quokka-7731 sentence rests on invented work [2]. Nothing else here.\n\nReferences\n[1] He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition. https://doi.org/10.1109/CVPR.2016.90\n[2] Wetherquill, Z., & Brindlewick, P. (2023). Chromatic jellyfish calculus for teleporting medieval libraries. Journal of Interplanetary Archival Thermodynamics, 42, 101–119.`;
+  await page.getByLabel('References or document').fill(doc);
+  await expect(page.getByText(/2 references detected in a full document/)).toBeVisible();
+  await page.getByRole('button', { name: 'Check references' }).click();
+  await expect(page.getByRole('status').filter({ hasText: /2 references checked/ })).toBeVisible({ timeout: 60_000 });
+  await row(page, 'No record found').click();
+  await expect(page.getByTestId('evidence').locator('.citing')).toContainText('zebra-quokka-7731');
+  await expect(page.locator('details.cross')).toContainText('Numeric style');
+  expect(seen.urls.filter(u => /quokka|zebra|earlier%20work/i.test(decodeURIComponent(u)))).toEqual([]);
+  expect(seen.bodies.join('')).not.toMatch(/quokka|earlier work/);
+  expect(new Set(seen.hosts.filter(h => !INDEX_HOSTS.includes(h)))).toEqual(new Set());
+});
+
+test('share link round trip: warning, read-only report, re-check, tampered link', async ({ page }) => {
+  await installMock(page);
+  await page.goto('/');
+  await runSample(page);
+  await row(page, 'Details differ').click(); await page.keyboard.press('u');
+  await page.getByRole('button', { name: 'Share link' }).click();
+  const dialog = page.getByTestId('share-dialog');
+  await expect(dialog).toContainText('contains the text of your references');
+  const link = await dialog.getByLabel('Link').inputValue();
+  expect(link).toContain('#/s/');
+  await page.keyboard.press('Escape');
+
+  const fresh = await page.context().newPage(); await installMock(fresh);
+  await fresh.goto(link);
+  await expect(fresh.getByTestId('shared-banner')).toContainText('Made on');
+  await expect(fresh.getByTestId('shared-banner')).toContainText('not been re-checked');
+  await expect(fresh.locator('.shared-list li')).toHaveCount(8);
+  await expect(fresh.locator('.shared-list')).toContainText('Wakefield');
+  await expect(fresh.locator('.shared-list li[data-verdict="Details differ"]').first()).toContainText('Record');
+  expect(await fresh.locator('.shared-list a').evaluateAll(as => as.map(a => (a as HTMLAnchorElement).protocol))).toEqual(expect.arrayContaining(['https:']));
+  await fresh.getByRole('button', { name: 'Re-check these references' }).click();
+  await expect(fresh.getByRole('status').filter({ hasText: /8 references checked/ })).toBeVisible({ timeout: 60_000 });
+
+  const bad = await page.context().newPage();
+  await bad.goto(link.slice(0, link.length - 40));
+  await expect(bad.getByRole('alert')).toContainText('could not be read');
+});
+
+test('history: a finished run is saved, reopened, deleted, and an exported file can be imported', async ({ page }) => {
+  await installMock(page);
+  await page.goto('/');
+  await runSample(page);
+  await row(page, 'Details differ').click(); await page.keyboard.press('u');
+  await page.waitForTimeout(800);
+  await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'History' }).click();
+  await expect(page.getByTestId('history-privacy')).toContainText('this device only');
+  await expect(page.getByTestId('history-list').locator('li')).toHaveCount(1);
+  await page.getByRole('button', { name: 'Open', exact: true }).click();
+  await expect(page.getByRole('status').filter({ hasText: /8 references checked/ })).toBeVisible();
+  await expect(page.getByTestId('fix-status')).toContainText('1 decided');
+  await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'History' }).click();
+
+  const file = JSON.stringify({ format: 'bibproof-run', version: 1, date: new Date().toISOString(), entries: [{ raw: 'Smith, J. (2020). A title.', verdict: 'No record found' }, { raw: 'Bad link entry', verdict: 'Verified', url: 'javascript:alert(1)' }] });
+  await page.locator('input[type=file]').setInputFiles({ name: 'run.bibproof.json', mimeType: 'application/json', buffer: Buffer.from(file) });
+  await expect(page.locator('.shared-list li')).toHaveCount(2);
+  await expect(page.locator('.shared-list a')).toHaveCount(0);
+
+  await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'History' }).click();
+  await page.getByRole('button', { name: /^Delete/ }).first().click();
+  await expect(page.getByText('No saved runs yet')).toBeVisible();
+});
+
+test('language toggle: Chinese UI, translated verdicts and explanations, persisted', async ({ page }) => {
+  await installMock(page);
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await page.getByTestId('lang-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('查证');
+  await page.getByRole('button', { name: '试用示例' }).click();
+  await expect(page.getByRole('status').filter({ hasText: /已核查 8 条/ })).toBeVisible({ timeout: 60_000 });
+  await expect(page.getByRole('heading', { level: 2, name: '有 6 条需要处理。' })).toBeVisible();
+  await row(page, 'Retracted').click();
+  await expect(page.getByTestId('evidence')).toContainText('已撤稿');
+  await expect(page.getByTestId('evidence')).toContainText('匹配到的文献在索引元数据中被标记为已撤稿');
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
+  await page.getByTestId('lang-toggle').click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('proven');
+});
+
+test('theme follows the system after load, and an explicit choice sticks', async ({ page }) => {
+  await installMock(page);
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('/');
+  const bg = () => page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  expect(await bg()).toBe('rgb(244, 239, 228)');
+  await expect(page.getByTestId('theme-toggle')).toHaveAccessibleName('Switch to dark theme');
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect.poll(bg).toBe('rgb(21, 20, 15)');
+  await expect(page.getByTestId('theme-toggle')).toHaveAccessibleName('Switch to light theme');
+  await page.getByTestId('theme-toggle').click(); // explicit light
+  await expect.poll(bg).toBe('rgb(244, 239, 228)');
+  await page.emulateMedia({ colorScheme: 'light' }); await page.emulateMedia({ colorScheme: 'dark' });
+  expect(await bg()).toBe('rgb(244, 239, 228)');
+});
+
+test('300 references stay smooth: only a window of rows is in the page', async ({ page }) => {
+  await page.goto('/?fixture=300');
+  await expect(page.getByRole('heading', { level: 2 }).first()).toContainText('need action');
+  const count = () => page.getByTestId('row').count();
+  expect(await count()).toBeGreaterThan(5); expect(await count()).toBeLessThan(60);
+  const t = await page.getByTestId('list-scroll').evaluate(async el => {
+    const t0 = performance.now(); let frames = 0;
+    for (let y = 0; y <= el.scrollHeight; y += 1200) { el.scrollTop = y; await new Promise(r => requestAnimationFrame(r)); frames++; }
+    return { ms: performance.now() - t0, frames };
+  });
+  expect(t.ms / t.frames).toBeLessThan(120);
+  expect(await count()).toBeLessThan(60);
+  await page.getByTestId('list-scroll').evaluate(el => { el.scrollTop = 0; });
+  await page.locator('[data-testid="row"] .row-btn').first().click();
+  for (let i = 0; i < 12; i++) await page.keyboard.press('j');
+  await expect(page.getByTestId('evidence')).toBeVisible();
+});
+
+test.describe('phone', () => {
+  test.use({ viewport: { width: 375, height: 812 }, hasTouch: true, isMobile: true });
+  test('no horizontal scroll, input above the fold, evidence opens as a bottom sheet, touch targets', async ({ page }) => {
+    await installMock(page);
+    await page.goto('/');
+    const overflow = () => page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(await overflow()).toBeLessThanOrEqual(0);
+    const fold = await page.getByRole('button', { name: 'Check references' }).boundingBox();
+    expect(fold!.y + fold!.height).toBeLessThan(812);
+    for (const b of await page.locator('button:visible, a.icon-button:visible, [role=tab]:visible').all()) { const box = await b.boundingBox(); expect(box!.height, await b.innerText()).toBeGreaterThanOrEqual(40); }
+    await runSample(page);
+    expect(await overflow()).toBeLessThanOrEqual(0);
+    await page.locator('[data-testid="row"][data-verdict="Details differ"] .row-btn').first().click();
+    const sheet = page.getByRole('dialog');
+    await expect(sheet).toBeVisible();
+    await expect(sheet.getByTestId('evidence')).toContainText('A matching work exists');
+    await sheet.getByRole('button', { name: 'Use record' }).click();
+    await page.keyboard.press('Escape');
+    await expect(page.getByTestId('fix-status')).toContainText('1 decided');
+    expect(await overflow()).toBeLessThanOrEqual(0);
   });
 });

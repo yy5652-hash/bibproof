@@ -50,6 +50,12 @@ export function useChecker() {
   }, []);
 
   const reset = useCallback(() => { run.current++; setRows([]); setPhase('idle'); }, []);
+  /** Show a finished run (from history or a test fixture) without any lookups. */
+  const load = useCallback((entries: string[], results: (CheckResult | null)[]) => {
+    run.current++;
+    setRows(entries.map((raw, id) => (results[id] ? { id, raw, state: 'done' as const, result: results[id]! } : { id, raw, state: 'skipped' as const })));
+    setPhase(results.some(Boolean) ? 'done' : 'cancelled');
+  }, []);
   const clearCache = useCallback(async () => { client.current ??= new IndexClient(new BrowserCache()); await client.current.cache.clear?.(); }, []);
-  return { rows, phase, start, cancel, reset, clearCache };
+  return { rows, phase, start, cancel, reset, load, clearCache };
 }

@@ -1,0 +1,363 @@
+import { useSyncExternalStore } from 'react';
+import type { Verdict } from './core/types';
+
+export type Lang = 'en' | 'zh-CN';
+const KEY = 'bibproof-lang';
+
+export const en = {
+  // shell
+  'skip': 'Skip to content', 'nav.primary': 'Primary', 'nav.check': 'Check', 'nav.history': 'History', 'nav.method': 'Methodology',
+  'brand.home': 'Bibproof, home', 'github': 'Bibproof on GitHub', 'lang.toggle': '中文', 'lang.aria': 'Switch the language to Chinese',
+  'theme.toLight': 'Switch to light theme', 'theme.toDark': 'Switch to dark theme', 'loading': 'Loading…',
+  'title.home': 'Bibproof · Check every reference', 'title.method': 'Methodology · Bibproof', 'title.history': 'History · Bibproof', 'title.shared': 'Shared report · Bibproof',
+  // hero
+  'hero.a': 'Every reference,', 'hero.b': 'proven', 'hero.c': 'before you submit.',
+  'hero.lede': 'Paste a bibliography, drop in a paper, or enter a DOI. Each reference is checked against the scholarly record, with the evidence shown.',
+  'tabs.label': 'How to provide references', 'tabs.paste': 'Paste', 'tabs.file': 'File', 'tabs.doi': 'DOI',
+  'paste.label': 'References or document',
+  'paste.placeholder': 'Paste references here, one per entry:\n\n[1] Vaswani, A., et al. (2017). Attention is all you need. NeurIPS.\n[2] He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. CVPR.\n\nOr paste a whole paper. Bibproof finds the References section and also cross-checks the in-text citations.',
+  'file.drop': 'Drop a file here', 'file.or': 'or', 'file.choose': 'Choose a file', 'file.formats': '.docx  .pdf  .bib  .ris  .txt', 'file.aria': 'Upload a .docx, .pdf, .bib, .ris or .txt file',
+  'file.reading': 'Reading on this device…', 'file.done': '{name} was read on this device.', 'file.replace': 'Choose another file',
+  'doi.label': 'DOI or doi.org link', 'doi.placeholder': '10.1038/nature14539', 'doi.hint': 'One identifier. It is resolved directly, no other details needed.',
+  'cta.check': 'Check references', 'cta.sample': 'Try a sample', 'cta.checkDoi': 'Check this DOI',
+  'hero.trust': 'No account. No cap. Your file stays on this device; only the text of each reference is looked up in public scholarly indexes.',
+  'detected_one': '{n} reference detected', 'detected_other': '{n} references detected', 'detected.doc': ' in a full document. The in-text cross-check will run.', 'detected.list': '.',
+  'status.idle': 'Read on this device. Only the text of each reference is sent to public scholarly indexes.',
+  'err.none': 'No references found. Paste a reference list or a document with a References heading, or choose a file.',
+  'err.doi': 'Enter a DOI such as 10.1038/nature14539.', 'err.file': 'The file could not be read.', 'err.ext': 'Choose a .pdf, .docx, .bib, .ris, or .txt file.',
+  // demo
+  'demo.title': 'From a citation to a verdict', 'demo.before': 'As written', 'demo.after': 'What Bibproof finds', 'demo.you': 'You wrote', 'demo.record': 'The record says',
+  'demo.field': 'Year', 'demo.source': 'Source record', 'demo.note': 'A real entry from the built-in sample, checked against Crossref.',
+  // compact bar and summary
+  'prog.done_one': '{n} reference checked.', 'prog.done_other': '{n} references checked.',
+  'bar.running': 'Checking {done} of {total}…', 'bar.new': 'New check', 'bar.cancel': 'Cancel', 'bar.stopped': 'Stopped. {done} of {total} checked.',
+  'sum.action_one': '{n} reference needs action.', 'sum.action_other': '{n} references need action.',
+  'sum.allgood_one': 'The reference is verified.', 'sum.allgood_other': 'All {n} references are verified.',
+  'sum.sofar_one': '{n} reference needs action so far.', 'sum.sofar_other': '{n} references need action so far.',
+  'sum.none': 'Results appear here as each reference is checked.',
+  'sum.detail': 'Anything that is not Verified is worth a look. Open a row to see the evidence and decide what to do.',
+  'filter.group': 'Filter by verdict', 'filter.all': 'All', 'sort.label': 'Sort by', 'sort.severity': 'Severity', 'sort.document': 'Document order',
+  'list.aria': 'References', 'list.empty': 'No references with this verdict.', 'list.waiting': 'Waiting for the first result…',
+  'state.queued': 'Waiting', 'state.running': 'Checking', 'state.skipped': 'Not checked',
+  // verdicts
+  'v.Verified': 'Verified', 'v.Details differ': 'Details differ', 'v.Identifier conflict': 'Identifier conflict', 'v.Retracted': 'Retracted', 'v.No record found': 'No record found', 'v.Could not check': 'Could not check',
+  'vs.Verified': 'Record found; title and authors agree', 'vs.Details differ': 'The work exists; some fields disagree', 'vs.Identifier conflict': 'The DOI or arXiv id points at a different work',
+  'vs.Retracted': 'The matched work has been retracted', 'vs.No record found': 'Nothing close in any index that answered', 'vs.Could not check': 'Not enough coverage to say either way',
+  // row notes
+  'note.matched': 'Matched record: {cite}', 'note.closest': 'Closest record: {cite}', 'note.identifier': 'Identifier resolves to: {cite}',
+  // decisions
+  'dec.group': 'Your decision for this reference', 'dec.keep': 'Keep original', 'dec.record': 'Use record', 'dec.remove': 'Remove',
+  'dec.tag.keep': 'Kept', 'dec.tag.record': 'Record', 'dec.tag.remove': 'Removed', 'dec.tag.candidate': 'Candidate', 'dec.unresolved': 'Unresolved',
+  'dec.none': 'No decision yet. This entry stays as written and is listed as unresolved.', 'dec.noneOk': 'No decision needed. This entry stays as written.',
+  'dec.noRecord': 'No record to adopt for this entry.', 'dec.clear': 'Clear decision',
+  'alt.title': 'Close real records', 'alt.lede': 'These are real records with similar wording. A candidate is not verified: read it before you use it.', 'alt.use': 'Use this candidate', 'alt.using': 'Using this candidate',
+  'fix.status': '{made} decided · {open} unresolved', 'fix.next': 'Next unresolved', 'fix.review': 'Clean bibliography', 'fix.allDone': 'Every flagged reference has a decision.',
+  'fix.hint': 'Keys: j / k move, u use record, o keep original, x remove, ? help', 'fix.group': 'Fix queue',
+  'kb.title': 'Keyboard shortcuts', 'kb.next': 'Next reference', 'kb.prev': 'Previous reference', 'kb.use': 'Use record', 'kb.keep': 'Keep original', 'kb.remove': 'Remove', 'kb.help': 'Show this list',
+  'kb.note': 'Pressing a decision key again clears the decision. Shortcuts are ignored while you type in a field.', 'close': 'Close',
+  // evidence
+  'ev.title': 'Evidence', 'ev.empty': 'Select a reference to see its evidence.', 'ev.back': 'Back to the list',
+  'ev.written': 'As written', 'ev.matched': 'Matched source record', 'ev.identifier': 'Your identifier points to', 'ev.closest': 'Closest title match, review before using', 'ev.nearest': 'Did you mean? Nearest result, not a confirmed match',
+  'ev.fields': 'Field-level evidence', 'ev.field': 'Field', 'ev.wrote': 'What you wrote', 'ev.says': 'What the record says',
+  'ev.agrees': 'Agrees', 'ev.differs': 'Differs', 'ev.uncertain': 'Uncertain', 'ev.retraction': 'Read the retraction notice',
+  'ev.trail': 'Index trail', 'ev.records_one': '{n} record', 'ev.records_other': '{n} records', 'ev.cached': 'cached', 'ev.unavailable': 'Unavailable', 'ev.query': 'Query evidence',
+  'ev.noIndex': 'No scholarly-index request was sent: this entry is outside supported coverage.', 'ev.openSource': 'Open original source',
+  'ev.checked': 'Checked {date}. Retraction coverage depends on index metadata; no flag is not a guarantee.',
+  'ev.corrected': 'Corrected reference', 'ev.copy': 'Copy reference', 'ev.copied': 'Copied', 'ev.formatting': 'Formatting reference…', 'ev.review': 'Review the matched work and all warnings before using this correction.',
+  'ev.clipboard': 'Clipboard unavailable. Select and copy the text instead.', 'ev.styleFail': 'Citation style could not be loaded.', 'ev.style': 'Correction style',
+  'ev.noDoi': 'Year unavailable',
+  // citing
+  'cite.title': 'Where this is cited', 'cite.local': 'Found in the document text on this device.', 'cite.more_one': '{n} more sentence not shown.', 'cite.more_other': '{n} more sentences not shown.',
+  'cite.none': 'No sentence citing this entry was detected. It may be uncited, or cited in a way Bibproof does not read, such as footnotes.',
+  'cite.nodoc': 'No in-text citations in a supported format were found in this document, so citing sentences cannot be listed.',
+  // hand check
+  'hc.title': 'Check by hand', 'hc.lede': 'Search for this title yourself. These links open only when you click them; Bibproof fetches nothing from these sites.', 'hc.cn': 'Chinese-language entry: start with CNKI or Wanfang.',
+  // cross panel
+  'cross.title': 'In-text citations', 'cross.none': 'No in-text citations detected', 'cross.style': '{style} style', 'cross.ok': 'Every in-text citation has a reference entry, and every entry is cited.',
+  'cross.missing': 'Cited, but no reference entry', 'cross.uncited': 'Listed, but never cited', 'cross.noneLine': 'None.',
+  'cross.listOnly': 'Treated as a reference list. The in-text cross-check needs a full document with a References heading.',
+  'cross.note.heuristic': 'Heuristic check. Footnotes, ambiguous author names, and unusual styles may need a manual review.', 'cross.note.none': 'No supported in-text citations detected; unused entries cannot be inferred.',
+  'cross.style.Numeric': 'Numeric', 'cross.style.Author–year': 'Author–year', 'cross.style.Mixed': 'Mixed', 'cross.style.Not detected': 'Not detected',
+  // toolbar and exports
+  'tool.export': 'Export', 'tool.csv': 'CSV report', 'tool.pdf': 'PDF report', 'tool.share': 'Share link', 'tool.bib': 'Clean bibliography',
+  // bibliography
+  'bib.title': 'Clean bibliography', 'bib.lede': 'Built from your decisions. Entries without a decision stay exactly as you wrote them.', 'bib.style': 'Style',
+  'bib.summary': '{record} replaced · {removed} removed · {original} as written', 'bib.copy': 'Copy', 'bib.copied': 'Copied', 'bib.txt': 'Download .txt', 'bib.bib': 'Download .bib', 'bib.ris': 'Download .ris',
+  'bib.note': 'The .bib and .ris files contain only the records you adopted. Entries kept as written are in the .txt file.',
+  'bib.empty': 'Nothing is left to show. Every entry was removed.', 'bib.formatting': 'Formatting…', 'bib.verifiedAll': 'Use the record for all verified entries', 'bib.verifiedDone': 'Done. Verified entries now use their records.',
+  'bib.log': 'Change log', 'bib.log.replaced': 'Replaced with a record', 'bib.log.removed': 'Removed', 'bib.log.unresolved': 'Unresolved, left as written', 'bib.log.kept': 'Kept as written on purpose',
+  'bib.log.empty': 'No changes yet.', 'bib.candidate': 'candidate, not verified', 'bib.logDl': 'Download change log', 'bib.error': 'The bibliography could not be formatted.', 'bib.original': 'as written',
+  // share
+  'share.title': 'Share this report', 'share.warn': 'This link contains the text of your references, compressed into the part of the address after #. That part is never sent to a server, but anyone you give the link to can read the references. Do not share it if they are confidential.',
+  'share.copy': 'Copy link', 'share.copied': 'Link copied', 'share.tooLong': 'This run is too long for a link', 'share.tooLongBody': 'The compressed run is longer than 8,000 characters, so a link would break in many apps. Download a .bibproof.json file instead. Anyone can open it with Import on the History page.',
+  'share.download': 'Download .bibproof.json', 'share.copyFail': 'Clipboard unavailable. Select the link and copy it.', 'share.link': 'Link',
+  'shared.title': 'Shared report', 'shared.banner': 'Made on {date}. It has not been re-checked since, so records and retractions may have changed.', 'shared.recheck': 'Re-check these references',
+  'shared.invalid': 'This link could not be read. It may be cut off, or it was not made by Bibproof.', 'shared.readonly': 'Read-only. Everything below is shown as plain text.', 'shared.record': 'Record', 'shared.decision': 'Decision', 'shared.none': 'No decision',
+  'shared.home': 'Go to the checker',
+  // history
+  'hist.title': 'History', 'hist.private': 'Saved on this device only, in this browser. Nothing is uploaded. Bibproof keeps the last 50 runs: the reference text, the results and your decisions, never the document itself.',
+  'hist.empty': 'No saved runs yet. A run is saved here when it finishes.', 'hist.open': 'Open', 'hist.delete': 'Delete', 'hist.clear': 'Clear all history', 'hist.confirm': 'Delete all saved runs', 'hist.cancel': 'Keep them',
+  'hist.import': 'Import a .bibproof.json file', 'hist.importFail': 'That file is not a Bibproof run file, or it is damaged.', 'hist.blocked': 'This browser is blocking storage. Runs are kept only until you close this tab.',
+  'hist.run_one': '{n} reference · {action} need action', 'hist.run_other': '{n} references · {action} need action', 'hist.deleted': 'Run deleted.', 'hist.cleared': 'History cleared.',
+  'hist.refs': 'References', 'hist.when': 'Run on {date}',
+  // sections
+  'how.eyebrow': 'How it works', 'how.title': 'Six verdicts, each one explained.',
+  'how.1.h': 'Read on your device', 'how.1.p': 'The reference section is found in your pasted text, Word file, PDF, BibTeX or RIS file, and split into individual entries.',
+  'how.2.h': 'Look up the record', 'how.2.p': 'A DOI or arXiv id is resolved directly. Anything else is searched at Crossref, then OpenAlex, Europe PMC and Open Library when Crossref has no strong match.',
+  'how.3.h': 'Compare field by field', 'how.3.p': 'Title, authors, year and venue are compared against your original text, so a real author list on an invented title, or a real DOI on the wrong paper, shows up.',
+  'how.4.h': 'Decide with evidence', 'how.4.p': 'Every verdict links the source record and shows what you wrote against what the record says. Keep, replace or remove each entry, then export a clean bibliography.',
+  'how.note': 'A genuine paper flagged as fabricated is the worst error, so Bibproof only says “No record found” after at least two indexes have answered. An index that is down or out of budget leads to “Could not check”, never to an accusation.',
+  'trust.eyebrow': 'Trust', 'trust.title': 'What Bibproof checks, and what it does not',
+  'trust.checked.h': 'Checked', 'trust.checked.p': 'Whether each reference exists in Crossref, DataCite, OpenAlex, Europe PMC or Open Library, whether title, authors, year and DOI agree with the record, and whether the record is marked retracted.',
+  'trust.not.h': 'Not checked', 'trust.not.p': 'Whether a source supports the claim you cite it for. A verified reference can still be misused, and a missing record can still be real.',
+  'trust.privacy.h': 'Privacy', 'trust.privacy.p': 'Your file is read on this device and never uploaded. Only the text of each reference goes to the public indexes. No account, no analytics, no cookies.',
+  'trust.stats': 'On a held-out test, {fa} of {n} genuine citations were wrongly flagged as fabricated, and {rate} of synthetic fabrications were caught.', 'trust.method': 'Read the methodology and the full results',
+  'privacy.eyebrow': 'Privacy', 'privacy.title': 'Your document stays on your device.',
+  'privacy.statement': 'Your file is read on your device and never uploaded. Only the text of each individual reference is sent to public scholarly indexes: Crossref, DataCite, OpenAlex, Europe PMC and Open Library.',
+  'privacy.1': 'No account, no sign-up, no analytics, no cookies, and no API keys.', 'privacy.2': 'No server of ours is involved. The site is static files; your browser talks to the indexes directly.',
+  'privacy.3': 'Lookups are cached in this browser for seven days so a re-run is instant. Saved runs live on this device only.', 'privacy.clear': 'Clear cached lookups', 'privacy.cleared': 'Cache cleared',
+  'foot.tag': 'Every reference, proven before you submit. MIT licensed, built with AI coding assistance.', 'foot.src': 'Source code on GitHub ↗', 'foot.libs': 'Open-source libraries',
+  'foot.libs.p': 'pdf.js (Apache-2.0), mammoth (BSD-2-Clause), Citation.js (MIT), React and Vite (MIT), Radix UI (MIT), TanStack Virtual (MIT), lz-string (MIT), and the CSL styles for MLA, Chicago and IEEE (CC BY-SA). Type: Newsreader and Inter (SIL OFL).',
+  'foot.idx': 'Scholarly indexes', 'foot.idx.p': 'Records come from Crossref, DataCite, OpenAlex, Europe PMC and Open Library. Retraction flags depend on their metadata.',
+  // print
+  'print.title': 'Bibproof reference report', 'print.summary': '{done} of {total} references checked', 'print.record': 'Record', 'print.idPoints': 'Identifier points to', 'print.nearest': 'Nearest record',
+  'print.agrees': 'agrees', 'print.differs': 'differs (you wrote “{w}”; record: “{r}”)', 'print.cross': 'In-text citations', 'print.crossBody': 'Cited without an entry: {missing}. Listed but never cited: {uncited}.', 'print.none': 'none',
+  'print.foot': 'Verdicts describe index metadata, not scientific claims. “No record found” means no close match in the indexes that answered; check by hand before deciding a reference is fabricated.',
+  // methodology
+  'm.eyebrow': 'Transparent by design', 'm.title': 'Evidence, not intuition.', 'm.lead': 'A reference deserves more than a confidence score. Here is exactly what Bibproof checks, and where it stops.',
+  'm.verdicts': 'Six verdicts. No hidden score.',
+  'm.mean.Verified': 'An indexed title and author list agree with your reference. This checks metadata, not the scientific claims.',
+  'm.mean.Details differ': 'A nearby work exists, but one or more fields disagree. An author mismatch can indicate a chimera. Review the field-level comparison.',
+  'm.mean.Identifier conflict': 'The supplied DOI or arXiv identifier resolves to a different work. Both records are shown when a closer title match is available.',
+  'm.mean.Retracted': 'The matched work is marked retracted by Crossref or OpenAlex. Retraction takes priority over other verdicts; read the notice.',
+  'm.mean.No record found': 'No close match after all queried indexes answered. Likely fabricated, check by hand. Index coverage is incomplete, so this is not proof of fabrication.',
+  'm.mean.Could not check': 'An index was unreachable, its budget was exhausted, or the reference is outside supported coverage. This is never counted as a fake.',
+  'm.flow': 'From reference to record',
+  'm.s1': 'Read locally.', 'm.s1p': 'Extract a bibliography from pasted text, PDF, DOCX, BibTeX, RIS, or text. Rebuild PDF lines and columns. Scanned PDFs need external OCR.',
+  'm.s2': 'Resolve, then search.', 'm.s2p': 'Try a DOI at Crossref, then DataCite; resolve arXiv through OpenAlex. Search Crossref for up to five candidates. If there is no strong match, consult OpenAlex and Europe PMC, plus Open Library for books.',
+  'm.s3': 'Compare the evidence.', 'm.s3p': 'Compare title tokens, surnames, year, and venue against the original entry. A ±1 year difference accommodates online-first publication. Title containment ≥88% and author overlap ≥70% define a strong candidate; approximate matches still require review.',
+  'm.s4': 'Check for retraction.', 'm.s4p': 'Inspect Crossref’s retraction relations and OpenAlex’s retracted flag. Missing or delayed notices remain a limitation.',
+  'm.s5': 'Check the document.', 'm.s5p': 'When a reference-section heading is present, compare numeric and author–year in-text citations with the bibliography, and list the sentences that cite each flagged entry. Ambiguous names, footnotes, and nonstandard styles need review.',
+  'm.measured': 'Measured, not promised.', 'm.live': 'Live-network evaluation',
+  'm.setup': 'Held-out seed {seed}; tuning seed {tuning}. {works} real works across six subject queries, each in APA, MLA, IEEE and Vancouver ({trials} formatting trials), plus {fab} synthetic fabrications. Measured {date}.',
+  'm.fa': 'False accusation rate', 'm.fa.sub': '{n} / {total} genuine trials', 'm.det': 'Synthetic detection rate', 'm.det.sub': 'Warnings or conflicts included', 'm.abst': 'Could not check', 'm.abst.sub': 'Included in denominators',
+  'm.matrix': 'Full confusion matrix · ground truth × verdict', 'm.truth': 'Ground truth', 'm.class': '{group}: {detected}/{total} ({rate}), {abstained} unavailable.',
+  'm.fine': 'A false accusation means a genuine citation received “No record found.” Detection includes “Details differ,” which is a review warning, not proof of fabrication. Formats of the same work are correlated. The fixed topical sample, Latin-script filter, and using Crossref for both sampling and lookup limit generalisation. These are not population-wide accuracy claims.',
+  'm.neurips': 'GPTZero’s public NeurIPS set', 'm.neurips.rest': 'reported separately: {detected}/{total} flagged ({rate}). Labels are the publisher’s claims, not independently adjudicated here.', 'm.neurips.none': 'Public NeurIPS set: {reason}.', 'm.neurips.na': 'Not included in this run',
+  'm.real': 'References as real authors typed them: {total} deposited reference strings from published articles, identifiers removed. {fa} false accusations; {accepted} matched, {abst} could not be checked. The first held-out run had one false accusation: a preprint cited under a title that differs from its record. A new rule now returns “Details differ” for it, so this set no longer counts as unseen.',
+  'm.github': 'Inspect the evaluation code and raw results on GitHub ↗', 'm.failed': 'Evaluation data could not be loaded. Run npm run eval to regenerate the measured report.', 'm.loading': 'Loading measured results…',
+  'm.limits': 'Limits worth knowing',
+  'm.limits1': 'Books, reports, websites, statutes, preprints, non-Latin scripts, and incomplete citations have uneven coverage. Title changes, common surnames, abbreviated venues, transliteration, and PDF layout errors can confuse matching. A verified reference can still support an incorrect claim. A missing record can still be real.',
+  'm.limits2': 'Crossref requests are serialized at no more than one per second. Other hosts have independent queues. We honour rate-limit backoff. OpenAlex searches are reserved for fallback; its shared anonymous budget may be exhausted. Successful metadata responses are cached locally for seven days, so cached retraction status can lag. Clear the cache to force fresh checks.',
+  'm.limits3': 'Hand-check links for CNKI, Wanfang, Baidu Scholar and Google Scholar are plain search links that open only when you click them. Bibproof does not read those sites.',
+} as const;
+type Dict = Record<keyof typeof en, string>;
+
+export const zh: Dict = {
+  'skip': '跳到正文', 'nav.primary': '主导航', 'nav.check': '核查', 'nav.history': '历史', 'nav.method': '方法说明',
+  'brand.home': 'Bibproof，首页', 'github': 'Bibproof 的 GitHub 仓库', 'lang.toggle': 'EN', 'lang.aria': '切换为英文界面',
+  'theme.toLight': '切换为浅色主题', 'theme.toDark': '切换为深色主题', 'loading': '加载中…',
+  'title.home': 'Bibproof · 逐条核查参考文献', 'title.method': '方法说明 · Bibproof', 'title.history': '历史 · Bibproof', 'title.shared': '分享的报告 · Bibproof',
+  'hero.a': '每一条参考文献，', 'hero.b': '查证', 'hero.c': '之后再提交。',
+  'hero.lede': '粘贴参考文献、拖入论文，或输入一个 DOI。每条引用都会对照学术记录检查，并附上证据。',
+  'tabs.label': '选择提供参考文献的方式', 'tabs.paste': '粘贴', 'tabs.file': '文件', 'tabs.doi': 'DOI',
+  'paste.label': '参考文献或整篇文档',
+  'paste.placeholder': '在这里粘贴参考文献，每条一段：\n\n[1] Vaswani, A., et al. (2017). Attention is all you need. NeurIPS.\n[2] He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. CVPR.\n\n也可以粘贴整篇论文。Bibproof 会找到参考文献部分，并交叉核对正文里的引用。',
+  'file.drop': '把文件拖到这里', 'file.or': '或', 'file.choose': '选择文件', 'file.formats': '.docx  .pdf  .bib  .ris  .txt', 'file.aria': '上传 .docx、.pdf、.bib、.ris 或 .txt 文件',
+  'file.reading': '正在本机读取…', 'file.done': '{name} 已在本机读取。', 'file.replace': '换一个文件',
+  'doi.label': 'DOI 或 doi.org 链接', 'doi.placeholder': '10.1038/nature14539', 'doi.hint': '只填一个标识符，直接解析，不需要其他信息。',
+  'cta.check': '核查参考文献', 'cta.sample': '试用示例', 'cta.checkDoi': '核查这个 DOI',
+  'hero.trust': '无需账号，不限条数。文件只在本机读取；只有每条参考文献的文字会发往公开的学术索引去查询。',
+  'detected_one': '识别到 {n} 条参考文献', 'detected_other': '识别到 {n} 条参考文献', 'detected.doc': '，来自完整文档，将同时核对正文引用。', 'detected.list': '。',
+  'status.idle': '在本机读取。只有每条参考文献的文字会发往公开的学术索引。',
+  'err.none': '没有找到参考文献。请粘贴参考文献列表或带有“References”标题的文档，或选择一个文件。',
+  'err.doi': '请输入 DOI，例如 10.1038/nature14539。', 'err.file': '无法读取这个文件。', 'err.ext': '请选择 .pdf、.docx、.bib、.ris 或 .txt 文件。',
+  'demo.title': '从一条引用到一个结论', 'demo.before': '原文写法', 'demo.after': 'Bibproof 查到的结果', 'demo.you': '你写的', 'demo.record': '记录中的信息',
+  'demo.field': '年份', 'demo.source': '来源记录', 'demo.note': '内置示例中的真实条目，对照 Crossref 核查。',
+  'prog.done_one': '已核查 {n} 条参考文献。', 'prog.done_other': '已核查 {n} 条参考文献。',
+  'bar.running': '正在核查，第 {done} 条，共 {total} 条…', 'bar.new': '重新核查', 'bar.cancel': '取消', 'bar.stopped': '已停止。已核查 {done} 条，共 {total} 条。',
+  'sum.action_one': '有 {n} 条需要处理。', 'sum.action_other': '有 {n} 条需要处理。',
+  'sum.allgood_one': '这条参考文献已核实。', 'sum.allgood_other': '全部 {n} 条参考文献均已核实。',
+  'sum.sofar_one': '目前有 {n} 条需要处理。', 'sum.sofar_other': '目前有 {n} 条需要处理。',
+  'sum.none': '每核查完一条，结果就会出现在这里。',
+  'sum.detail': '凡是不是“已核实”的条目都值得看一眼。打开一行即可查看证据并决定怎么处理。',
+  'filter.group': '按结论筛选', 'filter.all': '全部', 'sort.label': '排序', 'sort.severity': '按严重程度', 'sort.document': '按文中顺序',
+  'list.aria': '参考文献', 'list.empty': '没有这个结论的参考文献。', 'list.waiting': '等待第一条结果…',
+  'state.queued': '等待中', 'state.running': '核查中', 'state.skipped': '未核查',
+  'v.Verified': '已核实', 'v.Details differ': '信息有出入', 'v.Identifier conflict': '标识符冲突', 'v.Retracted': '已撤稿', 'v.No record found': '查无记录', 'v.Could not check': '无法核查',
+  'vs.Verified': '找到记录，标题和作者一致', 'vs.Details differ': '这篇文献存在，但部分字段不一致', 'vs.Identifier conflict': 'DOI 或 arXiv 编号指向另一篇文献',
+  'vs.Retracted': '匹配到的文献已被撤稿', 'vs.No record found': '在已响应的索引中没有相近的记录', 'vs.Could not check': '覆盖不足，无法下结论',
+  'note.matched': '匹配记录：{cite}', 'note.closest': '最接近的记录：{cite}', 'note.identifier': '标识符指向：{cite}',
+  'dec.group': '你对这条参考文献的处理', 'dec.keep': '保留原文', 'dec.record': '采用记录', 'dec.remove': '删除',
+  'dec.tag.keep': '已保留', 'dec.tag.record': '已采用记录', 'dec.tag.remove': '已删除', 'dec.tag.candidate': '候选', 'dec.unresolved': '待处理',
+  'dec.none': '还没有决定。这条会保持原文，并列为“待处理”。', 'dec.noneOk': '无需处理，这条会保持原文。',
+  'dec.noRecord': '这条没有可采用的记录。', 'dec.clear': '清除决定',
+  'alt.title': '相近的真实记录', 'alt.lede': '这些是措辞相近的真实记录。候选记录未经核实：使用之前请先读一遍。', 'alt.use': '采用这条候选', 'alt.using': '已采用这条候选',
+  'fix.status': '已决定 {made} 条 · 待处理 {open} 条', 'fix.next': '下一条待处理', 'fix.review': '干净书目', 'fix.allDone': '所有被标记的参考文献都已处理。',
+  'fix.hint': '快捷键：j / k 移动，u 采用记录，o 保留原文，x 删除，? 帮助', 'fix.group': '处理队列',
+  'kb.title': '键盘快捷键', 'kb.next': '下一条', 'kb.prev': '上一条', 'kb.use': '采用记录', 'kb.keep': '保留原文', 'kb.remove': '删除', 'kb.help': '显示这个列表',
+  'kb.note': '再按一次同一个决定键会清除该决定。在输入框里打字时快捷键不会生效。', 'close': '关闭',
+  'ev.title': '证据', 'ev.empty': '选择一条参考文献，查看它的证据。', 'ev.back': '返回列表',
+  'ev.written': '原文写法', 'ev.matched': '匹配的来源记录', 'ev.identifier': '你写的标识符指向', 'ev.closest': '标题最接近的记录，使用前请复核', 'ev.nearest': '你是不是想找？最接近的结果，并非确认匹配',
+  'ev.fields': '逐字段证据', 'ev.field': '字段', 'ev.wrote': '你写的', 'ev.says': '记录中的信息',
+  'ev.agrees': '一致', 'ev.differs': '不一致', 'ev.uncertain': '不确定', 'ev.retraction': '阅读撤稿声明',
+  'ev.trail': '索引查询记录', 'ev.records_one': '{n} 条记录', 'ev.records_other': '{n} 条记录', 'ev.cached': '来自缓存', 'ev.unavailable': '无响应', 'ev.query': '查询依据',
+  'ev.noIndex': '没有向学术索引发出请求：这条超出了支持的范围。', 'ev.openSource': '打开原始来源',
+  'ev.checked': '核查时间 {date}。撤稿覆盖取决于索引的元数据；没有标记不代表保证。',
+  'ev.corrected': '更正后的参考文献', 'ev.copy': '复制', 'ev.copied': '已复制', 'ev.formatting': '正在生成格式…', 'ev.review': '使用这条更正之前，请复核匹配到的文献和所有提示。',
+  'ev.clipboard': '无法访问剪贴板。请手动选中并复制文字。', 'ev.styleFail': '无法加载引用格式。', 'ev.style': '更正格式',
+  'ev.noDoi': '年份缺失',
+  'cite.title': '正文中引用它的地方', 'cite.local': '在本机从文档正文中找到。', 'cite.more_one': '另有 {n} 句未显示。', 'cite.more_other': '另有 {n} 句未显示。',
+  'cite.none': '没有检测到引用这一条的句子。它可能确实没被引用，也可能用了 Bibproof 读不到的方式，例如脚注。',
+  'cite.nodoc': '这份文档里没有找到受支持格式的正文引用，因此无法列出引用句。',
+  'hc.title': '手动查证', 'hc.lede': '自己搜索这个标题。这些链接只有你点击时才会打开，Bibproof 不会从这些网站抓取任何内容。', 'hc.cn': '中文文献：建议先查知网或万方。',
+  'cross.title': '正文引用', 'cross.none': '未检测到正文引用', 'cross.style': '{style}格式', 'cross.ok': '每处正文引用都有对应的参考文献，每条参考文献也都被引用了。',
+  'cross.missing': '正文引用了，但参考文献里没有', 'cross.uncited': '参考文献里有，但正文从未引用', 'cross.noneLine': '无。',
+  'cross.listOnly': '已当作参考文献列表处理。正文引用核对需要带有“References”标题的完整文档。',
+  'cross.note.heuristic': '这是启发式检查。脚注、有歧义的作者名和少见的格式可能需要人工复核。', 'cross.note.none': '没有检测到受支持的正文引用，无法推断哪些条目未被使用。',
+  'cross.style.Numeric': '数字编号', 'cross.style.Author–year': '作者—年份', 'cross.style.Mixed': '混合', 'cross.style.Not detected': '未检测到',
+  'tool.export': '导出', 'tool.csv': 'CSV 报告', 'tool.pdf': 'PDF 报告', 'tool.share': '分享链接', 'tool.bib': '干净书目',
+  'bib.title': '干净书目', 'bib.lede': '根据你的决定生成。没有做决定的条目会保持你写的原样。', 'bib.style': '格式',
+  'bib.summary': '已替换 {record} 条 · 已删除 {removed} 条 · 保持原文 {original} 条', 'bib.copy': '复制', 'bib.copied': '已复制', 'bib.txt': '下载 .txt', 'bib.bib': '下载 .bib', 'bib.ris': '下载 .ris',
+  'bib.note': '.bib 和 .ris 文件只包含你采用的记录。保持原文的条目在 .txt 文件里。',
+  'bib.empty': '没有可显示的内容，所有条目都已删除。', 'bib.formatting': '正在生成格式…', 'bib.verifiedAll': '为所有已核实条目采用记录', 'bib.verifiedDone': '完成。已核实的条目现在使用对应的记录。',
+  'bib.log': '改动清单', 'bib.log.replaced': '已替换为记录', 'bib.log.removed': '已删除', 'bib.log.unresolved': '待处理，保持原文', 'bib.log.kept': '有意保留原文',
+  'bib.log.empty': '还没有改动。', 'bib.candidate': '候选，未经核实', 'bib.logDl': '下载改动清单', 'bib.error': '无法生成书目格式。', 'bib.original': '原文',
+  'share.title': '分享这份报告', 'share.warn': '这个链接包含你的参考文献文字，已压缩进地址中 # 之后的部分。该部分不会发送到任何服务器，但拿到链接的人都能读到这些参考文献。如果内容是保密的，请不要分享。',
+  'share.copy': '复制链接', 'share.copied': '链接已复制', 'share.tooLong': '这次核查太长，放不进链接', 'share.tooLongBody': '压缩后的内容超过 8,000 个字符，链接在很多应用里会失效。请改为下载 .bibproof.json 文件，对方可以在“历史”页用“导入”打开。',
+  'share.download': '下载 .bibproof.json', 'share.copyFail': '无法访问剪贴板。请手动选中链接并复制。', 'share.link': '链接',
+  'shared.title': '分享的报告', 'shared.banner': '生成于 {date}。之后没有重新核查，记录和撤稿状态可能已经变化。', 'shared.recheck': '重新核查这些参考文献',
+  'shared.invalid': '无法读取这个链接。它可能被截断了，或者不是 Bibproof 生成的。', 'shared.readonly': '只读。下面的所有内容都以纯文本显示。', 'shared.record': '记录', 'shared.decision': '决定', 'shared.none': '无决定',
+  'shared.home': '前往核查页面',
+  'hist.title': '历史', 'hist.private': '只保存在这台设备的这个浏览器里，不会上传任何内容。Bibproof 保留最近 50 次核查：参考文献文字、结果和你的决定，绝不保存文档本身。',
+  'hist.empty': '还没有保存的核查。每次核查完成后会保存在这里。', 'hist.open': '打开', 'hist.delete': '删除', 'hist.clear': '清空全部历史', 'hist.confirm': '删除所有已保存的核查', 'hist.cancel': '保留',
+  'hist.import': '导入 .bibproof.json 文件', 'hist.importFail': '这个文件不是 Bibproof 的核查文件，或者已损坏。', 'hist.blocked': '这个浏览器阻止了存储。核查记录只会保留到你关闭此标签页。',
+  'hist.run_one': '{n} 条参考文献 · {action} 条需要处理', 'hist.run_other': '{n} 条参考文献 · {action} 条需要处理', 'hist.deleted': '已删除这次核查。', 'hist.cleared': '历史已清空。',
+  'hist.refs': '参考文献', 'hist.when': '核查于 {date}',
+  'how.eyebrow': '工作原理', 'how.title': '六种结论，每一种都有解释。',
+  'how.1.h': '在本机读取', 'how.1.p': '从你粘贴的文字、Word、PDF、BibTeX 或 RIS 文件里找到参考文献部分，并拆成单独的条目。',
+  'how.2.h': '查找记录', 'how.2.p': 'DOI 或 arXiv 编号直接解析；其他条目先在 Crossref 搜索，没有强匹配时再查 OpenAlex、Europe PMC 和 Open Library。',
+  'how.3.h': '逐字段比对', 'how.3.p': '把标题、作者、年份和刊名与你写的原文逐项比较，所以真实作者配上编造标题、真实 DOI 配上错误论文，都会被发现。',
+  'how.4.h': '凭证据做决定', 'how.4.p': '每个结论都附上来源记录，并列出你写的和记录里的差别。逐条选择保留、替换或删除，最后导出干净书目。',
+  'how.note': '把真实论文误判为伪造是最糟糕的错误，所以只有至少两个索引都响应后，Bibproof 才会说“查无记录”。索引宕机或额度用完时，结论是“无法核查”，不会指控。',
+  'trust.eyebrow': '可信度', 'trust.title': 'Bibproof 查什么，不查什么',
+  'trust.checked.h': '查什么', 'trust.checked.p': '每条参考文献是否存在于 Crossref、DataCite、OpenAlex、Europe PMC 或 Open Library；标题、作者、年份和 DOI 是否与记录一致；记录是否被标记为撤稿。',
+  'trust.not.h': '不查什么', 'trust.not.p': '来源是否支持你引用它所要说明的论点。已核实的文献仍可能被误用，查不到记录的文献也可能是真的。',
+  'trust.privacy.h': '隐私', 'trust.privacy.p': '文件只在本机读取，不会上传。只有每条参考文献的文字会发往公开索引。无需账号，无统计分析，无 Cookie。',
+  'trust.stats': '在预留测试集上，{n} 条真实引用中有 {fa} 条被误判为伪造；合成的伪造引用有 {rate} 被查出。', 'trust.method': '阅读方法说明和完整结果',
+  'privacy.eyebrow': '隐私', 'privacy.title': '你的文档不会离开你的设备。',
+  'privacy.statement': '文件在你的设备上读取，从不上传。只有每条参考文献的文字会发往公开的学术索引：Crossref、DataCite、OpenAlex、Europe PMC 和 Open Library。',
+  'privacy.1': '无需账号、无需注册，没有统计分析，没有 Cookie，也不需要 API 密钥。', 'privacy.2': '不涉及我们的任何服务器。网站只是静态文件，由你的浏览器直接访问各个索引。',
+  'privacy.3': '查询结果在这个浏览器里缓存七天，重新核查会立刻出结果。保存的核查记录只存在这台设备上。', 'privacy.clear': '清除缓存的查询', 'privacy.cleared': '缓存已清除',
+  'foot.tag': '每一条参考文献，查证之后再提交。MIT 许可，借助 AI 编程助手构建。', 'foot.src': 'GitHub 源代码 ↗', 'foot.libs': '开源库',
+  'foot.libs.p': 'pdf.js（Apache-2.0）、mammoth（BSD-2-Clause）、Citation.js（MIT）、React 和 Vite（MIT）、Radix UI（MIT）、TanStack Virtual（MIT）、lz-string（MIT），以及 MLA、Chicago、IEEE 的 CSL 样式（CC BY-SA）。字体：Newsreader 和 Inter（SIL OFL）。',
+  'foot.idx': '学术索引', 'foot.idx.p': '记录来自 Crossref、DataCite、OpenAlex、Europe PMC 和 Open Library。撤稿标记取决于它们的元数据。',
+  'print.title': 'Bibproof 参考文献核查报告', 'print.summary': '已核查 {done} 条，共 {total} 条', 'print.record': '记录', 'print.idPoints': '标识符指向', 'print.nearest': '最接近的记录',
+  'print.agrees': '一致', 'print.differs': '不一致（你写的是“{w}”；记录是“{r}”）', 'print.cross': '正文引用', 'print.crossBody': '正文引用但无条目：{missing}。有条目但从未引用：{uncited}。', 'print.none': '无',
+  'print.foot': '结论描述的是索引元数据，而不是科学论断。“查无记录”表示在已响应的索引中没有相近的匹配；判定某条参考文献为伪造之前，请先手动核对。',
+  'm.eyebrow': '设计上就是透明的', 'm.title': '靠证据，不靠直觉。', 'm.lead': '一条参考文献不该只得到一个置信度分数。下面说明 Bibproof 具体查什么，以及它在哪里止步。',
+  'm.verdicts': '六种结论，没有隐藏的分数。',
+  'm.mean.Verified': '索引中的标题和作者与你的参考文献一致。这检查的是元数据，不是科学论断。',
+  'm.mean.Details differ': '存在相近的文献，但有一个或多个字段不一致。作者不符可能说明引用是“拼接”出来的。请查看逐字段对比。',
+  'm.mean.Identifier conflict': '你写的 DOI 或 arXiv 编号指向另一篇文献。有更接近的标题匹配时，两条记录都会显示。',
+  'm.mean.Retracted': '匹配到的文献在 Crossref 或 OpenAlex 中被标记为撤稿。撤稿优先于其他结论；请阅读撤稿声明。',
+  'm.mean.No record found': '所有被查询的索引都响应了，仍没有相近的匹配。很可能是伪造的，请手动核对。索引覆盖并不完整，所以这不能证明它是伪造的。',
+  'm.mean.Could not check': '某个索引无法访问、额度用完，或者这条参考文献超出支持范围。这种情况绝不会被算作伪造。',
+  'm.flow': '从参考文献到记录',
+  'm.s1': '在本机读取。', 'm.s1p': '从粘贴的文字、PDF、DOCX、BibTeX、RIS 或文本文件中提取参考文献，重建 PDF 的行与分栏。扫描版 PDF 需要先做 OCR。',
+  'm.s2': '先解析，再搜索。', 'm.s2p': 'DOI 先查 Crossref，再查 DataCite；arXiv 通过 OpenAlex 解析。在 Crossref 搜索最多五个候选。没有强匹配时，再查 OpenAlex 和 Europe PMC，图书还会查 Open Library。',
+  'm.s3': '比对证据。', 'm.s3p': '把标题词、姓氏、年份和刊名与原条目比较。允许 ±1 年的差异，以容纳在线优先出版。标题包含度 ≥88% 且作者重合度 ≥70% 才算强候选；近似匹配仍需人工复核。',
+  'm.s4': '检查撤稿。', 'm.s4p': '检查 Crossref 的撤稿关系和 OpenAlex 的撤稿标记。撤稿声明缺失或延迟仍是局限。',
+  'm.s5': '检查整篇文档。', 'm.s5p': '文档中有参考文献标题时，把数字编号和作者—年份形式的正文引用与书目对照，并列出引用每条被标记条目的句子。有歧义的姓名、脚注和非标准格式需要人工复核。',
+  'm.measured': '有实测，不空口承诺。', 'm.live': '联网实测评估',
+  'm.setup': '预留种子 {seed}；调参种子 {tuning}。覆盖六个主题检索的 {works} 篇真实文献，每篇分别按 APA、MLA、IEEE、Vancouver 四种格式（共 {trials} 次格式试验），另有 {fab} 条合成的伪造引用。测量于 {date}。',
+  'm.fa': '误判为伪造的比例', 'm.fa.sub': '{n} / {total} 次真实引用试验', 'm.det': '合成伪造的检出率', 'm.det.sub': '含警告与冲突', 'm.abst': '无法核查', 'm.abst.sub': '已计入分母',
+  'm.matrix': '完整混淆矩阵 · 真实情况 × 结论', 'm.truth': '真实情况', 'm.class': '{group}：{detected}/{total}（{rate}），{abstained} 条无法判断。',
+  'm.fine': '误判为伪造指的是一条真实引用得到了“查无记录”。检出包含“信息有出入”，那只是复核提示，不能证明伪造。同一篇文献的不同格式之间是相关的。固定的主题样本、拉丁字母过滤，以及抽样和查询都用 Crossref，限制了结论的推广。这些不是对全体文献的准确率声明。',
+  'm.neurips': 'GPTZero 公开的 NeurIPS 数据集', 'm.neurips.rest': '单独报告：标出 {detected}/{total}（{rate}）。标签是发布方的说法，这里没有独立裁定。', 'm.neurips.none': '公开 NeurIPS 数据集：{reason}。', 'm.neurips.na': '本次未纳入',
+  'm.real': '真实作者手写的参考文献：{total} 条来自已发表文章的参考文献字符串，已去除标识符。误判为伪造 {fa} 条；匹配 {accepted} 条，无法核查 {abst} 条。第一次预留测试出现过一次误判：一篇预印本用了与记录不同的标题。现在新增规则会给它“信息有出入”，因此这组数据不再算未见过的数据。',
+  'm.github': '在 GitHub 查看评测代码和原始结果 ↗', 'm.failed': '无法加载评测数据。运行 npm run eval 可重新生成实测报告。', 'm.loading': '正在加载实测结果…',
+  'm.limits': '需要了解的局限',
+  'm.limits1': '图书、报告、网页、法规、预印本、非拉丁文字和不完整的引用，覆盖并不均匀。标题改动、常见姓氏、缩写刊名、音译和 PDF 版面错误都会干扰匹配。已核实的文献仍可能支撑错误的论点。查不到记录的文献也可能是真的。',
+  'm.limits2': '对 Crossref 的请求串行进行，每秒不超过一次；其他主机各有独立队列，并遵守限速退避。OpenAlex 搜索只作后备，它的匿名共享额度可能已用完。成功的元数据响应在本机缓存七天，所以缓存中的撤稿状态可能滞后。清除缓存可强制重新核查。',
+  'm.limits3': '知网、万方、百度学术和 Google Scholar 的手动查证链接只是普通搜索链接，只有你点击才会打开，Bibproof 不会读取这些网站。',
+};
+
+const dicts: Record<Lang, Dict> = { en, 'zh-CN': zh };
+
+// ---- explanations from the verification core (display only; core keeps English) ----
+const EXACT: Record<string, string> = {
+  'This identifier did not resolve in the registries checked. That does not make it fake, because other registries exist. Try it at doi.org.': '在已查询的注册库中没有解析到这个标识符。这不代表它是假的，因为还有别的注册库。请到 doi.org 自己试一下。',
+  'This identifier resolves to a work marked as retracted in index metadata. Read the retraction notice before citing it.': '这个标识符指向的文献在索引元数据中被标记为已撤稿。引用之前请先阅读撤稿声明。',
+  'This identifier resolves to the record shown. You gave no other details to compare against it.': '这个标识符解析到下方显示的记录。你没有提供其他信息可供比对。',
+  'The matched work is marked as retracted in index metadata. Read the retraction notice before citing it.': '匹配到的文献在索引元数据中被标记为已撤稿。引用之前请先阅读撤稿声明。',
+  'The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.': '你写的标识符能解析，但它的标题与这条参考文献不一致。请查看标识符对应的记录，以及标题更接近的匹配。',
+  'A matching work exists, but the highlighted fields differ.': '存在匹配的文献，但高亮的字段不一致。',
+  'The indexed title and authors agree. Publication year allows a one-year online-first difference.': '索引中的标题和作者一致。出版年份允许 1 年的在线优先出版差异。',
+  'This entry gives no title, but its first author, volume and first page match the record.': '这条没有写标题，但第一作者、卷号和起始页与记录一致。',
+  'First author, volume and first page match this record, but the title you wrote differs from it.': '第一作者、卷号和起始页与这条记录一致，但你写的标题与它不同。',
+  'A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.': '存在标题相近的文献，但作者不一致。这可能是“拼接”出来的引用：请仔细核对作者列表。',
+  'A nearby work exists, but its metadata differs. Review the evidence before using a correction.': '存在相近的文献，但元数据不一致。使用更正之前请先查看证据。',
+  'Every author and the year match this record, but the title you wrote differs from it. Check which title is right.': '所有作者和年份都与这条记录一致，但你写的标题不同。请确认哪个标题是对的。',
+  'This looks like a web page, report, legal source or other item these indexes do not reliably cover, and no matching record turned up. Check it by hand.': '这看起来是网页、报告、法律文件或这些索引覆盖不可靠的其他类型，也没有找到匹配的记录。请手动核对。',
+  'This entry has too little text to search on: it gives no clear title. Check it by hand.': '这条的文字太少，无法检索：没有写出清晰的标题。请手动核对。',
+  // field-level text produced by the scorer
+  'Not supplied': '未提供', 'Not isolated; checked against full entry': '未能单独提取，已对照整条原文检查', 'See original reference': '见原文', 'Only an identifier was given': '只提供了标识符', 'No title in this entry': '这条没有标题',
+  'Identifier not registered in this index': '这个索引中没有登记该标识符', 'Unexpected response format; not evidence of absence.': '响应格式异常；这不能证明记录不存在。',
+  'Title': '标题', 'Authors': '作者', 'Year': '年份', 'Venue': '刊名', 'DOI': 'DOI',
+};
+const PATTERNS: [RegExp, (m: RegExpMatchArray) => string][] = [
+  [/^The check failed before an answer was available \((.*)\)\. No conclusion about existence is possible; try again\.$/s, m => `核查在得到结果之前就失败了（${m[1]}）。无法就文献是否存在下结论，请重试。`],
+  [/^(.*) could not answer, so no conclusion about existence is possible\. Retry later or check by hand\.$/s, m => `${m[1] === 'A required index' ? '有一个必需的索引' : m[1].replace(/ and /g, '和')}无法响应，因此无法就文献是否存在下结论。请稍后重试或手动核对。`],
+  [/^No matching record in (\d+) indexes\.( The author names also look like placeholders\.)? Likely fabricated, check by hand\.$/, m => `在 ${m[1]} 个索引中没有匹配的记录。${m[2] ? '作者姓名看起来也像占位符。' : ''}很可能是伪造的，请手动核对。`],
+];
+export function explain(text: string, lang: Lang): string {
+  if (lang === 'en' || !text) return text;
+  const hit = EXACT[text]; if (hit) return hit;
+  for (const [re, fn] of PATTERNS) { const m = text.match(re); if (m) return fn(m); }
+  return text;
+}
+
+// ---- language store ----
+function initial(): Lang {
+  try { const s = localStorage.getItem(KEY); if (s === 'en' || s === 'zh-CN') return s; } catch { /* storage blocked */ }
+  const nav = typeof navigator !== 'undefined' ? (navigator.languages?.[0] ?? navigator.language ?? 'en') : 'en';
+  return /^zh\b/i.test(nav) ? 'zh-CN' : 'en';
+}
+let current: Lang = initial();
+const listeners = new Set<() => void>();
+const apply = () => { if (typeof document !== 'undefined') document.documentElement.lang = current; };
+apply();
+export function setLang(next: Lang) {
+  current = next; apply();
+  try { localStorage.setItem(KEY, next); } catch { /* storage blocked */ }
+  listeners.forEach(l => l());
+}
+export const getLang = () => current;
+
+type Base<K> = K extends `${infer B}_one` | `${infer B}_other` ? B : K;
+export type Key = Base<keyof typeof en>;
+export type Vars = Record<string, string | number>;
+export function translate(lang: Lang, key: Key | string, vars?: Vars): string {
+  const d = dicts[lang] as Record<string, string>; const base = en as Record<string, string>;
+  let s: string | undefined;
+  if (vars && typeof vars.n === 'number') {
+    const plural = vars.n === 1 ? 'one' : 'other';
+    s = d[`${key}_${plural}`] ?? base[`${key}_${plural}`] ?? d[`${key}_other`];
+  }
+  s ??= d[key] ?? base[key] ?? key;
+  return vars ? s.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? `{${k}}`)) : s;
+}
+
+export function useI18n() {
+  const lang = useSyncExternalStore(cb => { listeners.add(cb); return () => { listeners.delete(cb); }; }, getLang, () => 'en' as Lang);
+  return {
+    lang,
+    t: (key: Key, vars?: Vars) => translate(lang, key, vars),
+    verdict: (v: Verdict) => translate(lang, `v.${v}`),
+    verdictShort: (v: Verdict) => translate(lang, `vs.${v}`),
+    explain: (text: string) => explain(text, lang),
+    date: (iso: string | number | Date) => new Date(iso).toLocaleString(lang === 'zh-CN' ? 'zh-CN' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short' }),
+    setLang,
+  };
+}

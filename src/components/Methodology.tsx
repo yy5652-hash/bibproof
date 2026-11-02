@@ -1,21 +1,47 @@
 import { useEffect, useState } from 'react';
 import { VERDICTS } from '../core/types';
-const meanings=[
-  'An indexed title and author list agree with your reference. This checks metadata, not the scientific claims.',
-  'A nearby work exists, but one or more fields disagree. An author mismatch can indicate a chimera. Review the field-level comparison.',
-  'The supplied DOI or arXiv identifier resolves to a different work. Both records are shown when a closer title match is available.',
-  'The matched work is marked retracted by Crossref or OpenAlex. Retraction takes priority over other verdicts; read the notice.',
-  'No close match after all queried indexes answered. Likely fabricated, check by hand. Index coverage is incomplete, so this is not proof of fabrication.',
-  'An index was unreachable, its budget was exhausted, or the reference is outside supported coverage. This is never counted as a fake.'
-];
-const percent=(n:number)=>`${(n*100).toFixed(1)}%`;
-export default function Methodology(){
-  const [report,setReport]=useState<any>(null);const [failed,setFailed]=useState(false);
-  useEffect(()=>{let active=true;import('../../eval/summary.json').then(r=>{if(active)setReport(r.default);}).catch(()=>{if(active)setFailed(true);});return()=>{active=false;};},[]);
-  return <article className="methodology"><div className="eyebrow">Transparent by design</div><h1>Evidence, not intuition.</h1><p className="lead">A reference deserves more than a confidence score. Here is exactly what Bibproof checks, and where it stops.</p>
-    <section><h2>Six verdicts. No hidden score.</h2><div className="definitions">{VERDICTS.map((v,i)=><div key={v}><h3>{v}</h3><p>{meanings[i]}</p></div>)}</div></section>
-    <section><h2>From reference to record</h2><ol className="steps"><li><strong>Read locally.</strong> Extract a bibliography from pasted text, PDF, DOCX, BibTeX, RIS, or text. Rebuild PDF lines and columns. Scanned PDFs need external OCR.</li><li><strong>Resolve, then search.</strong> Try a DOI at Crossref, then DataCite; resolve arXiv through OpenAlex. Search Crossref for up to five candidates. If there is no strong match, consult OpenAlex and Europe PMC, plus Open Library for books.</li><li><strong>Compare the evidence.</strong> Compare title tokens, surnames, year, and venue against the original entry. A ±1 year difference accommodates online-first publication. Title containment ≥88% and author overlap ≥70% define a strong candidate; approximate matches still require review.</li><li><strong>Check for retraction.</strong> Inspect Crossref’s retraction relations and OpenAlex’s retracted flag. Missing or delayed notices remain a limitation.</li><li><strong>Check the document.</strong> When a reference-section heading is present, compare numeric and author–year in-text citations with the bibliography. Ambiguous names, footnotes, and nonstandard styles need review.</li></ol></section>
-    <section><div className="section-line"><h2>Measured, not promised.</h2><span className="eyebrow">Live-network evaluation</span></div>{report?<><p>Held-out seed <strong>{report.seed}</strong>; tuning seed <strong>{report.tuningSeed}</strong>. {report.sampling.genuineWorks} real works across six subject queries, each in APA, MLA, IEEE and Vancouver ({report.sampling.genuineTrials} formatting trials), plus {report.sampling.fabricatedTrials} synthetic fabrications. Measured {new Date(report.runAt).toLocaleDateString('en-GB')}.</p><div className="eval-stats"><div><strong>{percent(report.metrics.falseAccusationRate)}</strong><span>False accusation rate<br/>{report.metrics.falseAccusations} / {report.metrics.genuineTotal} genuine trials</span></div><div><strong>{percent(report.metrics.detectionRate)}</strong><span>Synthetic detection rate<br/>Warnings or conflicts included</span></div><div><strong>{report.metrics.abstentions}</strong><span>Could not check<br/>Included in denominators</span></div></div><div className="table-wrap"><table><caption>Full confusion matrix · ground truth × verdict</caption><thead><tr><th scope="col">Ground truth</th>{VERDICTS.map(v=><th key={v} scope="col">{v}</th>)}</tr></thead><tbody>{Object.entries(report.confusionMatrix).map(([group,counts]:[string,any])=><tr key={group}><th scope="row">{group}</th>{VERDICTS.map(v=><td key={v}>{counts[v]}</td>)}</tr>)}</tbody></table></div><ul>{Object.entries(report.metrics.detectionByClass).map(([group,m]:[string,any])=><li key={group}>{group}: <strong>{m.detected}/{m.total} ({percent(m.rate)})</strong>, {m.abstained} unavailable.</li>)}</ul><p className="fine-print">A false accusation means a genuine citation received “No record found.” Detection includes “Details differ,” which is a review warning, not proof of fabrication. Formats of the same work are correlated. The fixed topical sample, Latin-script filter, and using Crossref for both sampling and lookup limit generalisation. These are not population-wide accuracy claims.</p>{report.optionalSet?.status==='completed'?<p><a href="https://gptzero.me/news/neurips/">GPTZero’s public NeurIPS set</a>, reported separately: {report.optionalSet.detected}/{report.optionalSet.total} flagged ({percent(report.optionalSet.detectionRate)}). Labels are the publisher’s claims, not independently adjudicated here.</p>:<p>Public NeurIPS set: {report.optionalSet?.reason??'Not included in this run'}.</p>}{report.realisticGenuine&&<p>References as real authors typed them: {report.realisticGenuine.total} deposited reference strings from published articles, identifiers removed. <strong>{report.realisticGenuine.falseAccusations} false accusations</strong>; {report.realisticGenuine.accepted} matched, {report.realisticGenuine.abstentions} could not be checked. The first held-out run had one false accusation: a preprint cited under a title that differs from its record. A new rule now returns “Details differ” for it, so this set no longer counts as unseen.</p>}<p><a href="https://github.com/yy5652-hash/bibproof">Inspect the evaluation code and raw results on GitHub ↗</a></p></>:<p>{failed?'Evaluation data could not be loaded. Run npm run eval to regenerate the measured report.':'Loading measured results…'}</p>}</section>
-    <section><h2>Limits worth knowing</h2><p>Books, reports, websites, statutes, preprints, non-Latin scripts, and incomplete citations have uneven coverage. Title changes, common surnames, abbreviated venues, transliteration, and PDF layout errors can confuse matching. A verified reference can still support an incorrect claim. A missing record can still be real.</p><p>Crossref requests are serialized at no more than one per second. Other hosts have independent queues. We honour rate-limit backoff. OpenAlex searches are reserved for fallback; its shared anonymous budget may be exhausted. Successful metadata responses are cached locally for seven days, so cached retraction status can lag. Clear the cache to force fresh checks.</p></section>
-  </article>;
+import { useI18n } from '../i18n';
+
+const percent = (n: number) => `${(n * 100).toFixed(1)}%`;
+export default function Methodology() {
+  const { t, lang } = useI18n();
+  const [report, setReport] = useState<any>(null); const [failed, setFailed] = useState(false);
+  useEffect(() => { let active = true; import('../../eval/summary.json').then(r => { if (active) setReport(r.default); }).catch(() => { if (active) setFailed(true); }); return () => { active = false; }; }, []);
+  const locale = lang === 'zh-CN' ? 'zh-CN' : 'en-GB';
+  return (
+    <article className="methodology page-narrow">
+      <div className="eyebrow">{t('m.eyebrow')}</div>
+      <h1>{t('m.title')}</h1>
+      <p className="lead">{t('m.lead')}</p>
+      <section><h2>{t('m.verdicts')}</h2>
+        <div className="definitions">{VERDICTS.map(v => <div key={v}><h3>{t(`v.${v}` as 'v.Verified')}</h3><p>{t(`m.mean.${v}` as 'm.mean.Verified')}</p></div>)}</div>
+      </section>
+      <section><h2>{t('m.flow')}</h2>
+        <ol className="steps">{([1, 2, 3, 4, 5] as const).map(n => <li key={n}><strong>{t(`m.s${n}` as 'm.s1')}</strong> {t(`m.s${n}p` as 'm.s1p')}</li>)}</ol>
+      </section>
+      <section>
+        <div className="section-line"><h2>{t('m.measured')}</h2><span className="eyebrow">{t('m.live')}</span></div>
+        {report ? <>
+          <p>{t('m.setup', { seed: report.seed, tuning: report.tuningSeed, works: report.sampling.genuineWorks, trials: report.sampling.genuineTrials, fab: report.sampling.fabricatedTrials, date: new Date(report.runAt).toLocaleDateString(locale) })}</p>
+          <div className="eval-stats">
+            <div><strong>{percent(report.metrics.falseAccusationRate)}</strong><span>{t('m.fa')}<br />{t('m.fa.sub', { n: report.metrics.falseAccusations, total: report.metrics.genuineTotal })}</span></div>
+            <div><strong>{percent(report.metrics.detectionRate)}</strong><span>{t('m.det')}<br />{t('m.det.sub')}</span></div>
+            <div><strong>{report.metrics.abstentions}</strong><span>{t('m.abst')}<br />{t('m.abst.sub')}</span></div>
+          </div>
+          <div className="table-wrap"><table><caption>{t('m.matrix')}</caption>
+            <thead><tr><th scope="col">{t('m.truth')}</th>{VERDICTS.map(v => <th key={v} scope="col">{t(`v.${v}` as 'v.Verified')}</th>)}</tr></thead>
+            <tbody>{Object.entries(report.confusionMatrix).map(([group, counts]: [string, any]) => <tr key={group}><th scope="row">{group}</th>{VERDICTS.map(v => <td key={v}>{counts[v]}</td>)}</tr>)}</tbody>
+          </table></div>
+          <ul>{Object.entries(report.metrics.detectionByClass).map(([group, m]: [string, any]) => <li key={group}>{t('m.class', { group, detected: m.detected, total: m.total, rate: percent(m.rate), abstained: m.abstained })}</li>)}</ul>
+          <p className="fine-print">{t('m.fine')}</p>
+          {report.optionalSet?.status === 'completed'
+            ? <p><a href="https://gptzero.me/news/neurips/">{t('m.neurips')}</a>, {t('m.neurips.rest', { detected: report.optionalSet.detected, total: report.optionalSet.total, rate: percent(report.optionalSet.detectionRate) })}</p>
+            : <p>{t('m.neurips.none', { reason: report.optionalSet?.reason ?? t('m.neurips.na') })}</p>}
+          {report.realisticGenuine && <p>{t('m.real', { total: report.realisticGenuine.total, fa: report.realisticGenuine.falseAccusations, accepted: report.realisticGenuine.accepted, abst: report.realisticGenuine.abstentions })}</p>}
+          <p><a href="https://github.com/yy5652-hash/bibproof" target="_blank" rel="noopener noreferrer">{t('m.github')}</a></p>
+        </> : <p>{failed ? t('m.failed') : t('m.loading')}</p>}
+      </section>
+      <section><h2>{t('m.limits')}</h2><p>{t('m.limits1')}</p><p>{t('m.limits2')}</p><p>{t('m.limits3')}</p></section>
+    </article>
+  );
 }

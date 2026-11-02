@@ -1,4 +1,7 @@
-import type { CheckResult, Work } from './types';
+import type { CheckResult, Verdict, Work } from './types';
+
+/** Most serious first. This is the default order of the results list. */
+export const SEVERITY: Verdict[] = ['Retracted', 'Identifier conflict', 'No record found', 'Details differ', 'Could not check', 'Verified'];
 
 /** What the person chose for one entry. No decision means the entry stays as written. */
 export type Decision = { kind: 'keep' } | { kind: 'record'; alt?: number } | { kind: 'remove' };
@@ -7,7 +10,7 @@ export interface PlanRow { id: number; raw: string; result?: CheckResult }
 export interface PlanItem { id: number; raw: string; action: 'original' | 'record' | 'removed'; work?: Work; candidate?: boolean }
 export interface ChangeLine { id: number; kind: 'replaced' | 'removed' | 'unresolved' | 'kept'; raw: string; work?: Work; candidate?: boolean }
 
-export const stripLabel = (raw: string) => raw.replace(/^\s*(?:\[\d+\]|\d+[.)])\s*/, '').replace(/\s+/g, ' ').trim();
+export const stripLabel = (raw: string) => raw.replace(/^\s*(?:\[\d+\]\s*|\d+[.)]\s+)/, '').replace(/\s+/g, ' ').trim();
 
 /** The record that "Use record" adopts. Retracted entries get none: a retracted paper is kept or removed, never silently swapped. */
 export function primaryRecord(r: CheckResult): Work | undefined {
