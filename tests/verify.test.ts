@@ -108,6 +108,19 @@ describe('verifyReference: the six verdicts', () => {
     expect((await verifyReference(REF_PLAIN, clientFor({ crossrefSearch: [smith, close] }).client)).alternatives).toBeUndefined();
   });
 
+  it('An unrelated short title is not offered as an alternative', async () => {
+    const short = crossrefItem({ doi: '10.1000/int', title: 'Integral Calculus', authors: [['Ana', 'Vince']], year: 2023 });
+    const r = await verifyReference('Wetherquill, Z. (2023). Chromatic jellyfish calculus for teleporting medieval libraries. Journal of Examples, 42, 1-9.', clientFor({ crossrefSearch: [short] }).client);
+    expect(r.alternatives).toBeUndefined();
+  });
+
+  it('A Chinese entry with no match is never called fake', async () => {
+    const { client } = clientFor();
+    const r = await verifyReference('王小明, 李华. 深度学习在医学影像中的应用综述[J]. 计算机学报, 2021, 44(3): 123-140.', client);
+    expect(r.verdict).toBe('Could not check');
+    expect(r.explanation).toMatch(/Latin script/);
+  });
+
   it('Could not check: a web page that no index knows is never called fake', async () => {
     const { client } = clientFor();
     const r = await verifyReference('World Health Organization. (2024). Climate change. https://www.who.int/news-room/fact-sheets/detail/climate-change', client);

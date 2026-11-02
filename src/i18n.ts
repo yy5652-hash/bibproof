@@ -299,6 +299,7 @@ const EXACT: Record<string, string> = {
   'A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.': '存在标题相近的文献，但作者不一致。这可能是“拼接”出来的引用：请仔细核对作者列表。',
   'A nearby work exists, but its metadata differs. Review the evidence before using a correction.': '存在相近的文献，但元数据不一致。使用更正之前请先查看证据。',
   'Every author and the year match this record, but the title you wrote differs from it. Check which title is right.': '所有作者和年份都与这条记录一致，但你写的标题不同。请确认哪个标题是对的。',
+  'This entry is not in a Latin script. These indexes cover such journals poorly, so a missing record says nothing about it. Check it by hand.': '这条引用不是拉丁字母文字。这些索引对这类期刊覆盖很差，查不到记录不能说明任何问题，请手动核对。',
   'This looks like a web page, report, legal source or other item these indexes do not reliably cover, and no matching record turned up. Check it by hand.': '这看起来是网页、报告、法律文件或这些索引覆盖不可靠的其他类型，也没有找到匹配的记录。请手动核对。',
   'This entry has too little text to search on: it gives no clear title. Check it by hand.': '这条的文字太少，无法检索：没有写出清晰的标题。请手动核对。',
   // field-level text produced by the scorer

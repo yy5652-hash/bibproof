@@ -1,15 +1,14 @@
 import type { CheckResult, IndexEvidence, Work } from './types';
 import { parseReference } from './parse';
-import { scoreCandidate, strongMatch, settled, statedWords, containment } from './score';
+import { scoreCandidate, strongMatch, settled, statedWords, containment, closeWording } from './score';
 import { IndexClient } from './http';
 import { lookup, crossrefSearch, type Lookup } from './indexes';
-// Real records worth offering instead of a flagged entry. Close wording only: the
-// nearest hit for an invented title is usually unrelated, and offering it would mislead.
+// Real records worth offering instead of a flagged entry.
 function alternativesFor(result:CheckResult,candidates:Work[]):Work[]{
   if(result.verdict==='Verified')return [];
   const ref=result.reference;const seen=new Set([result.match?.doi??result.match?.id]);
   return candidates.map(work=>({work,score:scoreCandidate(ref,work)}))
-    .filter(({score,work})=>Math.max(score.title,containment(ref.title,work.title))>=.4&&Boolean(work.title))
+    .filter(({work})=>closeWording(ref,work))
     .sort((a,b)=>b.score.total-a.score.total)
     .filter(({work})=>{const key=work.doi??work.id;if(seen.has(key))return false;seen.add(key);return true;})
     .slice(0,3).map(({work})=>work);
@@ -36,7 +35,8 @@ async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<C
   }
   if(ref.pmid && !identifierRecord)add(await lookup(client,'Europe PMC',`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent('EXT_ID:'+ref.pmid+' AND SRC:MED')}&format=json&resultType=core&pageSize=5`));
   if(!bare&&!rank().some(x=>settled(x.score)))add(await lookup(client,'Crossref',crossrefSearch(ref.raw)));
-  if(!bare&&!limited&&!rank().some(x=>settled(x.score))){
+  // A same-titled record from the wrong year may be a reprint or duplicate, so keep looking for the right one.
+  if(!bare&&!limited&&!rank().some(x=>settled(x.score)&&(identifierRecord||!ref.year||x.score.year>0))){
     add(await lookup(client,'OpenAlex',`https://api.openalex.org/works?search=${encodeURIComponent(ref.title||ref.raw)}&per-page=5`));
     add(await lookup(client,'Europe PMC',`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent(ref.title||ref.raw)}&format=json&resultType=core&pageSize=5`));
     if(ref.kind==='book')add(await lookup(client,'Open Library',`https://openlibrary.org/search.json?q=${encodeURIComponent(ref.title||ref.raw)}&limit=5&fields=key,title,author_name,first_publish_year`));
@@ -47,6 +47,7 @@ async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<C
   if(best && (bare || best.score.title>=.65 || best.score.locator || best.work===identifierRecord)){
     if(best.work.doi && best.work.source!=='Crossref' && best.work.doi!==doi){add(await lookup(client,'Crossref',`https://api.crossref.org/works/${encodeURIComponent(best.work.doi)}`,true));best=rank()[0];}
     if(best.work.doi && !candidates.some(w=>w.source==='OpenAlex' && w.doi===best.work.doi))add(await lookup(client,'OpenAlex',`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(best.work.doi)}`,true));
+    best=rank()[0];
     const same=candidates.filter(w=>w.id===best.work.id || (w.doi && w.doi===best.work.doi));
     if(same.some(w=>w.retracted))best={...best,work:{...best.work,retracted:true,retractionUrls:same.flatMap(w=>w.retractionUrls??[])}};
   }
@@ -71,6 +72,7 @@ async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<C
   if(best && (best.score.title>=.65 || (identifierRecord===best.work && best.score.title>=.55)))return {...base,verdict:'Details differ',explanation:best.score.authors<.7?'A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.':'A nearby work exists, but its metadata differs. Review the evidence before using a correction.',match:best.work,score:best.score};
   // Three or more named authors plus the year identify a real work whose title was miscited.
   if(best && best.work.authors.length>=3 && best.score.authors===1 && best.score.year>0 && !/\bet\s+al\b/i.test(ref.raw))return {...base,verdict:'Details differ',explanation:'Every author and the year match this record, but the title you wrote differs from it. Check which title is right.',match:best.work,score:best.score};
+  if(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Cyrillic}\p{Script=Arabic}]/u.test(ref.raw))return {...base,verdict:'Could not check',explanation:'This entry is not in a Latin script. These indexes cover such journals poorly, so a missing record says nothing about it. Check it by hand.',nearest:best?.work,score:best?.score};
   const failed=evidence.some(e=>e.status!=='answered');const indexes=new Set(evidence.filter(e=>e.status==='answered').map(e=>e.index)).size;
   if(limited)return {...base,verdict:'Could not check',explanation:'This looks like a web page, report, legal source or other item these indexes do not reliably cover, and no matching record turned up. Check it by hand.',nearest:best?.work,score:best?.score};
   if(statedWords(ref)<4)return {...base,verdict:'Could not check',explanation:'This entry has too little text to search on: it gives no clear title. Check it by hand.',nearest:best?.work,score:best?.score};

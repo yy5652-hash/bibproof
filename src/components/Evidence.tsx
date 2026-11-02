@@ -4,6 +4,7 @@ import { formatWork, registerStyle, type CitationStyle } from '../core/format';
 import { canUseRecord, isCandidate, needsAction, primaryRecord, stripLabel, type Decision } from '../core/decisions';
 import { handCheckFor } from '../core/handcheck';
 import type { Citing } from '../core/citing';
+import { closeWording } from '../core/score';
 import { useI18n } from '../i18n';
 import { IconCopy, IconSearch, VerdictBadge } from './Icons';
 
@@ -44,7 +45,7 @@ export function DecisionBar({ result, decision, onDecide }: { result: CheckResul
     <div className="decision" role="group" aria-label={t('dec.group')}>
       <div className="seg">{item('keep', t('dec.keep'))}{item('record', t('dec.record'), !usable)}{item('remove', t('dec.remove'))}</div>
       <p className="muted decision-note">
-        {note}{!usable && !decision ? ` ${canUseRecord(result) ? t('alt.lede') : t('dec.noRecord')}` : ''}
+        {note}{!usable && !decision && !canUseRecord(result) ? ` ${t('dec.noRecord')}` : ''}
         {decision && <button type="button" className="link-button" onClick={() => onDecide(undefined)}>{t('dec.clear')}</button>}
       </p>
     </div>
@@ -63,6 +64,8 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
   }, [result.match, style]);
   async function copy() { try { await navigator.clipboard.writeText(corrected); setCopied(true); } catch { setError(t('ev.clipboard')); } }
   const problem = needsAction(result);
+  // The nearest hit is only shown when its wording is close; otherwise it reads like a suggestion it is not.
+  const lead = Boolean(result.nearest && closeWording(result.reference, result.nearest));
   const hand = (result.verdict === 'No record found' || result.verdict === 'Could not check') ? handCheckFor(result.reference) : null;
   const sentences = citing?.byEntry[index] ?? [];
   const more = citing ? Math.max(0, (citing.counts[index] ?? 0) - sentences.length) : 0;
@@ -75,7 +78,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
 
       {result.identifierRecord && <Record work={result.identifierRecord} label={t('ev.identifier')} />}
       {result.match && <Record work={result.match} label={result.identifierRecord ? t('ev.closest') : t('ev.matched')} />}
-      {!result.match && result.nearest && <Record work={result.nearest} label={t('ev.nearest')} />}
+      {!result.match && lead && <Record work={result.nearest!} label={t('ev.nearest')} />}
       {result.match?.retractionUrls?.map(url => <p key={url}><SourceLink url={url}>{t('ev.retraction')}</SourceLink></p>)}
 
       {result.alternatives?.length ? (
@@ -92,7 +95,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
         </section>
       ) : null}
 
-      {result.score && (
+      {result.score && (result.match || result.identifierRecord || lead) && (
         <div className="field-grid" role="table" aria-label={t('ev.fields')}>
           <div className="field-row field-head" role="row"><span role="columnheader">{t('ev.field')}</span><span role="columnheader">{t('ev.wrote')}</span><span role="columnheader">{t('ev.says')}</span></div>
           {result.score.fields.map(f => <div className={`field-row ${f.status}`} role="row" key={f.field}>

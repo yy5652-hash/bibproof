@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "held-out",
-  "runAt": "2026-11-02T15:50:39.133Z",
+  "runAt": "2026-11-02T15:53:25.449Z",
   "seed": 88421,
   "tuningSeed": 1729,
   "heldOutSeed": 88421,
@@ -145,7 +145,7 @@
     "robotsUrl": "https://gptzero.me/robots.txt",
     "robotsAllowed": true,
     "retrievedAt": "2026-11-01T01:08:11.113Z",
-    "runAt": "2026-11-02T15:50:38.927Z",
+    "runAt": "2026-11-02T15:53:13.129Z",
     "total": 100,
     "detected": 98,
     "detectionRate": 0.98,
@@ -193,7 +193,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.980Z",
+        "checkedAt": "2026-11-02T15:53:13.188Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -293,7 +293,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.980Z",
+        "checkedAt": "2026-11-02T15:53:13.189Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -393,7 +393,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.981Z",
+        "checkedAt": "2026-11-02T15:53:13.189Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -495,7 +495,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.981Z",
+        "checkedAt": "2026-11-02T15:53:13.190Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -597,7 +597,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.981Z",
+        "checkedAt": "2026-11-02T15:53:13.190Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -705,7 +705,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.982Z",
+        "checkedAt": "2026-11-02T15:53:13.190Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -814,7 +814,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.982Z",
+        "checkedAt": "2026-11-02T15:53:13.191Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -925,7 +925,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.982Z",
+        "checkedAt": "2026-11-02T15:53:13.192Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1032,7 +1032,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.982Z",
+        "checkedAt": "2026-11-02T15:53:13.192Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1132,7 +1132,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.983Z",
+        "checkedAt": "2026-11-02T15:53:13.193Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1232,7 +1232,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.983Z",
+        "checkedAt": "2026-11-02T15:53:13.193Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1338,7 +1338,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.984Z",
+        "checkedAt": "2026-11-02T15:53:13.194Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1438,7 +1438,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.984Z",
+        "checkedAt": "2026-11-02T15:53:13.194Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1542,7 +1542,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.984Z",
+        "checkedAt": "2026-11-02T15:53:13.195Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1646,7 +1646,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.985Z",
+        "checkedAt": "2026-11-02T15:53:13.195Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1751,7 +1751,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.985Z",
+        "checkedAt": "2026-11-02T15:53:13.196Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1856,7 +1856,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.985Z",
+        "checkedAt": "2026-11-02T15:53:13.196Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -1964,7 +1964,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.986Z",
+        "checkedAt": "2026-11-02T15:53:13.196Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2074,7 +2074,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.986Z",
+        "checkedAt": "2026-11-02T15:53:13.197Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2188,7 +2188,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.986Z",
+        "checkedAt": "2026-11-02T15:53:13.197Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2297,7 +2297,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.987Z",
+        "checkedAt": "2026-11-02T15:53:13.197Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2400,7 +2400,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.987Z",
+        "checkedAt": "2026-11-02T15:53:13.198Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2504,7 +2504,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.987Z",
+        "checkedAt": "2026-11-02T15:53:13.198Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2609,7 +2609,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.988Z",
+        "checkedAt": "2026-11-02T15:53:13.199Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2714,7 +2714,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.988Z",
+        "checkedAt": "2026-11-02T15:53:13.199Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2821,7 +2821,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.989Z",
+        "checkedAt": "2026-11-02T15:53:13.200Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -2930,7 +2930,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.989Z",
+        "checkedAt": "2026-11-02T15:53:13.200Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3050,7 +3050,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.990Z",
+        "checkedAt": "2026-11-02T15:53:13.201Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3159,7 +3159,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.990Z",
+        "checkedAt": "2026-11-02T15:53:13.201Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3266,7 +3266,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.991Z",
+        "checkedAt": "2026-11-02T15:53:13.202Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3375,7 +3375,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.991Z",
+        "checkedAt": "2026-11-02T15:53:13.202Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3485,7 +3485,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.992Z",
+        "checkedAt": "2026-11-02T15:53:13.203Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3592,7 +3592,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.992Z",
+        "checkedAt": "2026-11-02T15:53:13.203Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3692,7 +3692,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.992Z",
+        "checkedAt": "2026-11-02T15:53:13.204Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3792,7 +3792,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.992Z",
+        "checkedAt": "2026-11-02T15:53:13.204Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3898,7 +3898,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.993Z",
+        "checkedAt": "2026-11-02T15:53:13.204Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -3999,7 +3999,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.993Z",
+        "checkedAt": "2026-11-02T15:53:13.205Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -4103,7 +4103,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.993Z",
+        "checkedAt": "2026-11-02T15:53:13.205Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -4208,7 +4208,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.994Z",
+        "checkedAt": "2026-11-02T15:53:13.206Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -4319,7 +4319,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.994Z",
+        "checkedAt": "2026-11-02T15:53:13.206Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -4438,7 +4438,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.994Z",
+        "checkedAt": "2026-11-02T15:53:13.206Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -4599,7 +4599,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.995Z",
+        "checkedAt": "2026-11-02T15:53:13.207Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -4759,7 +4759,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.995Z",
+        "checkedAt": "2026-11-02T15:53:13.208Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -4924,7 +4924,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.996Z",
+        "checkedAt": "2026-11-02T15:53:13.208Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5085,7 +5085,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.996Z",
+        "checkedAt": "2026-11-02T15:53:13.209Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5190,7 +5190,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.996Z",
+        "checkedAt": "2026-11-02T15:53:13.209Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5295,7 +5295,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.997Z",
+        "checkedAt": "2026-11-02T15:53:13.210Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5407,7 +5407,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.997Z",
+        "checkedAt": "2026-11-02T15:53:13.210Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5511,7 +5511,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.997Z",
+        "checkedAt": "2026-11-02T15:53:13.210Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5611,7 +5611,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.998Z",
+        "checkedAt": "2026-11-02T15:53:13.211Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5711,7 +5711,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.998Z",
+        "checkedAt": "2026-11-02T15:53:13.211Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5816,7 +5816,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.998Z",
+        "checkedAt": "2026-11-02T15:53:13.211Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -5916,7 +5916,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.998Z",
+        "checkedAt": "2026-11-02T15:53:13.211Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6016,7 +6016,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.999Z",
+        "checkedAt": "2026-11-02T15:53:13.212Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6116,7 +6116,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.999Z",
+        "checkedAt": "2026-11-02T15:53:13.212Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6217,7 +6217,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.999Z",
+        "checkedAt": "2026-11-02T15:53:13.213Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6318,7 +6318,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:38.999Z",
+        "checkedAt": "2026-11-02T15:53:13.213Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6423,7 +6423,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.000Z",
+        "checkedAt": "2026-11-02T15:53:13.213Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6528,7 +6528,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.000Z",
+        "checkedAt": "2026-11-02T15:53:13.214Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6637,7 +6637,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.000Z",
+        "checkedAt": "2026-11-02T15:53:13.214Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6741,7 +6741,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.001Z",
+        "checkedAt": "2026-11-02T15:53:13.215Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6840,7 +6840,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.001Z",
+        "checkedAt": "2026-11-02T15:53:13.215Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -6939,7 +6939,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.001Z",
+        "checkedAt": "2026-11-02T15:53:13.216Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7045,7 +7045,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.002Z",
+        "checkedAt": "2026-11-02T15:53:13.216Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7144,7 +7144,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.002Z",
+        "checkedAt": "2026-11-02T15:53:13.216Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7244,7 +7244,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.002Z",
+        "checkedAt": "2026-11-02T15:53:13.217Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7344,7 +7344,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.003Z",
+        "checkedAt": "2026-11-02T15:53:13.217Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7451,7 +7451,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.003Z",
+        "checkedAt": "2026-11-02T15:53:13.218Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7549,7 +7549,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.003Z",
+        "checkedAt": "2026-11-02T15:53:13.218Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7649,7 +7649,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.004Z",
+        "checkedAt": "2026-11-02T15:53:13.219Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7747,7 +7747,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.004Z",
+        "checkedAt": "2026-11-02T15:53:13.219Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7851,7 +7851,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.005Z",
+        "checkedAt": "2026-11-02T15:53:13.219Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -7953,7 +7953,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.005Z",
+        "checkedAt": "2026-11-02T15:53:13.220Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -8061,7 +8061,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.006Z",
+        "checkedAt": "2026-11-02T15:53:13.220Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -8171,7 +8171,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.006Z",
+        "checkedAt": "2026-11-02T15:53:13.221Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -8282,7 +8282,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.007Z",
+        "checkedAt": "2026-11-02T15:53:13.221Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -8403,7 +8403,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.007Z",
+        "checkedAt": "2026-11-02T15:53:13.221Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -8561,7 +8561,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.008Z",
+        "checkedAt": "2026-11-02T15:53:13.222Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -8717,7 +8717,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.008Z",
+        "checkedAt": "2026-11-02T15:53:13.222Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -8877,7 +8877,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.008Z",
+        "checkedAt": "2026-11-02T15:53:13.223Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9032,7 +9032,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.008Z",
+        "checkedAt": "2026-11-02T15:53:13.223Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9130,7 +9130,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.009Z",
+        "checkedAt": "2026-11-02T15:53:13.223Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9228,7 +9228,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.009Z",
+        "checkedAt": "2026-11-02T15:53:13.224Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9331,7 +9331,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.009Z",
+        "checkedAt": "2026-11-02T15:53:13.224Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9429,7 +9429,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.009Z",
+        "checkedAt": "2026-11-02T15:53:13.224Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9527,7 +9527,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.010Z",
+        "checkedAt": "2026-11-02T15:53:13.224Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9625,7 +9625,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.010Z",
+        "checkedAt": "2026-11-02T15:53:13.225Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9727,7 +9727,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.010Z",
+        "checkedAt": "2026-11-02T15:53:13.225Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9825,7 +9825,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.010Z",
+        "checkedAt": "2026-11-02T15:53:13.225Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -9923,7 +9923,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.011Z",
+        "checkedAt": "2026-11-02T15:53:13.225Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10021,7 +10021,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.011Z",
+        "checkedAt": "2026-11-02T15:53:13.226Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10125,7 +10125,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.011Z",
+        "checkedAt": "2026-11-02T15:53:13.226Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10223,7 +10223,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.011Z",
+        "checkedAt": "2026-11-02T15:53:13.226Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10321,7 +10321,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.011Z",
+        "checkedAt": "2026-11-02T15:53:13.226Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10419,7 +10419,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.012Z",
+        "checkedAt": "2026-11-02T15:53:13.227Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10522,7 +10522,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.012Z",
+        "checkedAt": "2026-11-02T15:53:13.227Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10620,7 +10620,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.012Z",
+        "checkedAt": "2026-11-02T15:53:13.227Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10720,7 +10720,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.013Z",
+        "checkedAt": "2026-11-02T15:53:13.227Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10820,7 +10820,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.013Z",
+        "checkedAt": "2026-11-02T15:53:13.228Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -10921,7 +10921,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.013Z",
+        "checkedAt": "2026-11-02T15:53:13.228Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11021,7 +11021,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.013Z",
+        "checkedAt": "2026-11-02T15:53:13.228Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11120,7 +11120,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.014Z",
+        "checkedAt": "2026-11-02T15:53:13.229Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11219,7 +11219,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.014Z",
+        "checkedAt": "2026-11-02T15:53:13.229Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11322,7 +11322,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.014Z",
+        "checkedAt": "2026-11-02T15:53:13.230Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11421,7 +11421,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.015Z",
+        "checkedAt": "2026-11-02T15:53:13.230Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11519,7 +11519,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.015Z",
+        "checkedAt": "2026-11-02T15:53:13.230Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11617,7 +11617,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.015Z",
+        "checkedAt": "2026-11-02T15:53:13.231Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11723,7 +11723,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.015Z",
+        "checkedAt": "2026-11-02T15:53:13.231Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11821,7 +11821,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.016Z",
+        "checkedAt": "2026-11-02T15:53:13.231Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -11920,7 +11920,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.016Z",
+        "checkedAt": "2026-11-02T15:53:13.232Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12019,7 +12019,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.016Z",
+        "checkedAt": "2026-11-02T15:53:13.232Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12123,7 +12123,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.017Z",
+        "checkedAt": "2026-11-02T15:53:13.232Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12222,7 +12222,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.017Z",
+        "checkedAt": "2026-11-02T15:53:13.233Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12320,7 +12320,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.017Z",
+        "checkedAt": "2026-11-02T15:53:13.233Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12418,7 +12418,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.017Z",
+        "checkedAt": "2026-11-02T15:53:13.233Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12521,7 +12521,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.018Z",
+        "checkedAt": "2026-11-02T15:53:13.233Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12619,7 +12619,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.018Z",
+        "checkedAt": "2026-11-02T15:53:13.234Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12716,7 +12716,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.018Z",
+        "checkedAt": "2026-11-02T15:53:13.234Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12813,7 +12813,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.018Z",
+        "checkedAt": "2026-11-02T15:53:13.234Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -12910,7 +12910,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.018Z",
+        "checkedAt": "2026-11-02T15:53:13.234Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13008,7 +13008,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.019Z",
+        "checkedAt": "2026-11-02T15:53:13.235Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13112,7 +13112,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.019Z",
+        "checkedAt": "2026-11-02T15:53:13.235Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13216,7 +13216,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.019Z",
+        "checkedAt": "2026-11-02T15:53:13.235Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13327,7 +13327,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.020Z",
+        "checkedAt": "2026-11-02T15:53:13.236Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13431,7 +13431,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.020Z",
+        "checkedAt": "2026-11-02T15:53:13.236Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13535,7 +13535,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.021Z",
+        "checkedAt": "2026-11-02T15:53:13.236Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13638,7 +13638,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.021Z",
+        "checkedAt": "2026-11-02T15:53:13.237Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13742,7 +13742,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.021Z",
+        "checkedAt": "2026-11-02T15:53:13.237Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13845,7 +13845,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.022Z",
+        "checkedAt": "2026-11-02T15:53:13.237Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -13945,7 +13945,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.023Z",
+        "checkedAt": "2026-11-02T15:53:13.238Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14045,7 +14045,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.024Z",
+        "checkedAt": "2026-11-02T15:53:13.238Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14146,7 +14146,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.024Z",
+        "checkedAt": "2026-11-02T15:53:13.238Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14246,7 +14246,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.024Z",
+        "checkedAt": "2026-11-02T15:53:13.239Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14346,7 +14346,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.025Z",
+        "checkedAt": "2026-11-02T15:53:13.239Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14446,7 +14446,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.025Z",
+        "checkedAt": "2026-11-02T15:53:13.239Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14550,7 +14550,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.025Z",
+        "checkedAt": "2026-11-02T15:53:13.240Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14650,7 +14650,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.025Z",
+        "checkedAt": "2026-11-02T15:53:13.240Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14750,7 +14750,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.026Z",
+        "checkedAt": "2026-11-02T15:53:13.240Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14850,7 +14850,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.026Z",
+        "checkedAt": "2026-11-02T15:53:13.241Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -14955,7 +14955,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.026Z",
+        "checkedAt": "2026-11-02T15:53:13.241Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15055,7 +15055,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.026Z",
+        "checkedAt": "2026-11-02T15:53:13.241Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15155,7 +15155,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.027Z",
+        "checkedAt": "2026-11-02T15:53:13.242Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15255,7 +15255,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.027Z",
+        "checkedAt": "2026-11-02T15:53:13.242Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15355,7 +15355,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.027Z",
+        "checkedAt": "2026-11-02T15:53:13.242Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15455,7 +15455,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.027Z",
+        "checkedAt": "2026-11-02T15:53:13.242Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15555,7 +15555,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.028Z",
+        "checkedAt": "2026-11-02T15:53:13.243Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15655,7 +15655,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.028Z",
+        "checkedAt": "2026-11-02T15:53:13.243Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15756,7 +15756,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.029Z",
+        "checkedAt": "2026-11-02T15:53:13.244Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15856,7 +15856,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.029Z",
+        "checkedAt": "2026-11-02T15:53:13.244Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -15955,7 +15955,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.029Z",
+        "checkedAt": "2026-11-02T15:53:13.245Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16054,7 +16054,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.030Z",
+        "checkedAt": "2026-11-02T15:53:13.245Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16160,7 +16160,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.030Z",
+        "checkedAt": "2026-11-02T15:53:13.245Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16260,7 +16260,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.030Z",
+        "checkedAt": "2026-11-02T15:53:13.245Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16365,7 +16365,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.031Z",
+        "checkedAt": "2026-11-02T15:53:13.246Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16470,7 +16470,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.031Z",
+        "checkedAt": "2026-11-02T15:53:13.246Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16576,7 +16576,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.031Z",
+        "checkedAt": "2026-11-02T15:53:13.246Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16680,7 +16680,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.031Z",
+        "checkedAt": "2026-11-02T15:53:13.247Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16780,7 +16780,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.032Z",
+        "checkedAt": "2026-11-02T15:53:13.247Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16880,7 +16880,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.032Z",
+        "checkedAt": "2026-11-02T15:53:13.248Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -16988,7 +16988,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.032Z",
+        "checkedAt": "2026-11-02T15:53:13.248Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17088,7 +17088,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.033Z",
+        "checkedAt": "2026-11-02T15:53:13.248Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17188,7 +17188,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.033Z",
+        "checkedAt": "2026-11-02T15:53:13.249Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17288,7 +17288,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.033Z",
+        "checkedAt": "2026-11-02T15:53:13.249Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17396,7 +17396,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.034Z",
+        "checkedAt": "2026-11-02T15:53:13.250Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17497,7 +17497,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.034Z",
+        "checkedAt": "2026-11-02T15:53:13.250Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17601,7 +17601,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.034Z",
+        "checkedAt": "2026-11-02T15:53:13.250Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17706,7 +17706,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.034Z",
+        "checkedAt": "2026-11-02T15:53:13.251Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17816,7 +17816,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.035Z",
+        "checkedAt": "2026-11-02T15:53:13.251Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -17920,7 +17920,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.035Z",
+        "checkedAt": "2026-11-02T15:53:13.251Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18019,7 +18019,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.035Z",
+        "checkedAt": "2026-11-02T15:53:13.252Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18118,7 +18118,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.035Z",
+        "checkedAt": "2026-11-02T15:53:13.252Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18224,7 +18224,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.036Z",
+        "checkedAt": "2026-11-02T15:53:13.253Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18324,7 +18324,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.036Z",
+        "checkedAt": "2026-11-02T15:53:13.253Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18429,7 +18429,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.036Z",
+        "checkedAt": "2026-11-02T15:53:13.253Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18534,7 +18534,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.037Z",
+        "checkedAt": "2026-11-02T15:53:13.254Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18649,7 +18649,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.037Z",
+        "checkedAt": "2026-11-02T15:53:13.254Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18753,7 +18753,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.037Z",
+        "checkedAt": "2026-11-02T15:53:13.254Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18853,7 +18853,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.038Z",
+        "checkedAt": "2026-11-02T15:53:13.255Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -18953,7 +18953,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.038Z",
+        "checkedAt": "2026-11-02T15:53:13.255Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19055,7 +19055,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.038Z",
+        "checkedAt": "2026-11-02T15:53:13.255Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19155,7 +19155,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.039Z",
+        "checkedAt": "2026-11-02T15:53:13.256Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19255,7 +19255,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.039Z",
+        "checkedAt": "2026-11-02T15:53:13.256Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19355,7 +19355,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.040Z",
+        "checkedAt": "2026-11-02T15:53:13.256Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19462,7 +19462,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.040Z",
+        "checkedAt": "2026-11-02T15:53:13.257Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19564,7 +19564,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.040Z",
+        "checkedAt": "2026-11-02T15:53:13.257Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19673,7 +19673,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.040Z",
+        "checkedAt": "2026-11-02T15:53:13.257Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19783,7 +19783,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.041Z",
+        "checkedAt": "2026-11-02T15:53:13.258Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -19895,7 +19895,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.041Z",
+        "checkedAt": "2026-11-02T15:53:13.258Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20003,7 +20003,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.041Z",
+        "checkedAt": "2026-11-02T15:53:13.258Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20103,7 +20103,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.042Z",
+        "checkedAt": "2026-11-02T15:53:13.259Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20203,7 +20203,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.042Z",
+        "checkedAt": "2026-11-02T15:53:13.259Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20311,7 +20311,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.042Z",
+        "checkedAt": "2026-11-02T15:53:13.260Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20411,7 +20411,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.042Z",
+        "checkedAt": "2026-11-02T15:53:13.260Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20511,7 +20511,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.043Z",
+        "checkedAt": "2026-11-02T15:53:13.261Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20611,7 +20611,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.043Z",
+        "checkedAt": "2026-11-02T15:53:13.261Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20715,7 +20715,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.043Z",
+        "checkedAt": "2026-11-02T15:53:13.261Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20816,7 +20816,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.043Z",
+        "checkedAt": "2026-11-02T15:53:13.262Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -20920,7 +20920,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.044Z",
+        "checkedAt": "2026-11-02T15:53:13.262Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21024,7 +21024,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.044Z",
+        "checkedAt": "2026-11-02T15:53:13.262Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21133,7 +21133,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.044Z",
+        "checkedAt": "2026-11-02T15:53:13.262Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21238,7 +21238,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.044Z",
+        "checkedAt": "2026-11-02T15:53:13.263Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21347,7 +21347,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.045Z",
+        "checkedAt": "2026-11-02T15:53:13.263Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21457,7 +21457,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.045Z",
+        "checkedAt": "2026-11-02T15:53:13.264Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21568,7 +21568,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.045Z",
+        "checkedAt": "2026-11-02T15:53:13.264Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21678,7 +21678,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.046Z",
+        "checkedAt": "2026-11-02T15:53:13.265Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21787,7 +21787,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.046Z",
+        "checkedAt": "2026-11-02T15:53:13.265Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -21897,7 +21897,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.047Z",
+        "checkedAt": "2026-11-02T15:53:13.266Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22008,7 +22008,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.047Z",
+        "checkedAt": "2026-11-02T15:53:13.266Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22119,7 +22119,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.047Z",
+        "checkedAt": "2026-11-02T15:53:13.267Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22232,7 +22232,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.048Z",
+        "checkedAt": "2026-11-02T15:53:13.267Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22346,7 +22346,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.048Z",
+        "checkedAt": "2026-11-02T15:53:13.268Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22468,7 +22468,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.048Z",
+        "checkedAt": "2026-11-02T15:53:13.268Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22580,7 +22580,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.048Z",
+        "checkedAt": "2026-11-02T15:53:13.268Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22679,7 +22679,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.049Z",
+        "checkedAt": "2026-11-02T15:53:13.269Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22778,7 +22778,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.049Z",
+        "checkedAt": "2026-11-02T15:53:13.269Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22878,7 +22878,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.050Z",
+        "checkedAt": "2026-11-02T15:53:13.270Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -22978,7 +22978,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.050Z",
+        "checkedAt": "2026-11-02T15:53:13.270Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23083,7 +23083,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.050Z",
+        "checkedAt": "2026-11-02T15:53:13.270Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23188,7 +23188,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.051Z",
+        "checkedAt": "2026-11-02T15:53:13.271Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23294,7 +23294,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.051Z",
+        "checkedAt": "2026-11-02T15:53:13.271Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23399,7 +23399,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.051Z",
+        "checkedAt": "2026-11-02T15:53:13.271Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23503,7 +23503,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.052Z",
+        "checkedAt": "2026-11-02T15:53:13.272Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23606,7 +23606,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.052Z",
+        "checkedAt": "2026-11-02T15:53:13.272Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23710,7 +23710,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.052Z",
+        "checkedAt": "2026-11-02T15:53:13.273Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23815,7 +23815,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.052Z",
+        "checkedAt": "2026-11-02T15:53:13.273Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -23924,7 +23924,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.053Z",
+        "checkedAt": "2026-11-02T15:53:13.273Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24034,7 +24034,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.054Z",
+        "checkedAt": "2026-11-02T15:53:13.274Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24153,7 +24153,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.054Z",
+        "checkedAt": "2026-11-02T15:53:13.274Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24265,7 +24265,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.055Z",
+        "checkedAt": "2026-11-02T15:53:13.275Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24380,7 +24380,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.056Z",
+        "checkedAt": "2026-11-02T15:53:13.275Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24499,7 +24499,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.056Z",
+        "checkedAt": "2026-11-02T15:53:13.276Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24621,7 +24621,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.056Z",
+        "checkedAt": "2026-11-02T15:53:13.276Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24736,7 +24736,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.057Z",
+        "checkedAt": "2026-11-02T15:53:13.277Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24834,7 +24834,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.057Z",
+        "checkedAt": "2026-11-02T15:53:13.277Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -24932,7 +24932,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.058Z",
+        "checkedAt": "2026-11-02T15:53:13.278Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -25032,7 +25032,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.058Z",
+        "checkedAt": "2026-11-02T15:53:13.278Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -25130,7 +25130,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.058Z",
+        "checkedAt": "2026-11-02T15:53:13.278Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -25227,7 +25227,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.059Z",
+        "checkedAt": "2026-11-02T15:53:13.279Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -25324,7 +25324,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.059Z",
+        "checkedAt": "2026-11-02T15:53:13.279Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -25423,7 +25423,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.059Z",
+        "checkedAt": "2026-11-02T15:53:13.279Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -25518,7 +25518,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.059Z",
+        "checkedAt": "2026-11-02T15:53:13.279Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -25624,7 +25624,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.060Z",
+        "checkedAt": "2026-11-02T15:53:13.280Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -25759,7 +25759,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.061Z",
+        "checkedAt": "2026-11-02T15:53:13.283Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -25968,13 +25968,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Machine%20Learning.%202007%3B39(1)%3A59%E2%80%9391&per-page=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Machine%20Learning.%202007%3B39(1)%3A59%E2%80%9391&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1023%2Fa%3A1007673816718",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.063Z",
+        "checkedAt": "2026-11-02T15:53:13.284Z",
         "verdict": "Details differ",
         "explanation": "A matching work exists, but the highlighted fields differ.",
         "match": {
@@ -26046,28 +26058,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.5821/dissertation-2117-93974",
-            "title": "Part-of-speech Tagging: A Machine Learning Approach based on Decision Trees",
-            "authors": [
-              {
-                "family": "Màrquez",
-                "given": "Lluís"
-              }
-            ],
-            "year": null,
-            "venue": "",
-            "doi": "10.5821/dissertation-2117-93974",
-            "url": "https://doi.org/10.5821/dissertation-2117-93974",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "dissertation",
-            "publisher": "Universitat Politècnica de Catalunya"
-          }
-        ]
+        }
       }
     },
     {
@@ -26102,7 +26093,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.063Z",
+        "checkedAt": "2026-11-02T15:53:14.420Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -26211,7 +26202,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.064Z",
+        "checkedAt": "2026-11-02T15:53:14.422Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -26278,102 +26269,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1002/essoar.10509011.1",
-            "title": "A comprehensive investigation of machine learning models for estimating daily snow water equivalent over the Western U.S.",
-            "authors": [
-              {
-                "family": "Duan",
-                "given": "Shiheng"
-              },
-              {
-                "family": "Ullrich",
-                "given": "Paul"
-              }
-            ],
-            "year": 2021,
-            "venue": "",
-            "doi": "10.1002/essoar.10509011.1",
-            "url": "https://doi.org/10.1002/essoar.10509011.1",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "posted-content",
-            "publisher": "Wiley"
-          },
-          {
-            "id": "10.1038/s41598-020-75476-w",
-            "title": "Mass wasting susceptibility assessment of snow avalanches using machine learning models",
-            "authors": [
-              {
-                "family": "Choubin",
-                "given": "Bahram"
-              },
-              {
-                "family": "Borji",
-                "given": "Moslem"
-              },
-              {
-                "family": "Hosseini",
-                "given": "Farzaneh Sajedi"
-              },
-              {
-                "family": "Mosavi",
-                "given": "Amirhosein"
-              },
-              {
-                "family": "Dineva",
-                "given": "Adrienn A."
-              }
-            ],
-            "year": 2020,
-            "venue": "Scientific Reports",
-            "doi": "10.1038/s41598-020-75476-w",
-            "url": "https://doi.org/10.1038/s41598-020-75476-w",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "10",
-            "issue": "1",
-            "publisher": "Springer Science and Business Media LLC"
-          },
-          {
-            "id": "10.1175/aies-d-25-0021.1",
-            "title": "A Machine Learning Model for Estimating Snow Density and Snow Water Equivalent from Snow Depth and Seasonal Snow Climate Classes",
-            "authors": [
-              {
-                "family": "Alabi",
-                "given": "Ibrahim Olalekan"
-              },
-              {
-                "family": "Marshall",
-                "given": "Hans-Peter"
-              },
-              {
-                "family": "Mead",
-                "given": "Jodi"
-              },
-              {
-                "family": "Trujillo",
-                "given": "Ernesto"
-              }
-            ],
-            "year": 2026,
-            "venue": "Artificial Intelligence for the Earth Systems",
-            "doi": "10.1175/aies-d-25-0021.1",
-            "url": "https://doi.org/10.1175/aies-d-25-0021.1",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "5",
-            "issue": "2",
-            "publisher": "American Meteorological Society"
-          }
-        ]
+        }
       }
     },
     {
@@ -26417,7 +26313,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.066Z",
+        "checkedAt": "2026-11-02T15:53:14.426Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -26558,58 +26454,6 @@
             "type": "proceedings-article",
             "pages": "427-436",
             "publisher": "ACM Press"
-          },
-          {
-            "id": "10.1023/a:1022899313248",
-            "title": "Learning Fallible Deterministic Finite Automata",
-            "authors": [
-              {
-                "family": "Ron",
-                "given": "Dana"
-              },
-              {
-                "family": "Rubinfeld",
-                "given": "Ronitt"
-              }
-            ],
-            "year": 1995,
-            "venue": "Machine Learning",
-            "doi": "10.1023/a:1022899313248",
-            "url": "https://doi.org/10.1023/a:1022899313248",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "18",
-            "issue": "2-3",
-            "pages": "149-185",
-            "publisher": "Springer Science and Business Media LLC"
-          },
-          {
-            "id": "10.1007/bf00993409",
-            "title": "Learning fallible Deterministic Finite Automata",
-            "authors": [
-              {
-                "family": "Ron",
-                "given": "Dana"
-              },
-              {
-                "family": "Rubinfeld",
-                "given": "Ronitt"
-              }
-            ],
-            "year": 1995,
-            "venue": "Machine Learning",
-            "doi": "10.1007/bf00993409",
-            "url": "https://doi.org/10.1007/bf00993409",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "18",
-            "issue": "2-3",
-            "pages": "149-185",
-            "publisher": "Springer Science and Business Media LLC"
           }
         ]
       }
@@ -26643,13 +26487,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Machine%20Learning.%202002%3B20(1%E2%80%932)%3A155%E2%80%9391&per-page=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Machine%20Learning.%202002%3B20(1%E2%80%932)%3A155%E2%80%9391&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1023%2Fa%3A1022642320072",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.067Z",
+        "checkedAt": "2026-11-02T15:53:14.428Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -26792,7 +26648,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.068Z",
+        "checkedAt": "2026-11-02T15:53:15.449Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -26901,7 +26757,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.069Z",
+        "checkedAt": "2026-11-02T15:53:15.450Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -27032,40 +26888,6 @@
             "type": "book-chapter",
             "pages": "135-162",
             "publisher": "Springer US"
-          },
-          {
-            "id": "10.1023/a:1018237008823",
-            "title": "Purposive Behavior Acquisition for a Real Robot by Vision-Based Reinforcement Learning",
-            "authors": [
-              {
-                "family": "Asada",
-                "given": "Minoru"
-              },
-              {
-                "family": "Noda",
-                "given": "Shoichi"
-              },
-              {
-                "family": "Tawaratsumida",
-                "given": "Sukoya"
-              },
-              {
-                "family": "Hosoda",
-                "given": "Koh"
-              }
-            ],
-            "year": 1996,
-            "venue": "Machine Learning",
-            "doi": "10.1023/a:1018237008823",
-            "url": "https://doi.org/10.1023/a:1018237008823",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "23",
-            "issue": "2-3",
-            "pages": "279-303",
-            "publisher": "Springer Science and Business Media LLC"
           }
         ]
       }
@@ -27111,7 +26933,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.071Z",
+        "checkedAt": "2026-11-02T15:53:15.453Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -27326,13 +27148,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Journal%20of%20Molecular%20Biology.%202008%3B313(3)%3A451%E2%80%9364&per-page=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Journal%20of%20Molecular%20Biology.%202008%3B313(3)%3A451%E2%80%9364&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1006%2Fjmbi.2001.5055",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.073Z",
+        "checkedAt": "2026-11-02T15:53:15.454Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -27507,7 +27341,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.074Z",
+        "checkedAt": "2026-11-02T15:53:16.395Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -27616,7 +27450,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.075Z",
+        "checkedAt": "2026-11-02T15:53:16.396Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -27683,41 +27517,6 @@
         },
         "alternatives": [
           {
-            "id": "https://openalex.org/W45319280",
-            "title": "Computational Molecular Biology",
-            "authors": [],
-            "year": 1999,
-            "doi": "10.1016/s1380-7323(99)x8057-5",
-            "venue": "Theoretical and computational chemistry",
-            "url": "https://openalex.org/W45319280",
-            "source": "OpenAlex",
-            "retracted": false,
-            "type": "book"
-          },
-          {
-            "id": "https://openalex.org/W583936781",
-            "title": "Computational Molecular Biology",
-            "authors": [
-              {
-                "family": "Istrail",
-                "given": "Sorin"
-              },
-              {
-                "family": "Pevzner",
-                "given": "Pavel A."
-              },
-              {
-                "family": "A",
-                "given": "Ron Shamir"
-              }
-            ],
-            "year": 2000,
-            "url": "https://openalex.org/W583936781",
-            "source": "OpenAlex",
-            "retracted": false,
-            "type": "book"
-          },
-          {
             "id": "https://openalex.org/W2097770597",
             "title": "Homology assessment and molecular sequence alignment",
             "authors": [
@@ -27777,7 +27576,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.076Z",
+        "checkedAt": "2026-11-02T15:53:16.399Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -27979,13 +27778,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=A%20New%20Open%20velvet%20cartography%3A%20Molecular%20Biology%20%26%20Nanomedicine&per-page=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=A%20New%20Open%20velvet%20cartography%3A%20Molecular%20Biology%20%26%20Nanomedicine&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.37813%2Fj.mbn.2707-4692.001",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.078Z",
+        "checkedAt": "2026-11-02T15:53:16.401Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -28052,43 +27863,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1016/s1549-9634(06)00015-3",
-            "title": "Editorial Board",
-            "authors": [],
-            "year": 2006,
-            "venue": "Nanomedicine: Nanotechnology, Biology and Medicine",
-            "doi": "10.1016/s1549-9634(06)00015-3",
-            "url": "https://doi.org/10.1016/s1549-9634(06)00015-3",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "2",
-            "issue": "1",
-            "pages": "A3",
-            "publisher": "Elsevier BV"
-          },
-          {
-            "id": "10.1016/s1549-9634(05)00072-9",
-            "title": "Editorial Board",
-            "authors": [],
-            "year": 2005,
-            "venue": "Nanomedicine: Nanotechnology, Biology and Medicine",
-            "doi": "10.1016/s1549-9634(05)00072-9",
-            "url": "https://doi.org/10.1016/s1549-9634(05)00072-9",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "1",
-            "issue": "2",
-            "pages": "A1",
-            "publisher": "Elsevier BV"
-          }
-        ]
+        }
       }
     },
     {
@@ -28123,7 +27898,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.079Z",
+        "checkedAt": "2026-11-02T15:53:17.394Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -28232,7 +28007,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.080Z",
+        "checkedAt": "2026-11-02T15:53:17.397Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -28367,39 +28142,6 @@
             "source": "OpenAlex",
             "retracted": false,
             "type": "article"
-          },
-          {
-            "id": "https://openalex.org/W2806412015",
-            "title": "Larval density mediates knockdown resistance to pyrethroid insecticides in adult Aedes aegypti",
-            "authors": [
-              {
-                "family": "Grossman",
-                "given": "Marissa K."
-              },
-              {
-                "family": "Uc-Puc",
-                "given": "Valentín"
-              },
-              {
-                "family": "Flores",
-                "given": "Adriana E."
-              },
-              {
-                "family": "Manrique-Saide",
-                "given": "Pablo Camilo"
-              },
-              {
-                "family": "Vazquez‐Prokopec",
-                "given": "Gonzalo M."
-              }
-            ],
-            "year": 2018,
-            "doi": "10.1186/s13071-018-2865-x",
-            "venue": "Parasites & Vectors",
-            "url": "https://openalex.org/W2806412015",
-            "source": "OpenAlex",
-            "retracted": false,
-            "type": "article"
           }
         ]
       }
@@ -28444,7 +28186,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.082Z",
+        "checkedAt": "2026-11-02T15:53:17.402Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -28547,75 +28289,7 @@
               "status": "agree"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1016/j.pbiomolbio.2022.10.004",
-            "title": "Editorial",
-            "authors": [
-              {
-                "family": "Noble",
-                "given": "Denis"
-              }
-            ],
-            "year": 2022,
-            "venue": "Progress in Biophysics and Molecular Biology",
-            "doi": "10.1016/j.pbiomolbio.2022.10.004",
-            "url": "https://doi.org/10.1016/j.pbiomolbio.2022.10.004",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "175",
-            "pages": "1-2",
-            "publisher": "Elsevier BV"
-          },
-          {
-            "id": "10.1016/j.pbiomolbio.2019.02.002",
-            "title": "Editorial",
-            "authors": [
-              {
-                "family": "Noble",
-                "given": "Denis"
-              },
-              {
-                "family": "Blundell",
-                "given": "Tom L."
-              },
-              {
-                "family": "Kohl",
-                "given": "Peter"
-              }
-            ],
-            "year": 2019,
-            "venue": "Progress in Biophysics and Molecular Biology",
-            "doi": "10.1016/j.pbiomolbio.2019.02.002",
-            "url": "https://doi.org/10.1016/j.pbiomolbio.2019.02.002",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "141",
-            "pages": "1-2",
-            "publisher": "Elsevier BV"
-          },
-          {
-            "id": "10.1016/s0079-6107(19)30244-5",
-            "title": "Editorial Board",
-            "authors": [],
-            "year": 2019,
-            "venue": "Progress in Biophysics and Molecular Biology",
-            "doi": "10.1016/s0079-6107(19)30244-5",
-            "url": "https://doi.org/10.1016/s0079-6107(19)30244-5",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "149",
-            "pages": "ii",
-            "publisher": "Elsevier BV"
-          }
-        ]
+        }
       }
     },
     {
@@ -28650,13 +28324,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Journal%20of%20Molecular%20Biology.%202023%3B428(4)%3A669%E2%80%9370&per-page=5",
+            "status": "answered",
+            "count": 2
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Journal%20of%20Molecular%20Biology.%202023%3B428(4)%3A669%E2%80%9370&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1016%2Fj.jmb.2016.02.001",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.084Z",
+        "checkedAt": "2026-11-02T15:53:17.405Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -28838,7 +28524,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.085Z",
+        "checkedAt": "2026-11-02T15:53:18.393Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -28943,7 +28629,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.085Z",
+        "checkedAt": "2026-11-02T15:53:18.395Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -29126,7 +28812,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.088Z",
+        "checkedAt": "2026-11-02T15:53:18.399Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -29275,25 +28961,6 @@
             "type": "book-chapter",
             "pages": "71-74",
             "publisher": "Springer International Publishing"
-          },
-          {
-            "id": "10.1016/s0375-9601(01)00716-2",
-            "title": "Bound states of non-Hermitian quantum field theories",
-            "authors": [
-              {
-                "family": "Bender",
-                "given": "C"
-              }
-            ],
-            "year": 2001,
-            "venue": "Physics Letters A",
-            "doi": "10.1016/s0375-9601(01)00716-2",
-            "url": "https://doi.org/10.1016/s0375-9601(01)00716-2",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "publisher": "Elsevier BV"
           }
         ]
       }
@@ -29325,13 +28992,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Reports%20on%20Mathematical%20Physics.%202000%3B32(1)%3A117%E2%80%9332&per-page=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Reports%20on%20Mathematical%20Physics.%202000%3B32(1)%3A117%E2%80%9332&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1016%2F0034-4877(93)90074-o",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.089Z",
+        "checkedAt": "2026-11-02T15:53:18.402Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -29418,28 +29097,6 @@
             "publisher": "Birkhäuser Boston"
           },
           {
-            "id": "10.1007/bf01046766",
-            "title": "On a class of stochastic flows driven by quantum Brownian motion",
-            "authors": [
-              {
-                "family": "Applebaum",
-                "given": "David"
-              }
-            ],
-            "year": 1993,
-            "venue": "Journal of Theoretical Probability",
-            "doi": "10.1007/bf01046766",
-            "url": "https://doi.org/10.1007/bf01046766",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "6",
-            "issue": "1",
-            "pages": "17-32",
-            "publisher": "Springer Science and Business Media LLC"
-          },
-          {
             "id": "10.1016/0034-4877(80)90093-2",
             "title": "Stochastic processes on quantum logics",
             "authors": [
@@ -29500,7 +29157,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.090Z",
+        "checkedAt": "2026-11-02T15:53:19.441Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -29609,7 +29266,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.091Z",
+        "checkedAt": "2026-11-02T15:53:19.442Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -29670,68 +29327,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "https://openalex.org/W2905557141",
-            "title": "Quantum analogues of classical optimization algorithms.",
-            "authors": [
-              {
-                "family": "Mpofu",
-                "given": "Kelvin Tafadzwa"
-              }
-            ],
-            "year": 2017,
-            "venue": "ResearchSpace (University of KwaZulu-Natal)",
-            "url": "https://openalex.org/W2905557141",
-            "source": "OpenAlex",
-            "retracted": false,
-            "type": "dissertation"
-          },
-          {
-            "id": "10.1016/s0378-2166(01)80035-7",
-            "title": "Cesare Cornoldi and Jane Oakhill, eds.,",
-            "authors": [
-              {
-                "family": "McNamara",
-                "given": "Danielle S."
-              }
-            ],
-            "year": 2001,
-            "venue": "Journal of Pragmatics",
-            "doi": "10.1016/s0378-2166(01)80035-7",
-            "url": "https://doi.org/10.1016/s0378-2166(01)80035-7",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "33",
-            "issue": "6",
-            "pages": "943-956",
-            "publisher": "Elsevier BV"
-          },
-          {
-            "id": "https://openalex.org/W3106887093",
-            "title": "Machine Learning: Quantum vs Classical",
-            "authors": [
-              {
-                "family": "Khan",
-                "given": "Tariq Mahmood"
-              },
-              {
-                "family": "Robles‐Kelly",
-                "given": "Antonio"
-              }
-            ],
-            "year": 2020,
-            "doi": "10.1109/access.2020.3041719",
-            "venue": "IEEE Access",
-            "url": "https://openalex.org/W3106887093",
-            "source": "OpenAlex",
-            "retracted": false,
-            "type": "article"
-          }
-        ]
+        }
       }
     },
     {
@@ -29774,7 +29370,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.092Z",
+        "checkedAt": "2026-11-02T15:53:19.444Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -29907,25 +29503,6 @@
             "retractionUrls": [],
             "type": "peer-review",
             "publisher": "Copernicus GmbH"
-          },
-          {
-            "id": "10.1103/physics.12.s96",
-            "title": "Quantum Teleportation Now Comes in 3D",
-            "authors": [
-              {
-                "family": "Anonymous"
-              }
-            ],
-            "year": 2019,
-            "venue": "Physics",
-            "doi": "10.1103/physics.12.s96",
-            "url": "https://doi.org/10.1103/physics.12.s96",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "12",
-            "publisher": "American Physical Society (APS)"
           }
         ]
       }
@@ -29972,7 +29549,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.093Z",
+        "checkedAt": "2026-11-02T15:53:19.450Z",
         "verdict": "Could not check",
         "explanation": "This entry has too little text to search on: it gives no clear title. Check it by hand.",
         "nearest": {
@@ -30090,7 +29667,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.094Z",
+        "checkedAt": "2026-11-02T15:53:19.452Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -30195,7 +29772,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.095Z",
+        "checkedAt": "2026-11-02T15:53:19.453Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -30367,7 +29944,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.096Z",
+        "checkedAt": "2026-11-02T15:53:19.457Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -30502,61 +30079,6 @@
             "issue": "2",
             "pages": "121-157",
             "publisher": "SAGE Publications"
-          },
-          {
-            "id": "10.1002/acp.2350090711",
-            "title": "Cross‐cultural cognition: Developing tests for developing countries",
-            "authors": [
-              {
-                "family": "Baddeley",
-                "given": "Alan"
-              },
-              {
-                "family": "Gardner",
-                "given": "Julie Meeks"
-              },
-              {
-                "family": "Grantham‐McGregor",
-                "given": "Sally"
-              }
-            ],
-            "year": 1995,
-            "venue": "Applied Cognitive Psychology",
-            "doi": "10.1002/acp.2350090711",
-            "url": "https://doi.org/10.1002/acp.2350090711",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "9",
-            "issue": "7",
-            "publisher": "Wiley"
-          },
-          {
-            "id": "10.1177/0022022195262003",
-            "title": "Cultural Familiarity and Language Factors in the Structure of Category Knowledge",
-            "authors": [
-              {
-                "family": "Lin",
-                "given": "Pei-Jung"
-              },
-              {
-                "family": "Schwanenflugel",
-                "given": "Paulaj."
-              }
-            ],
-            "year": 1995,
-            "venue": "Journal of Cross-Cultural Psychology",
-            "doi": "10.1177/0022022195262003",
-            "url": "https://doi.org/10.1177/0022022195262003",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "26",
-            "issue": "2",
-            "pages": "153-168",
-            "publisher": "SAGE Publications"
           }
         ]
       }
@@ -30588,13 +30110,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Cognitive%20Psychology.%201999%3B24(3)%3A295%E2%80%93340&per-page=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Cognitive%20Psychology.%201999%3B24(3)%3A295%E2%80%93340&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 1
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1016%2F0010-0285(92)90010-y",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.098Z",
+        "checkedAt": "2026-11-02T15:53:19.460Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -30697,26 +30231,6 @@
             "issue": "4",
             "pages": "475-501",
             "publisher": "Elsevier BV"
-          },
-          {
-            "id": "10.1093/oso/9780195126938.003.0007",
-            "title": "Objects, Attention and Perceptual Experience",
-            "authors": [
-              {
-                "family": "Yantis",
-                "given": "Steven"
-              }
-            ],
-            "year": 1998,
-            "venue": "Visual Attention",
-            "doi": "10.1093/oso/9780195126938.003.0007",
-            "url": "https://doi.org/10.1093/oso/9780195126938.003.0007",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "book-chapter",
-            "pages": "187-214",
-            "publisher": "Oxford University PressNew York, NY"
           }
         ]
       }
@@ -30752,7 +30266,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.099Z",
+        "checkedAt": "2026-11-02T15:53:20.425Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -30857,7 +30371,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.100Z",
+        "checkedAt": "2026-11-02T15:53:20.428Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -31033,7 +30547,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.101Z",
+        "checkedAt": "2026-11-02T15:53:20.433Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -31152,32 +30666,6 @@
         },
         "alternatives": [
           {
-            "id": "10.1177/0956797613510725",
-            "title": "Loss Attention in a Dual-Task Setting",
-            "authors": [
-              {
-                "family": "Yechiam",
-                "given": "Eldad"
-              },
-              {
-                "family": "Hochman",
-                "given": "Guy"
-              }
-            ],
-            "year": 2013,
-            "venue": "Psychological Science",
-            "doi": "10.1177/0956797613510725",
-            "url": "https://doi.org/10.1177/0956797613510725",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "25",
-            "issue": "2",
-            "pages": "494-502",
-            "publisher": "SAGE Publications"
-          },
-          {
             "id": "10.1007/s00426-018-1013-8",
             "title": "Acceptable losses: the debatable origins of loss aversion",
             "authors": [
@@ -31198,29 +30686,6 @@
             "issue": "7",
             "pages": "1327-1339",
             "publisher": "Springer Science and Business Media LLC"
-          },
-          {
-            "id": "10.1037/e573552014-072",
-            "title": "Loss attention in a dual task setting",
-            "authors": [
-              {
-                "family": "Yechiam",
-                "given": "Eldad"
-              },
-              {
-                "family": "Hochman",
-                "given": "Guy"
-              }
-            ],
-            "year": 2014,
-            "venue": "PsycEXTRA Dataset",
-            "doi": "10.1037/e573552014-072",
-            "url": "https://doi.org/10.1037/e573552014-072",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "dataset",
-            "publisher": "American Psychological Association (APA)"
           }
         ]
       }
@@ -31257,13 +30722,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Applied%20Cognitive%20Psychology.%202018%3B26(4)%3A657%E2%80%938&per-page=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Applied%20Cognitive%20Psychology.%202018%3B26(4)%3A657%E2%80%938&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1002%2Facp.1836",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.103Z",
+        "checkedAt": "2026-11-02T15:53:20.436Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -31350,50 +30827,6 @@
             "issue": "5",
             "pages": "825-826",
             "publisher": "Wiley"
-          },
-          {
-            "id": "10.1002/acp.1833",
-            "title": "How I Got Started",
-            "authors": [
-              {
-                "family": "Stephen Lindsay",
-                "given": "D."
-              }
-            ],
-            "year": 2011,
-            "venue": "Applied Cognitive Psychology",
-            "doi": "10.1002/acp.1833",
-            "url": "https://doi.org/10.1002/acp.1833",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "26",
-            "issue": "3",
-            "pages": "497-498",
-            "publisher": "Wiley"
-          },
-          {
-            "id": "10.1002/acp.3134",
-            "title": "How I Got Started",
-            "authors": [
-              {
-                "family": "Bull",
-                "given": "Ray"
-              }
-            ],
-            "year": 2015,
-            "venue": "Applied Cognitive Psychology",
-            "doi": "10.1002/acp.3134",
-            "url": "https://doi.org/10.1002/acp.3134",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "29",
-            "issue": "4",
-            "pages": "628-630",
-            "publisher": "Wiley"
           }
         ]
       }
@@ -31436,7 +30869,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.104Z",
+        "checkedAt": "2026-11-02T15:53:21.435Z",
         "verdict": "No record found",
         "explanation": "No matching record in 3 indexes. Likely fabricated, check by hand.",
         "nearest": {
@@ -31564,7 +30997,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.105Z",
+        "checkedAt": "2026-11-02T15:53:21.437Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -31728,7 +31161,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.107Z",
+        "checkedAt": "2026-11-02T15:53:21.441Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -31834,30 +31267,7 @@
               "status": "agree"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1002/acp.2350090712",
-            "title": "Commemorating Donald Broadbent's contribution to the field of Applied Cognitive Psychology: A discussion of the special issue papers",
-            "authors": [
-              {
-                "family": "Long",
-                "given": "John"
-              }
-            ],
-            "year": 1995,
-            "venue": "Applied Cognitive Psychology",
-            "doi": "10.1002/acp.2350090712",
-            "url": "https://doi.org/10.1002/acp.2350090712",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "9",
-            "issue": "7",
-            "publisher": "Wiley"
-          }
-        ]
+        }
       }
     },
     {
@@ -31886,13 +31296,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Cognitive%20Psychology.%202021%3B72%3A54%E2%80%93107&per-page=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Cognitive%20Psychology.%202021%3B72%3A54%E2%80%93107&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 5
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1016%2Fj.cogpsych.2014.02.002",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.108Z",
+        "checkedAt": "2026-11-02T15:53:21.442Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -31955,78 +31377,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1016/s0364-0213(03)00068-5",
-            "title": "Categorization as causal reasoning",
-            "authors": [
-              {
-                "family": "Rehder",
-                "given": "B"
-              }
-            ],
-            "year": 2003,
-            "venue": "Cognitive Science",
-            "doi": "10.1016/s0364-0213(03)00068-5",
-            "url": "https://doi.org/10.1016/s0364-0213(03)00068-5",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "27",
-            "issue": "5",
-            "pages": "709-748",
-            "publisher": "Wiley"
-          },
-          {
-            "id": "10.1207/s15516709cog2705_2",
-            "title": "Categorization as causal reasoning⋆",
-            "authors": [
-              {
-                "family": "Rehder",
-                "given": "Bob"
-              }
-            ],
-            "year": 2003,
-            "venue": "Cognitive Science",
-            "doi": "10.1207/s15516709cog2705_2",
-            "url": "https://doi.org/10.1207/s15516709cog2705_2",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "27",
-            "issue": "5",
-            "pages": "709-748",
-            "publisher": "Wiley"
-          },
-          {
-            "id": "10.1016/j.cogpsych.2017.05.002",
-            "title": "Diagnostic causal reasoning with verbal information",
-            "authors": [
-              {
-                "family": "Meder",
-                "given": "Björn"
-              },
-              {
-                "family": "Mayrhofer",
-                "given": "Ralf"
-              }
-            ],
-            "year": 2017,
-            "venue": "Cognitive Psychology",
-            "doi": "10.1016/j.cogpsych.2017.05.002",
-            "url": "https://doi.org/10.1016/j.cogpsych.2017.05.002",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "96",
-            "pages": "54-84",
-            "publisher": "Elsevier BV"
-          }
-        ]
+        }
       }
     },
     {
@@ -32060,7 +31411,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.109Z",
+        "checkedAt": "2026-11-02T15:53:22.487Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -32124,26 +31475,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1080/03585522.1980.10407920",
-            "title": "The international economic history congresses",
-            "authors": [],
-            "year": 1980,
-            "venue": "Scandinavian Economic History Review",
-            "doi": "10.1080/03585522.1980.10407920",
-            "url": "https://doi.org/10.1080/03585522.1980.10407920",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "28",
-            "issue": "1",
-            "pages": "103-108",
-            "publisher": "Informa UK Limited"
-          }
-        ]
+        }
       }
     },
     {
@@ -32184,7 +31516,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.110Z",
+        "checkedAt": "2026-11-02T15:53:22.489Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -32354,7 +31686,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.111Z",
+        "checkedAt": "2026-11-02T15:53:22.492Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -32493,32 +31825,6 @@
             "issue": "3",
             "pages": "441-458",
             "publisher": "Wiley"
-          },
-          {
-            "id": "10.2307/2598100",
-            "title": "Capitalism, Culture and Economic Decline in Britain, 1750-1990.",
-            "authors": [
-              {
-                "family": "Pollard",
-                "given": "Sidney"
-              },
-              {
-                "family": "Rubinstein",
-                "given": "W. D."
-              }
-            ],
-            "year": 1994,
-            "venue": "The Economic History Review",
-            "doi": "10.2307/2598100",
-            "url": "https://doi.org/10.2307/2598100",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "47",
-            "issue": "2",
-            "pages": "417",
-            "publisher": "JSTOR"
           }
         ]
       }
@@ -32559,7 +31865,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.113Z",
+        "checkedAt": "2026-11-02T15:53:22.494Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -32623,31 +31929,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1080/20780389.2019.1575589",
-            "title": "Fifty years of African economic history",
-            "authors": [
-              {
-                "family": "Hopkins",
-                "given": "A. G."
-              }
-            ],
-            "year": 2019,
-            "venue": "Economic History of Developing Regions",
-            "doi": "10.1080/20780389.2019.1575589",
-            "url": "https://doi.org/10.1080/20780389.2019.1575589",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "34",
-            "issue": "1",
-            "pages": "1-15",
-            "publisher": "Informa UK Limited"
-          }
-        ]
+        }
       }
     },
     {
@@ -32682,7 +31964,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.113Z",
+        "checkedAt": "2026-11-02T15:53:22.496Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -32793,7 +32075,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.114Z",
+        "checkedAt": "2026-11-02T15:53:22.496Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -32877,44 +32159,6 @@
             "retractionUrls": [],
             "type": "book-chapter",
             "publisher": "Edward Elgar Publishing"
-          },
-          {
-            "id": "https://openalex.org/W87960219",
-            "title": "Text mining with the WEBSOM",
-            "authors": [
-              {
-                "family": "Lagus",
-                "given": "Krista"
-              }
-            ],
-            "year": 2000,
-            "venue": "Aaltodoc (Aalto University)",
-            "url": "https://openalex.org/W87960219",
-            "source": "OpenAlex",
-            "retracted": false,
-            "type": "dissertation"
-          },
-          {
-            "id": "10.5362/jshet.55.1_86",
-            "title": "Economic Thought of Werner Sombart:",
-            "authors": [
-              {
-                "family": "Okuyama",
-                "given": "Makoto"
-              }
-            ],
-            "year": 2013,
-            "venue": "The History of Economic Thought",
-            "doi": "10.5362/jshet.55.1_86",
-            "url": "https://doi.org/10.5362/jshet.55.1_86",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "55",
-            "issue": "1",
-            "pages": "86-104",
-            "publisher": "The Japanese Society for the History of Economic Thought"
           }
         ]
       }
@@ -32959,7 +32203,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.115Z",
+        "checkedAt": "2026-11-02T15:53:22.500Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -33112,28 +32356,6 @@
             "publisher": "JSTOR"
           },
           {
-            "id": "10.1017/s0022050700067693",
-            "title": "Soll und Haben: Recent German Economic History and the Problem of Economic Development",
-            "authors": [
-              {
-                "family": "Tilly",
-                "given": "Richard"
-              }
-            ],
-            "year": 1969,
-            "venue": "The Journal of Economic History",
-            "doi": "10.1017/s0022050700067693",
-            "url": "https://doi.org/10.1017/s0022050700067693",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "29",
-            "issue": "2",
-            "pages": "298-319",
-            "publisher": "Cambridge University Press (CUP)"
-          },
-          {
             "id": "10.2307/2590340",
             "title": "Bibliography: Recent Work in German Economic History (1900-1927)",
             "authors": [
@@ -33186,13 +32408,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Economic%20History%20of%20Developing%20Regions.%202029%3B38(2)%3A151%E2%80%9372&per-page=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Economic%20History%20of%20Developing%20Regions.%202029%3B38(2)%3A151%E2%80%9372&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1080%2F20780389.2022.2099371",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.117Z",
+        "checkedAt": "2026-11-02T15:53:22.503Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -33290,7 +32524,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.118Z",
+        "checkedAt": "2026-11-02T15:53:23.411Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -33441,7 +32675,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.118Z",
+        "checkedAt": "2026-11-02T15:53:23.412Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -33643,7 +32877,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.120Z",
+        "checkedAt": "2026-11-02T15:53:23.416Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -33772,50 +33006,6 @@
             "issue": "6823",
             "pages": "971-971",
             "publisher": "Springer Science and Business Media LLC"
-          },
-          {
-            "id": "10.2139/ssrn.3828245",
-            "title": "Challenging the Bleak Climate Forecast for Georgian Bay (Updated)",
-            "authors": [
-              {
-                "family": "Jowett",
-                "given": "E. Craig"
-              }
-            ],
-            "year": 2021,
-            "venue": "",
-            "doi": "10.2139/ssrn.3828245",
-            "url": "https://doi.org/10.2139/ssrn.3828245",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "posted-content",
-            "publisher": "Elsevier BV"
-          },
-          {
-            "id": "10.1029/2025sw004589",
-            "title": "Heliospheric Turbulence: Presidential Budget Request Offers a Bleak Forecast for Space Weather Research",
-            "authors": [
-              {
-                "family": "Lugaz",
-                "given": "N."
-              },
-              {
-                "family": "Carter",
-                "given": "B. A."
-              }
-            ],
-            "year": 2025,
-            "venue": "Space Weather",
-            "doi": "10.1029/2025sw004589",
-            "url": "https://doi.org/10.1029/2025sw004589",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "23",
-            "issue": "7",
-            "publisher": "American Geophysical Union (AGU)"
           }
         ]
       }
@@ -33848,13 +33038,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Climate%20Policy.%202029%3B22(6)%3A754%E2%80%9369&per-page=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Climate%20Policy.%202029%3B22(6)%3A754%E2%80%9369&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.1080%2F14693062.2022.2038063",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.122Z",
+        "checkedAt": "2026-11-02T15:53:23.419Z",
         "verdict": "Details differ",
         "explanation": "A matching work exists, but the highlighted fields differ.",
         "match": {
@@ -34034,7 +33236,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.123Z",
+        "checkedAt": "2026-11-02T15:53:24.414Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -34139,7 +33341,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.123Z",
+        "checkedAt": "2026-11-02T15:53:24.416Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -34211,82 +33413,7 @@
               "status": "unknown"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.2139/ssrn.4363221",
-            "title": "The Relationship between Climate Risk, Climate Policy Uncertainty, and CO2 Emissions: Empirical Evidence from the US",
-            "authors": [
-              {
-                "family": "Makrychoriti",
-                "given": "Panagiota"
-              },
-              {
-                "family": "Guesmi",
-                "given": "Khaled"
-              },
-              {
-                "family": "Spyrou",
-                "given": "Spyros I."
-              }
-            ],
-            "year": 2023,
-            "venue": "",
-            "doi": "10.2139/ssrn.4363221",
-            "url": "https://doi.org/10.2139/ssrn.4363221",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "posted-content",
-            "publisher": "Elsevier BV"
-          },
-          {
-            "id": "10.1016/j.gfj.2022.100805",
-            "title": "Firm-level risk of climate change: Evidence from climate disasters",
-            "authors": [
-              {
-                "family": "Ai",
-                "given": "Li"
-              },
-              {
-                "family": "Gao",
-                "given": "Lucia S."
-              }
-            ],
-            "year": 2023,
-            "venue": "Global Finance Journal",
-            "doi": "10.1016/j.gfj.2022.100805",
-            "url": "https://doi.org/10.1016/j.gfj.2022.100805",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "55",
-            "pages": "100805",
-            "publisher": "Elsevier BV"
-          },
-          {
-            "id": "https://openalex.org/W2796870799",
-            "title": "Assessing Climate Finance Readiness in the Asia-Pacific Region",
-            "authors": [
-              {
-                "family": "Samuwai",
-                "given": "Jale"
-              },
-              {
-                "family": "Hills",
-                "given": "Jeremy Maxwell"
-              }
-            ],
-            "year": 2018,
-            "doi": "10.3390/su10041192",
-            "venue": "Sustainability",
-            "url": "https://openalex.org/W2796870799",
-            "source": "OpenAlex",
-            "retracted": false,
-            "type": "article"
-          }
-        ]
+        }
       }
     },
     {
@@ -34330,7 +33457,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.125Z",
+        "checkedAt": "2026-11-02T15:53:24.421Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -34449,28 +33576,6 @@
         },
         "alternatives": [
           {
-            "id": "10.1029/2008eo250003",
-            "title": "Action on climate urge",
-            "authors": [
-              {
-                "family": "Showstack",
-                "given": "Randy"
-              }
-            ],
-            "year": 2008,
-            "venue": "Eos, Transactions American Geophysical Union",
-            "doi": "10.1029/2008eo250003",
-            "url": "https://doi.org/10.1029/2008eo250003",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "89",
-            "issue": "25",
-            "pages": "226-226",
-            "publisher": "American Geophysical Union (AGU)"
-          },
-          {
             "id": "10.1029/eost2008eo22",
             "title": "Eos, Transactions, American Geophysical Union Volume 89, Number 22, 27 May 2008",
             "authors": [],
@@ -34484,28 +33589,6 @@
             "type": "journal-article",
             "volume": "89",
             "issue": "22",
-            "publisher": "American Geophysical Union (AGU)"
-          },
-          {
-            "id": "10.1029/2011eo240004",
-            "title": "Communicating climate science",
-            "authors": [
-              {
-                "family": "Betts",
-                "given": "Alan K."
-              }
-            ],
-            "year": 2011,
-            "venue": "Eos, Transactions American Geophysical Union",
-            "doi": "10.1029/2011eo240004",
-            "url": "https://doi.org/10.1029/2011eo240004",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "92",
-            "issue": "24",
-            "pages": "203-204",
             "publisher": "American Geophysical Union (AGU)"
           }
         ]
@@ -34547,7 +33630,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.127Z",
+        "checkedAt": "2026-11-02T15:53:24.424Z",
         "verdict": "Verified",
         "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
         "match": {
@@ -34644,7 +33727,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.127Z",
+        "checkedAt": "2026-11-02T15:53:24.425Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {
@@ -34749,7 +33832,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.128Z",
+        "checkedAt": "2026-11-02T15:53:24.427Z",
         "verdict": "Details differ",
         "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
         "match": {
@@ -34927,7 +34010,7 @@
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.131Z",
+        "checkedAt": "2026-11-02T15:53:24.432Z",
         "verdict": "Identifier conflict",
         "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
         "identifierRecord": {
@@ -35032,45 +34115,7 @@
               "status": "agree"
             }
           ]
-        },
-        "alternatives": [
-          {
-            "id": "10.1126/science.300.5628.2013a",
-            "title": "EPA Report Takes Heat for Climate Change Edits",
-            "authors": [
-              {
-                "family": "Stokstad",
-                "given": "Erik"
-              }
-            ],
-            "year": 2003,
-            "venue": "Science",
-            "doi": "10.1126/science.300.5628.2013a",
-            "url": "https://doi.org/10.1126/science.300.5628.2013a",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "journal-article",
-            "volume": "300",
-            "issue": "5628",
-            "pages": "2013-2013",
-            "publisher": "American Association for the Advancement of Science (AAAS)"
-          },
-          {
-            "id": "10.1163/9789004322714_cclc_2021-0097-335",
-            "title": "Why not aim for Gold in Beating Climate Change, too?",
-            "authors": [],
-            "year": null,
-            "venue": "Climate Change and Law Collection",
-            "doi": "10.1163/9789004322714_cclc_2021-0097-335",
-            "url": "https://doi.org/10.1163/9789004322714_cclc_2021-0097-335",
-            "source": "Crossref",
-            "retracted": false,
-            "retractionUrls": [],
-            "type": "dataset",
-            "publisher": "Walter de Gruyter GmbH"
-          }
-        ]
+        }
       }
     },
     {
@@ -35107,13 +34152,25 @@
           },
           {
             "index": "OpenAlex",
+            "url": "https://api.openalex.org/works?search=Urban%20Science.%202029%3B6(4)%3A65&per-page=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "Europe PMC",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Urban%20Science.%202029%3B6(4)%3A65&format=json&resultType=core&pageSize=5",
+            "status": "answered",
+            "count": 0
+          },
+          {
+            "index": "OpenAlex",
             "url": "https://api.openalex.org/works/https://doi.org/10.3390%2Furbansci6040065",
             "status": "answered",
             "count": 1,
             "cached": true
           }
         ],
-        "checkedAt": "2026-11-02T15:50:39.132Z",
+        "checkedAt": "2026-11-02T15:53:24.435Z",
         "verdict": "Details differ",
         "explanation": "First author, volume and first page match this record, but the title you wrote differs from it.",
         "match": {

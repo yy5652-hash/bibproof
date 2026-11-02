@@ -11,7 +11,7 @@ export default function CrossPanel({ extraction }: { extraction: Extraction }) {
   const clean = !none && !cross.missing.length && !cross.uncited.length;
   const style = t(`cross.style.${cross.style}` as 'cross.style.Numeric');
   return (
-    <details className="panel cross" open={!none && !clean}>
+    <details className="panel cross" open={cross.missing.length > 0}>
       <summary>
         <h3 id="cross-h">{t('cross.title')}</h3>
         <span className="pill">{none ? t('cross.none') : t('cross.style', { style })}</span>

@@ -29,6 +29,12 @@ export function scoreCandidate(ref: ParsedReference, work: Work): Score {
   ];
   return {title,authors,year,venue,locator,total:.64*title+.26*authors+.07*year+.03*venue+(locator?.5:0),fields};
 }
+// Enough shared wording to offer a record as a lead. One word in common is not:
+// the nearest hit for an invented title is often an unrelated short title.
+export function closeWording(ref: ParsedReference, work: Work): boolean {
+  const title=tokens(work.title), raw=new Set(tokens(ref.raw)); const shared=title.filter(t=>raw.has(t)).length;
+  return (shared>=2&&shared/title.length>=.75)||(shared>=3&&shared/title.length>=.5);
+}
 export function strongMatch(s: Score): boolean { return s.title>=.88 && s.authors>=.7; }
 export function settled(s: Score): boolean { return strongMatch(s) || Boolean(s.locator); }
 // How many words remain once author names, numbers and the venue are removed: an

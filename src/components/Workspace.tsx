@@ -51,14 +51,18 @@ export default function Workspace({ s }: { s: Session }) {
   const selected = selectedId !== null ? rows[selectedId] : undefined;
   const unresolved = useMemo(() => done.filter(r => needsAction(r.result!) && !decisions[r.id]), [done, decisions]);
 
-  // On a wide screen the first finished row is selected as soon as it exists, so the evidence pane is never empty.
+  // On a wide screen the evidence pane is never empty, and it opens on the most serious row until the reader picks one.
+  const picked = useRef(false);
   useEffect(() => {
-    if (selectedId === null && desktop) { const first = ordered.find(r => r.result); if (first) setSelectedId(first.id); }
-  }, [selectedId, desktop, ordered]);
-  useEffect(() => { if (!rows.length) { setSelectedId(null); setSheet(false); setFilter('all'); } }, [rows.length]);
+    if (!desktop || picked.current) return;
+    const first = ordered.find(r => r.result);
+    if (first && (selectedId === null || phase !== 'running') && first.id !== selectedId) setSelectedId(first.id);
+  }, [selectedId, desktop, ordered, phase]);
+  useEffect(() => { if (!rows.length) { picked.current = false; setSelectedId(null); setSheet(false); setFilter('all'); } }, [rows.length]);
 
-  const select = useCallback((id: number) => { setSelectedId(id); if (!desktop) setSheet(true); }, [desktop]);
+  const select = useCallback((id: number) => { picked.current = true; setSelectedId(id); if (!desktop) setSheet(true); }, [desktop]);
   const move = useCallback((delta: 1 | -1) => {
+    picked.current = true;
     const here = ordered.findIndex(r => r.id === selectedId);
     for (let i = here + delta; i >= 0 && i < ordered.length; i += delta) {
       if (ordered[i].result) { setSelectedId(ordered[i].id); scrollTo.current?.(i); return; }
@@ -66,6 +70,7 @@ export default function Workspace({ s }: { s: Session }) {
   }, [ordered, selectedId]);
   const nextUnresolved = useCallback(() => {
     if (!unresolved.length) return;
+    picked.current = true;
     const ids = new Set(unresolved.map(r => r.id));
     const here = ordered.findIndex(r => r.id === selectedId);
     const order = [...ordered.slice(here + 1), ...ordered.slice(0, here + 1)];
@@ -126,8 +131,9 @@ export default function Workspace({ s }: { s: Session }) {
         <div className="filters" role="group" aria-label={t('filter.group')}>
           <button className="chip" aria-pressed={filter === 'all'} onClick={() => setFilter('all')}>{t('filter.all')} <span className="count">{rows.length}</span></button>
           {SEVERITY.map(v => {
+            if (!counts[v]) return null;
             const { Icon, slug } = verdictMeta[v];
-            return <button key={v} className={`chip v-${slug}`} data-verdict={v} aria-pressed={filter === v} disabled={!counts[v]} onClick={() => setFilter(filter === v ? 'all' : v)}><Icon />{t(`v.${v}` as 'v.Verified')} <span className="count">{counts[v]}</span></button>;
+            return <button key={v} className={`chip v-${slug}`} data-verdict={v} aria-pressed={filter === v} onClick={() => setFilter(filter === v ? 'all' : v)}><Icon />{t(`v.${v}` as 'v.Verified')} <span className="count">{counts[v]}</span></button>;
           })}
         </div>
         <div className="seg sort" role="group" aria-label={t('sort.label')}>

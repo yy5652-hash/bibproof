@@ -1,6 +1,7 @@
 import { VERDICTS, type CheckResult } from '../core/types';
 import type { Extraction } from '../core/extract';
 import { crossCheck } from '../core/crosscheck';
+import { closeWording } from '../core/score';
 import { useI18n } from '../i18n';
 import type { RowState } from '../useChecker';
 
@@ -17,7 +18,7 @@ export default function PrintReport({ rows, extraction }: { rows: RowState[]; ex
       <p>{date(Date.now())} · {t('print.summary', { done: done.length, total: rows.length })} · https://yy5652-hash.github.io/bibproof/</p>
       <p>{VERDICTS.map(v => `${results.filter(r => r.verdict === v).length} ${verdict(v)}`).join(' · ')}</p>
       <ol>
-        {done.map(row => { const r: CheckResult = row.result!; const rec = r.verdict === 'Identifier conflict' ? r.identifierRecord : r.match ?? r.nearest; return (
+        {done.map(row => { const r: CheckResult = row.result!; const rec = r.verdict === 'Identifier conflict' ? r.identifierRecord : r.match ?? (r.nearest && closeWording(r.reference, r.nearest) ? r.nearest : undefined); return (
           <li key={row.id}>
             <strong>{verdict(r.verdict)}</strong>
             <p>{row.raw}</p>
