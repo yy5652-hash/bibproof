@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import JSZip from 'jszip';
 import { readFileSync } from 'node:fs';
 import { INDEX_HOSTS, installMock } from './mock';
 
@@ -277,3 +278,34 @@ test.describe('phone', () => {
     expect(await overflow()).toBeLessThanOrEqual(0);
   });
 });
+
+const PAPER = ['Introduction', 'Deep networks changed vision research [1]. Attention models later replaced recurrence [2].', 'References', '[1] He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. CVPR.', '[2] Vaswani, A., et al. (2017). Attention is all you need. NeurIPS.'];
+
+function pdfBytes(lines: string[]) {
+  const content = `BT /F1 10 Tf 40 760 Td 14 TL ${lines.map(l => `(${l.replace(/([()\\])/g, '\\$1')}) Tj T*`).join(' ')} ET`;
+  const objects = ['<< /Type /Catalog /Pages 2 0 R >>', '<< /Type /Pages /Kids [3 0 R] /Count 1 >>', '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>', `<< /Length ${content.length} >>\nstream\n${content}\nendstream`, '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>'];
+  let out = '%PDF-1.4\n'; const offsets: number[] = [];
+  objects.forEach((o, i) => { offsets.push(out.length); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
+  const xref = out.length;
+  out += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n${offsets.map(n => `${String(n).padStart(10, '0')} 00000 n \n`).join('')}trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
+  return Buffer.from(out, 'latin1');
+}
+async function docxBytes(lines: string[]) {
+  const zip = new JSZip();
+  zip.file('[Content_Types].xml', '<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>');
+  zip.file('_rels/.rels', '<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>');
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  zip.file('word/document.xml', `<?xml version="1.0"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${lines.map(l => `<w:p><w:r><w:t>${esc(l)}</w:t></w:r></w:p>`).join('')}</w:body></w:document>`);
+  return zip.generateAsync({ type: 'nodebuffer' });
+}
+for (const kind of ['pdf', 'docx'] as const) {
+  test(`a real .${kind} is read on the device and its references found`, async ({ page }) => {
+    await installMock(page);
+    await page.goto('/');
+    await page.getByRole('tab', { name: 'File' }).click();
+    const buffer = kind === 'pdf' ? pdfBytes(PAPER) : await docxBytes(PAPER);
+    await page.locator('input[type=file]').first().setInputFiles({ name: `paper.${kind}`, mimeType: kind === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', buffer });
+    await expect(page.getByText(`paper.${kind} was read on this device`)).toBeVisible({ timeout: 20000 });
+    await expect(page.getByText('2 references detected in a full document')).toBeVisible();
+  });
+}
