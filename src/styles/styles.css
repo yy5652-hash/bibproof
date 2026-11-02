@@ -72,6 +72,7 @@ small { display: block; margin-top: 2px; }
 
 /* ---------- buttons, chips, segmented control ---------- */
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 16px; border: 1px solid var(--rule-strong); border-radius: 10px; background: var(--surface); color: var(--ink); font-weight: 500; font-size: .94rem; text-decoration: none; transition: background .12s, border-color .12s, transform .12s; white-space: nowrap; }
+.button svg { flex: none; }
 .button:hover:not(:disabled) { background: var(--surface-2); }
 .button:active:not(:disabled) { transform: translateY(1px); }
 .button:disabled { opacity: .45; }
