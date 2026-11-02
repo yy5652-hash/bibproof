@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { VERDICTS } from '../core/types';
 import { useI18n } from '../i18n';
+import fresh from '../../eval/fresh-results.json';
 
 const percent = (n: number) => `${(n * 100).toFixed(1)}%`;
 export default function Methodology() {
@@ -37,6 +38,7 @@ export default function Methodology() {
           {report.optionalSet?.status === 'completed'
             ? <p><a href="https://gptzero.me/news/neurips/">{t('m.neurips')}</a>, {t('m.neurips.rest', { detected: report.optionalSet.detected, total: report.optionalSet.total, rate: percent(report.optionalSet.detectionRate) })}</p>
             : <p>{t('m.neurips.none', { reason: report.optionalSet?.reason ?? t('m.neurips.na') })}</p>}
+          <p>{t('m.fresh', { total: fresh.total, fa: fresh.falseAccusations, accepted: fresh.accepted, abst: fresh.abstentions })}</p>
           {report.realisticGenuine && <p>{t('m.real', { total: report.realisticGenuine.total, fa: report.realisticGenuine.falseAccusations, accepted: report.realisticGenuine.accepted, abst: report.realisticGenuine.abstentions })}</p>}
           <p><a href="https://github.com/yy5652-hash/bibproof" target="_blank" rel="noopener noreferrer">{t('m.github')}</a></p>
         </> : <p>{failed ? t('m.failed') : t('m.loading')}</p>}

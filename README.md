@@ -2,7 +2,7 @@
 
 **Every reference, proven before you submit.**
 
-Paste a bibliography or drop in a paper. Bibproof checks each reference against the scholarly record and shows the evidence: which record it matched, which fields disagree, and what the index actually says. No account, no cap, nothing to install.
+Paste a bibliography, drop in a paper, or enter a DOI. Bibproof checks each reference against the scholarly record, shows the evidence, and helps you fix what it finds. No account, no cap, nothing to install. In English and Chinese.
 
 Live: https://yy5652-hash.github.io/bibproof/
 
@@ -26,13 +26,16 @@ Each reference gets one of six verdicts, always with its evidence:
 It also:
 
 - reads `.docx`, `.pdf`, `.bib`, `.ris` and `.txt`, finding the reference section in a full paper;
-- cross-checks in-text citations against the reference list, in both directions;
-- writes the corrected reference in APA 7, MLA 9, Chicago or IEEE;
-- exports a corrected `.bib` or `.ris`, a CSV report, and a printable PDF report.
+- cross-checks in-text citations against the reference list, in both directions, and lists the sentences that cite each problem reference;
+- sorts by severity, so the worst problem comes first, with keyboard shortcuts for working through them;
+- lets you keep, replace or remove each entry, offers close real records as candidates, and builds a clean bibliography in APA 7, MLA 9, Chicago, IEEE or Harvard, with a change log;
+- exports `.txt`, `.bib`, `.ris`, a CSV report and a printable PDF report;
+- gives direct search links to CNKI, Wanfang, Baidu Scholar and Google Scholar for entries it cannot check, including Chinese references;
+- keeps your past checks in this browser, and shares a result as a link that carries everything in its `#` fragment, so it never reaches a server.
 
 ## Privacy
 
-Your file is read on your device and never uploaded. Only the text of individual references goes to the public scholarly indexes: Crossref, DataCite, OpenAlex, Europe PMC and Open Library. There is no backend and no analytics.
+Your file is read on your device and never uploaded. Only the text of individual references goes to the public scholarly indexes: Crossref, DataCite, OpenAlex, Europe PMC and Open Library. History stays in your browser and can be cleared in one click. A share link contains the reference text, and the app warns you before copying it. There is no backend and no analytics.
 
 ## How it works
 
@@ -49,16 +52,17 @@ Your file is read on your device and never uploaded. Only the text of individual
 | --- | --- |
 | 240 genuine references (60 works in 4 styles) | 0 false accusations, 240 accepted |
 | 56 genuine references as real authors typed them | 1 false accusation on the first held-out run; 0 after the fix below, all 56 matched |
+| 60 more typed references, drawn after the rules were frozen | 1 false accusation, 58 matched, 1 could not be checked |
 | 60 synthetic fabrications | 97% flagged (invented 15/15, chimera 15/15, bogus DOI 15/15, mutated 13/15) |
 | 100 hallucinated citations from GPTZero's NeurIPS list | 98 flagged, 0 marked verified, 2 could not be checked |
 
-The one false accusation was a preprint cited under a title that differs from its record, although every author and the year matched. That pattern now returns "Details differ". Because the rule came from this set, the set no longer counts as unseen; the run before the fix is kept in [`eval/summary-first-heldout.json`](eval/summary-first-heldout.json), and the fix left the synthetic results unchanged and moved one GPTZero entry from "No record found" to "Details differ", still flagged.
+The one false accusation was a preprint cited under a title that differs from its record, although every author and the year matched. That pattern now returns "Details differ". Because the rule came from this set, the set no longer counts as unseen; the run before the fix is kept in [`eval/summary-first-heldout.json`](eval/summary-first-heldout.json), and the fix left the synthetic results unchanged and moved one GPTZero entry from "No record found" to "Details differ", still flagged. The newer batch of 60 is the unseen figure: its one false accusation is a book chapter cited only by its book title, and no rule has been changed for it. Its results are in [`eval/fresh-results.json`](eval/fresh-results.json).
 
 These are measurements on these sets, not population-wide accuracy claims. The synthetic set is sampled from Crossref, the same index used for lookup, and the NeurIPS labels are GPTZero's own.
 
 ## Limits
 
-Coverage of books, reports, web pages and non-Latin scripts is uneven, so these often land in "Could not check". A missing record can still be real, and "Details differ" is a prompt to look, not proof of fabrication. Bibproof checks that a source exists and is cited accurately, not that it supports your claim. OpenAlex allows about 100 anonymous searches per network per day; beyond that, unmatched entries return "Could not check" until it resets.
+Coverage of books, reports, web pages and non-Latin scripts is uneven, so these often land in "Could not check", and an entry in a non-Latin script is never called fabricated. A missing record can still be real, and "Details differ" is a prompt to look, not proof of fabrication. Bibproof checks that a source exists and is cited accurately, not that it supports your claim. OpenAlex allows about 100 anonymous searches per network per day; beyond that, unmatched entries return "Could not check" until it resets.
 
 ## Run it
 
@@ -75,7 +79,7 @@ npm run eval       # live network, cached in eval/cache
 
 Built for LaunchPad Hacks in November 2026 by Yi Yu, with all project code written during the event. AI coding assistants (Claude Code and OpenAI Codex) wrote much of the code under the author's direction and review.
 
-Libraries: [React](https://react.dev), [Vite](https://vite.dev), [pdf.js](https://mozilla.github.io/pdf.js/) (Apache-2.0), [mammoth.js](https://github.com/mwilliamson/mammoth.js) (BSD-2-Clause), [Citation.js](https://citation.js.org) (MIT), CSL styles from the [Citation Style Language project](https://citationstyles.org) (CC BY-SA 3.0), Inter and Newsreader fonts through Fontsource (OFL).
+Libraries: [React](https://react.dev), [Vite](https://vite.dev), [Radix UI](https://www.radix-ui.com) (MIT), [TanStack Virtual](https://tanstack.com/virtual) (MIT), [lz-string](https://github.com/pieroxy/lz-string) (MIT), [pdf.js](https://mozilla.github.io/pdf.js/) (Apache-2.0), [mammoth.js](https://github.com/mwilliamson/mammoth.js) (BSD-2-Clause), [Citation.js](https://citation.js.org) (MIT), CSL styles from the [Citation Style Language project](https://citationstyles.org) (CC BY-SA 3.0), Inter and Newsreader fonts through Fontsource (OFL).
 
 Data: [Crossref](https://www.crossref.org), [DataCite](https://datacite.org), [OpenAlex](https://openalex.org), [Europe PMC](https://europepmc.org), [Open Library](https://openlibrary.org).
 

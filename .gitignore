@@ -7,3 +7,5 @@ test-results/
 .DS_Store
 # GPTZero's published table stays at its source; `npm run eval` fetches it.
 eval/real-world-*.json
+# Competitor screenshots are for internal comparison only
+compare/
