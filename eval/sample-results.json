@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-01T00:55:25.126Z",
+  "runAt": "2026-11-02T00:17:32.325Z",
   "allPassed": true,
   "results": [
     {
@@ -24,7 +24,7 @@
           "cached": true
         }
       ],
-      "checkedAt": "2026-11-01T00:55:22.773Z",
+      "checkedAt": "2026-11-02T00:17:29.492Z",
       "verdict": "Verified",
       "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
       "match": {
@@ -77,6 +77,7 @@
         "authors": 1,
         "year": 1,
         "venue": 0.3333333333333333,
+        "locator": false,
         "total": 0.98,
         "fields": [
           {
@@ -145,7 +146,7 @@
           "cached": true
         }
       ],
-      "checkedAt": "2026-11-01T00:55:22.781Z",
+      "checkedAt": "2026-11-02T00:17:29.498Z",
       "verdict": "Verified",
       "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
       "match": {
@@ -185,6 +186,7 @@
         "authors": 1,
         "year": 1,
         "venue": 1,
+        "locator": false,
         "total": 1,
         "fields": [
           {
@@ -233,7 +235,7 @@
           "Bengio",
           "Hinton"
         ],
-        "title": "Deep learning",
+        "title": "LeCun, Y., Bengio, Y., & Hinton, G. (2022)",
         "kind": "scholarly"
       },
       "evidence": [
@@ -252,7 +254,7 @@
           "cached": true
         }
       ],
-      "checkedAt": "2026-11-01T00:55:22.786Z",
+      "checkedAt": "2026-11-02T00:17:29.505Z",
       "verdict": "Details differ",
       "explanation": "A matching work exists, but the highlighted fields differ.",
       "match": {
@@ -290,11 +292,12 @@
         "authors": 1,
         "year": 0,
         "venue": 1,
-        "total": 0.93,
+        "locator": true,
+        "total": 1.4300000000000002,
         "fields": [
           {
             "field": "Title",
-            "written": "Deep learning",
+            "written": "LeCun, Y., Bengio, Y., & Hinton, G. (2022)",
             "record": "Deep learning",
             "status": "agree"
           },
@@ -335,7 +338,7 @@
           "Darwin",
           "Newton"
         ],
-        "title": "Deep learning",
+        "title": "Nature, 521, 436–444",
         "kind": "scholarly"
       },
       "evidence": [
@@ -343,22 +346,30 @@
           "index": "Crossref",
           "url": "https://api.crossref.org/works?query.bibliographic=Darwin%2C%20C.%2C%20%26%20Newton%2C%20I.%20(2015).%20Deep%20learning.%20Nature%2C%20521%2C%20436%E2%80%93444.&rows=5",
           "status": "answered",
-          "count": 5
+          "count": 5,
+          "cached": true
         },
         {
           "index": "OpenAlex",
-          "url": "https://api.openalex.org/works?search=Deep%20learning&per-page=5",
+          "url": "https://api.openalex.org/works?search=Nature%2C%20521%2C%20436%E2%80%93444&per-page=5",
           "status": "answered",
           "count": 5
         },
         {
           "index": "Europe PMC",
-          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Deep%20learning&format=json&resultType=core&pageSize=5",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Nature%2C%20521%2C%20436%E2%80%93444&format=json&resultType=core&pageSize=5",
           "status": "answered",
           "count": 5
+        },
+        {
+          "index": "OpenAlex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.1038%2Fnature14539",
+          "status": "answered",
+          "count": 1,
+          "cached": true
         }
       ],
-      "checkedAt": "2026-11-01T00:55:22.792Z",
+      "checkedAt": "2026-11-02T00:17:29.510Z",
       "verdict": "Details differ",
       "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
       "match": {
@@ -396,11 +407,12 @@
         "authors": 0,
         "year": 1,
         "venue": 1,
+        "locator": false,
         "total": 0.74,
         "fields": [
           {
             "field": "Title",
-            "written": "Deep learning",
+            "written": "Nature, 521, 436–444",
             "record": "Deep learning",
             "status": "agree"
           },
@@ -471,7 +483,7 @@
           "cached": true
         }
       ],
-      "checkedAt": "2026-11-01T00:55:25.117Z",
+      "checkedAt": "2026-11-02T00:17:30.867Z",
       "verdict": "Identifier conflict",
       "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
       "identifierRecord": {
@@ -573,6 +585,7 @@
         "authors": 0,
         "year": 0.85,
         "venue": 0,
+        "locator": false,
         "total": 0.6995,
         "fields": [
           {
@@ -644,7 +657,7 @@
           "cached": true
         }
       ],
-      "checkedAt": "2026-11-01T00:55:25.120Z",
+      "checkedAt": "2026-11-02T00:17:30.871Z",
       "verdict": "No record found",
       "explanation": "No matching record in 3 indexes. Likely fabricated, check by hand.",
       "nearest": {
@@ -672,6 +685,7 @@
         "authors": 0,
         "year": 1,
         "venue": 0.3333333333333333,
+        "locator": false,
         "total": 0.4,
         "fields": [
           {
@@ -737,7 +751,7 @@
           "cached": true
         }
       ],
-      "checkedAt": "2026-11-01T00:55:25.123Z",
+      "checkedAt": "2026-11-02T00:17:30.875Z",
       "verdict": "Retracted",
       "explanation": "The matched work is marked as retracted in index metadata. Read the retraction notice before citing it.",
       "match": {
@@ -817,7 +831,8 @@
         "authors": 1,
         "year": 1,
         "venue": 1,
-        "total": 0.9466666666666668,
+        "locator": true,
+        "total": 1.4466666666666668,
         "fields": [
           {
             "field": "Title",
@@ -864,13 +879,78 @@
           "Health",
           "Organization"
         ],
-        "title": "Climate change",
+        "title": "World Health Organization",
         "kind": "unsupported"
       },
-      "evidence": [],
-      "checkedAt": "2026-11-01T00:55:25.126Z",
+      "evidence": [
+        {
+          "index": "Crossref",
+          "url": "https://api.crossref.org/works?query.bibliographic=World%20Health%20Organization.%20(2024).%20Climate%20change.%20https%3A%2F%2Fwww.who.int%2Fnews-room%2Ffact-sheets%2Fdetail%2Fclimate-change&rows=5",
+          "status": "answered",
+          "count": 5
+        }
+      ],
+      "checkedAt": "2026-11-02T00:17:30.879Z",
       "verdict": "Could not check",
-      "explanation": "This looks like a web page, report, statute, or an entry without enough scholarly metadata. These indexes cannot reliably establish whether it exists."
+      "explanation": "This looks like a web page, report, legal source or other item these indexes do not reliably cover, and no matching record turned up. Check it by hand.",
+      "nearest": {
+        "id": "10.2471/b09447",
+        "title": "Embedding ethics in health and climate change",
+        "authors": [
+          {
+            "family": "World Health Organization"
+          }
+        ],
+        "year": 2025,
+        "venue": "",
+        "doi": "10.2471/b09447",
+        "url": "https://doi.org/10.2471/b09447",
+        "source": "Crossref",
+        "retracted": false,
+        "retractionUrls": [],
+        "type": "monograph",
+        "publisher": "World Health Organization"
+      },
+      "score": {
+        "title": 0.6,
+        "authors": 1,
+        "year": 0.85,
+        "venue": 0,
+        "locator": false,
+        "total": 0.7035,
+        "fields": [
+          {
+            "field": "Title",
+            "written": "World Health Organization",
+            "record": "Embedding ethics in health and climate change",
+            "status": "differ"
+          },
+          {
+            "field": "Authors",
+            "written": "World, Health, Organization",
+            "record": "World Health Organization",
+            "status": "agree"
+          },
+          {
+            "field": "Year",
+            "written": "2024",
+            "record": "2025",
+            "status": "agree"
+          },
+          {
+            "field": "Venue",
+            "written": "See original reference",
+            "record": "Not supplied",
+            "status": "unknown"
+          },
+          {
+            "field": "DOI",
+            "written": "Not supplied",
+            "record": "10.2471/b09447",
+            "status": "unknown"
+          }
+        ]
+      }
     }
   ]
 }

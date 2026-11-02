@@ -48,9 +48,11 @@ Your file is read on your device and never uploaded. Only the text of individual
 | Test set | Result |
 | --- | --- |
 | 240 genuine references (60 works in 4 styles) | 0 false accusations, 240 accepted |
-| 56 genuine references as real authors typed them | 0 false accusations, 55 matched, 1 could not be checked |
-| 60 synthetic fabrications | 95% flagged (invented 14/15, chimera 15/15, bogus DOI 15/15, mutated 13/15) |
-| 100 hallucinated citations from GPTZero's NeurIPS list | 79 flagged, 0 marked verified, 21 could not be checked |
+| 56 genuine references as real authors typed them | 1 false accusation on the first held-out run; 0 after the fix below, all 56 matched |
+| 60 synthetic fabrications | 97% flagged (invented 15/15, chimera 15/15, bogus DOI 15/15, mutated 13/15) |
+| 100 hallucinated citations from GPTZero's NeurIPS list | 98 flagged, 0 marked verified, 2 could not be checked |
+
+The one false accusation was a preprint cited under a title that differs from its record, although every author and the year matched. That pattern now returns "Details differ". Because the rule came from this set, the set no longer counts as unseen; the run before the fix is kept in [`eval/summary-first-heldout.json`](eval/summary-first-heldout.json), and the fix left the synthetic results unchanged and moved one GPTZero entry from "No record found" to "Details differ", still flagged.
 
 These are measurements on these sets, not population-wide accuracy claims. The synthetic set is sampled from Crossref, the same index used for lookup, and the NeurIPS labels are GPTZero's own.
 

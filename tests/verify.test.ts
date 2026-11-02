@@ -70,6 +70,14 @@ describe('verifyReference: the six verdicts', () => {
     expect(r.nearest?.title).toBe('Tidal forcing of estuarine sediment');
   });
 
+  it('Details differ, never fake: all named authors and the year match, only the title is miscited', async () => {
+    const preprint = crossrefItem({ doi: '10.1000/pre', title: 'Working memory capacity predicts offloading benefits', authors: [['Hana', 'Ball'], ['Phil', 'Peper'], ['Sam', 'Gilbert']], year: 2021 });
+    const { client } = clientFor({ crossrefSearch: [preprint] });
+    const r = await verifyReference('Ball H. Peper P. Gilbert S. (2021). Prospective remembering in laboratory and naturalistic settings. PsyArXiv Preprints.', client);
+    expect(r.verdict).toBe('Details differ');
+    expect(r.match?.doi).toBe('10.1000/pre');
+  });
+
   it('Could not check: a web page that no index knows is never called fake', async () => {
     const { client } = clientFor();
     const r = await verifyReference('World Health Organization. (2024). Climate change. https://www.who.int/news-room/fact-sheets/detail/climate-change', client);

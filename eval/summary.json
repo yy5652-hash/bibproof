@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "held-out",
-  "runAt": "2026-11-01T01:14:12.601Z",
+  "runAt": "2026-11-02T00:16:35.747Z",
   "seed": 88421,
   "tuningSeed": 1729,
   "heldOutSeed": 88421,
@@ -29,7 +29,7 @@
       190,
       337
     ],
-    "method": "Fixed-seed shuffle of cached Crossref top-500 topical queries (journal articles, 1990\u20132024). Excludes missing metadata, >40 authors, retracted works, titles with <5 content tokens, and titles outside Latin-script filter. Not a population-representative sample.",
+    "method": "Fixed-seed shuffle of cached Crossref top-500 topical queries (journal articles, 1990–2024). Excludes missing metadata, >40 authors, retracted works, titles with <5 content tokens, and titles outside Latin-script filter. Not a population-representative sample.",
     "genuineWorks": 60,
     "styles": [
       "apa",
@@ -43,24 +43,17 @@
   "realisticGenuine": {
     "total": 56,
     "counts": {
-      "Verified": 48,
-      "Details differ": 7,
+      "Verified": 50,
+      "Details differ": 6,
       "Identifier conflict": 0,
       "Retracted": 0,
       "No record found": 0,
-      "Could not check": 1
+      "Could not check": 0
     },
     "falseAccusations": 0,
-    "accepted": 55,
-    "abstentions": 1,
-    "misjudged": [
-      {
-        "raw": "Ball H. Peper P. Alakbarova D. Gilbert S. Brewer G. A. &Brewer G. A.(2021).Individual differences in prospective memory offloading in laboratory and naturalistic settings (version 1).PsyArXiv Preprints.",
-        "doi": "10.31234/osf.io/42mxw",
-        "verdict": "Could not check",
-        "nearest": "Individual differences in working memory capacity predict benefits to memory from intention offloading"
-      }
-    ]
+    "accepted": 56,
+    "abstentions": 0,
+    "misjudged": []
   },
   "metrics": {
     "falseAccusations": 0,
@@ -68,14 +61,14 @@
     "falseAccusationRate": 0,
     "genuineAccepted": 240,
     "genuineIdentifierConflicts": 0,
-    "detectionRate": 0.95,
-    "abstentions": 2,
+    "detectionRate": 0.9666666666666667,
+    "abstentions": 1,
     "detectionByClass": {
       "invented": {
         "total": 15,
-        "detected": 14,
-        "rate": 0.9333333333333333,
-        "abstained": 1
+        "detected": 15,
+        "rate": 1,
+        "abstained": 0
       },
       "chimera": {
         "total": 15,
@@ -117,8 +110,8 @@
       "Details differ": 14,
       "Identifier conflict": 0,
       "Retracted": 0,
-      "No record found": 0,
-      "Could not check": 1
+      "No record found": 1,
+      "Could not check": 0
     },
     "chimera": {
       "Verified": 0,
@@ -151,17 +144,17 @@
     "robotsUrl": "https://gptzero.me/robots.txt",
     "robotsAllowed": true,
     "retrievedAt": "2026-11-01T01:08:11.113Z",
-    "runAt": "2026-11-01T01:10:52.183Z",
+    "runAt": "2026-11-02T00:16:35.180Z",
     "total": 100,
-    "detected": 79,
-    "detectionRate": 0.79,
+    "detected": 98,
+    "detectionRate": 0.98,
     "counts": {
       "Verified": 0,
-      "Details differ": 37,
-      "Identifier conflict": 10,
+      "Details differ": 39,
+      "Identifier conflict": 15,
       "Retracted": 0,
-      "No record found": 32,
-      "Could not check": 21
+      "No record found": 44,
+      "Could not check": 2
     },
     "note": "Separate real-world set. Ground-truth labels are GPTZero's claims, not independently adjudicated here. All extracted table rows included. Never pooled with synthetic hold-out metrics."
   }
