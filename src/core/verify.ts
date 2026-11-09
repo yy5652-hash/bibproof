@@ -7,6 +7,8 @@ import { lookup, crossrefSearch, type Lookup } from './indexes';
 // Real records worth offering instead of a flagged entry.
 function alternativesFor(result:CheckResult,candidates:Work[]):Work[]{
   if(result.verdict==='Verified')return [];
+  // A conflict that already has a same-title record offers that record, not looser look-alikes.
+  if(result.verdict==='Identifier conflict'&&result.match)return [];
   const ref=result.reference;const seen=new Set([result.match?.doi??result.match?.id]);
   return candidates.map(work=>({work,score:scoreCandidate(ref,work)}))
     .filter(({work})=>closeWording(ref,work))

@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-09T13:08:01.512Z",
+  "runAt": "2026-11-09T13:11:47.046Z",
   "provenance": "Fresh live public scholarly index requests; no response replay or verdict overrides.",
   "entries": [
     "Vaswani, A., et al. (2017). Attention Is All You Need. arXiv:1706.03762.",
@@ -31,7 +31,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:07:26.087Z",
+      "checkedAt": "2026-11-09T13:11:35.570Z",
       "verdict": "Verified",
       "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
       "match": {
@@ -149,7 +149,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:07:27.516Z",
+      "checkedAt": "2026-11-09T13:11:35.902Z",
       "verdict": "Verified",
       "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
       "match": {
@@ -253,7 +253,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:07:28.157Z",
+      "checkedAt": "2026-11-09T13:11:36.816Z",
       "verdict": "Details differ",
       "explanation": "A matching work exists, but the highlighted fields differ.",
       "match": {
@@ -358,7 +358,7 @@
           "count": 5
         }
       ],
-      "checkedAt": "2026-11-09T13:07:29.397Z",
+      "checkedAt": "2026-11-09T13:11:37.800Z",
       "verdict": "Details differ",
       "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
       "match": {
@@ -493,7 +493,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:07:44.530Z",
+      "checkedAt": "2026-11-09T13:11:40.497Z",
       "verdict": "Identifier conflict",
       "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
       "identifierRecord": {
@@ -629,117 +629,7 @@
             "status": "agree"
           }
         ]
-      },
-      "alternatives": [
-        {
-          "id": "10.1038/nature14539",
-          "title": "Deep learning",
-          "authors": [
-            {
-              "family": "LeCun",
-              "given": "Yann"
-            },
-            {
-              "family": "Bengio",
-              "given": "Yoshua"
-            },
-            {
-              "family": "Hinton",
-              "given": "Geoffrey"
-            }
-          ],
-          "year": 2015,
-          "venue": "Nature",
-          "doi": "10.1038/nature14539",
-          "url": "https://doi.org/10.1038/nature14539",
-          "source": "Crossref",
-          "retracted": false,
-          "retractionUrls": [],
-          "type": "journal-article",
-          "volume": "521",
-          "issue": "7553",
-          "pages": "436-444",
-          "publisher": "Springer Science and Business Media LLC"
-        },
-        {
-          "id": "10.3390/app10114023",
-          "title": "Deep Image Compression with Residual Learning",
-          "authors": [
-            {
-              "family": "Li",
-              "given": "Weigui"
-            },
-            {
-              "family": "Sun",
-              "given": "Wenyu"
-            },
-            {
-              "family": "Zhao",
-              "given": "Yadong"
-            },
-            {
-              "family": "Yuan",
-              "given": "Zhuqing"
-            },
-            {
-              "family": "Liu",
-              "given": "Yongpan"
-            }
-          ],
-          "year": 2020,
-          "venue": "Applied Sciences",
-          "doi": "10.3390/app10114023",
-          "url": "https://doi.org/10.3390/app10114023",
-          "source": "Crossref",
-          "retracted": false,
-          "retractionUrls": [],
-          "type": "journal-article",
-          "volume": "10",
-          "issue": "11",
-          "pages": "4023",
-          "publisher": "MDPI AG"
-        },
-        {
-          "id": "10.1109/icisce.2016.164",
-          "title": "Web Identification Image Recognition Based on Deep Learning",
-          "authors": [
-            {
-              "family": "Zhao",
-              "given": "Yanling"
-            },
-            {
-              "family": "Zhang",
-              "given": "Xinchang"
-            },
-            {
-              "family": "Xu",
-              "given": "Mei"
-            },
-            {
-              "family": "Sun",
-              "given": "Zhanquan"
-            },
-            {
-              "family": "Liu",
-              "given": "Guangqi"
-            },
-            {
-              "family": "Li",
-              "given": "Shifeng"
-            }
-          ],
-          "year": 2016,
-          "venue": "2016 3rd International Conference on Information Science and Control Engineering (ICISCE)",
-          "doi": "10.1109/icisce.2016.164",
-          "url": "https://doi.org/10.1109/icisce.2016.164",
-          "source": "Crossref",
-          "retracted": false,
-          "retractionUrls": [],
-          "type": "proceedings-article",
-          "pages": "743-747",
-          "publisher": "IEEE"
-        }
-      ]
+      }
     },
     {
       "reference": {
@@ -772,7 +662,7 @@
           "count": 5
         }
       ],
-      "checkedAt": "2026-11-09T13:07:47.369Z",
+      "checkedAt": "2026-11-09T13:11:42.785Z",
       "verdict": "No record found",
       "explanation": "No matching record in 3 indexes. Likely fabricated, check by hand.",
       "nearest": {
@@ -927,7 +817,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:07:58.969Z",
+      "checkedAt": "2026-11-09T13:11:44.822Z",
       "verdict": "Retracted",
       "explanation": "The matched work is marked as retracted in index metadata. Read the retraction notice before citing it.",
       "match": {
@@ -1064,7 +954,7 @@
           "count": 5
         }
       ],
-      "checkedAt": "2026-11-09T13:07:59.530Z",
+      "checkedAt": "2026-11-09T13:11:45.187Z",
       "verdict": "Could not check",
       "explanation": "This looks like a web page, report, legal source or other item these indexes do not reliably cover, and no matching record turned up. Check it by hand.",
       "nearest": {
