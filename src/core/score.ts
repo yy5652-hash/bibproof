@@ -20,11 +20,13 @@ export function scoreCandidate(ref: ParsedReference, work: Work): Score {
   const firstPage=normalize(String(work.pages??'').split(/[-–]/)[0]);
   const padded=' '+raw+' ';
   const locator=Boolean(firstPage&&work.volume&&names[0]&&padded.includes(' '+firstPage+' ')&&padded.includes(' '+normalize(work.volume)+' ')&&padded.includes(' '+names[0]+' '));
+  // Field statuses use the same thresholds as the verdict: 'differ' only where matching also sees a difference.
+  const bareTitle=work.title.replace(/^\s*(?:retracted|withdrawn)\s*:\s*/i,'');
   const fields:FieldEvidence[]=[
-    {field:'Title',written:ref.title||'Not isolated; checked against full entry',record:work.title,status:title>=.9?'agree':title>=.65?'unknown':'differ'},
-    {field:'Authors',written:ref.surnames.join(', ')||'Not isolated; checked against full entry',record:work.authors.map(a=>[a.given,a.family].filter(Boolean).join(' ')).join('; ')||'Not supplied',status:!names.length?'unknown':authors>=.8?'agree':'differ'},
-    {field:'Year',written:years.join(', ')||'Not supplied',record:String(work.year??'Not supplied'),status:!years.length||!work.year?'unknown':delta<=1?'agree':'differ'},
-    {field:'Venue',written:ref.venue || (venue>=.6?work.venue!:'See original reference'),record:work.venue||'Not supplied',status:!work.venue?'unknown':venue>=.6?'agree':'unknown'},
+    {field:'Title',written:ref.title||'Not isolated; checked against full entry',record:work.title,status:title<.65?'differ':ref.title&&(normalize(ref.title)===normalize(bareTitle)||(title>=.9&&containment(ref.title,bareTitle)>=.9))?'agree':'unknown'},
+    {field:'Authors',written:ref.surnames.join(', ')||'Not isolated; checked against full entry',record:work.authors.map(a=>a.family).join(', ')||'Not supplied',status:!names.length?'unknown':authors<.8?'differ':'agree'},
+    {field:'Year',written:years.join(', ')||'Not supplied',record:String(work.year??'Not supplied'),status:!years.length||!work.year?'unknown':delta===0?'agree':delta===1?'tolerance':'differ'},
+    {field:'Venue',written:ref.venue || 'See original reference',record:work.venue||'Not supplied',status:!work.venue||!ref.venue?'unknown':normalize(ref.venue)===normalize(work.venue)?'agree':'unknown'},
     {field:'DOI',written:ref.doi||'Not supplied',record:work.doi||'Not supplied',status:!ref.doi||!work.doi?'unknown':ref.doi===work.doi.toLowerCase()?'agree':'differ'}
   ];
   return {title,authors,year,venue,locator,total:.64*title+.26*authors+.07*year+.03*venue+(locator?.5:0),fields};
@@ -42,4 +44,11 @@ export function settled(s: Score): boolean { return strongMatch(s) || Boolean(s.
 export function statedWords(ref: ParsedReference, work?: Work): number {
   const known=new Set(work?[...tokens(work.venue??''),...work.authors.flatMap(a=>tokens(`${a.family} ${a.given??''}`))]:ref.surnames.flatMap(tokens));
   return tokens(ref.raw.replace(/https?:\/\/\S+|10\.\d{4,9}\/\S+/g,' ')).filter(t=>t.length>2&&!/^\d+$/.test(t)&&!known.has(t)).length;
+}
+
+/** Preserve the search-based verdict rules independently of the stricter display comparison. */
+export function matchingDetailsDiffer(ref: ParsedReference, work: Work, s: Score): boolean {
+  return s.title < .65 || (work.authors.length > 0 && s.authors < .8) ||
+    (Boolean(ref.raw.replace(/10\.\d{4,9}\/\S+|https?:\/\/\S+/g, '').match(/\b(?:18|19|20)\d{2}\b/)) && Boolean(work.year) && s.year === 0) ||
+    Boolean(ref.doi && work.doi && ref.doi !== work.doi.toLowerCase());
 }

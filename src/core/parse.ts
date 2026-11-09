@@ -33,7 +33,7 @@ export function parseReference(raw: string): ParsedReference {
   const afterYear = withoutIds.match(/\(\d{4}[a-z]?(?:[^)]*)\)\s*[.,:]?\s*(.+)/);
   const segments = withoutIds.split(/(?<=[\p{Ll}\p{N}\)\]])\.\s+(?=[\p{Lu}“"])/u);
   let title = quoted?.[1] ?? afterYear?.[1]?.split(/\.\s+/)[0] ?? (segments.length > 1 ? segments[1] : withoutIds);
-  if (tokens(title).length < 3 || title === withoutIds) title = fallbackTitle(withoutIds) || title;
+  if ((!quoted && !afterYear && tokens(title).length < 3) || title === withoutIds) title = fallbackTitle(withoutIds) || title;
   title = title.replace(/^[.,\s]+|[.,\s]+$/g, '');
   const titleAt = text.indexOf(title);
   const authorBlock = (titleAt > 0 ? text.slice(0, titleAt) : text.slice(0, yearMatch?.index ?? 100)).replace(/\b(?:18|19|20)\d{2}\b/g, '');

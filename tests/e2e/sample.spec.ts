@@ -7,15 +7,17 @@ const SEVERITY_ORDER = ['Retracted', 'Identifier conflict', 'No record found', '
 const verdicts = (page: Page) => page.getByTestId('row').evaluateAll(rows => rows.map(r => (r as HTMLElement).dataset.verdict));
 async function runSample(page: Page) {
   await page.getByRole('button', { name: 'Try a sample' }).click();
+  await page.getByRole('button', { name: 'Run live checks' }).click();
+  await expect(page.getByTestId('saved-example')).toBeHidden();
   await expect(page.getByRole('status').filter({ hasText: /8 references checked/ })).toBeVisible({ timeout: 60_000 });
 }
 const row = (page: Page, verdict: string) => page.locator(`[data-testid="row"][data-verdict="${verdict}"] .row-btn`).first();
 
-test('sample: severity order, filter, evidence, decisions by keyboard, clean bibliography, exports', async ({ page }) => {
+test('sample: severity order, filter, evidence, decisions by keyboard, review and export, exports', async ({ page }) => {
   const seen = await installMock(page);
   await page.goto('/');
   await expect(page).toHaveTitle(/Bibproof/);
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Every reference');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Catch invented references before you submit.');
   await expect(page.getByRole('button', { name: 'Check references' })).toBeDisabled();
   await expect(page.getByRole('tab')).toHaveCount(3);
 
@@ -66,7 +68,7 @@ test('sample: severity order, filter, evidence, decisions by keyboard, clean bib
     const hand = page.getByTestId('evidence').locator('.hand-links a');
     await expect(hand).toHaveCount(4);
     for (const a of await hand.all()) { await expect(a).toHaveAttribute('rel', 'noopener noreferrer'); await expect(a).toHaveAttribute('href', /^https:\/\//); }
-    await expect(hand.filter({ hasText: 'CNKI' })).toHaveAttribute('href', /Chromatic/);
+    await expect(hand.filter({ hasText: 'CNKI' })).toHaveAttribute('href', /Citation-grounded/);
     await page.keyboard.press('x');
     await expect(page.getByTestId('fix-status')).toContainText('2 decided · 4 unresolved');
     await page.keyboard.press('x'); // pressing again clears it
@@ -79,19 +81,19 @@ test('sample: severity order, filter, evidence, decisions by keyboard, clean bib
     await expect(page.getByTestId('shortcuts')).toBeHidden();
   });
 
-  await test.step('clean bibliography and change log; .bib holds only the adopted record', async () => {
-    await page.getByRole('button', { name: 'Clean bibliography' }).click();
+  await test.step('review and export and change log; .bib holds only the adopted record', async () => {
+    await page.getByRole('button', { name: 'Review & export' }).click();
     const panel = page.getByTestId('bibliography');
     await expect(panel.getByTestId('bib-summary')).toHaveText('1 replaced · 1 removed · 6 as written');
     await expect(panel.getByTestId('bib-list')).toContainText('(2015)');
-    await expect(panel.getByTestId('bib-list')).not.toContainText('Wetherquill');
+    await expect(panel.getByTestId('bib-list')).not.toContainText('Bennett');
     await expect(panel.getByTestId('change-log')).toContainText('Unresolved, left as written');
     const grab = async (name: string) => { const [d] = await Promise.all([page.waitForEvent('download'), panel.getByRole('button', { name }).click()]); return { d, text: readFileSync(await d.path()!, 'utf8') }; };
-    const bib = await grab('Download .bib');
+    const bib = await grab('Download 1 record · 7 omitted (.bib)');
     expect(bib.d.suggestedFilename()).toBe('bibproof-bibliography.bib');
     expect(bib.text).toMatch(/@article\{LeCun2015/);
-    expect(bib.text).not.toMatch(/Wetherquill|Wakefield/);
-    expect((await grab('Download .ris')).text).toMatch(/^TY {2}- /m);
+    expect(bib.text).not.toMatch(/Bennett|Wakefield/);
+    expect((await grab('Download 1 record · 7 omitted (.ris)')).text).toMatch(/^TY {2}- /m);
     expect((await grab('Download .txt')).text).toContain('Vaswani');
     await panel.getByLabel('Style').selectOption('harvard1');
     await expect(panel.getByTestId('bib-list')).toContainText('LeCun');
@@ -104,8 +106,8 @@ test('sample: severity order, filter, evidence, decisions by keyboard, clean bib
     expect(csv).toContain('"Reference","Verdict"'); expect(csv).toContain('"No record found"');
   });
 
-  await test.step('only scholarly index hosts were contacted', async () => {
-    expect(seen.hosts.length).toBeGreaterThan(0);
+  await test.step('the saved example contacts no host at all', async () => {
+    expect(seen.hosts).toEqual([]);
     expect(new Set(seen.hosts.filter(h => !INDEX_HOSTS.includes(h)))).toEqual(new Set());
   });
 
@@ -149,7 +151,7 @@ test('share link round trip: warning, read-only report, re-check, tampered link'
   await row(page, 'Details differ').click(); await page.keyboard.press('u');
   await page.getByRole('button', { name: 'Share link' }).click();
   const dialog = page.getByTestId('share-dialog');
-  await expect(dialog).toContainText('contains the text of your references');
+  await expect(dialog).toContainText('contains your references');
   const link = await dialog.getByLabel('Link').inputValue();
   expect(link).toContain('#/s/');
   await page.keyboard.press('Escape');
@@ -200,7 +202,7 @@ test('language toggle: Chinese UI, translated verdicts and explanations, persist
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await page.getByTestId('lang-toggle').click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('查证');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('找出虚构引用');
   await page.getByRole('button', { name: '试用示例' }).click();
   await expect(page.getByRole('status').filter({ hasText: /已核查 8 条/ })).toBeVisible({ timeout: 60_000 });
   await expect(page.getByRole('heading', { level: 2, name: '有 6 条需要处理。' })).toBeVisible();
@@ -210,7 +212,7 @@ test('language toggle: Chinese UI, translated verdicts and explanations, persist
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
   await page.getByTestId('lang-toggle').click();
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('proven');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('invented references');
 });
 
 test('theme follows the system after load, and an explicit choice sticks', async ({ page }) => {

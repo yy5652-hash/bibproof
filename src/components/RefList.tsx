@@ -33,6 +33,7 @@ const Row = memo(function Row({ row, selected, decision, onSelect, index, count 
             : row.state === 'skipped' ? <span className="badge v-skipped">{t('state.skipped')}</span>
             : row.state === 'running' ? <span className="badge v-pending"><IconSpinner />{t('state.running')}</span>
             : <span className="badge v-pending">{t('state.queued')}</span>}
+          {r?.userEvidence && <span className="tag">{t('user.badge')}</span>}
           {tag && <span className={`tag${decision ? ' decided' : ' open'}`} data-testid="row-tag">{tag}</span>}
         </span>
         <span className="row-raw" translate="no">{row.raw.replace(/^\s*(?:\[\d+\]\s*|\d+[.)]\s+)/, '')}</span>

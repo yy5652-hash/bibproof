@@ -1,3 +1,5 @@
+import { sanitizeUserEvidence, type UserEvidence } from './core/userEvidence';
+import { retryUnavailable } from './core/retry';
 import { useCallback, useRef, useState } from 'react';
 import type { CheckResult } from './core/types';
 import { IndexClient } from './core/http';
@@ -19,10 +21,11 @@ export function useChecker() {
   const [rows, setRows] = useState<RowState[]>([]);
   const [phase, setPhase] = useState<Phase>('idle');
 
-  const start = useCallback(async (entries: string[]) => {
+  const start = useCallback(async (entries: string[], fresh = false) => {
     const mine = ++run.current;
     client.current ??= new IndexClient(new BrowserCache());
-    const http = client.current;
+    const savedCache = client.current.cache;
+    const http = fresh ? new IndexClient({get: key => key.startsWith('response:') ? Promise.resolve(undefined) : savedCache.get(key), set: (key,value) => savedCache.set(key,value)}) : client.current;
     setRows(entries.map((raw, id) => ({ id, raw, state: 'queued' })));
     setPhase('running');
     const patch = (id: number, change: Partial<RowState>) => setRows(prev => prev.map(r => (r.id === id ? { ...r, ...change } : r)));
@@ -43,6 +46,17 @@ export function useChecker() {
     if (mine === run.current) setPhase('done');
   }, []);
 
+  const retry = useCallback(async (ids?: number[]) => {
+    const mine = ++run.current;
+    client.current ??= new IndexClient(new BrowserCache());
+    setPhase('running');
+    await retryUnavailable(rows, ids, async raw => {
+      try { return await verifyReference(raw, client.current!); }
+      catch (e) { return unreadable(raw, e instanceof Error ? e.message : 'unexpected error'); }
+    }, (id, result) => setRows(prev => prev.map(r => r.id === id ? {...r, state:'done', result:{...result, userEvidence:r.result?.userEvidence}} : r)), () => mine === run.current);
+    if (mine === run.current) setPhase('done');
+  }, [rows]);
+
   const cancel = useCallback(() => {
     run.current++;
     setRows(prev => prev.map(r => (r.state === 'done' ? r : { ...r, state: 'skipped' })));
@@ -56,6 +70,7 @@ export function useChecker() {
     setRows(entries.map((raw, id) => (results[id] ? { id, raw, state: 'done' as const, result: results[id]! } : { id, raw, state: 'skipped' as const })));
     setPhase(results.some(Boolean) ? 'done' : 'cancelled');
   }, []);
+  const saveUserEvidence = useCallback((id: number, evidence?: UserEvidence) => setRows(prev => prev.map(r => r.id === id && r.result ? {...r, result:{...r.result, userEvidence:sanitizeUserEvidence(evidence)}} : r)), []);
   const clearCache = useCallback(async () => { client.current ??= new IndexClient(new BrowserCache()); await client.current.cache.clear?.(); }, []);
-  return { rows, phase, start, cancel, reset, load, clearCache };
+  return { rows, phase, start, retry, cancel, reset, load, clearCache, saveUserEvidence };
 }

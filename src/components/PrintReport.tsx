@@ -1,3 +1,4 @@
+import { UserEvidenceView } from './UserEvidence';
 import { VERDICTS, type CheckResult } from '../core/types';
 import type { Extraction } from '../core/extract';
 import { crossCheck } from '../core/crosscheck';
@@ -23,6 +24,7 @@ export default function PrintReport({ rows, extraction }: { rows: RowState[]; ex
             <strong>{verdict(r.verdict)}</strong>
             <p translate="no">{row.raw}</p>
             <p>{explain(r.explanation)}</p>
+            {r.userEvidence && <UserEvidenceView evidence={r.userEvidence} />}
             {rec && <p>{r.match ? t('print.record') : r.verdict === 'Identifier conflict' ? t('print.idPoints') : t('print.nearest')}: {rec.title} ({rec.authors.slice(0, 3).map(a => a.family).join(', ')}{rec.authors.length > 3 ? ' et al.' : ''}, {rec.year ?? 'n.d.'}) · {rec.url}</p>}
             {r.score && <p>{r.score.fields.filter(f => f.status !== 'unknown').map(f => `${explain(f.field)}: ${f.status === 'agree' ? t('print.agrees') : t('print.differs', { w: f.written, r: f.record })}`).join(' · ')}</p>}
           </li>); })}

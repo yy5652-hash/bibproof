@@ -1,3 +1,8 @@
+import { UserEvidenceForm, UserEvidenceView } from './UserEvidence';
+import type { UserEvidence } from '../core/userEvidence';
+import { failedProviders, retryable } from '../core/retry';
+import { RepairSentences } from './Repairs';
+import type { ManuscriptEdit, SentenceChoice } from '../core/repairs';
 import { useEffect, useState } from 'react';
 import type { CheckResult, Work } from '../core/types';
 import { formatWork, registerStyle, type CitationStyle } from '../core/format';
@@ -43,7 +48,7 @@ export function DecisionBar({ result, decision, onDecide }: { result: CheckResul
   const note = decision ? (isCandidate(result, decision) ? t('bib.candidate') : '') : needsAction(result) ? t('dec.none') : t('dec.noneOk');
   return (
     <div className="decision" role="group" aria-label={t('dec.group')}>
-      <div className="seg">{item('keep', t('dec.keep'))}{item('record', t('dec.record'), !usable)}{item('remove', t('dec.remove'))}</div>
+      <div className="seg">{item('keep', t('dec.keep'))}{item('record', result.verdict === 'Identifier conflict' && result.match ? `${t(result.match.doi === result.identifierRecord?.doi ? 'dec.doiRecord' : 'dec.titleRecord')}: ${result.match.title}` : t('dec.record'), !usable)}{item('remove', t('dec.remove'))}</div>
       <p className="muted decision-note">
         {note}{!usable && !decision && !canUseRecord(result) ? ` ${t('dec.noRecord')}` : ''}
         {decision && <button type="button" className="link-button" onClick={() => onDecide(undefined)}>{t('dec.clear')}</button>}
@@ -52,8 +57,9 @@ export function DecisionBar({ result, decision, onDecide }: { result: CheckResul
   );
 }
 
-export function Detail({ index, result, raw, decision, onDecide, style, onStyle, citing }: {
-  index: number; result: CheckResult; raw: string; decision?: Decision; onDecide: (d: Decision | undefined) => void; style: CitationStyle; onStyle: (s: CitationStyle) => void; citing: Citing | null;
+export function Detail({ index, result, raw, decision, onDecide, style, onStyle, citing, edits, onReview, onRetry, retryDisabled, onUserEvidence }: {
+  onUserEvidence: (e?: UserEvidence) => void; onRetry: () => void; retryDisabled: boolean;
+  index: number; result: CheckResult; raw: string; decision?: Decision; onDecide: (d: Decision | undefined) => void; style: CitationStyle; onStyle: (s: CitationStyle) => void; citing: Citing | null; edits: ManuscriptEdit[]; onReview: (key: string, choice: SentenceChoice) => void;
 }) {
   const { t, explain, date } = useI18n();
   const [corrected, setCorrected] = useState(''); const [error, setError] = useState(''); const [copied, setCopied] = useState(false);
@@ -72,9 +78,11 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
   return (
     <div className="evidence" data-testid="evidence">
       <div className="ev-head"><span className="row-n">{index + 1}</span><VerdictBadge verdict={result.verdict} /></div>
+      {retryable(result) && <div className="retry-row"><p>{t('retry.providers', { names: failedProviders(result).join(', ') })}</p><button className="button small" disabled={retryDisabled} onClick={onRetry}>{t('retry.one')}</button></div>}
       <p className="verdict-explanation">{explain(result.explanation)}</p>
       <blockquote className="as-written"><span className="eyebrow">{t('ev.written')}</span><span translate="no">{stripLabel(raw)}</span></blockquote>
       <DecisionBar result={result} decision={decision} onDecide={onDecide} />
+      {citing && (decision?.kind === 'remove' || decision?.kind === 'record' || edits.length > 0) && <RepairSentences edits={edits} onReview={onReview} />}
 
       {result.identifierRecord && <Record work={result.identifierRecord} label={t('ev.identifier')} />}
       {result.match && <Record work={result.match} label={result.identifierRecord ? t('ev.closest') : t('ev.matched')} />}
@@ -96,10 +104,11 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
       ) : null}
 
       {result.score && (result.match || result.identifierRecord || lead) && (
-        <div className="field-grid" role="table" aria-label={t('ev.fields')}>
+        <div className="field-grid" role="table" aria-label={t(result.identifierRecord ? 'ev.idComparison' : 'ev.fields')}>
+          {result.identifierRecord && <p className="fine-print">{t('ev.idComparison')}</p>}
           <div className="field-row field-head" role="row"><span role="columnheader">{t('ev.field')}</span><span role="columnheader">{t('ev.wrote')}</span><span role="columnheader">{t('ev.says')}</span></div>
           {result.score.fields.map(f => <div className={`field-row ${f.status}`} role="row" key={f.field}>
-            <strong role="cell">{explain(f.field)}<small>{f.status === 'agree' ? `✓ ${t('ev.agrees')}` : f.status === 'differ' ? `≠ ${t('ev.differs')}` : `– ${t('ev.uncertain')}`}</small></strong>
+            <strong role="cell">{explain(f.field)}<small>{f.status === 'agree' ? `✓ ${t('ev.agrees')}` : f.status === 'tolerance' ? `≠ ${t('ev.tolerance')}` : f.status === 'differ' ? `≠ ${t('ev.differs')}` : `– ${t('ev.uncertain')}`}</small></strong>
             <span role="cell" translate="no">{explain(f.written)}</span><span role="cell" translate="no">{explain(f.record)}</span>
           </div>)}
         </div>
@@ -114,6 +123,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
         </section>
       )}
 
+      {hand ? <UserEvidenceForm evidence={result.userEvidence} onSave={onUserEvidence} /> : result.userEvidence ? <UserEvidenceView evidence={result.userEvidence} /> : null}
       {hand && hand.links.length > 0 && (
         <section className="handcheck" aria-labelledby={`hc-${index}`}>
           <h4 id={`hc-${index}`}>{t('hc.title')}</h4>

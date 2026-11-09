@@ -24,11 +24,12 @@ export default function Methodology() {
         <div className="section-line"><h2>{t('m.measured')}</h2><span className="eyebrow">{t('m.live')}</span></div>
         {report ? <>
           <p>{t('m.setup', { seed: report.seed, tuning: report.tuningSeed, works: report.sampling.genuineWorks, trials: report.sampling.genuineTrials, fab: report.sampling.fabricatedTrials, date: new Date(report.runAt).toLocaleDateString(locale) })}</p>
-          <div className="eval-stats">
-            <div><strong>{percent(report.metrics.falseAccusationRate)}</strong><span>{t('m.fa')}<br />{t('m.fa.sub', { n: report.metrics.falseAccusations, total: report.metrics.genuineTotal })}</span></div>
-            <div><strong>{percent(report.metrics.detectionRate)}</strong><span>{t('m.det')}<br />{t('m.det.sub')}</span></div>
-            <div><strong>{report.metrics.abstentions}</strong><span>{t('m.abst')}<br />{t('m.abst.sub')}</span></div>
+          <div className="eval-stats paired-stats">
+            <div><strong>{report.metrics.falseAccusations} / {report.metrics.genuineTotal}</strong><span>{t('m.formatTrials', { fa: report.metrics.falseAccusations, total: report.metrics.genuineTotal, works: report.sampling.genuineWorks, styles: report.sampling.styles.length })}</span></div>
+            <div><strong>{fresh.falseAccusations} / {fresh.total}</strong><span>{t('m.freshTrials', { fa: fresh.falseAccusations, total: fresh.total })}</span></div>
           </div>
+          <p className="fine-print">{t('m.trialExplanation', { total: report.metrics.genuineTotal, works: report.sampling.genuineWorks, styles: report.sampling.styles.length })}</p>
+          <p>{t('m.syntheticCount', { n: Object.values(report.metrics.detectionByClass).reduce((n: number, x: any) => n + x.detected, 0), total: report.sampling.fabricatedTrials })}</p>
           <div className="table-wrap"><table><caption>{t('m.matrix')}</caption>
             <thead><tr><th scope="col">{t('m.truth')}</th>{VERDICTS.map(v => <th key={v} scope="col">{t(`v.${v}` as 'v.Verified')}</th>)}</tr></thead>
             <tbody>{Object.entries(report.confusionMatrix).map(([group, counts]: [string, any]) => <tr key={group}><th scope="row">{group}</th>{VERDICTS.map(v => <td key={v}>{counts[v]}</td>)}</tr>)}</tbody>

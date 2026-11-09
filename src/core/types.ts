@@ -1,3 +1,4 @@
+import type { UserEvidence } from './userEvidence';
 export const VERDICTS = ['Verified', 'Details differ', 'Identifier conflict', 'Retracted', 'No record found', 'Could not check'] as const;
 export type Verdict = typeof VERDICTS[number];
 export type IndexName = 'Crossref' | 'DataCite' | 'OpenAlex' | 'Europe PMC' | 'Open Library';
@@ -16,9 +17,10 @@ export interface IndexEvidence {
   index: IndexName; status: 'answered' | 'failed' | 'skipped'; url: string;
   count: number; cached?: boolean; detail?: string;
 }
-export interface FieldEvidence { field: string; written: string; record: string; status: 'agree' | 'differ' | 'unknown' }
+export interface FieldEvidence { field: string; written: string; record: string; status: 'agree' | 'differ' | 'tolerance' | 'unknown' }
 export interface Score { title: number; authors: number; year: number; venue: number; locator?: boolean; total: number; fields: FieldEvidence[] }
 export interface CheckResult {
+  userEvidence?: UserEvidence;
   reference: ParsedReference; verdict: Verdict; explanation: string; evidence: IndexEvidence[];
   match?: Work; nearest?: Work; identifierRecord?: Work; alternatives?: Work[]; score?: Score; checkedAt: string;
 }

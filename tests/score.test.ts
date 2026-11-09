@@ -13,7 +13,7 @@ describe('scoreCandidate', () => {
     expect(s.fields.filter(f => ['Title', 'Authors', 'Year'].includes(f.field)).every(f => f.status === 'agree')).toBe(true);
   });
   it('allows one year of online-first drift but flags two', () => {
-    expect(scoreCandidate(parseReference(REF), work({ year: 2021 })).fields.find(f => f.field === 'Year')!.status).toBe('agree');
+    expect(scoreCandidate(parseReference(REF), work({ year: 2021 })).fields.find(f => f.field === 'Year')!.status).toBe('tolerance');
     expect(scoreCandidate(parseReference(REF), work({ year: 2023 })).fields.find(f => f.field === 'Year')!.status).toBe('differ');
   });
   it('is not strong when the title is real but the authors belong to another paper (chimera)', () => {

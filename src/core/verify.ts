@@ -1,3 +1,4 @@
+import { matchingDetailsDiffer } from './score';
 import type { CheckResult, IndexEvidence, Work } from './types';
 import { parseReference } from './parse';
 import { scoreCandidate, strongMatch, settled, statedWords, containment, closeWording } from './score';
@@ -59,9 +60,10 @@ async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<C
   const idScore=identifierRecord?scoreCandidate(ref,identifierRecord):undefined;
   const conflict=Boolean(identifierRecord && idScore && (idScore.title<.55 || (containment(ref.title,identifierRecord.title)<.55 && idScore.authors<.5)) && ref.title.split(/\s+/).length>=3);
   if(best?.work.retracted && (best.score.title>=.65||best.score.locator))return {...base,verdict:'Retracted',explanation:'The matched work is marked as retracted in index metadata. Read the retraction notice before citing it.',match:best.work,score:best.score,identifierRecord:conflict?identifierRecord:undefined};
+  if(conflict&&idScore)idScore.fields=idScore.fields.map(f=>f.field==='Title'?{...f,status:'differ'}:f);
   if(conflict)return {...base,verdict:'Identifier conflict',explanation:'The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.',identifierRecord,match:best?.score.title>=.65?best.work:undefined,nearest:best?.work,score:idScore};
   if(best && strongMatch(best.score)){
-    const differ=best.score.fields.some(f=>f.status==='differ');
+    const differ=matchingDetailsDiffer(ref,best.work,best.score);
     return {...base,verdict:differ?'Details differ':'Verified',explanation:differ?'A matching work exists, but the highlighted fields differ.':'The indexed title and authors agree. Publication year allows a one-year online-first difference.',match:best.work,score:best.score};
   }
   if(best?.score.locator){

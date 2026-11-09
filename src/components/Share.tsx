@@ -1,3 +1,4 @@
+import { UserEvidenceView } from './UserEvidence';
 import { useMemo, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { chosenRecord, stripLabel, type Decisions } from '../core/decisions';
@@ -9,10 +10,10 @@ import { IconClose, IconCopy, IconDownload, IconRefresh } from './Icons';
 import { VerdictBadge } from './Icons';
 
 export function runFrom(rows: RowState[], decisions: Decisions, at: string): SharedRun {
-  const entries: SharedEntry[] = rows.filter(r => r.result).map(r => {
+  const entries: SharedEntry[] = rows.map(r => {
     const res = r.result!; const d = decisions[r.id];
-    const rec = chosenRecord(res, d) ?? res.match;
-    return { raw: r.raw, verdict: res.verdict, title: rec?.title, doi: rec?.doi, url: safeUrl(rec?.url), ...(d ? { decision: d.kind as SharedDecision } : {}) };
+    const rec = res ? chosenRecord(res, d) ?? res.match : undefined;
+    return { raw: r.raw, verdict: res?.verdict ?? 'Not checked', title: rec?.title, doi: rec?.doi, url: safeUrl(rec?.url), ...(d ? { decision: d.kind as SharedDecision } : {}), ...(res?.userEvidence ? {userEvidence:res.userEvidence} : {}) };
   });
   return { date: at, entries };
 }
@@ -56,12 +57,14 @@ export function SharedReport({ run, onRecheck }: { run: SharedRun | undefined; o
       <h1 id="shared-h">{t('shared.title')}</h1>
       <p className="notice" role="note" data-testid="shared-banner">{t('shared.banner', { date: date(run.date) })}</p>
       <p className="muted">{t('shared.readonly')}</p>
+      <p>{t('sum.partial', { done: run.entries.filter(e => e.verdict !== 'Not checked').length, left: run.entries.filter(e => e.verdict === 'Not checked').length })}</p>
       <div className="bib-actions"><button className="button primary" onClick={() => onRecheck(run.entries.map(e => e.raw))}><IconRefresh />{t('shared.recheck')}</button></div>
       <ol className="shared-list">
         {run.entries.map((e, i) => (
           <li key={i} data-verdict={e.verdict}>
-            <div className="row-top"><span className="row-n">{i + 1}</span><VerdictBadge verdict={e.verdict} />{e.decision && <span className="tag">{t(`dec.tag.${e.decision}` as 'dec.tag.keep')}</span>}</div>
+            <div className="row-top"><span className="row-n">{i + 1}</span>{e.verdict === 'Not checked' ? <span>{t('state.skipped')}</span> : <VerdictBadge verdict={e.verdict} />}{e.decision && <span className="tag">{t(`dec.tag.${e.decision}` as 'dec.tag.keep')}</span>}</div>
             <p className="row-raw">{stripLabel(e.raw)}</p>
+            {e.userEvidence && <UserEvidenceView evidence={e.userEvidence} />}
             {(e.title || e.doi || e.url) && <p className="shared-record"><span className="eyebrow">{t('shared.record')}</span>{e.title}{e.doi ? <small> · doi:{e.doi}</small> : null}{e.url ? <> <a href={e.url} target="_blank" rel="noopener noreferrer">{new URL(e.url).host} ↗</a></> : null}</p>}
           </li>
         ))}

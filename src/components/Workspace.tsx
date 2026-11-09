@@ -1,8 +1,9 @@
+import { retryable } from '../core/retry';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { VERDICTS, type Verdict } from '../core/types';
-import { SEVERITY, needsAction, primaryRecord } from '../core/decisions';
-import { citingSentences } from '../core/citing';
+import { SEVERITY, needsAction, primaryRecord, completionSummary } from '../core/decisions';
+import { manuscriptEdits, editsNeeded } from '../core/repairs';
 import { csvReport, type CitationStyle } from '../core/format';
 import { download } from '../browser/files';
 import { useI18n } from '../i18n';
@@ -19,7 +20,7 @@ import { IconBack, IconBook, IconClose, IconDownload, IconKeyboard, IconPrint, I
 const severityIndex = (r: RowState) => (r.result ? SEVERITY.indexOf(r.result.verdict) : SEVERITY.length);
 
 export default function Workspace({ s }: { s: Session }) {
-  const { t } = useI18n();
+  const { t, date } = useI18n();
   const desktop = useMediaQuery('(min-width: 1024px)');
   const { rows, phase, extraction, decisions } = s;
   const [filter, setFilter] = useState<Verdict | 'all'>('all');
@@ -47,7 +48,8 @@ export default function Workspace({ s }: { s: Session }) {
     const list = rows.filter(r => filter === 'all' || (r.state === 'done' && r.result!.verdict === filter));
     return sort === 'document' ? list : [...list].sort((a, b) => severityIndex(a) - severityIndex(b) || a.id - b.id);
   }, [rows, filter, sort]);
-  const citing = useMemo(() => (extraction?.fullDocument ? citingSentences(extraction.body, extraction.entries) : null), [extraction]);
+  const citing = s.citing;
+  const edits = useMemo(() => manuscriptEdits(rows, decisions, citing, s.reviews), [rows, decisions, citing, s.reviews]);
   const selected = selectedId !== null ? rows[selectedId] : undefined;
   const unresolved = useMemo(() => done.filter(r => needsAction(r.result!) && !decisions[r.id]), [done, decisions]);
 
@@ -102,25 +104,29 @@ export default function Workspace({ s }: { s: Session }) {
 
   const results = done.map(r => r.result!);
   const shareRun = useMemo(() => runFrom(rows, decisions, s.meta?.at ?? new Date().toISOString()), [rows, decisions, s.meta, share]);
-  const summary = !done.length ? t('sum.none') : phase === 'running' ? t('sum.sofar', { n: attention }) : attention ? t('sum.action', { n: attention }) : t('sum.allgood', { n: rows.length });
-  const progress = phase === 'running' ? t('bar.running', { done: Math.min(done.length + 1, rows.length), total: rows.length }) : phase === 'cancelled' ? t('bar.stopped', { done: done.length, total: rows.length }) : t('prog.done', { n: rows.length });
-  const detail = selected?.result ? <Detail key={selected.id} index={selected.id} result={selected.result} raw={selected.raw} decision={decisions[selected.id]} onDecide={d => s.decide(selected.id, d)} style={style} onStyle={setStyle} citing={citing} /> : null;
+  const completion = completionSummary(rows);
+  const summary = phase !== 'running' && completion.unchecked ? t('sum.partial', { done: completion.checked, left: completion.unchecked }) : !done.length ? t('sum.none') : phase === 'running' ? t('sum.sofar', { n: attention }) : attention ? t('sum.action', { n: attention }) : t('sum.allgood', { n: rows.length });
+  const progress = phase === 'running' ? t('bar.running', { done: Math.min(done.length + 1, rows.length), total: rows.length }) : phase === 'cancelled' ? t('bar.stopped', { done: done.length, total: rows.length }) : completion.unchecked ? t('sum.partial', { done: completion.checked, left: completion.unchecked }) : t('prog.done', { n: done.length });
+  const detail = selected?.result ? <Detail key={selected.id} index={selected.id} result={selected.result} raw={selected.raw} decision={decisions[selected.id]} onDecide={d => s.decide(selected.id, d)} style={style} onStyle={setStyle} citing={citing} edits={edits.filter(e => e.id === selected.id)} onReview={s.reviewSentence} onRetry={() => void s.retry([selected.id])} retryDisabled={phase === 'running'} onUserEvidence={e => s.saveUserEvidence(selected.id,e)} /> : null;
   const decided = done.filter(r => decisions[r.id]).length;
   const listProps = { items: ordered, selectedId, decisions, onSelect: select, scrollTo, label: t('list.aria') };
 
   return (
     <section className="workspace no-print" aria-labelledby="results-h" id="results">
+      {s.savedExampleAt && <div className="notice" data-testid="saved-example"><strong>{t('sample.saved', { date: date(s.savedExampleAt) })}</strong><p>{t('sample.intro')}</p><button className="button small" onClick={() => s.recheck(rows.map(r => r.raw), true)}>{t('sample.live')}</button></div>}
       <div className="compact-bar">
         <div className="compact-text">
           <h2 id="results-h">{summary}</h2>
           <p className="muted live" role="status" aria-live="polite">{progress}</p>
         </div>
         <div className="compact-actions">
+          {rows.some(r => retryable(r.result)) && <button className="button small" onClick={() => void s.retry()} disabled={phase === 'running'}>{t('retry.all')}</button>}
           {phase === 'running' && <button className="button ghost small" onClick={s.cancel}><IconStop />{t('bar.cancel')}</button>}
           <button className="button small" onClick={s.newCheck}><IconBack />{t('bar.new')}</button>
         </div>
       </div>
 
+      <p className="fine-print">{t('results.scope')}</p>
       <div className="meter" role="img" aria-label={`${done.length}/${rows.length}: ${VERDICTS.filter(v => counts[v]).map(v => `${counts[v]} ${t(`v.${v}` as 'v.Verified')}`).join(', ')}`}>
         {VERDICTS.map(v => counts[v] ? <span key={v} className={`mseg v-${verdictMeta[v].slug}`} style={{ flexGrow: counts[v] }} /> : null)}
         {pending > 0 && <span className="mseg pending" style={{ flexGrow: pending }} />}
@@ -145,6 +151,7 @@ export default function Workspace({ s }: { s: Session }) {
       <div className="fix-row" role="group" aria-label={t('fix.group')}>
         <p className="fix-status" data-testid="fix-status" aria-live="polite">
           <strong>{t('fix.status', { made: decided, open: unresolved.length })}</strong>
+          <span>{t('repair.summary', { reviewed: decided, edits: editsNeeded(edits), unchecked: completion.unchecked })}</span>
           <span className="muted">{flash || (finished && done.length && !unresolved.length && attention ? t('fix.allDone') : '')}</span>
         </p>
         <div className="fix-actions">
@@ -191,7 +198,7 @@ export default function Workspace({ s }: { s: Session }) {
         </Dialog.Portal>
       </Dialog.Root>
 
-      <Bibliography open={bib} onOpenChange={setBib} rows={rows} decisions={decisions} style={style} onStyle={setStyle}
+      <Bibliography open={bib} onOpenChange={setBib} rows={rows} decisions={decisions} edits={edits} citing={citing} onReview={s.reviewSentence} style={style} onStyle={setStyle}
         onVerifiedAll={() => s.decideMany(Object.fromEntries(done.filter(r => r.result!.verdict === 'Verified' && !decisions[r.id] && primaryRecord(r.result!)).map(r => [r.id, { kind: 'record' as const }])))} />
       <ShareDialog open={share} onOpenChange={setShare} run={shareRun} />
     </section>

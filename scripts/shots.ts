@@ -41,13 +41,13 @@ try {
     await snap(page, 'home');
     if (await runSample(page, 'results')) {
       if (await select(page, 'Details differ')) await snap(page, 'results-selected'); else skipped.push('results-selected: no selectable row');
-      const bib = await find(page, ['button:has-text("Clean bibliography")'], 1500);
+      const bib = await find(page, ['button:has-text("Review & export")'], 1500);
       if (bib) {
         await page.keyboard.press('u'); await page.keyboard.press('j'); await page.keyboard.press('j');
         await select(page, 'No record found'); await page.keyboard.press('x');
         await bib.click(); await page.getByTestId('bibliography').waitFor({ timeout: 5000 }).catch(() => {});
         await page.waitForTimeout(1200); await snap(page, 'decisions');
-      } else skipped.push('decisions: no "Clean bibliography" panel in this build');
+      } else skipped.push('decisions: no "Review & export" panel in this build');
     }
     await ctx.close();
   }

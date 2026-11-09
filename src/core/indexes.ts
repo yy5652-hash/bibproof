@@ -5,7 +5,7 @@ type Json = Record<string,any>;
 function text(value:any):string { return String(value??'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'); }
 function fullName(name:string):Author{const p=name.trim().split(/\s+/);return {family:p.pop()??'',given:p.join(' ')};}
 export function fromCrossref(w:Json):Work {
-  const updates=[...(w['update-to']??[]),...(w['updated-by']??[])].filter(x=>String(x.type).toLowerCase()==='retraction');
+  const updates: Json[]=(w['updated-by']??[]).filter((x:Json)=>String(x.type).toLowerCase()==='retraction');
   return {id:w.DOI,title:text(w.title?.[0]),authors:(w.author??[]).map((a:Json)=>({family:a.family??a.name??'',given:a.given})),year:(w.published??w.issued??w['published-print'])?.['date-parts']?.[0]?.[0],venue:text(w['container-title']?.[0]),doi:cleanDoi(w.DOI??''),url:`https://doi.org/${w.DOI}`,source:'Crossref',retracted:updates.length>0,retractionUrls:updates.map(x=>`https://doi.org/${x.DOI??x.doi}`),type:w.type,volume:w.volume,issue:w.issue,pages:w.page,publisher:w.publisher};
 }
 export function fromDataCite(w:Json):Work{

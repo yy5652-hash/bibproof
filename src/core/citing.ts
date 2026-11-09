@@ -29,7 +29,7 @@ export function numbersIn(group: string): number[] {
   });
 }
 
-export function citingSentences(body: string, entries: string[]): Citing {
+export function citingSentences(body: string, entries: string[], complete = false): Citing {
   const refs = entries.map(parseReference);
   const byEntry: string[][] = refs.map(() => []);
   const counts = refs.map(() => 0);
@@ -51,7 +51,7 @@ export function citingSentences(body: string, entries: string[]): Citing {
     }
     for (const [at, where] of hits) {
       counts[at]++;
-      if (byEntry[at].length < MAX_PER_ENTRY) byEntry[at].push(clip(sentence, where));
+      if (complete || byEntry[at].length < MAX_PER_ENTRY) byEntry[at].push(complete ? sentence : clip(sentence, where));
     }
   }
   const style = numeric && authorYear ? 'mixed' : numeric ? 'numeric' : authorYear ? 'author-year' : 'none';

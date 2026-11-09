@@ -59,3 +59,23 @@ export function changeLogText(log: ChangeLine[], title = 'Bibproof change log'):
   };
   return [title, '', ...group('replaced', 'Replaced with a record'), ...group('removed', 'Removed'), ...group('unresolved', 'Unresolved, left as written'), ...group('kept', 'Kept as written on purpose')].join('\n').trimEnd() + '\n';
 }
+
+/** Missing results are never an all-clear, including restored and shared runs. */
+export function completionSummary(rows: PlanRow[]) {
+  const checked = rows.filter(r => r.result).length;
+  const attention = rows.filter(r => r.result && needsAction(r.result)).length;
+  return { checked, unchecked: rows.length - checked, attention, allVerified: rows.length > 0 && checked === rows.length && attention === 0 };
+}
+export interface NumberMap { id: number; old: string; next: number | null; changed: boolean }
+export function numberMap(rows: PlanRow[], decisions: Decisions): NumberMap[] {
+  let next = 0;
+  return rows.map((r, i) => {
+    const old = r.raw.match(/^\s*(?:\[(\d+)\]|(\d+)[.)](?!\d))\s*/);
+    const label = old?.[1] ?? old?.[2] ?? String(i + 1);
+    const n = decisions[r.id]?.kind === 'remove' ? null : ++next;
+    return { id: r.id, old: label, next: n, changed: String(n) !== label };
+  });
+}
+export function numberMapText(rows: PlanRow[], decisions: Decisions): string {
+  return 'Numeric labels (old → new)\n' + numberMap(rows, decisions).map(m => `[${m.old}] → ${m.next === null ? 'removed' : `[${m.next}]`}`).join('\n');
+}

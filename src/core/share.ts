@@ -1,15 +1,17 @@
+import { sanitizeUserEvidence, type UserEvidence } from './userEvidence';
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string';
 import { VERDICTS, type Verdict } from './types';
 
 /** The essentials of a run, small enough for a URL fragment. Everything read back from a link or a file is untrusted. */
 export type SharedDecision = 'keep' | 'record' | 'remove';
-export interface SharedEntry { raw: string; verdict: Verdict; title?: string; doi?: string; url?: string; decision?: SharedDecision }
+export interface SharedEntry { raw: string; verdict: Verdict | 'Not checked'; title?: string; doi?: string; url?: string; decision?: SharedDecision; userEvidence?: UserEvidence }
 export interface SharedRun { date: string; entries: SharedEntry[] }
 
 export const MAX_FRAGMENT = 8000;
 const MAX_ENTRIES = 1000;
 const MAX_RAW = 1500; const MAX_TITLE = 400; const MAX_DOI = 200; const MAX_URL = 600;
 const MAX_INFLATED = 2_000_000;
+const REPORT_VERDICTS = [...VERDICTS, 'Not checked'] as const;
 const DECISIONS: SharedDecision[] = ['keep', 'record', 'remove'];
 
 const text = (v: unknown, max: number): string | undefined => (typeof v === 'string' && v.trim() ? v.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').slice(0, max) : undefined);
@@ -26,10 +28,10 @@ export const validDate = (v: unknown): string | undefined => {
 function entryFrom(o: unknown): SharedEntry | undefined {
   if (!o || typeof o !== 'object') return undefined;
   const e = o as Record<string, unknown>;
-  const raw = text(e.raw, MAX_RAW); const verdict = VERDICTS.find(v => v === e.verdict);
+  const raw = text(e.raw, MAX_RAW); const verdict = REPORT_VERDICTS.find(v => v === e.verdict);
   if (!raw || !verdict) return undefined;
   const decision = DECISIONS.find(d => d === e.decision);
-  return { raw, verdict, title: text(e.title, MAX_TITLE), doi: text(e.doi, MAX_DOI), url: safeUrl(e.url), ...(decision ? { decision } : {}) };
+  return { raw, verdict, title: text(e.title, MAX_TITLE), doi: text(e.doi, MAX_DOI), url: safeUrl(e.url), ...(decision ? { decision } : {}), ...(sanitizeUserEvidence(e.userEvidence) ? {userEvidence:sanitizeUserEvidence(e.userEvidence)} : {}) };
 }
 export function sanitizeRun(o: unknown): SharedRun | undefined {
   if (!o || typeof o !== 'object') return undefined;
@@ -42,7 +44,7 @@ export function sanitizeRun(o: unknown): SharedRun | undefined {
 // Compact wire form: positional arrays keep the fragment short.
 export function encodeShare(run: SharedRun): { ok: true; fragment: string } | { ok: false; reason: 'too-large' | 'empty' } {
   if (!run.entries.length) return { ok: false, reason: 'empty' };
-  const wire = { v: 1, d: run.date, e: run.entries.map(e => [e.raw, VERDICTS.indexOf(e.verdict), e.title ?? '', e.doi ?? '', e.url ?? '', e.decision ? DECISIONS.indexOf(e.decision) : -1]) };
+  const wire = { v: 1, d: run.date, e: run.entries.map(e => [e.raw, REPORT_VERDICTS.indexOf(e.verdict), e.title ?? '', e.doi ?? '', e.url ?? '', e.decision ? DECISIONS.indexOf(e.decision) : -1, e.userEvidence ?? null]) };
   const payload = compressToEncodedURIComponent(JSON.stringify(wire));
   const fragment = `#/s/${payload}`;
   return fragment.length > MAX_FRAGMENT ? { ok: false, reason: 'too-large' } : { ok: true, fragment };
@@ -54,7 +56,7 @@ export function decodeShare(payload: string): SharedRun | undefined {
     if (!json || json.length > MAX_INFLATED) return undefined;
     const wire = JSON.parse(json) as { v?: unknown; d?: unknown; e?: unknown };
     if (wire.v !== 1 || !Array.isArray(wire.e) || wire.e.length > MAX_ENTRIES) return undefined;
-    return sanitizeRun({ date: wire.d, entries: wire.e.map(row => Array.isArray(row) ? { raw: row[0], verdict: VERDICTS[row[1] as number], title: row[2], doi: row[3], url: row[4], decision: DECISIONS[row[5] as number] } : null) });
+    return sanitizeRun({ date: wire.d, entries: wire.e.map(row => Array.isArray(row) ? { raw: row[0], verdict: REPORT_VERDICTS[row[1] as number], title: row[2], doi: row[3], url: row[4], decision: DECISIONS[row[5] as number], userEvidence: row[6] } : null) });
   } catch { return undefined; }
 }
 

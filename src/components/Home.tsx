@@ -110,7 +110,7 @@ export default function Home({ s }: { s: Session }) {
           </Tabs.Root>
           <div className="input-actions">
             <button className="button primary" onClick={submit} disabled={busy || !ready}>{tab === 'doi' ? t('cta.checkDoi') : t('cta.check')}</button>
-            <button className="button" onClick={() => { s.setText(SAMPLE); setTab('paste'); setError(''); s.check(SAMPLE); }} disabled={busy}>{t('cta.sample')}</button>
+            <button className="button" onClick={() => { s.setText(SAMPLE); setTab('paste'); setError(''); void s.loadSample().catch(() => setError(t('sample.failed'))); }} disabled={busy}>{t('cta.sample')}</button>
           </div>
           <div className="input-status" aria-live="polite">
             {error ? <p role="alert" className="error">{error}</p>
@@ -119,6 +119,7 @@ export default function Home({ s }: { s: Session }) {
               : null}
           </div>
         </div>
+        <p className="fine-print">{t('sample.intro')}</p>
         <p className="hero-trust">{t('hero.trust')}</p>
       </div>
       <div className="hero-aside"><Illustration /></div>

@@ -1,6 +1,6 @@
 # Bibproof
 
-**Every reference, proven before you submit.**
+**Catch invented references before you submit.**
 
 Paste a bibliography, drop in a paper, or enter a DOI. Bibproof checks each reference against the scholarly record, shows the evidence, and helps you fix what it finds. No account, no cap, nothing to install. In English and Chinese.
 
@@ -28,14 +28,18 @@ It also:
 - reads `.docx`, `.pdf`, `.bib`, `.ris` and `.txt`, finding the reference section in a full paper;
 - cross-checks in-text citations against the reference list, in both directions, and lists the sentences that cite each problem reference;
 - sorts by severity, so the worst problem comes first, with keyboard shortcuts for working through them;
-- lets you keep, replace or remove each entry, offers close real records as candidates, and builds a clean bibliography in APA 7, MLA 9, Chicago, IEEE or Harvard, with a change log;
+- lets you keep, replace or remove each entry, offers close real records as candidates, and opens Review & export in APA 7, MLA 9, Chicago, IEEE or Harvard, with a change log;
 - exports `.txt`, `.bib`, `.ris`, a CSV report and a printable PDF report;
 - gives direct search links to CNKI, Wanfang, Baidu Scholar and Google Scholar for entries it cannot check, including Chinese references;
+- tracks affected citing sentences, preserves an old-to-new numeric label map, and exports manuscript edit lists;
+- retries index failures without discarding finished results or decisions;
+- accepts separately labelled user-reviewed source evidence without changing automated verdicts;
+- opens a dated, saved live example instantly, with an explicit button to rerun live checks;
 - keeps your past checks in this browser, and shares a result as a link that carries everything in its `#` fragment, so it never reaches a server.
 
 ## Privacy
 
-Your file is read on your device and never uploaded. Only the text of individual references goes to the public scholarly indexes: Crossref, DataCite, OpenAlex, Europe PMC and Open Library. History stays in your browser and can be cleared in one click. A share link contains the reference text, and the app warns you before copying it. There is no backend and no analytics.
+Your file is read on your device and never uploaded. Only the text of individual references goes to the public scholarly indexes: Crossref, DataCite, OpenAlex, Europe PMC and Open Library. History, manual evidence and citing sentences stay in your browser and can be cleared in one click. The full document is not retained. A share link contains the reference text and any manual evidence notes, and the app warns you before copying it. There is no backend and no analytics.
 
 ## How it works
 
@@ -53,7 +57,7 @@ Your file is read on your device and never uploaded. Only the text of individual
 | 240 genuine references (60 works in 4 styles) | 0 false accusations, 240 accepted |
 | 56 genuine references as real authors typed them | 1 false accusation on the first held-out run; 0 after the fix below, all 56 matched |
 | 60 more typed references, drawn after the rules were frozen | 1 false accusation, 58 matched, 1 could not be checked |
-| 60 synthetic fabrications | 97% flagged (invented 15/15, chimera 15/15, bogus DOI 15/15, mutated 13/15) |
+| 60 synthetic fabrications | 58 of 60 flagged for review (invented 15/15, chimera 15/15, bogus DOI 15/15, mutated 13/15) |
 | 100 hallucinated citations from GPTZero's NeurIPS list | 98 flagged, 0 marked verified, 2 could not be checked |
 
 The one false accusation was a preprint cited under a title that differs from its record, although every author and the year matched. That pattern now returns "Details differ". Because the rule came from this set, the set no longer counts as unseen; the run before the fix is kept in [`eval/summary-first-heldout.json`](eval/summary-first-heldout.json), and the fix left the synthetic results unchanged and moved one GPTZero entry from "No record found" to "Details differ", still flagged. The newer batch of 60 is the unseen figure: its one false accusation is a book chapter cited only by its book title, and no rule has been changed for it. Its results are in [`eval/fresh-results.json`](eval/fresh-results.json).
@@ -84,3 +88,9 @@ Libraries: [React](https://react.dev), [Vite](https://vite.dev), [Radix UI](http
 Data: [Crossref](https://www.crossref.org), [DataCite](https://datacite.org), [OpenAlex](https://openalex.org), [Europe PMC](https://europepmc.org), [Open Library](https://openlibrary.org).
 
 MIT licensed.
+
+## Sample provenance and offline regression checks
+
+`npx tsx scripts/record-sample.ts` records a fresh run against public indexes, verifies every intended verdict, and only then replaces `src/core/sample-snapshot.json` and the browser response fixture. It shares the existing OpenAlex daily counter, never overrides verdicts, and leaves `eval/*.json` unchanged. The sample includes explicitly constructed demonstration errors.
+
+`npx tsx scripts/replay-eval.ts` replays the committed 300-trial evaluation from `eval/cache` without network requests or result-file changes. Cache misses are reported, never filled with invented responses.

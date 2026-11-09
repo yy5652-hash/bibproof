@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 // Real index responses recorded once for the eight sample entries (trimmed); the one OpenAlex search that hit the daily
 // keyless budget while recording is set to the empty result list it returned on an earlier run. Nothing here touches the network.
-const recorded: Record<string, { status: number; body: unknown }> = JSON.parse(readFileSync(fileURLToPath(new URL('./fixtures/sample-responses.json', import.meta.url)), 'utf8'));
+const older: Record<string, { status: number; body: unknown }> = JSON.parse(readFileSync(fileURLToPath(new URL('./fixtures/sample-responses.json', import.meta.url)), 'utf8'));
+const recorded = { ...older, ...JSON.parse(readFileSync(fileURLToPath(new URL('./fixtures/sample-current-responses.json', import.meta.url)), 'utf8')) } as typeof older;
 export const INDEX_HOSTS = ['api.crossref.org', 'api.datacite.org', 'api.openalex.org', 'www.ebi.ac.uk', 'openlibrary.org'];
 
 /** Answers every request to a scholarly index from the recorded fixtures and returns the list of hosts and URLs contacted. */

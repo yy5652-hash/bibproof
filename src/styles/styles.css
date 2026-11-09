@@ -438,3 +438,25 @@ thead th { font-size: .74rem; color: var(--ink-3); }
   .print-only li { break-inside: avoid; margin-bottom: 10pt; padding-bottom: 6pt; border-bottom: 0.5pt solid #999; }
   .print-only li p { margin: 2pt 0; overflow-wrap: anywhere; }
 }
+
+.paired-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.number-map { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85rem; }
+@media (max-width: 600px) { .paired-stats { grid-template-columns: 1fr; } }
+
+.repair-sentences { margin: 16px 0; padding: 12px; border: 1px solid var(--rule); border-radius: var(--radius); }
+.repair-sentences ul { padding-left: 20px; }
+.repair-sentences li { margin-bottom: 16px; overflow-wrap: anywhere; }
+.repair-sentences label { display: grid; gap: 6px; }
+.repair-sentences select { width: 100%; min-width: 0; max-width: 100%; min-height: 44px; }
+
+.user-review, .user-evidence { margin: 16px 0; overflow-wrap: anywhere; }
+.user-form { display: grid; gap: 12px; padding: 12px 0; }
+.user-form label { display: grid; gap: 6px; }
+.user-form input, .user-form textarea { width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.user-form textarea { min-height: 100px; }
+.user-form button { min-height: 44px; }
+
+.decision .seg { flex-wrap: wrap; }
+.decision .seg-btn { white-space: normal; overflow-wrap: anywhere; min-width: 0; max-width: 100%; }
+.field-row.tolerance { background: var(--v-differ-bg); }
+.field-row.tolerance strong small { color: var(--v-differ); }

@@ -14,6 +14,13 @@ export async function importBibliography(source:string):Promise<string[]>{
 }
 export function csvReport(results:CheckResult[]):string{
   const cell=(s:unknown)=>{let t=String(s??'');if(/^[=+@\-\t\r]/.test(t))t="'"+t;return '"'+t.replace(/"/g,'""')+'"';};
-  const rows=[['Reference','Verdict','Explanation','Matched title','DOI','Source record','Indexes answered','Indexes failed','Checked at'],...results.map(r=>[r.reference.raw,r.verdict,r.explanation,r.match?.title,r.match?.doi,r.match?.url,r.evidence.filter(e=>e.status==='answered').map(e=>e.index).join('; '),r.evidence.filter(e=>e.status==='failed').map(e=>e.index).join('; '),r.checkedAt])];
+  const rows=[['Reference','Verdict','Explanation','Matched title','DOI','Source record','Indexes answered','Indexes failed','Checked at','User-reviewed title','User-reviewed URL','User-reviewed authors','User-reviewed year','User-reviewed venue','User evidence note'],...results.map(r=>[r.reference.raw,r.verdict,r.explanation,r.match?.title,r.match?.doi,r.match?.url,r.evidence.filter(e=>e.status==='answered').map(e=>e.index).join('; '),r.evidence.filter(e=>e.status==='failed').map(e=>e.index).join('; '),r.checkedAt,r.userEvidence?.title,r.userEvidence?.url,r.userEvidence?.authors,r.userEvidence?.year,r.userEvidence?.venue,r.userEvidence?.note])];
   return '\uFEFF'+rows.map(row=>row.map(cell).join(',')).join('\r\n');
+}
+
+/** Carry the run's manuscript audit in formats that otherwise silently drop it. */
+export function annotateStructuredExport(source:string, format:'bibtex'|'ris', notes:string, heading='Bibproof export review (applies to the whole export)'):string {
+  if(format==='bibtex') return notes.split(/\r?\n/).map(line=>'% '+line).join('\n')+'\n'+source;
+  // RIS N1 is a free-text note; flatten newlines so user text cannot inject tags.
+  return source.replace(/^ER {2}-/m, () => 'N1  - '+heading+': '+notes.replace(/[\r\n]+/g,' | ')+'\nER  -');
 }
