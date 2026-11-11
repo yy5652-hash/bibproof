@@ -1,0 +1,708 @@
+{
+  "provenance": "Read-only offline replay of pre-round-2 committed verifier; not a live evaluation.",
+  "commit": "208c2d53eeab7cc4961b0bc9e04330d0e1f91976",
+  "fresh": [
+    {
+      "raw": "Eggermont JJ, Kenmochi M (1998) Salicylate and quinine selectively increase spontaneous firing rates in secondary auditory cortex. Hear Res 117:149–160 2015].",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Stuart, G., Spruston, N., Häusser, M. (2016). Dendrites (G. Stuart, N. Spruston, & M. Häusser (eds.); third. Oxford University Press.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "S.J. Luck, An Introduction to Event-Related Potentials and Their Neural Origins, in: An Introd. to Event-Related Potential Tech., MIT Press, 2014: pp. 2–50.",
+      "verdict": "Could not check"
+    },
+    {
+      "raw": "Hoffman, A.J. (2016). Reflections: Academia’s Emerging Crisis of Relevance and the Consequent Role of the Engaged Scholar (SSRN Scholarly Paper No. 2932312).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Maina MB (2022) African neuroscience: despeately seeking diversity. The Unesco Courrier. 3 February, (accessed January 2023).",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Misquitta K.A., Codeluppi S.A., Knoch J.K., Bansal Y., Tomoda T., Ellegood J., Lerch J.P., Sibille E., Nikolova Y.S., Banasr M. Behavioral and Neurostructural changes associated with Chronic Amygdala Hyperactivation, 2021a.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ehrenstein WH, Ehrenstein A (1999) Psychophysical Methods. In: Modern Techniques in Neuroscience Research (Uwe Windhorst HJ, ed): Springer.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "LaMontagne, P.J., Benzinger, T.L.S., Morris, J.C., Keefe, S., Hornbeck, R., Xiong, C., Grant, E., Hassenstab, J., Moulder, K., Vlassenko, A., Raichle, M.E., Cruchaga, C., Marcus, D., 2019. OASIS-3: longitudinal neuroimaging, clinical, and cognitive dataset for normal aging and alzheimer disease. medRxiv.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Shung, K.K., Sigelmann, R. a, Reid, J.M., 1976. Scattering of Ultrasound by Blood. IEEE Trans. Biomed. Eng. BME-23, 460–467.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "The exon-based transcriptomic analysis of Parkinson's disease. Biomolecules. 2025;15(3):440. PMID: 40149977.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "J. Thäder, S. collaboration, et al., Higher moments of net-particle multiplicity distributions, Nuclear Physics A 956 (2016) 320–323.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "R.A. Enrique, K. Nordlund, R.S. Averback, P. Bellon, Simulations of dynamical stabilization of Ag-Cu nanocomposites by ion-beam processing, J. Appl. Phys. 93 (2003) 2917–2923,",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Wang P, Zhao Z, Zhang L, Zhan S, Li Y. Revealing the role of binary distortion in PMS activation over spinel toward efficient new pollutants removal. Adv Funct Mater 2024:2316542.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Chen T, Guestrin C (2016) XGBoost: a scalable tree boosting system, Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, ACM, New York, 2016, pp. 785–794.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Biesiekierski, A., Munir, K., Li, Y., & Wen, C. (2020). Material selection for medical devices. In Metallic Biomaterials Processing and Medical Device Manufacturing (pp. 31-94). Woodhead Publishing.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ge Q, Chen Z, Cheng J, Zhang B, Zhang YF, Li H, He X, Yuan C, Liu J, Magdassi S, Qu S. 3D printing of highly stretchable hydrogel with diverse UV curable polymers. Sci Adv 2021;7:eaba4261.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Lee J, Yoon W, Kim S, et al. BioBERT: a pre-trained biomedical language representation model for biomedical text mining. arXiv:1901.08746. 2019 Oct 31. Available from:",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Nealy J, Wilson J, Townsend L. Preliminary analyses of space radiation protection for luner base surface systems; 1989.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Siddabattuni S, Schuman TP. In Polymer composites for energy harvesting, conversion, and storage. ACS Symposium series; 2014, p. 165–190.",
+      "verdict": "No record found"
+    },
+    {
+      "raw": "Zhu, H., et al., Anomalous scaling law of strength and toughness of cellulose nanopaper. Proceedings of the National Academy of Sciences, 2015. 112(29): p. 8971-8976.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Madu E, Malik EM, Nagaraja SB, Tyagi R, Fant G. Scoping review and expert reflections: Coronavirus disease 2019-preparedness and response in selected countries of East Africa, West Africa, and Southeast Asia. Public Health Open J. 2020; 5(3): 49-57. [In Press]",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Long KZ, Nanthakumar N. Energetic and nutritional regulation of the adaptive immune response and trade-offs in ecological immunology. Am J Hum Biology: Official J Hum Biology Association. 2004;16(5):499–507.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Adams J, Hillier-Brown FC, Moore HJ, Lake AA, Araujo-Soares V, White M, Summerbell C. Searching and synthesising ‘grey literature’ and ‘grey information’ in public health: critical reflections on three case studies. Syst Rev. 2016;5(1):164.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Pope S, Williams J, Cleland J. Men’s football fandom and the performance of progressive and misogynistic masculinities in a ‘new age’ of UK women’s sport. Sociology. 2022;56(4):730–48.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Powers madison vulnerable populations in the context of public health emergency preparedness planning and response. In: Emergency ethics: public health preparedness and response, ed. Bruce Jennings, John Arras, Drue Barrett, and Barbara Ellis. p. 135-154. Oxford University Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Haddaway NR, Page MJ, Pritchard CC, McGuinness LA. PRISMA2020: an R package and Shiny app for producing PRISMA 2020-compliant flow diagrams, with interactivity for optimised digital transparency and open synthesis. Campbell Syst Rev. 2022;18:e1230.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Wilkinson, R. G., & Pickett, K. E. (2009). Income inequality and social dysfunction. Annual Review of Sociology, 35(1), 493–511.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Honney K, Buszewicz M, Coppola W, Griffin M. Comparison of levels of depression in medical and non-medical students. Clin Teach. 2010;7(3):180–4.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Klosko G. The principle of fairness and political obligation. Ethics. 1987;97:353–62.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Page AS, Cooper AR, Griew P, Jago R. Independent mobility, perceptions of the built environment and children’s participation in play, active travel and structured exercise and sport: the PEACH Project. Int J Behav Nut Phys Act. 2010;7:1–10.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Eisenstadt S. N.(1972). Intellectuals and traditions.Daedalus 101 (Spring) 1‐19.American Behavioral Scientist 15(6) 946–946.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Vallor S (2024) The AI Mirror: How to Reclaim Our Humanity in an Age of Machine Thinking. Oxford: Oxford University Press. Available at: (accessed 11 December 2024)",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Fuhse, J., 2013. Social relationships between communication, network structure, and culture. In: François Dépelteau and Christopher Powell, eds. Applying relational sociology. New York: Palgrave Macmillan, 181–206.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Gingras J., Smith S., Matson D.J., Johnson D., Nye K., et al. (2014) ‘Global Nav1.7 Knockout Mice Recapitulate the Phenotype of Human Congenital Indifference to Pain’, Plos One 9(9): 1–14,",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "HoSang, D. M., and N. Molina. 2019. “Introduction: Toward a Relational Consciousness of Race.” In Relational Formations of Race: Theory, Method and Practice , edited by N. Molina, D. Martinez HoSang, and R. Gutiérrez, 1–18. Berkeley: University of California Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Lynch S.M., Bartlett B. Bayesian statistics in sociology: past, present, and future. Annual Review of Sociology. 2019;45:47–68.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Waltz M.(2014).Worlds of autism: Across the spectrum of neurological difference.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Blois JP (2020) Sociology in Argentina. A Long-Term Account. Palgrave Macmillan.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Knoll, Lisa 2024. “Valuation and Sustainability.” In The Routledge International Handbook of Valuation and Society, edited by A. Krüger, T. Peetz, and H. Schaefer, 316–325. London: Routledge.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Mallinson K. (2015), “Smartphone revolution: Technology patenting and licensing fosters innovation, market entry, and exceptional growth”, IEEE Consumer Electronics Magazine, vol. 4, no. 2, pp. 60–66,",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Caesar, Holger, Uijlings, Jasper, Ferrari, Vittorio, 2018. COCO-Stuff: Thing and Stuff Classes in Context. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. pp. 1209–1218.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Gur, S., Wolf, L., 2019. Single image depth estimation trained via depth from defocus cues. In: Intl. Conf. Computer Vision and Pattern Recognition, CVPR, pp. 7683–7692.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Dalal, N., Triggs, B., 2005. Histograms of oriented gradients for human detection. In: 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, CVPR’05. 1, pp. 886–893 vol. 1.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Regmi, K., Shah, M., 2019. Bridging the domain gap for ground-to-aerial image matching. arXiv preprint arXiv:1904.11045.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Y.Benigmim M.Fahes T. H.Vu et al. “FLOSS: Free Lunch in Open‐Vocabulary Semantic Segmentation ” preprint arXiv: 2504.10487 (2025).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Vedantam, R., Lawrence Zitnick, C., Parikh, D., 2015. Cider: Consensus-based image description evaluation. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. pp. 4566–4575.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Liu J. Shahroudy A. Xu D. et al: ‘Spatio‐temporal lstm with trust gates for 3d human action recognition’.European Conf. on Computer Vision 2016 pp.816–833",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Zhang, Y., Kundu, S.J., Goldgof, D.B., Sarkar, S., Tsap, L.V., 2004. Elastic face - an anatomy-based biometrics beyond visible cue. In: Proceedings of the 17th International Conference on Pattern Recognition, Vol. 2. pp. 19–22.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Li C. et al.:Co‐occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation(2018).arXiv preprint arXiv:1804.06055",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Xu J. et al.:Deep Incomplete Multi‐View Clustering via Mining Cluster Complementarity(2022)",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Bolton, B.J. (2013) Corporate Social Responsibility and Bank Performance. Published online 2013.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "von Holle B, Yelenik S, Gornish ES. Restoration at the landscape scale as a means of mitigation and adaptation to climate change. Current Landscape Ecology Reports. 2020;5(3):85–97.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Tachibana, C., (2015 September 11). Effective teaching: to be an effective educator, get active. from (Retrieved 04.13.2016).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Kakishima S. Tuno N. Hosaka K. Okamoto T. Ito T. &Okuyama Y.(2019).A specialized deceptive pollination system based on elaborate mushroom mimicry.bioRxiv 819136.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "vanEtten J.2012.gdistance: Distances and routes on geographical grids. R package version 1.1–4.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Moran P. A. P.1958.Random processes in genetics. Mathematical Proceedings of the Cambridge Philosophical Society 54:60–71.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Widdel F Knittel K Galushko A . Anaerobic hydrocarbon-degrading microorganisms: an overview. In: Timmis KN , editor. Handbook of Hydrocarbon and Lipid Microbiology. Berlin, Heidelberg: Springer; 2010. p. 1997-2021.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Clobert, J. (1995). Capture-recapture and evolutionary ecology: A difficult wedding ? Journal of Applied Statistics, 22(5–6), 989–1008.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Gale EF (1951) The Chemical Activities of Bacteria, 3rd edn. Academic Press, NY",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Loxdale, H. D., Balog, A., & Biron, D. G. (2020). Aphids in focus: Unravelling their complex ecology and evolution using genetic and molecular approaches. Biological Journal of the Linnean Society, 129, 507–531.",
+      "verdict": "Verified"
+    }
+  ],
+  "realistic": [
+    {
+      "raw": "Singh, N., Chaturvedi, S. and Akhter, S. (2019). Weather fOrecasting Using Machine Learning Algorithm. In 2019 International Conference on Signal Processing and Communication (ICSC), 171-174, IEEE.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Zhang, Y., Zhao, H., Li, X., Gao, S., Kong, K., & Chen, Y. (2020). Exchange traded fund clustering via metric learning. In 2020 IEEE international conference on big data (pp. 5486–5495). Atlanta, GA, USA:",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Danilchenko, K., Segal, M., & Vilenchik, D. (2022). Opinion spam detection: A new approach using machine learning and network-based algorithms. In Proceedings of the international AAAI conference on web and social media, vol. 16 (pp. 125–134).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Noraswaliza, Abdullah., Yue, Xu., and Shlomo, Geva. (2013). Integrating collaborative filtering and matching-based search for product recommendations. Journal of Theoretical and Applied Electronic Commerce Research, 8(2), 34-48.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Yang, Y., Tong, W.-W., & Liu, Z. (2019). A machine learning model to characterize Chronic Kidney Disease with metabolomics data. In 2019 IEEE international conference on healthcare informatics (ICHI).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Kaufman, S., Rosset, S., & Perlich, C. (2011). Leakage in data mining: Formulation, detection, and avoidance. 6, 556–563.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., & Wojna, Z. (2016). Rethinking the inception architecture for computer vision. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2818–2826).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ji, H., Zhu, J., Wang, X., Shi, C., Wang, B., Tan, X., et al. (2021). Who you would like to share with? a study of share recommendation in social e-commerce. In Proceedings of the AAAI conference on artificial intelligence, vol. 35, no. 1 (pp. 232–239).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Yildirim, P., Birant, D., & Alpyildiz, T. (2018). Data mining and machine learning in textile industry. Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, 8(1), e1228.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Singh, J., and Singh, M. (2016, January 25–27). Evolution in Quantum Computing. Proceedings of the 2016 International Conference System Modeling & Advancement in Research Trends (SMART), Moradabad, India.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Zhang, J., Peng, Y., & Yuan, M. (2018). Unsupervised generative adversarial cross-modal hashing. In Thirty-second AAAI conference on artificial intelligence.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Longo, R., Carew, A., Sawyer, S., Kemp, B., & Kerslake, F. (2020). A review on the aroma composition of Vitis vinifera L. Pinot noir wines: origins and influencing factors. 61 (10) 1589–1604.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "McFee, B., Raffel, C., Liang, D., Ellis, D. P., McVicar, M., Battenberg, E., et al. (2015). librosa: Audio and music signal analysis in python. In Proceedings of the 14th python in science conference, vol. 8 (pp. 18–25).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Zhang, T., Xue, M., Zhang, J., Zhang, H., Wang, Y., Cheng, L., Song, J., & Song, M. (2023). Generalization matters: Loss minima flattening via parameter hybridization for efficient online knowledge distillation. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 20176–20185).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Smith, A. L., Owen, H., & Reynolds, K. (2013). Heart rate variability indices for very short-term (30 beat) analysis. Part 2 : Validation | SpringerLink. 27(5), 577–585.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ribeiro, M. T., Singh, S. Guestrin, C. (2016). Why should I trust you? Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135–1144).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Park, J., Lee, J.-Y., Yoo, D., & Kweon, I. S. (2018). Distort-and-Recover: Color Enhancement Using Deep Reinforcement Learning. In Proceedings of the IEEE conference on computer vision and pattern recognition.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). ” Why should i trust you?” Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135–1144).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Lu, Y., Tsaparas, P., Ntoulas, A., & Polanyi, L. (2010). Exploiting social context for review quality prediction. In Proceedings of the 19th international conference on world wide web (pp. 691–700).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Kharrat, S., Fourati, F., & Canini, M. (2024). ACING: actor-critic for instruction learning in black-box large language models (No. arXiv:2411.12736). arXiv.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "J. Aarum, C.P. Cabrera, T.A. Jones, S. Rajendran, R. Adiutori, G. Giovannoni, et al. Enzymatic degradation of RNA causes widespread protein aggregation in cell and tissue lysates. EMBO Rep. 2020:e49585.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "G.N. Ramachandran, C. Ramakrishnan, V. Sasisekharan, Stereochemistry of polypeptide chain configurations 7(1) (1963) 95–99.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Shivakumar Keerthikumar, David Chisanga, Dinuka Ariyaratne, Haidar Al Saffar, Sushma Anand, Kening Zhao, Monisha Samuel, Mohashin Pathan, Markandeya Jois, Naveen Chilamkurti, Lahiru Gangoda, Suresh Mathivanan, ExoCarta: A Web-Based Compendium of Exosomal Cargo, J. Mol. Biol.,",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Baptista, M. A. S., Merchant, K., Barrett, T., Bhargava, S., Bryce, D. K., Ellis, J. M., Estrada, A. A., Fell, M. J., et al. (n.d.), LRRK2 inhibitors induce reversible changes in nonhuman primate lungs without measurable pulmonary deficits. 7915.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Kostadinova, M., Raykovska, M., Simeonov, R., Lolov, S., and Mourdjeva, M. (2025). Recent Advances in Bone Tissue Engineering: Enhancing the Potential of Mesenchymal Stem Cells for Regenerative Therapies. Curr. Issues Mol. Biol., 47.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Le Q.S. Kim J. Kim J.andSon H.I.(2017).Report on work in progress of small insect tracking system using autonomous UAV. In: 14th International Conference on Ubiquitous Robots and Ambient Intelligence (URAI) Jeju 2 28 June‐1 July 2017 pp. 242–243. Available at: 1 November 2018]. doi:",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Carhart-Harris RL and Friston KJ. Brain 2010; 133(4): 1265–1283.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Dellicour S, Durkin K, Hong SL, Vanmechelen B, Martí-Carreras J, Gill MS, et al. A phylodynamic workflow to rapidly gain insights into the dispersal history and dynamics of SARS-CoV-2 lineages. BioRxiv. 2020.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Wang Y, Tajkhorshid E. 2010. Nitric oxide conduction by the brain aquaporin AQP4. Proteins: Struct Funct Bioinformat 78:661–670",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Zheng, J., Trafny, E.A., Knighton, D.R., Xuong, N.-H., Taylor, S.S., Teneyck, L.F., and Sowadski, J.M. (1993). 2.2 angstrom refined crystal structure of the catalytic subunit of cAMP-dependent protein kinase complexed with MNATP and a peptide inhibitor.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Z. Y, S. J, TM-align: a protein structure alignment algorithm based on the TM-score, Nucleic Acids Res. 33 (2005) 2302–2309.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "J. A. Bogovic P. Hanslovsky A. Wong S. Saalfeld “Robust Registration of Calcium Images by Learned Contrast Synthesis” in 2016 IEEE 13th International Symposium on Biomedical Imaging (ISBI); pp. 1123–1126 (2016).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ulland TK, Song WM, Huang SC, Ulrich JD, Sergushichev A, Beatty WL, et al. TREM2 maintains microglial metabolic fitness in Alzheimer's disease. Cell. 2017;170:649-63 e13.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Wang, S., Zhu, H., Pan, L., Zhang, M., Wan, X., Xu, H., Hua, R., Zhu, M., and Gao, P. (2023). Systemic inflammatory regulators and risk of acute-on-chronic liver failure: A bidirectional mendelian-randomization study. Front. Cell Dev. Biol., 11.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Assmann, J.. Axial breakthroughs and semantic relocations in ancient Egypt and Israel. In: Giesen, B., Daniel Šuber, D. (Eds.), Religion and Politics. Cultural Perspectives (International Studies in Religion and Society 3), Leiden; Boston, S. 39-53.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Koch, R., The etiology of tuberculosis (Die Atiologie der Tuberkulose, Berliner Kliniscben Wocbenschift, 1882). (Carter KC, translator), Essays of Robert Koch. Connecticut: Greenwood Press, 1987: p. 83–96.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ney, A., 2013. Introduction, in Ney, A., and Albert, D., (eds).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Balachandran RS, Heighington CS, Starostina NG, Anderson JW, Owen DL, Vasudevan S, et al. The ubiquitin ligase CRL2(ZYG11) targets cyclin B1 for degradation in a conserved pathway that facilitates mitotic slippage. J Cell Biol. 2016;215:151–66.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Lindeboom, R. G. H., Worlock, K. B., Dratva, L. M., Yoshida, M., Scobie, D., Wagstaffe, H. R., et al. (2023). Human SARS-CoV-2 challenge resolves local and systemic response dynamics. medRxiv. 2023.2004.2013.23288227.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Wilson, N. K. et al. Combinatorial transcriptional control in blood stem/progenitor cells: genome-wide analysis of ten major transcriptional regulators. Cell Stem Cell 7, 532–544 (2010).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "M. Mosca, P. Kaye, Quantum Networks for Generating Arbitrary Quantum States OSA, 2001, p. PB28.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Li Y-L, Huang Y-R, Lai Y-H. Efficiency droop behaviors of InGaN/GaN multiple-quantum-well light-emitting diodes with varying quantum well thickness. Appl Phys Lett 2007;91 (18). Pubmed: 181113-1 – 181113-3.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Chabaud, U., Diamanti, E., Markham, D., Kashefi, E., Joux, A.: Optimal quantum-programmable projective measurement with linear optics. Phys. Rev. A 98, 062318 (2018).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Albert, D.Z. (1992). Quantum Mechanics and Experience, Harvard University Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Holevo AS. Statistical structure of quantum theory. Berlin: Springer; 2001.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Krasnoholovets, V. (2017). Structure of Space and the Submicroscopic Deterministic Concept of Physics, CRC Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "with phase-space distributions. Rev, Mod. Phys 55: 245.",
+      "verdict": "Could not check"
+    },
+    {
+      "raw": "J. W. Negele. ``The mean-field theory of nuclear structure and dynamics&apos;&apos;. Reviews of Modern Physics 54, 913–1015 (1982).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "X. Yuan, S. Endo, Q. Zhao, Y. Li, S. Benjamin, Theory of variational quantum simulation, arXiv e-prints (2018), arXiv:1812.08767 [quant-ph].",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "C. Branciard, E. G. Cavalcanti, S. P. Walborn, V. Scarani, H. M. Wiseman, One-sided device-independent quantum key distribution: security, feasibility, and the connection with steering, 85(1) (2012).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Palop, J.J., Mucke, L.: Network abnormalities and interneuron dysfunction in Alzheimer disease. Nat. Rev. Neurosci. 17, 777–792 (2016).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Almheiri, A., Dong, X. & Harlow, D. Bulk locality and quantum error correction in AdS/CFT. J. High Energy Phys. 2015, 163 (2015). This paper posits a fundamental connection between AdS/CFT and quantum error correction.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Lefschetz, S. (1953). Algebraic Geometry, Princeton University Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Cooper, R. (1983). Quantification and syntactic theory. In D. Reidel (Ed.), Synthese language library (Vol. 21). Dordrecht, Netherlands.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Lakoff, G., & Johnson, M. (1980). The metaphorical structure of the human conceptual system. Cognitive Science, 4(2), 195–208. 8:958.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Green, D. W. (1998). Mental control of the bilingual lexico-semantic system. Bilingualism: Language and Cognition, 1, 67–81.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Pennekamp P. &Mansour J. K.(2024).Laypeople's Interpretations of \"High Confidence\".Psychology Crime and Law.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Vantomme D. Geuens M. &Dewitte S.(2005).How to portray men and women in advertisements? Explicit and implicit evaluations of ads depicting different gender roles. Working Papers of Faculty of Economics and Business Administration Ghent University Faculty of Economics and Business Administration p.319",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Malloy V. Hogan.1964.378 US 1 84 S. Ct. 1489 12 L. Ed. 2d 653.",
+      "verdict": "Could not check"
+    },
+    {
+      "raw": "Singer, H. S., Hahn, I. H., & Moran, T. H. (1991). Abnormal dopamine uptake sites in postmortem striatum from patients with Tourette's syndrome. Annals of Neurology: Official Journal of the American Neurological Association and the Child Neurology Society, 30(4), 558–562.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Anderson, S.F. , Kelley, K. & Maxwell, S.E. (2017). Sample-size planning for more accurate statistical power: a method adjusting sample effect sizes for publication bias and uncertainty. Psychological Science, 0956797617723724.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Barr, N., Klein, L., McNamara, M. J., & Peters, K. (2023). Creative cognition: From ideation to innovation. In L. J. Ball, & F. Vallée-Tourangeau (Eds.), The Routledge international handbook of creative cognition (pp. 109–126). Routledge.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Hassanpour A. Y.Kowsari H. O.Shahreza B.Yang andS.Marcel.2024.“ChatGPT and Biometrics: An Assessment of Face Recognition Gender Detection and Age Estimation Capabilities.”arXiv. arXiv:2403.02965.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Wu, C. M., Schulz, E., Garvert, M. M., Meder, B., & Schuck, N. W. (2018). Connecting conceptual and spatial search via a model of generalization. bioRxiv, 258665.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Nieuwland, M. S., Politzer-Ahles, S., Heyselaar, E., Segaert, K., Darley, E., Kazanina, N., …, Huettig, F. (2018). Large-scale replication study reveals a limit on probabilistic prediction in language comprehension. eLife.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Flynn, J. R. (1987). Massive IQ gains in 14 nations: What IQ tests really measure. Psychological Bulletin, 101, 171–191.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Völter, C. J., & Call, J. (2017). Causal and inferential reasoning in animals. APA Handbook of Comparative Psychology: Perception, Learning, and Cognition, Vol. 2, 643–671.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Kennedy, C., & Levin, B. (2008). Measure of change: the adjectival core of degree achievements. In: L. McNally. & C. Kennedy (Eds.), Adjectives and adverbs: Syntax, semantics and discourse. Oxford University Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "66. Wierzba M., Riegel M., Pucz A., Leśniewska Z., Dragan W. Ł., Gola M., Jednoróg K., Marchewka A. (2015) Erotic subset for the Nencki Affective Picture System (NAPS ERO): cross-sexual comparison study. Frontiers in Psychology, 6:1336.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Ball H. Peper P. Alakbarova D. Gilbert S. Brewer G. A. &Brewer G. A.(2021).Individual differences in prospective memory offloading in laboratory and naturalistic settings (version 1).PsyArXiv Preprints.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Kennedy, R., Clifford, S., Burleigh, T., Waggoner, P., & Jewell, R. (2018). The shape of and solutions to the MTurk quality crisis. Unpublished manuscript.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Pearson, D. G. (2023). Mental imagery and creative cognition. In L. J. Ball & F. Vallee-Tourangeau (Eds.), The Routledge international handbook of creative cognition (pp. 180–198). Routledge.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Meyerhoff H. S. &Papenmeier F.(2020).Individual differences in visual attention: A short reliable open source and multilingual test of multiple object tracking in psychopy. PsyArXiv.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Hartog, François. 2022. Chronos: The West Confronts Time. New York: Columbia University Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Velde, François. 2020. What happened to the US economy during the 1918 influenza pandemic? A view through high-frequency data. Federal Reserve Bank of Chicago Working Paper #2020-11.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Becker, S.O., Rubin, J. and Woessmann, L. (2023), “Religion and Growth”, CAGE Working Paper No. 684, University of Warwick,",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Henderson, Vernon, Mark Roberts, and Adam Storeygard. 2013. “Is Urbanization in Sub-Saharan Africa Different?” Unpublished manuscript, Department of Economics, Brown Univerisity.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Althoff, Lukas, Reichardt, Hugo, 2024. Jim Crow and Black Economic Progress After Slavery. Working Paper.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Bernhofena, Daniel, Markus Eberhardt, Jianan Li, Stephen Morgan. 2015. Assessing market (dis)integration in pre-modern China. American University (Working paper)",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Acemoglu D.andÜçer M. ‘The ups and downs of Turkish growth 2002–2015: political dynamics the European Union and the institutional slide’ National Bureau of Economic Research working paper no. 21608 (2015).",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Zhai R.andGao Y. ‘Two millennia of Chinese economic growth’ CQH Working Paper No. 0007 HKU Business School (2025).",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Ogilvie, Sheilagh, Carus, A.W., 2014. Institutions and economic growth in historical perspective. CESifo Working Paper No. 4861.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Okoye, Dozie, and Roland Pongou. 2021. “Missions and Heterogeneous Social Change: Evidence from Border Discontinuities in the Emirates of Nigeria.” Available at SSRN:",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Khudokormov A.G. Useful, Informative Book on Nobel Prize Winners in Economics. Nauchnye issledovaniya ekonomicheskogo fakul'teta. Elektronnyi zhurnal = Scientific Research of Faculty of Economics. Electronic Journal, 2019, vol. 11, no. 3, pp. 70–78. Available at: (In Russian).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Coleman, A. (2009). Storage, slow transport, and the law of one price: theory with evidence from nineteenth-century U.S. corn markets. The Review of Economic Statistics.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Johnston L. D.andWilliamson S. H. ‘What was the US GDP then?’ (2018) on 31 Aug. 2018).",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Kalashnikov N.I. Singapore: Problems of the City-State. Moscow, Znanie Publ., 1981. 64 p.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "McLaughlin E. DucoingC.andOxley L. ‘Tracing sustainability in the long run: genuine savings estimates 1850–2018’ National Bureau of Economic Research Working Paper 31155(2023).",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Nachtergael, G. De quelques comptes d'un grand domaine de haute-Egypte au IIe siècle p.C., Chronique d'Egypte 82 (2007); 281–92.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Rose, J., 2020. Replication - Short term residential mortgage contracts in American economic history.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Lindegren, J. (1980). Utskrivning och utsugning: Produktion och reproduktion i Bygdea 1620–1640 (Doctoral dissertation). Studia Historica Upsaliensia, 117. Uppsala: Uppsala University.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "North D.C. Institutions, Institutional Change and Economic Performance. Cambridge University Press, 1990. 152 p. (Russ. ed.: North D.C. Institutions, Institutional Change and Economic Performance. Moscow, Nachala Publ., 1997. 180 p. EDN: YQDVYE).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Medema, Steven G. 2014a. “1966 and All That: The Birth of the Coase Theorem Controversy.” Journal of the History of Economic Thought 36 (3): 271–303.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Benenson, I., and Torrens, P. (2004). Geosimulation: Automata-Based Modeling of Urban Phenomena, John Wiley & Sons.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Hawkins S Yudkin D Juan-Torres M et al. (2018) Hidden Tribes: A Study of America’s Polarized Landscape. More in Common. g/hidden_tribes_report.pdf.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Somerville, R., and S.J. Hassol (2011), Communicating the science of climate change, Phys. Today.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Albani, S., Y. Balkanski, N. Mahowald, G. Winckler, V. Maggi, and B. Delmonte, 2018: Aerosol–climate interactions during the Last Glacial Maximum. Curr. Climate Change Rep., 4, 99–114,",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "York, Abigail M., Boone, Christopher G. (2018). Inventing Phoenix: Land use, politics, and environmental justice. 161–180 The American Environment Revisited. The American Environment Revisited. Eds. Geoffrey L. Buckley and Yolanda Youngs. Rowman and Littlefield, Lanham, pp. 161–180.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Fundel, V.J., Fleischhut, N., Herzog, S.M., Göber, M., and Hagedorn, R. 2019. Promoting the use of probabilistic weather forecasts through a dialogue between scientists, developers, and end-users. Q. J. R. Meteorol. Soc., 145, 210–231.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Masud, M., Bae, S., and Kim, J. (2017). Analysis of Environmental Accounting and Reporting Practices of Listed Banking Companies in Bangladesh. Sustainability, 9.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Campbell, L.K., Svendsen, E., Sonti, N.F., Hines, S.J., and Maddox, D. (2019). A Proposed Multi-Agency Program for Stewardship Science, Green Readiness, Response, and Recovery: A Collaborative Synthesis, General Technical Report MRS-P-185.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Tripathi, Falling capacity utilization of thermal power plants in India: Projection of future scenarios. International Journal of Energy Production and Management. Vol 6, issue 1, (2021). 94 – 104.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "CagleLE TilleryD. Climate change research across disciplines: the value and uses of multidisciplinary research reviews for technical communication.Tech Commun Q2015. Another useful collection that explores climate argumentation from a communication‐studies perspective is Moser SC Dilling L.Creating a Climate for Change. Cambridge UK: Cambridge University Press; 2006.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Winkelmann, R. (2003). Econometric Analysis of Count Data. New York: Springer.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Adler, R. et al. The Global Precipitation Climatology Project (GPCP) Monthly Analysis (New Version 2.3) and a Review of 2017 Global Precipitation. Atmosphere 9, 138 (2018).",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "de Haas, H. (2021). A theory of migration: The aspirations-capabilities framework. Comparative Migration Studies, 9(1), 135.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "McComb, D. (2004). Renormalization Methods: A Guide for Beginners, Oxford U. Press.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Wockner, G., Boone, R., Schoenecker, K.A., Zeigenfuss, L.C., 2015. Modeling Elk and Bison Carrying Capacity for Great Sand Dunes National Park, Baca National Wildlife Refuge, and The Nature Conservancy’s Medano Ranch, Colorado (No. 2014–1200), Open-File Report. US Geological Survey, Reston, VA.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Rigaud, K.K., de Sherbinin, A., Jones, B., Adamo, S., Maleki, D., Arora, A., Casals Fernandez, A.T., Chai-Onn, T., Mills, B., 2021. Groundswell Africa: Internal climate migration in the Lake Victoria Basin countries. World Bank Open Knowledge Repository. Accessed 14 April 2023. URL:",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "Parikh Jyoti and Parikh Kirit S., (1998), “Free ride through delay: Risk and accountability for climate change”, Journal of Environment and Development Economics, Vol. 3 No. 3, pp. 384–389, 1998.",
+      "verdict": "Verified"
+    },
+    {
+      "raw": "G. Hoogenboom, C.H. Porter, K.J. Boote, V. Shelia, G.Y. Tsuji, Advances in crop modelling for a sustainable agriculture E-CHAPTER FROM THIS BOOK the DSSAT crop modeling ecosystem, (n.d.),",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Connor S. &Green C.(2009 February 1).Climate scientists: It's time for “Plan B.”The Independent.",
+      "verdict": "Details differ"
+    },
+    {
+      "raw": "Shiru MS, Chung E-S (2021) Performance evaluation of CMIP6 global climate models for selecting models for climate projection over Nigeria. Theor Appl Climatol 146:599–615.",
+      "verdict": "Verified"
+    }
+  ],
+  "cacheMisses": [
+    "https://api.openalex.org/works?search=Dendrites%20(G&per-page=5",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Dendrites%20(G&format=json&resultType=core&pageSize=5",
+    "https://openlibrary.org/search.json?q=Dendrites%20(G&limit=5&fields=key,title,author_name,first_publish_year",
+    "https://openlibrary.org/search.json?q=pp&limit=5&fields=key,title,author_name,first_publish_year",
+    "https://api.openalex.org/works?search=on%2031%20Aug&per-page=5",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=on%2031%20Aug&format=json&resultType=core&pageSize=5"
+  ]
+}

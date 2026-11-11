@@ -5,6 +5,26 @@ export type Lang = 'en' | 'zh-CN';
 const KEY = 'bibproof-lang';
 
 export const en = {
+  'cta.paper': 'Try a paper',
+  'paper.intro': 'Constructed teaching manuscript with deliberate citation errors. Saved reference evidence comes from the dated live sample run; the manuscript was assembled afterward.',
+  'hero.figures': '{fa} false accusations in {total} formatting trials of {works} works; {freshFa} in {freshTotal} fresh references.',
+  'progress.querying': 'Querying {provider} · attempt {attempt}/3',
+  'progress.retrying': 'Retrying {provider} · attempt {attempt}/3',
+  'progress.unavailable': '{provider} unavailable · automatic attempts ended; ready for manual retry',
+
+  'repair.labelDone': 'Citation label edit done',
+  'repair.labelPending': 'Citation label edit pending',
+  'bib.copyBibliography': 'Copy bibliography',
+  'bib.copyNotes': 'Copy review notes',
+
+  'preview.title': 'Review extracted references',
+  'preview.note': 'Nothing has been sent. Edit each entry; use a new line where you want to split. Text above the reference heading is excluded.',
+  'preview.entry': 'Reference {n}',
+  'preview.merge': 'Merge with previous',
+  'preview.split': 'Split at line breaks',
+  'preview.exclude': 'Exclude',
+  'preview.check': 'Check {n} references',
+
   'bib.reviewNotes': 'Bibproof export review (applies to the whole export)',
   'repair.affects_one': 'This decision affects {n} sentence',
   'repair.affects_other': 'This decision affects {n} sentences',
@@ -76,7 +96,7 @@ export const en = {
   'file.reading': 'Reading on this device…', 'file.done': '{name} was read on this device.', 'file.replace': 'Choose another file',
   'doi.label': 'DOI or doi.org link', 'doi.placeholder': '10.1038/nature14539', 'doi.hint': 'One identifier. It is resolved directly, no other details needed.',
   'cta.check': 'Check references', 'cta.sample': 'Try a sample', 'cta.checkDoi': 'Check this DOI',
-  'hero.trust': 'No account. No cap. Your file stays on this device; only the text of each reference is looked up in public scholarly indexes.',
+  'hero.trust': 'No account. No Bibproof usage cap; public-index limits apply. Your file stays on this device; only the text of each reference is looked up in public scholarly indexes.',
   'detected_one': '{n} reference detected', 'detected_other': '{n} references detected', 'detected.doc': ' in a full document. The in-text cross-check will run.', 'detected.list': '.',
   'status.idle': 'Read on this device. Only the text of each reference is sent to public scholarly indexes.',
   'err.none': 'No references found. Paste a reference list or a document with a References heading, or choose a file.',
@@ -110,7 +130,7 @@ export const en = {
   'fix.status': '{made} decided · {open} unresolved', 'fix.next': 'Next unresolved', 'fix.review': 'Review & export', 'fix.allDone': 'Every flagged reference has a decision.',
   'fix.hint': 'Keys: j / k move, u use record, o keep original, x remove, ? help', 'fix.group': 'Fix queue',
   'kb.title': 'Keyboard shortcuts', 'kb.next': 'Next reference', 'kb.prev': 'Previous reference', 'kb.use': 'Use record', 'kb.keep': 'Keep original', 'kb.remove': 'Remove', 'kb.help': 'Show this list',
-  'kb.note': 'Pressing a decision key again clears the decision. Shortcuts are ignored while you type in a field.', 'close': 'Close',
+  'kb.note': 'Pressing a decision key again clears the decision. Decision shortcuts work only inside the results list or evidence panel, outside editable fields and dialogs. Tab and arrow keys keep the focused row selected.', 'close': 'Close',
   // evidence
   'ev.title': 'Evidence', 'ev.empty': 'Select a reference to see its evidence.', 'ev.back': 'Back to the list',
   'ev.written': 'As written', 'ev.matched': 'Matched source record', 'ev.identifier': 'Your identifier points to', 'ev.closest': 'Closest title match, review before using', 'ev.nearest': 'Did you mean? Nearest result, not a confirmed match',
@@ -191,7 +211,7 @@ export const en = {
   'm.flow': 'From reference to record',
   'm.s1': 'Read locally.', 'm.s1p': 'Extract a bibliography from pasted text, PDF, DOCX, BibTeX, RIS, or text. Rebuild PDF lines and columns. Scanned PDFs need external OCR.',
   'm.s2': 'Resolve, then search.', 'm.s2p': 'Try a DOI at Crossref, then DataCite; resolve arXiv through OpenAlex. Search Crossref for up to five candidates. If there is no strong match, consult OpenAlex and Europe PMC, plus Open Library for books.',
-  'm.s3': 'Compare the evidence.', 'm.s3p': 'Compare title tokens, surnames, year, and venue against the original entry. A ±1 year difference accommodates online-first publication. Title containment ≥88% and author overlap ≥70% define a strong candidate; approximate matches still require review.',
+  'm.s3': 'Compare the evidence.', 'm.s3p': 'Compare title tokens, surnames, year, and venue against the original entry. A ±1 year difference accommodates online-first publication. Title containment ≥88% and author overlap ≥70% define a strong candidate; approximate matches still require review. Reliably isolated titles also require identity in both directions.',
   'm.s4': 'Check for retraction.', 'm.s4p': 'Inspect Crossref’s retraction relations and OpenAlex’s retracted flag. Missing or delayed notices remain a limitation.',
   'm.s5': 'Check the document.', 'm.s5p': 'When a reference-section heading is present, compare numeric and author–year in-text citations with the bibliography, and list the sentences that cite each flagged entry. Ambiguous names, footnotes, and nonstandard styles need review.',
   'm.measured': 'Measured, not promised.', 'm.live': 'Live-network evaluation',
@@ -211,6 +231,26 @@ export const en = {
 type Dict = Record<keyof typeof en, string>;
 
 export const zh: Dict = {
+  'cta.paper': '试用完整论文',
+  'paper.intro': '含有刻意设置的引用错误的教学论文。保存的文献证据来自标注日期的真实在线示例核查；论文为随后编排。',
+  'hero.figures': '{works} 篇作品的 {total} 次格式测试中误报 {fa} 次；另 {freshTotal} 条新文献中误报 {freshFa} 次。',
+  'progress.querying': '正在查询 {provider} · 第 {attempt}/3 次尝试',
+  'progress.retrying': '正在重试 {provider} · 第 {attempt}/3 次尝试',
+  'progress.unavailable': '{provider} 不可用 · 自动尝试已结束；可手动重试',
+
+  'repair.labelDone': '引用标签修改已完成',
+  'repair.labelPending': '引用标签待修改',
+  'bib.copyBibliography': '复制参考文献',
+  'bib.copyNotes': '复制检查笔记',
+
+  'preview.title': '确认提取的参考文献',
+  'preview.note': '尚未发送任何内容。可编辑每条文献，并用换行标记拆分位置。参考文献标题上方的文字已排除。',
+  'preview.entry': '文献 {n}',
+  'preview.merge': '与上一条合并',
+  'preview.split': '按换行拆分',
+  'preview.exclude': '排除',
+  'preview.check': '检查 {n} 条文献',
+
   'bib.reviewNotes': 'Bibproof 导出审阅说明（适用于整份导出）',
   'repair.affects_one': '此决定影响 {n} 个句子',
   'repair.affects_other': '此决定影响 {n} 个句子',
@@ -280,7 +320,7 @@ export const zh: Dict = {
   'file.reading': '正在本机读取…', 'file.done': '{name} 已在本机读取。', 'file.replace': '换一个文件',
   'doi.label': 'DOI 或 doi.org 链接', 'doi.placeholder': '10.1038/nature14539', 'doi.hint': '只填一个标识符，直接解析，不需要其他信息。',
   'cta.check': '核查参考文献', 'cta.sample': '试用示例', 'cta.checkDoi': '核查这个 DOI',
-  'hero.trust': '无需账号，不限条数。文件只在本机读取；只有每条参考文献的文字会发往公开的学术索引去查询。',
+  'hero.trust': '无需账号。Bibproof 不设使用上限；公开索引的限额仍适用。文件只在本机读取；只有每条参考文献的文字会发往公开的学术索引去查询。',
   'detected_one': '识别到 {n} 条参考文献', 'detected_other': '识别到 {n} 条参考文献', 'detected.doc': '，来自完整文档，将同时核对正文引用。', 'detected.list': '。',
   'status.idle': '在本机读取。只有每条参考文献的文字会发往公开的学术索引。',
   'err.none': '没有找到参考文献。请粘贴参考文献列表或带有“References”标题的文档，或选择一个文件。',
@@ -309,7 +349,7 @@ export const zh: Dict = {
   'fix.status': '已决定 {made} 条 · 待处理 {open} 条', 'fix.next': '下一条待处理', 'fix.review': '检查并导出', 'fix.allDone': '所有被标记的参考文献都已处理。',
   'fix.hint': '快捷键：j / k 移动，u 采用记录，o 保留原文，x 删除，? 帮助', 'fix.group': '处理队列',
   'kb.title': '键盘快捷键', 'kb.next': '下一条', 'kb.prev': '上一条', 'kb.use': '采用记录', 'kb.keep': '保留原文', 'kb.remove': '删除', 'kb.help': '显示这个列表',
-  'kb.note': '再按一次同一个决定键会清除该决定。在输入框里打字时快捷键不会生效。', 'close': '关闭',
+  'kb.note': '再按一次同一个决定键会清除该决定。快捷键仅在结果列表或证据面板内生效，输入框和对话框内不触发。Tab 与方向键同步选中行。', 'close': '关闭',
   'ev.title': '证据', 'ev.empty': '选择一条参考文献，查看它的证据。', 'ev.back': '返回列表',
   'ev.written': '原文写法', 'ev.matched': '匹配的来源记录', 'ev.identifier': '你写的标识符指向', 'ev.closest': '标题最接近的记录，使用前请复核', 'ev.nearest': '你是不是想找？最接近的结果，并非确认匹配',
   'ev.fields': '逐字段证据', 'ev.field': '字段', 'ev.wrote': '你写的', 'ev.says': '记录中的信息',
@@ -379,7 +419,7 @@ export const zh: Dict = {
   'm.flow': '从参考文献到记录',
   'm.s1': '在本机读取。', 'm.s1p': '从粘贴的文字、PDF、DOCX、BibTeX、RIS 或文本文件中提取参考文献，重建 PDF 的行与分栏。扫描版 PDF 需要先做 OCR。',
   'm.s2': '先解析，再搜索。', 'm.s2p': 'DOI 先查 Crossref，再查 DataCite；arXiv 通过 OpenAlex 解析。在 Crossref 搜索最多五个候选。没有强匹配时，再查 OpenAlex 和 Europe PMC，图书还会查 Open Library。',
-  'm.s3': '比对证据。', 'm.s3p': '把标题词、姓氏、年份和刊名与原条目比较。允许 ±1 年的差异，以容纳在线优先出版。标题包含度 ≥88% 且作者重合度 ≥70% 才算强候选；近似匹配仍需人工复核。',
+  'm.s3': '比对证据。', 'm.s3p': '把标题词、姓氏、年份和刊名与原条目比较。允许 ±1 年的差异，以容纳在线优先出版。标题包含度 ≥88% 且作者重合度 ≥70% 才算强候选；近似匹配仍需人工复核。可靠提取出的标题还需双向核对其一致性。',
   'm.s4': '检查撤稿。', 'm.s4p': '检查 Crossref 的撤稿关系和 OpenAlex 的撤稿标记。撤稿声明缺失或延迟仍是局限。',
   'm.s5': '检查整篇文档。', 'm.s5p': '文档中有参考文献标题时，把数字编号和作者—年份形式的正文引用与书目对照，并列出引用每条被标记条目的句子。有歧义的姓名、脚注和非标准格式需要人工复核。',
   'm.measured': '有实测，不空口承诺。', 'm.live': '联网实测评估',

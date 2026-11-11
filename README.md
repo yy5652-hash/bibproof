@@ -2,7 +2,7 @@
 
 **Catch invented references before you submit.**
 
-Paste a bibliography, drop in a paper, or enter a DOI. Bibproof checks each reference against the scholarly record, shows the evidence, and helps you fix what it finds. No account, no cap, nothing to install. In English and Chinese.
+Paste a bibliography, drop in a paper, or enter a DOI. Bibproof checks each reference against the scholarly record, shows the evidence, and helps you fix what it finds. No account, nothing to install. No Bibproof usage cap; public-index limits apply. In English and Chinese.
 
 Live: https://yy5652-hash.github.io/bibproof/
 
@@ -45,8 +45,8 @@ Your file is read on your device and never uploaded. Only the text of individual
 
 1. **Extract** the entries from pasted text or a document. PDF lines and columns are rebuilt from pdf.js text items.
 2. **Look up** by identifier first, then Crossref bibliographic search, then OpenAlex, Europe PMC and Open Library. Each host has its own queue that honours its rate limit, and answers are cached on your device.
-3. **Score** each candidate against the raw reference text rather than a parsed guess: title containment, surnames, year, venue, plus a volume + first page + first author check that recognises entries with abbreviated or missing titles.
-4. **Decide** conservatively. A failed index is never evidence of absence, and an entry with no stated title is never called fabricated.
+3. **Score** candidates for retrieval against the raw reference text: title containment, surnames, year, venue, plus a volume + first page + first author check that recognises entries with abbreviated or missing titles.
+4. **Decide** conservatively. When a title boundary can be isolated, check title identity in both directions before marking it Verified. A failed index is never evidence of absence, and an entry with no stated title is never called fabricated.
 
 ## Measured accuracy
 
@@ -57,7 +57,7 @@ Your file is read on your device and never uploaded. Only the text of individual
 | 240 genuine references (60 works in 4 styles) | 0 false accusations, 240 accepted |
 | 56 genuine references as real authors typed them | 1 false accusation on the first held-out run; 0 after the fix below, all 56 matched |
 | 60 more typed references, drawn after the rules were frozen | 1 false accusation, 58 matched, 1 could not be checked |
-| 60 synthetic fabrications | 58 of 60 flagged for review (invented 15/15, chimera 15/15, bogus DOI 15/15, mutated 13/15) |
+| 60 synthetic fabrications | 59 of 60 flagged for review (invented 15/15, chimera 15/15, bogus DOI 15/15, mutated 14/15; the other mutated entry could not be checked) |
 | 100 hallucinated citations from GPTZero's NeurIPS list | 98 flagged, 0 marked verified, 2 could not be checked |
 
 The one false accusation was a preprint cited under a title that differs from its record, although every author and the year matched. That pattern now returns "Details differ". Because the rule came from this set, the set no longer counts as unseen; the run before the fix is kept in [`eval/summary-first-heldout.json`](eval/summary-first-heldout.json), and the fix left the synthetic results unchanged and moved one GPTZero entry from "No record found" to "Details differ", still flagged. The newer batch of 60 is the unseen figure: its one false accusation is a book chapter cited only by its book title, and no rule has been changed for it. Its results are in [`eval/fresh-results.json`](eval/fresh-results.json).
@@ -94,3 +94,5 @@ MIT licensed.
 `npx tsx scripts/record-sample.ts` records a fresh run against public indexes, verifies every intended verdict, and only then replaces `src/core/sample-snapshot.json` and the browser response fixture. It shares the existing OpenAlex daily counter, never overrides verdicts, and leaves `eval/*.json` unchanged. The sample includes explicitly constructed demonstration errors.
 
 `npx tsx scripts/replay-eval.ts` replays the committed 300-trial evaluation from `eval/cache` without network requests or result-file changes. Cache misses are reported, never filled with invented responses.
+
+`node --import tsx scripts/record-paper.ts` records the constructed full-paper example live. `--from-saved` explicitly assembles it from the dated existing live sample evidence, retaining that date and provenance. Neither mode changes eval result files.

@@ -8,6 +8,8 @@ export function RepairSentences({ edits, onReview }: { edits: ManuscriptEdit[]; 
     <ul>{edits.map(e => <li key={e.key}>
       <p translate="no">{e.sentence}</p>
       {e.renumber && <p>{t('repair.numberEdit')}: [{e.old}] → {e.next === null ? t('dec.tag.remove') : `[${e.next}]`}</p>}
+      {e.labelChange && <p>{e.labelChange}</p>}
+      {(e.labelChange || e.renumber) && <label><input type="checkbox" checked={e.labelDone} onChange={ev=>onReview(e.key+':label',ev.target.checked?'keep':'unresolved')} />{t('repair.labelDone')}</label>}
       <label>{t('repair.action')}<select value={e.choice} onChange={ev => onReview(e.key, ev.target.value as SentenceChoice)}>
         {SENTENCE_CHOICES.map(choice => <option key={choice} value={choice}>{t(`repair.${choice}`)}</option>)}
       </select></label>

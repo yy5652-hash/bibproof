@@ -1,10 +1,11 @@
+import type { CrossCheck } from '../core/crosscheck';
 import type { Citing } from '../core/citing';
 import type { SentenceReviews } from '../core/repairs';
 import type { CheckResult } from '../core/types';
 import type { Decisions } from '../core/decisions';
 
 /** One saved run. Holds the reference strings and results, only citing sentences, never the full document body. */
-export interface StoredRun { id: string; at: string; entries: string[]; results: (CheckResult | null)[]; decisions: Decisions; citing?: Citing | null; reviews?: SentenceReviews; savedExampleAt?: string }
+export interface StoredRun { id: string; at: string; entries: string[]; results: (CheckResult | null)[]; decisions: Decisions; citing?: Citing | null; reviews?: SentenceReviews; savedExampleAt?: string; fullDocument?: boolean; cross?: CrossCheck }
 export const MAX_RUNS = 50;
 
 function valid(r: unknown): r is StoredRun {

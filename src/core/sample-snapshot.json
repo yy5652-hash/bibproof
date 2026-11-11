@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-09T13:11:47.046Z",
+  "runAt": "2026-11-10T23:43:11.670Z",
   "provenance": "Fresh live public scholarly index requests; no response replay or verdict overrides.",
   "entries": [
     "Vaswani, A., et al. (2017). Attention Is All You Need. arXiv:1706.03762.",
@@ -15,6 +15,7 @@
     {
       "reference": {
         "raw": "Vaswani, A., et al. (2017). Attention Is All You Need. arXiv:1706.03762.",
+        "identityTitle": "Attention Is All You Need",
         "arxiv": "1706.03762",
         "year": 2017,
         "surnames": [
@@ -31,7 +32,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:11:35.570Z",
+      "checkedAt": "2026-11-10T23:42:59.585Z",
       "verdict": "Verified",
       "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
       "match": {
@@ -123,6 +124,7 @@
     {
       "reference": {
         "raw": "He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. https://doi.org/10.1109/CVPR.2016.90",
+        "identityTitle": "Deep Residual Learning for Image Recognition",
         "doi": "10.1109/cvpr.2016.90",
         "url": "https://doi.org/10.1109/CVPR.2016.90",
         "year": 2016,
@@ -149,7 +151,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:11:35.902Z",
+      "checkedAt": "2026-11-10T23:42:59.864Z",
       "verdict": "Verified",
       "explanation": "The indexed title and authors agree. Publication year allows a one-year online-first difference.",
       "match": {
@@ -228,6 +230,7 @@
     {
       "reference": {
         "raw": "LeCun, Y., Bengio, Y., & Hinton, G. (2022). Deep learning. Nature, 521, 436–444. https://doi.org/10.1038/nature14539",
+        "identityTitle": "Deep learning",
         "doi": "10.1038/nature14539",
         "url": "https://doi.org/10.1038/nature14539",
         "year": 2022,
@@ -253,7 +256,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:11:36.816Z",
+      "checkedAt": "2026-11-10T23:43:00.817Z",
       "verdict": "Details differ",
       "explanation": "A matching work exists, but the highlighted fields differ.",
       "match": {
@@ -330,6 +333,7 @@
     {
       "reference": {
         "raw": "Goodfellow, I., & Szegedy, C. (2015). Deep learning. Nature, 521, 436–444.",
+        "identityTitle": "Deep learning",
         "year": 2015,
         "surnames": [
           "Goodfellow",
@@ -358,7 +362,7 @@
           "count": 5
         }
       ],
-      "checkedAt": "2026-11-09T13:11:37.800Z",
+      "checkedAt": "2026-11-10T23:43:01.816Z",
       "verdict": "Details differ",
       "explanation": "A close title exists, but its authors do not agree. This may be a chimera: check the author list carefully.",
       "match": {
@@ -461,6 +465,7 @@
     {
       "reference": {
         "raw": "He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition. https://doi.org/10.1038/nature14539",
+        "identityTitle": "Deep Residual Learning for Image Recognition",
         "doi": "10.1038/nature14539",
         "url": "https://doi.org/10.1038/nature14539",
         "year": 2016,
@@ -493,7 +498,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:11:40.497Z",
+      "checkedAt": "2026-11-10T23:43:03.857Z",
       "verdict": "Identifier conflict",
       "explanation": "The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.",
       "identifierRecord": {
@@ -634,6 +639,7 @@
     {
       "reference": {
         "raw": "Bennett, R., & Alvarez, M. (2023). Citation-grounded uncertainty calibration for multilingual academic writing assistants. Journal of Artificial Intelligence Research, 78, 241–259.",
+        "identityTitle": "Citation-grounded uncertainty calibration for multilingual academic writing assistants",
         "year": 2023,
         "surnames": [
           "Bennett",
@@ -662,7 +668,7 @@
           "count": 5
         }
       ],
-      "checkedAt": "2026-11-09T13:11:42.785Z",
+      "checkedAt": "2026-11-10T23:43:05.329Z",
       "verdict": "No record found",
       "explanation": "No matching record in 3 indexes. Likely fabricated, check by hand.",
       "nearest": {
@@ -794,6 +800,7 @@
     {
       "reference": {
         "raw": "Wakefield, A. J., et al. (1998). Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children. The Lancet, 351, 637–641. https://doi.org/10.1016/S0140-6736(97)11096-0",
+        "identityTitle": "Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children",
         "doi": "10.1016/s0140-6736(97)11096-0",
         "url": "https://doi.org/10.1016/S0140-6736(97)11096-0",
         "year": 1998,
@@ -817,7 +824,7 @@
           "count": 1
         }
       ],
-      "checkedAt": "2026-11-09T13:11:44.822Z",
+      "checkedAt": "2026-11-10T23:43:10.448Z",
       "verdict": "Retracted",
       "explanation": "The matched work is marked as retracted in index metadata. Read the retraction notice before citing it.",
       "match": {
@@ -936,6 +943,7 @@
     {
       "reference": {
         "raw": "World Health Organization. (2024). Climate change. https://www.who.int/news-room/fact-sheets/detail/climate-change",
+        "identityTitle": "Climate change",
         "url": "https://www.who.int/news-room/fact-sheets/detail/climate-change",
         "year": 2024,
         "surnames": [
@@ -954,7 +962,7 @@
           "count": 5
         }
       ],
-      "checkedAt": "2026-11-09T13:11:45.187Z",
+      "checkedAt": "2026-11-10T23:43:10.945Z",
       "verdict": "Could not check",
       "explanation": "This looks like a web page, report, legal source or other item these indexes do not reliably cover, and no matching record turned up. Check it by hand.",
       "nearest": {

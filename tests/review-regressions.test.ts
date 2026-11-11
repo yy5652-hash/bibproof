@@ -30,9 +30,9 @@ it('separates evidence agreement from containment and one-year tolerance', () =>
   const w: Work = {id:'w', title:'Deep learning', authors:[{family:'He'}], year:2015, source:'Crossref', url:'https://example.org'};
   const s = scoreCandidate(ref,w);
   expect(s.title).toBe(1);
-  expect(s.fields.find(f => f.field==='Title')?.status).toBe('unknown'); // contained one way only: never shown as "Agrees"
+  expect(s.fields.find(f => f.field==='Title')?.status).toBe('differ');
   expect(s.fields.find(f => f.field==='Year')?.status).toBe('tolerance');
-  expect(matchingDetailsDiffer(ref,w,s)).toBe(false); // verdict thresholds did not change
+  expect(matchingDetailsDiffer(ref,w,s)).toBe(true); // isolated title identity is required
 });
 it('maps removal and replacement without losing original manuscript numbers', () => {
   expect(numberMap(rows,{1:{kind:'remove'},2:{kind:'record'}})).toEqual([

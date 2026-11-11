@@ -1,0 +1,49 @@
+{
+  "upstream_commit": "c62d296d1d2e3e6f9cb325e37963b63350ab2ca4",
+  "method": "Exact AST extraction of upstream ConfusionMatrix, is_answer, build_confusion_matrix and per_tier_metrics; no rewritten metric formulas.",
+  "checks": [
+    {
+      "tool": "Bibproof",
+      "exact_upstream_metric_agreement": true,
+      "values": {
+        "tp": 14,
+        "fp": 0,
+        "tn": 14,
+        "fn": 2,
+        "detection_rate": 0.875,
+        "false_positive_rate": 0.0,
+        "f1": 0.9333333333333333,
+        "tier3_f1": 1.0
+      }
+    },
+    {
+      "tool": "Zero-shot GPT-5.1 (saved)",
+      "exact_upstream_metric_agreement": true,
+      "values": {
+        "tp": 14,
+        "fp": 3,
+        "tn": 11,
+        "fn": 2,
+        "detection_rate": 0.875,
+        "false_positive_rate": 0.21428571428571427,
+        "f1": 0.8484848484848485,
+        "tier3_f1": 0.6
+      }
+    },
+    {
+      "tool": "Cascade GPT-5.1 variant (saved)",
+      "exact_upstream_metric_agreement": true,
+      "values": {
+        "tp": 16,
+        "fp": 1,
+        "tn": 13,
+        "fn": 0,
+        "detection_rate": 1.0,
+        "false_positive_rate": 0.07142857142857142,
+        "f1": 0.9696969696969697,
+        "tier3_f1": 0.888888888888889
+      }
+    }
+  ],
+  "uncertain_and_missing_fixture_passed": true
+}

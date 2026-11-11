@@ -67,7 +67,7 @@ export default function Workspace({ s }: { s: Session }) {
     picked.current = true;
     const here = ordered.findIndex(r => r.id === selectedId);
     for (let i = here + delta; i >= 0 && i < ordered.length; i += delta) {
-      if (ordered[i].result) { setSelectedId(ordered[i].id); scrollTo.current?.(i); return; }
+      if (ordered[i].result) { setSelectedId(ordered[i].id); scrollTo.current?.(i); requestAnimationFrame(()=>document.querySelector<HTMLButtonElement>(`.list-pane [data-id="${ordered[i].id}"] .row-btn`)?.focus()); return; }
     }
   }, [ordered, selectedId]);
   const nextUnresolved = useCallback(() => {
@@ -95,8 +95,8 @@ export default function Workspace({ s }: { s: Session }) {
       const el = e.target as HTMLElement | null;
       if (el?.closest('input, textarea, select, [contenteditable="true"], [contenteditable=""]')) return;
       if (e.key === '?') { e.preventDefault(); setHelp(h => !h); return; }
-      if (help || bib || share) return;
-      const act: Record<string, () => void> = { j: () => move(1), k: () => move(-1), u: () => decideSelected('record'), o: () => decideSelected('keep'), x: () => decideSelected('remove') };
+      if (help || bib || share || el?.closest('[role="dialog"]') || !el?.closest('.list-pane, .detail-pane')) return;
+      const act: Record<string, () => void> = { arrowdown:()=>move(1), arrowup:()=>move(-1), j: () => move(1), k: () => move(-1), u: () => decideSelected('record'), o: () => decideSelected('keep'), x: () => decideSelected('remove') };
       const fn = act[e.key.toLowerCase()]; if (fn) { e.preventDefault(); fn(); }
     };
     document.addEventListener('keydown', on); return () => document.removeEventListener('keydown', on);
@@ -109,11 +109,11 @@ export default function Workspace({ s }: { s: Session }) {
   const progress = phase === 'running' ? t('bar.running', { done: Math.min(done.length + 1, rows.length), total: rows.length }) : phase === 'cancelled' ? t('bar.stopped', { done: done.length, total: rows.length }) : completion.unchecked ? t('sum.partial', { done: completion.checked, left: completion.unchecked }) : t('prog.done', { n: done.length });
   const detail = selected?.result ? <Detail key={selected.id} index={selected.id} result={selected.result} raw={selected.raw} decision={decisions[selected.id]} onDecide={d => s.decide(selected.id, d)} style={style} onStyle={setStyle} citing={citing} edits={edits.filter(e => e.id === selected.id)} onReview={s.reviewSentence} onRetry={() => void s.retry([selected.id])} retryDisabled={phase === 'running'} onUserEvidence={e => s.saveUserEvidence(selected.id,e)} /> : null;
   const decided = done.filter(r => decisions[r.id]).length;
-  const listProps = { items: ordered, selectedId, decisions, onSelect: select, scrollTo, label: t('list.aria') };
+  const listProps = { items: ordered, selectedId, decisions, onSelect: select, onFocus:(id:number)=>{picked.current=true;setSelectedId(id);}, scrollTo, label: t('list.aria') };
 
   return (
     <section className="workspace no-print" aria-labelledby="results-h" id="results">
-      {s.savedExampleAt && <div className="notice" data-testid="saved-example"><strong>{t('sample.saved', { date: date(s.savedExampleAt) })}</strong><p>{t('sample.intro')}</p><button className="button small" onClick={() => s.recheck(rows.map(r => r.raw), true)}>{t('sample.live')}</button></div>}
+      {s.savedExampleAt && <div className="notice" data-testid="saved-example"><strong>{t('sample.saved', { date: date(s.savedExampleAt) })}</strong><p>{t(extraction?.fullDocument?'paper.intro':'sample.intro')}</p><button className="button small" onClick={s.runLive}>{t('sample.live')}</button></div>}
       <div className="compact-bar">
         <div className="compact-text">
           <h2 id="results-h">{summary}</h2>

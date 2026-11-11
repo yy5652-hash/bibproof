@@ -12,23 +12,25 @@ export function cacheKey(url:string):string {
   return 'response:v1:'+u.toString();
 }
 export const delay=(ms:number)=>new Promise<void>(resolve=>setTimeout(resolve,ms));
+export interface HttpProgress { attempt:number; state:'querying'|'retrying' }
 export class IndexClient {
   private queues=new Map<string,Promise<unknown>>();
   private next=new Map<string,number>();
   private pending=new Map<string,Promise<HttpResult>>();
   constructor(public cache:Cache=new MemoryCache(),private transport:typeof fetch=(input,init)=>fetch(input,init),private interval=1000){}
-  async request(url:string):Promise<HttpResult> {
+  async request(url:string,onProgress?:(p:HttpProgress)=>void):Promise<HttpResult> {
+    onProgress?.({attempt:1,state:'querying'});
     const key=cacheKey(url);
     const hit=await this.cache.get(key).catch(()=>undefined) as {at:number;value:HttpResult}|undefined;
     if(hit && Date.now()-hit.at<7*86400000) return {...hit.value,cached:true};
     const existing=this.pending.get(key);if(existing)return existing;
     const host=new URL(url).host;
     const previous=this.queues.get(host)??Promise.resolve();
-    const task=previous.catch(()=>undefined).then(()=>this.execute(url,key,host));
+    const task=previous.catch(()=>undefined).then(()=>this.execute(url,key,host,onProgress));
     this.queues.set(host,task);this.pending.set(key,task);
     try{return await task;}finally{this.pending.delete(key);}
   }
-  private async execute(url:string,key:string,host:string):Promise<HttpResult>{
+  private async execute(url:string,key:string,host:string,onProgress?:(p:HttpProgress)=>void):Promise<HttpResult>{
     const openAlex=host==='api.openalex.org';
     const day=new Date().toISOString().slice(0,10);
     const budgetKey='openalex-budget:'+day;
@@ -36,6 +38,7 @@ export class IndexClient {
     const search=openAlex && new URL(url).searchParams.has('search');
     if(openAlex && (budget.blocked || (search && budget.searches>=95)))return {ok:false,status:429,error:'OpenAlex daily keyless budget unavailable; other indexes still checked.'};
     for(let attempt=0;attempt<3;attempt++){
+      onProgress?.({attempt:attempt+1,state:attempt?'retrying':'querying'});
       const wait=Math.max(0,(this.next.get(host)??0)-Date.now());
       if(wait>60000)return {ok:false,status:429,error:'Index requested a longer cooldown. Retry later.'};
       await delay(wait);

@@ -6,7 +6,7 @@ import { useI18n } from '../i18n';
 /** The in-text cross-check, kept as a collapsible summary so the workspace keeps the screen. */
 export default function CrossPanel({ extraction }: { extraction: Extraction }) {
   const { t } = useI18n();
-  const cross = useMemo(() => crossCheck(extraction.body, extraction.entries), [extraction]);
+  const cross = useMemo(() => extraction.cross ?? crossCheck(extraction.body, extraction.entries), [extraction]);
   const none = cross.style === 'Not detected';
   const clean = !none && !cross.missing.length && !cross.uncited.length;
   const style = t(`cross.style.${cross.style}` as 'cross.style.Numeric');

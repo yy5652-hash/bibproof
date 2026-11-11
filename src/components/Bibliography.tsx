@@ -20,12 +20,12 @@ export default function Bibliography({ open, onOpenChange, rows, decisions, styl
 }) {
   const { t } = useI18n();
   const userNotes = userEvidenceText(rows, t('user.badge'));
-  const manuscript = t('repair.title') + '\n' + edits.map(e => `#${e.id + 1} ${e.sentence}\n  ${t(`repair.${e.choice}`)}${e.renumber ? ` · [${e.old}] → ${e.next === null ? t('dec.tag.remove') : `[${e.next}]`}` : ''}`).join('\n\n') + '\n' + (!citing ? t('repair.noDocument') : t('repair.manual'));
-  const mapText = numberMapText(rows, decisions).replace('Numeric labels (old → new)', t('repair.map')).replaceAll('removed', t('dec.tag.remove'));
+  const manuscript = t('repair.title') + '\n' + edits.map(e => `#${e.id + 1} ${e.sentence}\n  ${t(`repair.${e.choice}`)}${e.labelChange ? ` · ${e.labelChange} · ${t(e.labelDone ? 'repair.labelDone' : 'repair.labelPending')}` : ''}${e.renumber ? ` · [${e.old}] → ${e.next === null ? t('dec.tag.remove') : `[${e.next}]`}` : ''}`).join('\n\n') + '\n' + (!citing ? t('repair.noDocument') : t('repair.manual'));
+  const mapText = citing?.style==='numeric' || citing?.style==='mixed' ? numberMapText(rows, decisions).replace('Numeric labels (old → new)', t('repair.map')).replaceAll('removed', t('dec.tag.remove')) : edits.flatMap(e=>e.labelChange ? [e.labelChange] : []).filter((v,i,a)=>a.indexOf(v)===i).join('\n');
 
   const { items, log } = useMemo(() => planBibliography(rows.map(r => ({ id: r.id, raw: r.raw, result: r.result })), decisions), [rows, decisions]);
   const [formatted, setFormatted] = useState<Map<number, string>>(new Map());
-  const [error, setError] = useState(''); const [copied, setCopied] = useState(false);
+  const [error, setError] = useState(''); const [copied, setCopied] = useState<'bibliography'|'notes'|null>(null);
   const [bulkDone, setBulkDone] = useState(false);
   useEffect(() => {
     if (!open) return;
@@ -47,7 +47,7 @@ export default function Bibliography({ open, onOpenChange, rows, decisions, styl
   const exportText = text + '\n\n' + exportNotes + '\n';
   const records = recordsWithKeys(items);
   const verifiedLeft = rows.some(r => r.result?.verdict === 'Verified' && !decisions[r.id]);
-  async function copy() { try { await navigator.clipboard.writeText(exportText); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch { setError(t('ev.clipboard')); } }
+  async function copy(value:string,kind:'bibliography'|'notes') { try { await navigator.clipboard.writeText(value); setCopied(kind); setTimeout(() => setCopied(null), 2000); } catch { setError(t('ev.clipboard')); } }
   const groups: ['replaced' | 'removed' | 'unresolved' | 'kept', string][] = [['replaced', t('bib.log.replaced')], ['removed', t('bib.log.removed')], ['unresolved', t('bib.log.unresolved')], ['kept', t('bib.log.kept')]];
 
   return (
@@ -79,7 +79,8 @@ export default function Bibliography({ open, onOpenChange, rows, decisions, styl
               <button className="button small" onClick={() => download('bibproof-manuscript-edits.txt', manuscript + '\n\n' + mapText + '\n\n' + userNotes, 'text/plain;charset=utf-8')}>{t('repair.download')}</button>
               <pre className="number-map">{mapText}</pre>
               <div className="bib-actions">
-                <button className="button primary small" onClick={copy} disabled={!kept.length}><IconCopy />{copied ? t('bib.copied') : t('bib.copy')}</button>
+                <button className="button primary small" onClick={()=>copy(text,'bibliography')} disabled={!kept.length}><IconCopy />{copied==='bibliography' ? t('bib.copied') : t('bib.copyBibliography')}</button>
+                <button className="button small" onClick={()=>copy(exportNotes,'notes')}>{copied==='notes'?t('bib.copied'):t('bib.copyNotes')}</button>
                 <button className="button small" onClick={() => download('bibproof-bibliography.txt', exportText, 'text/plain;charset=utf-8')} disabled={!kept.length}><IconDownload />{t('bib.txt')}</button>
                 <button className="button small" onClick={async () => download('bibproof-bibliography.bib', annotateStructuredExport(await exportWorks(records, 'bibtex'), 'bibtex', exportNotes, t('bib.reviewNotes')), 'application/x-bibtex')} disabled={!records.length}><IconDownload />{t('bib.downloadRecords', { n: records.length, omitted: rows.length - records.length })} (.bib)</button>
                 <button className="button small" onClick={async () => download('bibproof-bibliography.ris', annotateStructuredExport(await exportWorks(records, 'ris'), 'ris', exportNotes, t('bib.reviewNotes')), 'application/x-research-info-systems')} disabled={!records.length}><IconDownload />{t('bib.downloadRecords', { n: records.length, omitted: rows.length - records.length })} (.ris)</button>

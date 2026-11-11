@@ -1,0 +1,136 @@
+{
+  "all_startup_hashes_verified": true,
+  "files": [
+    {
+      "path": "package-lock.json",
+      "sha256": "d378154441e265288f55b9cd190a394418f607fde2ca4b8f2542f0e0ed65f0b3",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/package-lock.json"
+    },
+    {
+      "path": "scripts/hallmark/client.ts",
+      "sha256": "9dcd6b71e1422901ed3b30744d5463e254e193c1023864bc899ea2fac9a98b71",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/scripts/hallmark/client.ts"
+    },
+    {
+      "path": "scripts/hallmark/common.ts",
+      "sha256": "ff9acc9951af0f47d0bfe45eebc45a1ef3e016ff75cd3a81c2c4061ed867804f",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/scripts/hallmark/common.ts"
+    },
+    {
+      "path": "scripts/hallmark/convert.ts",
+      "sha256": "60161f5657e815aa1bb96b05868f49f7400d121da966743dcad9ffa22e666ba2",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/scripts/hallmark/convert.ts"
+    },
+    {
+      "path": "scripts/hallmark/mapping.ts",
+      "sha256": "ffe7eeb432b2d3fead160bb5b208831e3d06323b88cadb7240c365e8214ff59f",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/scripts/hallmark/mapping.ts"
+    },
+    {
+      "path": "scripts/hallmark/run.ts",
+      "sha256": "77a4f17879d6dae9b0ef83ebe7144215ae8686d943b1d2d709c7b155ed6bbe7d",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/scripts/hallmark/run.ts"
+    },
+    {
+      "path": "scripts/hallmark/score.ts",
+      "sha256": "514dfe40c49e7322964fc43d55fa47514f613b155eac9083895e437c3185bc4d",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/scripts/hallmark/score.ts"
+    },
+    {
+      "path": "scripts/hallmark/select.ts",
+      "sha256": "bd3ca57626bf917af17deb7dc74d99833f7e013446b9ce1b6107a251d9642d75",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/scripts/hallmark/select.ts"
+    },
+    {
+      "path": "src/core/citing.ts",
+      "sha256": "512d79cf0298b34e5edf96aab339f8ba1718008eda7298705bd3affeaa0059ee",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/citing.ts"
+    },
+    {
+      "path": "src/core/crosscheck.ts",
+      "sha256": "119e78e68f559d85976e81d1c0151936b3d04cb80c8db9652687cf0fdd11069d",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/crosscheck.ts"
+    },
+    {
+      "path": "src/core/decisions.ts",
+      "sha256": "4da9a42525baba76d9f1f70b488eb227fa1672a6d322b25715d72c4c7be4d428",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/decisions.ts"
+    },
+    {
+      "path": "src/core/extract.ts",
+      "sha256": "f1ea03f225afa52f59ded488ffc34fb2949da53ae256e4ca05e67d3f6362abd0",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/extract.ts"
+    },
+    {
+      "path": "src/core/format.ts",
+      "sha256": "1cb14fce29e8faf1d92649ac87abe16640bdbd5a14eda1b0b523fe3a4af9ec70",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/format.ts"
+    },
+    {
+      "path": "src/core/handcheck.ts",
+      "sha256": "f3d072b54afe3866592f44131350628c399ac9ece2179dd8e054992c1ac3fdbf",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/handcheck.ts"
+    },
+    {
+      "path": "src/core/http.ts",
+      "sha256": "f5c7ee324840be6c87005d6e452e2e55333eba2d69740f8e57790c27acb3123f",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/http.ts"
+    },
+    {
+      "path": "src/core/indexes.ts",
+      "sha256": "818aae6b833c12f80cff1cc84e93ce35f6c3c5e2ae33a67099643d5b4f0d486d",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/indexes.ts"
+    },
+    {
+      "path": "src/core/paper-sample.ts",
+      "sha256": "c60d24763d0a9e40963b267584b20af65bf2b8f44f1e0161dcdecb0ce49e7ffe",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/paper-sample.ts"
+    },
+    {
+      "path": "src/core/parse.ts",
+      "sha256": "1d04c270274da0be21cb723adf57f25c90c9b65a50c1f6d92933b3e7c0e19550",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/parse.ts"
+    },
+    {
+      "path": "src/core/repairs.ts",
+      "sha256": "787b27c1a522d91d5cf0c2a33b7ed74cfb9f40fe094a636c9a649f06e5fac53d",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/repairs.ts"
+    },
+    {
+      "path": "src/core/retry.ts",
+      "sha256": "20cb5d554e80feaddaae5de90b83062810bf30f2b6800aea3a60b2917b4cd280",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/retry.ts"
+    },
+    {
+      "path": "src/core/sample.ts",
+      "sha256": "16c8d4ead8f44f6e035a26d1211d74d31fcfbf721e122d22282478355c4aae7d",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/sample.ts"
+    },
+    {
+      "path": "src/core/score.ts",
+      "sha256": "729150600aeba577de80eee217ae6f4779fb365f685a578f0b3d3e5be574f9c6",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/score.ts"
+    },
+    {
+      "path": "src/core/share.ts",
+      "sha256": "0a0d4d98c6f718444154500ac37d1e396f153dae046096e6c1ed8834cadeacf8",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/share.ts"
+    },
+    {
+      "path": "src/core/types.ts",
+      "sha256": "adb315edc179138fc0d33d880e1f817686c31dc6608a02098420c85e88d1d63a",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/types.ts"
+    },
+    {
+      "path": "src/core/userEvidence.ts",
+      "sha256": "e65a8ed7fb1b94ace67a5f9d77898b334e3d91f843900798b3348e45a5ebe450",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/userEvidence.ts"
+    },
+    {
+      "path": "src/core/verify.ts",
+      "sha256": "db29c7056f444fd34bf60ff67147b9aea33fb458e346614acb6bf9381c4a7813",
+      "snapshot": "eval/hallmark/runs/dev_public-pilot30/source/src/core/verify.ts"
+    }
+  ],
+  "note": "Concurrent edits changed score.ts during the pilot and parse.ts after it. Their archived startup versions were recovered and matched byte-for-byte to the pre-network startup SHA256. The one pilot process loaded production modules at launch; no mid-run imports/restarts or pooled versions. Keep original drift flag for transparency."
+}

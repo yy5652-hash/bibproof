@@ -3,11 +3,11 @@ import { retryUnavailable } from './core/retry';
 import { useCallback, useRef, useState } from 'react';
 import type { CheckResult } from './core/types';
 import { IndexClient } from './core/http';
-import { verifyReference } from './core/verify';
+import { verifyReference, type CheckProgress } from './core/verify';
 import { parseReference } from './core/parse';
 import { BrowserCache } from './browser/cache';
 
-export type RowState = { id: number; raw: string; state: 'queued' | 'running' | 'done' | 'skipped'; result?: CheckResult };
+export type RowState = { id: number; raw: string; state: 'queued' | 'running' | 'done' | 'skipped'; result?: CheckResult; progress?:CheckProgress; retrying?:boolean };
 export type Phase = 'idle' | 'running' | 'done' | 'cancelled';
 const CONCURRENCY = 3;
 
@@ -36,10 +36,10 @@ export function useChecker() {
         if (id >= entries.length) return;
         patch(id, { state: 'running' });
         let result: CheckResult;
-        try { result = await verifyReference(entries[id], http); }
+        try { result = await verifyReference(entries[id], http,progress=>{if(mine===run.current)patch(id,{progress});}); }
         catch (e) { result = unreadable(entries[id], e instanceof Error ? e.message : 'unexpected error'); }
         if (mine !== run.current) return;
-        patch(id, { state: 'done', result });
+        patch(id, { state: 'done', result, progress:undefined });
       }
     };
     await Promise.all(Array.from({ length: Math.min(CONCURRENCY, entries.length) }, worker));
@@ -50,16 +50,17 @@ export function useChecker() {
     const mine = ++run.current;
     client.current ??= new IndexClient(new BrowserCache());
     setPhase('running');
-    await retryUnavailable(rows, ids, async raw => {
-      try { return await verifyReference(raw, client.current!); }
+    await retryUnavailable(rows, ids, async (raw,id) => {
+      setRows(prev=>prev.map(r=>r.id===id?{...r,retrying:true}:r));
+      try { return await verifyReference(raw, client.current!,progress=>{if(mine===run.current)setRows(prev=>prev.map(r=>r.id===id?{...r,progress}:r));}); }
       catch (e) { return unreadable(raw, e instanceof Error ? e.message : 'unexpected error'); }
-    }, (id, result) => setRows(prev => prev.map(r => r.id === id ? {...r, state:'done', result:{...result, userEvidence:r.result?.userEvidence}} : r)), () => mine === run.current);
+    }, (id, result) => setRows(prev => prev.map(r => r.id === id ? {...r, state:'done', progress:undefined, retrying:false, result:{...result, userEvidence:r.result?.userEvidence}} : r)), () => mine === run.current);
     if (mine === run.current) setPhase('done');
   }, [rows]);
 
   const cancel = useCallback(() => {
     run.current++;
-    setRows(prev => prev.map(r => (r.state === 'done' ? r : { ...r, state: 'skipped' })));
+    setRows(prev => prev.map(r => (r.state === 'done' ? {...r,progress:undefined,retrying:false} : { ...r, state: 'skipped', progress:undefined, retrying:false })));
     setPhase('cancelled');
   }, []);
 

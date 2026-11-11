@@ -388,8 +388,9 @@ thead th { font-size: .74rem; color: var(--ink-3); }
   .hero h1 { max-width: none; }
   .lede { margin: 10px 0 16px; font-size: 1rem; }
   .input-card textarea, .dropzone, .doi-field { height: 120px; min-height: 120px; }
-  .input-actions .primary { flex: 1 1 auto; }
-  .input-actions { flex-wrap: nowrap; }
+  /* Three actions on a phone: the check button takes its own row, the two examples share the next one. */
+  .input-actions .primary { flex: 1 1 100%; }
+  .input-actions .button:not(.primary) { flex: 1 1 0; }
   .trust-grid, .eval-stats, .cross-grid { grid-template-columns: 1fr; }
   .how-steps, .legend { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr; gap: 2px; }
@@ -460,3 +461,8 @@ thead th { font-size: .74rem; color: var(--ink-3); }
 .decision .seg-btn { white-space: normal; overflow-wrap: anywhere; min-width: 0; max-width: 100%; }
 .field-row.tolerance { background: var(--v-differ-bg); }
 .field-row.tolerance strong small { color: var(--v-differ); }
+
+.extraction-preview { padding: 1rem; border-top: 1px solid var(--rule); min-width: 0; }
+.extraction-preview textarea { display: block; box-sizing: border-box; width: 100%; min-height: 6rem; margin: .5rem 0; resize: vertical; }
+.extraction-preview .button { margin: .25rem; white-space: normal; }
+.repair-sentences p, .number-map { overflow-wrap: anywhere; white-space: pre-wrap; }

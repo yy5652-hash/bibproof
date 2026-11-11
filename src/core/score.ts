@@ -3,6 +3,44 @@ import type { ParsedReference, Work, Score, FieldEvidence } from './types';
 export function containment(needle: string, haystack: string): number {
   const a=tokens(needle), b=new Set(tokens(haystack)); return a.length?a.filter(t=>b.has(t)).length/a.length:0;
 }
+const cleanTitle = (s:string) => s.replace(/^\s*(?:retracted|withdrawn)\s*:\s*/i,'')
+    .replace(/\[(?:preprint|[^\]]*version)\]|\b(?:(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|revised)\s+(?:ed(?:ition)?\.?)|version\s+\d+(?:\.\d+)*)/gi,'')
+    .replace(/\b(behaviour|colour|favour|labour|centre|analyse|modelling|organis\w*)\b/gi, w => w.toLowerCase().replace('our','or').replace('centre','center').replace('analyse','analyze').replace('modelling','modeling').replace('organis','organiz'));
+function writtenIdentity(ref:ParsedReference,work:Work):string {
+  let title=ref.identityTitle??'';
+  // A venue can share the line with a title; strip it only when index metadata
+  // identifies that exact suffix, never arbitrary extra prose.
+  if(work.venue){
+    const at=title.toLowerCase().indexOf(work.venue.toLowerCase());
+    if(at>0 && /[.:,?]\s*$/.test(title.slice(0,at))) title=title.slice(0,at).replace(/[.:,?]\s*$/,'');
+  }
+  return title;
+}
+export function titleIdentityAgrees(ref: ParsedReference, work: Work): boolean {
+  if(!ref.identityTitle)return false;
+  const parts=(s:string)=>cleanTitle(s.replace(/^[A-Z][A-Z0-9]{1,12}:\s+/, '')).split(/:\s*|\?\s*|\s+[—–-]\s+/).filter(p=>tokens(p).length>0);
+  const both=parts(writtenIdentity(ref,work)).length>1&&parts(work.title).length>1;
+  const main=(s:string)=>tokens(both?cleanTitle(s):parts(s)[0]??'').sort().join(' ');
+  return main(writtenIdentity(ref,work)).length>0 && main(writtenIdentity(ref,work))===main(work.title);
+}
+// Compare isolated titles in both directions without changing retrieval or absence rules.
+// Explicit subtitle separators permit omission of a subtitle, not invented prose
+// appended to an otherwise short title.
+export function titleIdentityDiffers(ref: ParsedReference, work: Work): boolean {
+  if (!ref.identityTitle) return false;
+  const parts=(s:string)=>cleanTitle(s.replace(/^[A-Z][A-Z0-9]{1,12}:\s+/, '')).split(/:\s*|\?\s*|\s+[—–-]\s+/).filter(p=>tokens(p).length>0);
+  const a=parts(writtenIdentity(ref,work)), b=parts(work.title);
+  const compare=(x:string,y:string)=>{
+    const left=tokens(x),right=tokens(y);
+    if(!left.length||!right.length)return false;
+    const same=(w:string,v:string)=>w===v || (Math.min(w.length,v.length)>=4 && (w.startsWith(v)||v.startsWith(w)) && /\./.test(x+y));
+    return left.filter(w=>!right.some(v=>same(w,v))).length>=2 || right.filter(w=>!left.some(v=>same(w,v))).length>=2;
+  };
+  if(!a.length||!b.length)return false;
+  if((a.length>1)!==(b.length>1) && !compare(a[0],b[0])) return false;
+  if(!compare(a.join(' '),b.join(' ')))return false;
+  return compare(cleanTitle(writtenIdentity(ref,work)),cleanTitle(work.title));
+}
 export function scoreCandidate(ref: ParsedReference, work: Work): Score {
   const raw=normalize(ref.raw); const title=containment(work.title,ref.raw);
   // Compare the index's surnames against the full reference. Avoid reliance on
@@ -20,10 +58,10 @@ export function scoreCandidate(ref: ParsedReference, work: Work): Score {
   const firstPage=normalize(String(work.pages??'').split(/[-–]/)[0]);
   const padded=' '+raw+' ';
   const locator=Boolean(firstPage&&work.volume&&names[0]&&padded.includes(' '+firstPage+' ')&&padded.includes(' '+normalize(work.volume)+' ')&&padded.includes(' '+names[0]+' '));
-  // Field statuses use the same thresholds as the verdict: 'differ' only where matching also sees a difference.
+  // Display title identity separately from the retrieval containment score.
   const bareTitle=work.title.replace(/^\s*(?:retracted|withdrawn)\s*:\s*/i,'');
   const fields:FieldEvidence[]=[
-    {field:'Title',written:ref.title||'Not isolated; checked against full entry',record:work.title,status:title<.65?'differ':ref.title&&(normalize(ref.title)===normalize(bareTitle)||(title>=.9&&containment(ref.title,bareTitle)>=.9))?'agree':'unknown'},
+    {field:'Title',written:ref.identityTitle||ref.title||'Not isolated; checked against full entry',record:work.title,status:titleIdentityDiffers(ref,work)?'differ':titleIdentityAgrees(ref,work)?'agree':title<.65?'differ':ref.title&&(normalize(ref.title)===normalize(bareTitle)||(title>=.9&&containment(ref.title,bareTitle)>=.9))?'agree':'unknown'},
     {field:'Authors',written:ref.surnames.join(', ')||'Not isolated; checked against full entry',record:work.authors.map(a=>a.family).join(', ')||'Not supplied',status:!names.length?'unknown':authors<.8?'differ':'agree'},
     {field:'Year',written:years.join(', ')||'Not supplied',record:String(work.year??'Not supplied'),status:!years.length||!work.year?'unknown':delta===0?'agree':delta===1?'tolerance':'differ'},
     {field:'Venue',written:ref.venue || 'See original reference',record:work.venue||'Not supplied',status:!work.venue||!ref.venue?'unknown':normalize(ref.venue)===normalize(work.venue)?'agree':'unknown'},
@@ -46,9 +84,9 @@ export function statedWords(ref: ParsedReference, work?: Work): number {
   return tokens(ref.raw.replace(/https?:\/\/\S+|10\.\d{4,9}\/\S+/g,' ')).filter(t=>t.length>2&&!/^\d+$/.test(t)&&!known.has(t)).length;
 }
 
-/** Preserve the search-based verdict rules independently of the stricter display comparison. */
+/** Isolated title conflicts downgrade a match without changing absence rules. */
 export function matchingDetailsDiffer(ref: ParsedReference, work: Work, s: Score): boolean {
-  return s.title < .65 || (work.authors.length > 0 && s.authors < .8) ||
+  return titleIdentityDiffers(ref,work) || (s.title < .65 && !titleIdentityAgrees(ref,work)) || (work.authors.length > 0 && s.authors < .8) ||
     (Boolean(ref.raw.replace(/10\.\d{4,9}\/\S+|https?:\/\/\S+/g, '').match(/\b(?:18|19|20)\d{2}\b/)) && Boolean(work.year) && s.year === 0) ||
     Boolean(ref.doi && work.doi && ref.doi !== work.doi.toLowerCase());
 }

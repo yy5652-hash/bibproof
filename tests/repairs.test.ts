@@ -29,3 +29,23 @@ it('retains unrelated sentence reviews but invalidates changed sources and shift
  expect(retainSentenceReviews(rows,{}, {1:{kind:'record'}},reviews)).toEqual({'0:0':'keep','2:0':'keep'});
  expect(retainSentenceReviews(rows,{}, {1:{kind:'remove'}},reviews)).toEqual({'0:0':'keep'});
 });
+
+import { parseReference } from '../src/core/parse';
+import type { CheckResult } from '../src/core/types';
+it('keeps author-year label edits open after a sentence is kept, per citing sentence',()=>{
+ const raw='LeCun, Y., Bengio, Y., & Hinton, G. (2022). Deep learning.';
+ const result:CheckResult={reference:parseReference(raw),verdict:'Details differ',explanation:'',evidence:[],checkedAt:'',match:{id:'x',title:'Deep learning',authors:[{family:'LeCun'},{family:'Bengio'},{family:'Hinton'}],year:2015,source:'Crossref',url:''}};
+ const rows=[{id:0,raw,result}];const citing=citingSentences('A claim (LeCun et al., 2022). Another claim (LeCun et al., 2022).',[raw],true);
+ const edits=manuscriptEdits(rows,{0:{kind:'record'}},citing,{'0:0':'keep','0:1':'keep'});
+ expect(edits).toHaveLength(2);expect(edits[0].labelChange).toBe('(LeCun et al., 2022) → (LeCun et al., 2015)');expect(editsNeeded(edits)).toBe(2);
+ expect(editsNeeded(manuscriptEdits(rows,{0:{kind:'record'}},citing,{'0:0':'keep','0:1':'keep','0:0:label':'keep'}))).toBe(1);
+});
+
+it('requires author changes but does not invent an edit to an unchanged et-al label',()=>{
+ const raw='Smith, J., et al. (2020). Work.';
+ const result:CheckResult={reference:parseReference(raw),verdict:'Details differ',explanation:'',evidence:[],checkedAt:'',match:{id:'x',title:'Work',authors:[{family:'Smith'},{family:'Lee'},{family:'Jones'}],year:2020,source:'Crossref',url:''}};
+ const rows=[{id:0,raw,result}];const citing=citingSentences('A claim (Smith et al., 2020).',[raw],true);
+ expect(manuscriptEdits(rows,{0:{kind:'record'}},citing,{})[0].labelChange).toBeUndefined();
+ result.match!.authors[0].family='Chen';
+ expect(manuscriptEdits(rows,{0:{kind:'record'}},citing,{})[0].labelChange).toBe('(Smith et al., 2020) → (Chen et al., 2020)');
+});

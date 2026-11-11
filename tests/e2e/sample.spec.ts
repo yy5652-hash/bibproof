@@ -135,6 +135,7 @@ test('citing sentences are found on the device and no document text leaves it', 
   await page.getByLabel('References or document').fill(doc);
   await expect(page.getByText(/2 references detected in a full document/)).toBeVisible();
   await page.getByRole('button', { name: 'Check references' }).click();
+  await page.getByRole('button',{name:'Check 2 references',exact:true}).click();
   await expect(page.getByRole('status').filter({ hasText: /2 references checked/ })).toBeVisible({ timeout: 60_000 });
   await row(page, 'No record found').click();
   await expect(page.getByTestId('evidence').locator('.citing')).toContainText('zebra-quokka-7731');

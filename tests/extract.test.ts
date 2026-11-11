@@ -62,3 +62,18 @@ describe('rebuildPdfPage', () => {
     expect(text.split('\n')[1]).toMatch(/^ {2}continued line/);
   });
 });
+
+it.each(['References','Bibliography','Works Cited','Literature Cited','Reference List','参考文献','参考资料','引用文献','文献'])('excludes prose above %s', heading => {
+ const ex=extractReferences(`这是私人正文，不应发送。\n${heading}\n（1）张三. 标题. 2020.\n[2] 李四. 第二篇. 2021.`);
+ expect(ex.entries).toHaveLength(2); expect(ex.entries.join('')).not.toContain('私人');expect(ex.fullDocument).toBe(true);
+});
+
+import { needsExtractionPreview } from '../src/core/extract';
+it('requires confirmation for uncertain boundaries, while keeping short reference lists one-click',()=>{
+ expect(needsExtractionPreview(extractReferences('Smith, J. (2020). A real title.\n\nJones, A. (2021). Another title.'))).toBe(false);
+ expect(needsExtractionPreview(extractReferences('A body paragraph without bibliographic metadata.'))).toBe(true);
+ expect(needsExtractionPreview(extractReferences('Smith argues that progress accelerated in 2020. This is private manuscript prose.'))).toBe(true);
+ expect(needsExtractionPreview(extractReferences('这是正文，在 2020 年发生了一件事。'))).toBe(true);
+ expect(needsExtractionPreview(extractReferences('Smith, J. (2020). '+ 'long prose '.repeat(100)))).toBe(true);
+ expect(needsExtractionPreview(extractReferences('A claim [1].\nReferences\n[1] Smith, J. (2020). A title.'))).toBe(true);
+});

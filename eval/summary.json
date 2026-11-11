@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "held-out",
-  "runAt": "2026-11-02T15:53:25.449Z",
+  "runAt": "2026-11-11T00:26:33.159Z",
   "seed": 88421,
   "tuningSeed": 1729,
   "heldOutSeed": 88421,
@@ -61,7 +61,7 @@
     "falseAccusationRate": 0,
     "genuineAccepted": 240,
     "genuineIdentifierConflicts": 0,
-    "detectionRate": 0.9666666666666667,
+    "detectionRate": 0.9833333333333333,
     "abstentions": 1,
     "detectionByClass": {
       "invented": {
@@ -84,8 +84,8 @@
       },
       "mutated": {
         "total": 15,
-        "detected": 13,
-        "rate": 0.8666666666666667,
+        "detected": 14,
+        "rate": 0.9333333333333333,
         "abstained": 1
       }
     }
@@ -130,8 +130,8 @@
       "Could not check": 0
     },
     "mutated": {
-      "Verified": 1,
-      "Details differ": 13,
+      "Verified": 0,
+      "Details differ": 14,
       "Identifier conflict": 0,
       "Retracted": 0,
       "No record found": 0,
@@ -144,14 +144,14 @@
     "robotsUrl": "https://gptzero.me/robots.txt",
     "robotsAllowed": true,
     "retrievedAt": "2026-11-01T01:08:11.113Z",
-    "runAt": "2026-11-02T15:53:13.129Z",
+    "runAt": "2026-11-11T00:26:29.066Z",
     "total": 100,
     "detected": 98,
     "detectionRate": 0.98,
     "counts": {
       "Verified": 0,
-      "Details differ": 39,
-      "Identifier conflict": 15,
+      "Details differ": 38,
+      "Identifier conflict": 16,
       "Retracted": 0,
       "No record found": 44,
       "Could not check": 2

@@ -32,6 +32,19 @@ export function parseReference(raw: string): ParsedReference {
   // usually separate the author block and title with a full stop (not initials).
   const afterYear = withoutIds.match(/\(\d{4}[a-z]?(?:[^)]*)\)\s*[.,:]?\s*(.+)/);
   const segments = withoutIds.split(/(?<=[\p{Ll}\p{N}\)\]])\.\s+(?=[\p{Lu}“"])/u);
+  // Only a confident boundary is used for strict identity; search keeps its existing heuristic.
+  const vancouver = withoutIds.match(/^(?:[\p{L}’'-]+(?:[ -][\p{L}’'-]+)* [A-Z]{1,4}, ?)*(?:[\p{L}’'-]+(?:[ -][\p{L}’'-]+)* [A-Z]{1,4})\.\s+(.+)/u)?.[1];
+  const titleChunk=(value:string)=>value.replace(/^\d{4}\.\s*/, '')
+    .replace(/\s*\((?:No\.|SSRN Scholarly Paper).*$/i,'')
+    .replace(/\.\s*(?:bioRxiv|medRxiv|arXiv|from\s+\(Retrieved|\d{2,}\s*\().*$/i,'')
+    .replace(/^[“"‘]([^”"’]+)[”"’].*$/, '$1')
+    .split(/(?<!\b\p{Lu})\.[”’]?\s*(?=[\p{Lu}])/u)[0]
+    .replace(/\s*\((?:No\.|SSRN Scholarly Paper)[^)]*\).*$/i,'')
+    .replace(/,\s*(?:[^,]*\b(?:University Press|CRC Press|Academic Press))\.?$/i,'');
+  const authorPrefix = afterYear ? withoutIds.slice(0,afterYear.index).replace(/\b(?:et al|and|van|von|de)\b/gi,'') : '';
+  const apaTitle = afterYear?.[1] && !/\b[a-z]{3,}\b/.test(authorPrefix) && /^[\p{L}“"‘]/u.test(afterYear[1]) ? titleChunk(afterYear[1]) : undefined;
+  const quotedTitle = quoted && /^(?:[.,]\s*)?(?:[\p{Lu}]|$)/u.test(withoutIds.slice((quoted.index??0)+quoted[0].length).trim()) ? quoted[1] : undefined;
+  const identityTitle = (apaTitle ?? (vancouver && !/^(?:et al\b|(?:\p{Lu}\.|[\p{Lu}][\p{L}’'-]+ [A-Z]{1,4}\.))/u.test(vancouver) ? titleChunk(vancouver) : undefined) ?? quotedTitle)?.replace(/[.,]+$/,'');
   let title = quoted?.[1] ?? afterYear?.[1]?.split(/\.\s+/)[0] ?? (segments.length > 1 ? segments[1] : withoutIds);
   if ((!quoted && !afterYear && tokens(title).length < 3) || title === withoutIds) title = fallbackTitle(withoutIds) || title;
   title = title.replace(/^[.,\s]+|[.,\s]+$/g, '');
@@ -43,5 +56,5 @@ export function parseReference(raw: string): ParsedReference {
   const book = /\b(?:ISBN|press|publisher|edition|ed\.)\b/i.test(text);
   const unsupported = !doi && !arxiv && !pmid && (Boolean(url && !/arxiv|doi\.org|pubmed/i.test(url)) || /\b(?:statute|legislation|act of|annual report|technical report|general technical report|white paper|website|web page|working paper|discussion paper|dissertation|thesis)\b/i.test(text) || /\b[\p{Lu}][\p{L}'’-]+\s+[vV]s?\.\s+[\p{Lu}]|\b\d+\s+(?:U\.?\s?S\.?|S\.?\s?Ct\.?|F\.\dd)\s+\d+/u.test(text));
   const scholarly = Boolean(doi || arxiv || pmid || (surnames.length && tokens(title).length >= 2 && (year || tokens(title).length >= 4)));
-  return {raw, label:label?.[1] ?? label?.[2], doi, arxiv, pmid, url, year, yearSuffix:yearMatch?.[2], surnames:[...new Set(surnames)], title, kind:unsupported?'unsupported':book?'book':scholarly?'scholarly':'unknown'};
+  return {raw, identityTitle:identityTitle && !/^(?:[\p{L}’'-]+ [A-Z]{1,4}|arxiv preprint)$/iu.test(identityTitle) ? identityTitle : undefined, label:label?.[1] ?? label?.[2], doi, arxiv, pmid, url, year, yearSuffix:yearMatch?.[2], surnames:[...new Set(surnames)], title, kind:unsupported?'unsupported':book?'book':scholarly?'scholarly':'unknown'};
 }

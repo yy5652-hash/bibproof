@@ -1,6 +1,9 @@
+import report from '../../eval/summary.json';
+import fresh from '../../eval/fresh-results.json';
 import { useRef, useState } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import { SAMPLE, sampleEntries } from '../core/sample';
+import { ExtractionPreview } from './ExtractionPreview';
 import { extractReferences } from '../core/extract';
 import { readInputFile } from '../browser/files';
 import { useI18n } from '../i18n';
@@ -111,7 +114,9 @@ export default function Home({ s }: { s: Session }) {
           <div className="input-actions">
             <button className="button primary" onClick={submit} disabled={busy || !ready}>{tab === 'doi' ? t('cta.checkDoi') : t('cta.check')}</button>
             <button className="button" onClick={() => { s.setText(SAMPLE); setTab('paste'); setError(''); void s.loadSample().catch(() => setError(t('sample.failed'))); }} disabled={busy}>{t('cta.sample')}</button>
+            <button className="button" disabled={busy} onClick={()=>{setError('');void s.loadPaper().catch(()=>setError(t('sample.failed')));}}>{t('cta.paper')}</button>
           </div>
+          {s.pendingExtraction && <ExtractionPreview key={s.pendingExtraction.entries.join('\n')} extraction={s.pendingExtraction} onCancel={() => s.setPendingExtraction(null)} onConfirm={ex => s.begin(ex.entries, ex)} />}
           <div className="input-status" aria-live="polite">
             {error ? <p role="alert" className="error">{error}</p>
               : tab === 'paste' && preview?.entries.length ? <p className="muted">{t('detected', { n: preview.entries.length })}{preview.fullDocument ? t('detected.doc') : t('detected.list')}</p>
@@ -120,6 +125,7 @@ export default function Home({ s }: { s: Session }) {
           </div>
         </div>
         <p className="fine-print">{t('sample.intro')}</p>
+        <p className="fine-print">{t('hero.figures',{fa:report.metrics.falseAccusations,total:report.metrics.genuineTotal,works:report.sampling.genuineWorks,freshFa:fresh.falseAccusations,freshTotal:fresh.total})}</p>
         <p className="hero-trust">{t('hero.trust')}</p>
       </div>
       <div className="hero-aside"><Illustration /></div>

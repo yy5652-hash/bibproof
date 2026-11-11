@@ -1,5 +1,6 @@
 import { memo, useLayoutEffect, useRef, useState, type MutableRefObject } from 'react';
 import { useVirtualizer, useWindowVirtualizer, type VirtualItem } from '@tanstack/react-virtual';
+import { failedProviders } from '../core/retry';
 import { needsAction, type Decision } from '../core/decisions';
 import { useI18n } from '../i18n';
 import type { RowState } from '../useChecker';
@@ -20,13 +21,13 @@ function rowNote(r: NonNullable<RowState['result']>, t: ReturnType<typeof useI18
   }
 }
 
-const Row = memo(function Row({ row, selected, decision, onSelect, index, count }: { row: RowState; selected: boolean; decision?: Decision; onSelect: (id: number) => void; index: number; count: number }) {
+const Row = memo(function Row({ row, selected, decision, onSelect, onFocus, index, count }: { row: RowState; selected: boolean; decision?: Decision; onSelect: (id: number) => void; onFocus: (id:number)=>void; index: number; count: number }) {
   const { t, explain } = useI18n();
   const r = row.result;
   const tag = decision ? (decision.kind === 'record' ? (decision.alt !== undefined ? t('dec.tag.candidate') : t('dec.tag.record')) : t(`dec.tag.${decision.kind}` as 'dec.tag.keep')) : r && needsAction(r) ? t('dec.unresolved') : '';
   return (
     <div className={`row ${r ? `v-${verdictMeta[r.verdict].slug}` : `is-${row.state}`}${selected ? ' selected' : ''}`} data-testid="row" data-verdict={r?.verdict ?? row.state} data-id={row.id}>
-      <button className="row-btn" aria-current={selected ? 'true' : undefined} aria-posinset={index + 1} aria-setsize={count} disabled={!r} onClick={() => onSelect(row.id)}>
+      <button className="row-btn" aria-current={selected ? 'true' : undefined} aria-posinset={index + 1} aria-setsize={count} disabled={!r} onFocus={()=>onFocus(row.id)} onClick={() => onSelect(row.id)}>
         <span className="row-top">
           <span className="row-n">{row.id + 1}</span>
           {r ? <VerdictBadge verdict={r.verdict} />
@@ -37,6 +38,8 @@ const Row = memo(function Row({ row, selected, decision, onSelect, index, count 
           {tag && <span className={`tag${decision ? ' decided' : ' open'}`} data-testid="row-tag">{tag}</span>}
         </span>
         <span className="row-raw" translate="no">{row.raw.replace(/^\s*(?:\[\d+\]\s*|\d+[.)]\s+)/, '')}</span>
+        {row.progress && <span className="row-note" role="status">{t(row.progress.state==='retrying'||row.retrying?'progress.retrying':'progress.querying',{provider:row.progress.index,attempt:row.progress.attempt})}</span>}
+        {!row.progress && r?.verdict==='Could not check' && failedProviders(r).length>0 && <span className="row-note">{t('progress.unavailable',{provider:failedProviders(r).join(', ')})}</span>}
         {r && <span className="row-note">{rowNote(r, t, explain)}</span>}
       </button>
     </div>
@@ -44,7 +47,7 @@ const Row = memo(function Row({ row, selected, decision, onSelect, index, count 
 });
 
 export interface ListProps {
-  items: RowState[]; selectedId: number | null; decisions: Record<number, Decision>; onSelect: (id: number) => void;
+  items: RowState[]; selectedId: number | null; decisions: Record<number, Decision>; onSelect: (id: number) => void; onFocus:(id:number)=>void;
   scrollTo: MutableRefObject<((index: number) => void) | null>; label: string;
 }
 
@@ -52,7 +55,7 @@ function renderItems(v: VirtualItem[], p: ListProps, offset: number, measure: (e
   return v.map(item => {
     const row = p.items[item.index];
     return <li key={item.key} data-index={item.index} ref={measure} className="vrow" style={{ transform: `translateY(${item.start - offset}px)` }}>
-      <Row row={row} selected={row.id === p.selectedId} decision={p.decisions[row.id]} onSelect={p.onSelect} index={item.index} count={p.items.length} />
+      <Row row={row} selected={row.id === p.selectedId} decision={p.decisions[row.id]} onSelect={p.onSelect} onFocus={p.onFocus} index={item.index} count={p.items.length} />
     </li>;
   });
 }

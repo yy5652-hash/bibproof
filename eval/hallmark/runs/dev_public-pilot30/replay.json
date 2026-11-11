@@ -1,0 +1,159 @@
+{
+  "source_hashes_verified": 26,
+  "entries": 30,
+  "identical": 30,
+  "network_attempts": 0,
+  "cache_policy": "Read-only; recorded responses reused regardless of age. Production cache TTL is not a reproducibility limit.",
+  "checks": [
+    {
+      "bibtex_key": "ac3b1baad664",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "e35a86db8b66",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "bfa63f49d844",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "a99a488f23a1",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "f3d57e677ea0",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "c2b439325558",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "bdba1969a0b0",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "f1411ce61763",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "d2b67e388fd4",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "c8ac3dbbf6a8",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "fe44dcc587ce",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "c54f7d8c4387",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "f3bb93b91056",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "c3b2242828f1",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "ea8d6b0ea3d9",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "7b6b97446c94",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "efc9b94c1c34",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "aa49c228428a",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "cc1fb1afb461",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "c123f7c3c948",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "b21fd5158fdc",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "b0435865ae63",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "306b141e4e85",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "d3019f310718",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "e6219cb0d01d",
+      "verdict": "Verified",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "c77f41c08910",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "f50c6b24fcdd",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "aacc02631cc8",
+      "verdict": "No record found",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "c14102f7a116",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    },
+    {
+      "bibtex_key": "d5aa29b8633b",
+      "verdict": "Details differ",
+      "identical_reference_verdict_explanation_match": true
+    }
+  ]
+}

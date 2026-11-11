@@ -1,5 +1,6 @@
-export interface Extraction { entries: string[]; body: string; fullDocument: boolean; warnings: string[] }
-const heading = /^\s*(?:\d+[.\s]+)?(?:references|bibliography|works cited|literature cited)\s*:?\s*$/im;
+import type { CrossCheck } from './crosscheck';
+export interface Extraction { entries: string[]; body: string; fullDocument: boolean; warnings: string[]; cross?: CrossCheck }
+const heading = /^\s*(?:\d+[.\s]+)?(?:references|bibliography|works cited|literature cited|reference list|参考文献|参考资料|引用文献|文献)\s*[:：]?\s*$/im;
 export function extractReferences(input: string): Extraction {
   const normalized = input.replace(/\r\n?/g,'\n').replace(/\u00ad/g,'');
   const match = heading.exec(normalized);
@@ -7,13 +8,13 @@ export function extractReferences(input: string): Extraction {
   let referenceText = match ? normalized.slice(match.index + match[0].length) : normalized;
   referenceText = referenceText.split(/\n\s*(?:appendi(?:x|ces)(?:\s+[A-Z\d])?|acknowledg(?:e)?ments|supplementary (?:material|information))\s*\n/i)[0].trim();
   const lines = referenceText.split('\n');
-  const numbered = lines.some(l => /^\s*(?:\[\d+\]|\d+[.)])\s+\S/.test(l));
+  const numbered = lines.some(l => /^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])\s*\S/.test(l));
   const blocks: string[] = []; let current = '';
   for (let i=0;i<lines.length;i++) {
     const line = lines[i]; const trimmed = line.trim();
     if (!trimmed) { if (!numbered && current) { blocks.push(current); current=''; } continue; }
     if (/^\d+$/.test(trimmed)) continue; // PDF page numbers
-    const explicit = /^\s*(?:\[\d+\]|\d+[.)])\s+\S/.test(line);
+    const explicit = /^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])\s*\S/.test(line);
     const authorStart = /^[\p{Lu}][\p{L}'’-]+,\s*(?:[\p{Lu}]\.|[\p{Lu}][\p{L}]+)|^[\p{Lu}][\p{L}'’-]+\s+[A-Z]{1,3}[,.]/u.test(trimmed);
     const hangingStart = !/^\s/.test(line) && /^\s+\S/.test(lines[i+1] ?? '') && Boolean(current);
     if (current && (explicit || (!numbered && (authorStart || hangingStart)))) { blocks.push(current); current=''; }
@@ -21,6 +22,17 @@ export function extractReferences(input: string): Extraction {
   }
   if(current) blocks.push(current);
   return { entries:blocks.filter(x=>x.length>5), body, fullDocument:Boolean(match && body), warnings:match?[]:['No reference-section heading found. Treating the input as a reference list; in-text checks are unavailable.'] };
+}
+/** Short, recognisable reference lists retain one-click checks. Ambiguous text never does. */
+export function needsExtractionPreview(ex: Extraction): boolean {
+  return ex.fullDocument || ex.entries.some(entry => {
+    if(entry.length>800)return true;
+    if(/10\.\d{4,9}\//.test(entry))return false;
+    const text=entry.replace(/^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])\s*/, '');
+    const author=/^(?:[\p{Lu}][\p{L}’'-]+,\s*(?:\p{Lu}\.|\p{Lu}[\p{L}]+)|[\p{Lu}][\p{L}’'-]+ [A-Z]{1,4}[,. ]|(?:\p{Lu}\.\s*)+[\p{Lu}][\p{L}’'-]+|[\p{Script=Han}]{2,4}[，,、.．])/u.test(text);
+    const hanUnstructured=/^[\p{Script=Han}]/u.test(text) && !/^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])/.test(entry) && !/\[[JMDBCR]\]/i.test(entry);
+    return !author || hanUnstructured || !/\b(?:18|19|20)\d{2}\b/.test(entry);
+  });
 }
 export interface PdfTextItem { str: string; transform: number[]; width: number; height: number }
 export function rebuildPdfPage(items: PdfTextItem[], pageWidth: number): string {

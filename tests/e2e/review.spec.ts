@@ -46,6 +46,7 @@ test('3A removal, replacement, sentence decisions and numeric map survive review
   await installMock(page); await page.goto('/');
   const doc=`First claim [1]. Unsupported claim [2]. Last claim [3].\n\nReferences\n[1] ${sampleEntries[2].raw}\n[2] ${sampleEntries[5].raw}\n[3] ${sampleEntries[1].raw}`;
   await page.getByLabel('References or document').fill(doc); await page.getByRole('button',{name:'Check references',exact:true}).click();
+  await page.getByRole('button',{name:'Check 3 references',exact:true}).click();
   await expect(page.getByRole('status').filter({hasText:'3 references checked.'})).toBeVisible();
   await pick(page,0).click(); await page.getByTestId('evidence').getByRole('button',{name:'Use record',exact:true}).click();
   await expect(page.getByTestId('repair-sentences')).toContainText('This decision affects 1 sentence');
@@ -125,6 +126,7 @@ for(const chinese of [false,true]) test(`new screens fit 375 px and keyboard con
   await page.getByRole('button',{name:chinese?'重新核查':'New check',exact:true}).click();
   await page.getByLabel(chinese?'参考文献或整篇文档':'References or document').fill(`One claim [1]. Another claim [2].\n\nReferences\n[1] ${sampleEntries[1].raw}\n[2] ${sampleEntries[2].raw}`);
   await page.getByRole('button',{name:chinese?'核查参考文献':'Check references',exact:true}).click();
+  await page.getByRole('button',{name:chinese?'检查 2 条文献':'Check 2 references',exact:true}).click();
   await expect(pick(page,0)).toBeEnabled(); await pick(page,0).click();
   await page.getByTestId('evidence').getByRole('button',{name:chinese?'删除':'Remove',exact:true}).click();
   const action=page.getByTestId('repair-sentences').getByLabel(chinese?'句子处理':'Sentence action');

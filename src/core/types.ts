@@ -10,7 +10,7 @@ export interface Work {
 }
 export interface ParsedReference {
   raw: string; label?: string; doi?: string; arxiv?: string; pmid?: string; url?: string;
-  year?: number; yearSuffix?: string; surnames: string[]; title: string; venue?: string;
+  year?: number; yearSuffix?: string; surnames: string[]; title: string; identityTitle?: string; venue?: string;
   kind: 'scholarly' | 'book' | 'unsupported' | 'unknown';
 }
 export interface IndexEvidence {
