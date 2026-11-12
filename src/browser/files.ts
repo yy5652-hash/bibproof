@@ -17,7 +17,8 @@ export async function readInputFile(file:File):Promise<{text:string;note?:string
     return {text:pages.join('\n'),note:'PDF layout was reconstructed locally. Review entry boundaries, especially in complex layouts.'};
   }
   const text=await file.text();
-  if(ext==='bib'||ext==='ris'){const {importBibliography}=await import('../core/format');return {text:(await importBibliography(text)).join('\n\n'),note:'Bibliography imported locally. In-text checks require a full document.'};}
+  if(ext==='bib')return {text};
+  if(ext==='ris'){const {importBibliography}=await import('../core/format');return {text:(await importBibliography(text)).join('\n\n'),note:'Bibliography imported locally. In-text checks require a full document.'};}
   return {text};
 }
 export function download(name:string,text:string,type:string){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

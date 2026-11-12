@@ -1,3 +1,4 @@
+import { isBibtex, parseBibtex } from './structured';
 import type { ParsedReference } from './types';
 export function normalize(text: string): string {
   return text.replace(/<[^>]*>/g, ' ').normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
@@ -17,6 +18,7 @@ function fallbackTitle(text: string): string {
   return parts.reduce((best, part) => tokens(part).length > tokens(best).length && !/^(?:[\p{Lu}][\p{L}'’-]+,\s*(?:\p{Lu}\.\s?)+,?\s*)+$/u.test(part) ? part : best, '');
 }
 export function parseReference(raw: string): ParsedReference {
+  if(isBibtex(raw)) { try { return parseBibtex(raw); } catch { return {raw,title:'',surnames:[],kind:'unknown'}; } }
   const label = raw.match(/^\s*(?:\[(\d+)\]|(\d+)[.)](?!\d))\s*/);
   const text = raw.replace(/^\s*(?:\[\d+\]|\d+[.)](?!\d))\s*/, '').replace(/\s+/g, ' ').trim();
   const doiMatch = text.match(/10\.\d{4,9}\/[^\s<>"\]}]+/i);
@@ -37,10 +39,12 @@ export function parseReference(raw: string): ParsedReference {
   const titleChunk=(value:string)=>value.replace(/^\d{4}\.\s*/, '')
     .replace(/\s*\((?:No\.|SSRN Scholarly Paper).*$/i,'')
     .replace(/\.\s*(?:bioRxiv|medRxiv|arXiv|from\s+\(Retrieved|\d{2,}\s*\().*$/i,'')
-    .replace(/^[“"‘]([^”"’]+)[”"’].*$/, '$1')
+    .replace(/^[“"‘]([^”"’]+)[”"’](?:[.,]\s+.*)?$/, '$1')
     .split(/(?<!\b\p{Lu})\.[”’]?\s*(?=[\p{Lu}])/u)[0]
     .replace(/\s*\((?:No\.|SSRN Scholarly Paper)[^)]*\).*$/i,'')
-    .replace(/,\s*(?:[^,]*\b(?:University Press|CRC Press|Academic Press))\.?$/i,'');
+    .replace(/,\s*(?:[^,]*\b(?:Press|Wiley|Sons)\b).*$/i,'')
+    .replace(/,\s*Proceedings\b.*$/i,'')
+    .replace(/\.\s+\d[^]*$/,'');
   const authorPrefix = afterYear ? withoutIds.slice(0,afterYear.index).replace(/\b(?:et al|and|van|von|de)\b/gi,'') : '';
   const apaTitle = afterYear?.[1] && !/\b[a-z]{3,}\b/.test(authorPrefix) && /^[\p{L}“"‘]/u.test(afterYear[1]) ? titleChunk(afterYear[1]) : undefined;
   const quotedTitle = quoted && /^(?:[.,]\s*)?(?:[\p{Lu}]|$)/u.test(withoutIds.slice((quoted.index??0)+quoted[0].length).trim()) ? quoted[1] : undefined;
@@ -52,9 +56,26 @@ export function parseReference(raw: string): ParsedReference {
   const authorBlock = (titleAt > 0 ? text.slice(0, titleAt) : text.slice(0, yearMatch?.index ?? 100)).replace(/\b(?:18|19|20)\d{2}\b/g, '');
   let surnames = [...authorBlock.matchAll(/(?:^|[;&]|\band\b|,\s*(?=[\p{Lu}][\p{L}'’-]+,))\s*([\p{Lu}][\p{L}'’-]+)(?=,)/gu)].map(m => m[1]);
   if (!surnames.length) surnames = [...authorBlock.matchAll(/\b([\p{Lu}][\p{L}'’-]{2,})\b/gu)].map(m => m[1]).filter(s => !['Retrieved','Available','Accessed'].includes(s));
+  // Only inspect the author prefix; never treat title/venue words as names.
+  const prefix=afterYear ? withoutIds.slice(0,afterYear.index).trim() : authorBlock;
+  const explicit=[...prefix.matchAll(/(?:^|,\s*|&\s*|\band\s+)((?:(?:van|von|de|del|der|den|da|di|la|le)\s+)*[\p{Lu}][\p{L}'’\-]+(?:[ -][\p{Lu}][\p{L}'’\-]+)*),\s*((?:\p{Lu}\.(?:[ -]?\p{Lu}\.)*\s*)+)/gu)].map(m=>({family:m[1],given:m[2].trim()}));
+  const nameOnly=prefix.replace(/\bet al\.?/gi,'').replace(/(?:,?\s*(?:&|and)\s+)/g,', ').replace(/[.,\s]+$/,'').split(/,\s*/);
+  const authors=explicit.length ? explicit : nameOnly.length>0 && (/[&]|\band\b/.test(prefix) || (nameOnly.length===1 && !/\s/.test(nameOnly[0]))) && nameOnly.every(n=>!/[ -][A-Z]{1,4}$/.test(n) && /^(?:(?:van|von|de|del|da|di)\s+)*[\p{Lu}][\p{L}'’-]+(?:[ -][\p{Lu}][\p{L}'’-]+)*$/u.test(n)) ? nameOnly.map(family=>({family,given:undefined})) : undefined;
+  if(authors) surnames=authors.map(a=>a.family);
+  let venue:string|undefined;
+  if(identityTitle){
+    const at=withoutIds.indexOf(identityTitle);
+    const tail=at>=0?withoutIds.slice(at+identityTitle.length).replace(/^[.,”’"\s]+/,''):'';
+    const candidate=tail.split(/,\s*\d|\.\s+|\s+(?:18|19|20)\d{2}\b|\s+ISBN\b/)[0]?.replace(/[.,]+$/,'');
+    if(candidate && /^[.,”’"\s]+/.test(withoutIds.slice(at+identityTitle.length)) && /\p{L}/u.test(candidate) && !/^(?:doi|https?|ISBN)\b/i.test(candidate))venue=candidate;
+  }
+  const isbn=text.match(/\bISBN(?:-1[03])?:?\s*([\dXx][\dXx -]{8,}[\dXx])/i)?.[1]?.replace(/[^\dX]/gi,'');
+  const publisher=bookPublisher(withoutIds);
   const url = text.match(/https?:\/\/[^\s<>]+/)?.[0]?.replace(/[.,;)]+$/, '');
   const book = /\b(?:ISBN|press|publisher|edition|ed\.)\b/i.test(text);
   const unsupported = !doi && !arxiv && !pmid && (Boolean(url && !/arxiv|doi\.org|pubmed/i.test(url)) || /\b(?:statute|legislation|act of|annual report|technical report|general technical report|white paper|website|web page|working paper|discussion paper|dissertation|thesis)\b/i.test(text) || /\b[\p{Lu}][\p{L}'’-]+\s+[vV]s?\.\s+[\p{Lu}]|\b\d+\s+(?:U\.?\s?S\.?|S\.?\s?Ct\.?|F\.\dd)\s+\d+/u.test(text));
   const scholarly = Boolean(doi || arxiv || pmid || (surnames.length && tokens(title).length >= 2 && (year || tokens(title).length >= 4)));
-  return {raw, identityTitle:identityTitle && !/^(?:[\p{L}’'-]+ [A-Z]{1,4}|arxiv preprint)$/iu.test(identityTitle) ? identityTitle : undefined, label:label?.[1] ?? label?.[2], doi, arxiv, pmid, url, year, yearSuffix:yearMatch?.[2], surnames:[...new Set(surnames)], title, kind:unsupported?'unsupported':book?'book':scholarly?'scholarly':'unknown'};
+  return {raw, authors, authorsTruncated:/\bet\s+al\b|…|\.\.\./i.test(prefix),venue,publisher,isbn, identityTitle:identityTitle && !/^(?:[\p{L}’'-]+ [A-Z]{1,4}|arxiv preprint)$/iu.test(identityTitle) ? identityTitle : undefined, label:label?.[1] ?? label?.[2], doi, arxiv, pmid, url, year, yearSuffix:yearMatch?.[2], surnames:[...new Set(surnames)], title, kind:unsupported?'unsupported':book?'book':scholarly?'scholarly':'unknown'};
 }
+
+function bookPublisher(text:string):string|undefined { return text.match(/(?:^|\.\s+)([^.]*\b(?:Press|Publishers?|Publishing)\b[^.]*)(?:\.|$)/i)?.[1]?.replace(/\s*ISBN.*$/i,'').trim(); }

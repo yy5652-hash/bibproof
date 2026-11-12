@@ -6,7 +6,7 @@ function text(value:any):string { return String(value??'').replace(/<[^>]+>/g,''
 function fullName(name:string):Author{const p=name.trim().split(/\s+/);return {family:p.pop()??'',given:p.join(' ')};}
 export function fromCrossref(w:Json):Work {
   const updates: Json[]=(w['updated-by']??[]).filter((x:Json)=>String(x.type).toLowerCase()==='retraction');
-  return {id:w.DOI,title:text(w.title?.[0]),authors:(w.author??[]).map((a:Json)=>({family:a.family??a.name??'',given:a.given})),year:(w.published??w.issued??w['published-print'])?.['date-parts']?.[0]?.[0],venue:text(w['container-title']?.[0]),doi:cleanDoi(w.DOI??''),url:`https://doi.org/${w.DOI}`,source:'Crossref',retracted:updates.length>0,retractionUrls:updates.map(x=>`https://doi.org/${x.DOI??x.doi}`),type:w.type,volume:w.volume,issue:w.issue,pages:w.page,publisher:w.publisher};
+  return {id:w.DOI,retrievalTitle:text(w.title?.[0]),title:[text(w.title?.[0]).replace(/:\s*$/,''),...(w.subtitle??[]).map(text)].filter(Boolean).join(': '),authors:(w.author??[]).map((a:Json)=>({family:a.family??a.name??'',given:a.given})),year:(w.published??w.issued??w['published-print'])?.['date-parts']?.[0]?.[0],venue:text(w['container-title']?.[0]),doi:cleanDoi(w.DOI??''),url:`https://doi.org/${w.DOI}`,source:'Crossref',retracted:updates.length>0,retractionUrls:updates.map(x=>`https://doi.org/${x.DOI??x.doi}`),type:w.type,volume:w.volume,issue:w.issue,pages:w.page,publisher:w.publisher};
 }
 export function fromDataCite(w:Json):Work{
   const a=w.attributes??w; return {id:a.doi,title:text(a.titles?.[0]?.title),authors:(a.creators??[]).map((p:Json)=>p.familyName?{family:p.familyName,given:p.givenName}:fullName(p.name??'')),year:Number(a.publicationYear)||undefined,doi:cleanDoi(a.doi??''),venue:typeof a.publisher==='string'?a.publisher:a.publisher?.name,url:`https://doi.org/${a.doi}`,source:'DataCite',type:a.types?.resourceTypeGeneral};
@@ -17,7 +17,7 @@ export function fromOpenAlex(w:Json):Work{
 function fromEuropePmc(w:Json):Work {
   return {id:w.id,title:text(w.title),authors:w.authorList?.author?.map((a:Json)=>({family:a.lastName??a.fullName??'',given:a.firstName}))??(w.authorString??'').split(', ').filter(Boolean).map((n:string)=>({family:n.replace(/\s+[A-Z]+\.?$/,'')})),year:Number(w.pubYear)||undefined,doi:w.doi?cleanDoi(w.doi):undefined,venue:w.journalInfo?.journal?.title??w.journalTitle,url:`https://europepmc.org/article/${w.source??'MED'}/${w.id}`,source:'Europe PMC',retracted:w.isRetracted==='Y'||w.pubTypeList?.pubType?.includes('Retracted Publication'),type:'journal-article'};
 }
-function fromOpenLibrary(w:Json):Work{return {id:w.key,title:text(w.title),authors:(w.author_name??[]).map(fullName),year:w.first_publish_year,url:`https://openlibrary.org${w.key}`,source:'Open Library',type:'book'};}
+function fromOpenLibrary(w:Json):Work{return {id:w.key,title:text(w.title),authors:(w.author_name??[]).map(fullName),year:w.first_publish_year,url:`https://openlibrary.org${w.key}`,source:'Open Library',type:'book',isbn:w.isbn,publisher:w.publisher?.[0]};}
 export interface Lookup { works:Work[]; evidence:IndexEvidence }
 export async function lookup(client:IndexClient,index:IndexName,url:string,single=false):Promise<Lookup>{
   const result=await client.request(url);

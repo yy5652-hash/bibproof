@@ -1,0 +1,154 @@
+{
+  "baselineCommit": "208c2d53eeab7cc4961b0bc9e04330d0e1f91976",
+  "sets": [
+    {
+      "set": "held-out",
+      "trials": 300,
+      "falseAccusations": 0,
+      "cacheMisses": 12
+    },
+    {
+      "set": "realistic",
+      "trials": 113,
+      "falseAccusations": 0,
+      "cacheMisses": 4
+    },
+    {
+      "set": "fresh",
+      "trials": 60,
+      "falseAccusations": 1,
+      "cacheMisses": 8
+    }
+  ],
+  "regressions": 0,
+  "changes": [
+    {
+      "group": "realistic",
+      "raw": "Kaufman, S., Rosset, S., & Perlich, C. (2011). Leakage in data mining: Formulation, detection, and avoidance. 6, 556–563.",
+      "before": "Verified",
+      "after": "Details differ",
+      "writtenTitle": "Leakage in data mining: Formulation, detection, and avoidance",
+      "recordTitle": "Leakage in data mining"
+    },
+    {
+      "group": "realistic",
+      "raw": "Kharrat, S., Fourati, F., & Canini, M. (2024). ACING: actor-critic for instruction learning in black-box large language models (No. arXiv:2411.12736). arXiv.",
+      "before": "Verified",
+      "after": "Details differ",
+      "writtenTitle": "ACING: actor-critic for instruction learning in black-box large language models"
+    },
+    {
+      "group": "realistic",
+      "raw": "Koch, R., The etiology of tuberculosis (Die Atiologie der Tuberkulose, Berliner Kliniscben Wocbenschift, 1882). (Carter KC, translator), Essays of Robert Koch. Connecticut: Greenwood Press, 1987: p. 83–96.",
+      "before": "Verified",
+      "after": "Details differ",
+      "recordTitle": "Essays of Robert Koch"
+    },
+    {
+      "group": "realistic",
+      "raw": "X. Yuan, S. Endo, Q. Zhao, Y. Li, S. Benjamin, Theory of variational quantum simulation, arXiv e-prints (2018), arXiv:1812.08767 [quant-ph].",
+      "before": "Verified",
+      "after": "Details differ"
+    },
+    {
+      "group": "realistic",
+      "raw": "Barr, N., Klein, L., McNamara, M. J., & Peters, K. (2023). Creative cognition: From ideation to innovation. In L. J. Ball, & F. Vallée-Tourangeau (Eds.), The Routledge international handbook of creative cognition (pp. 109–126). Routledge.",
+      "before": "Verified",
+      "after": "Details differ",
+      "writtenTitle": "Creative cognition: From ideation to innovation",
+      "recordTitle": "Creative Cognition"
+    },
+    {
+      "group": "realistic",
+      "raw": "Hassanpour A. Y.Kowsari H. O.Shahreza B.Yang andS.Marcel.2024.“ChatGPT and Biometrics: An Assessment of Face Recognition Gender Detection and Age Estimation Capabilities.”arXiv. arXiv:2403.02965.",
+      "before": "Verified",
+      "after": "Details differ"
+    },
+    {
+      "group": "realistic",
+      "raw": "Benenson, I., and Torrens, P. (2004). Geosimulation: Automata-Based Modeling of Urban Phenomena, John Wiley & Sons.",
+      "before": "Verified",
+      "after": "Details differ",
+      "writtenTitle": "Geosimulation: Automata-Based Modeling of Urban Phenomena",
+      "recordTitle": "Geosimulation"
+    },
+    {
+      "group": "realistic",
+      "raw": "McComb, D. (2004). Renormalization Methods: A Guide for Beginners, Oxford U. Press.",
+      "before": "Verified",
+      "after": "Details differ",
+      "writtenTitle": "Renormalization Methods: A Guide for Beginners",
+      "recordTitle": "Renormalization Methods: A Guide for Beginners"
+    },
+    {
+      "group": "fresh",
+      "raw": "Lee J, Yoon W, Kim S, et al. BioBERT: a pre-trained biomedical language representation model for biomedical text mining. arXiv:1901.08746. 2019 Oct 31. Available from:",
+      "before": "Verified",
+      "after": "Details differ"
+    },
+    {
+      "group": "fresh",
+      "raw": "Vallor S (2024) The AI Mirror: How to Reclaim Our Humanity in an Age of Machine Thinking. Oxford: Oxford University Press. Available at: (accessed 11 December 2024)",
+      "before": "Verified",
+      "after": "Details differ",
+      "writtenTitle": "The AI Mirror: How to Reclaim Our Humanity in an Age of Machine Thinking",
+      "recordTitle": "The AI Mirror"
+    },
+    {
+      "group": "fresh",
+      "raw": "Regmi, K., Shah, M., 2019. Bridging the domain gap for ground-to-aerial image matching. arXiv preprint arXiv:1904.11045.",
+      "before": "Verified",
+      "after": "Details differ"
+    },
+    {
+      "group": "fresh",
+      "raw": "Y.Benigmim M.Fahes T. H.Vu et al. “FLOSS: Free Lunch in Open‐Vocabulary Semantic Segmentation ” preprint arXiv: 2504.10487 (2025).",
+      "before": "Verified",
+      "after": "Details differ"
+    },
+    {
+      "group": "fresh",
+      "raw": "Li C. et al.:Co‐occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation(2018).arXiv preprint arXiv:1804.06055",
+      "before": "Verified",
+      "after": "Details differ"
+    }
+  ],
+  "freshRawChecks": [
+    {
+      "raw": "S.J. Luck, An Introduction to Event-Related Potentials and Their Neural Origins, in: An Introd. to Event-Related Potential Tech., MIT Press, 2014: pp. 2–50.",
+      "committed": "Could not check",
+      "replayed": "Could not check"
+    },
+    {
+      "raw": "Siddabattuni S, Schuman TP. In Polymer composites for energy harvesting, conversion, and storage. ACS Symposium series; 2014, p. 165–190.",
+      "committed": "No record found",
+      "replayed": "No record found"
+    }
+  ],
+  "cacheMisses": [
+    "https://api.openalex.org/works/https://doi.org/10.1023%2Fa%3A1007469231743",
+    "https://api.openalex.org/works/https://doi.org/10.1016%2F0022-2836(91)80062-y",
+    "https://api.openalex.org/works/https://doi.org/10.1103%2Fphysics.13.s92",
+    "https://api.openalex.org/works/https://doi.org/10.1103%2Fphysics.10.s11",
+    "https://api.openalex.org/works/https://doi.org/10.1016%2Fs0375-9601(00)00385-6",
+    "https://api.openalex.org/works/https://doi.org/10.1002%2Facp.2350040602",
+    "https://api.openalex.org/works/https://doi.org/10.1002%2Facp.1654",
+    "https://api.openalex.org/works/https://doi.org/10.1080%2F20780389.2019.1575589",
+    "https://api.openalex.org/works/https://doi.org/10.5362%2Fjshet.61.1_104",
+    "https://api.openalex.org/works/https://doi.org/10.2307%2F2598392",
+    "https://api.openalex.org/works/https://doi.org/10.3390%2Fcli11060119",
+    "https://api.openalex.org/works/https://doi.org/10.1080%2F17565529.2021.2018985",
+    "https://api.datacite.org/dois/10.48550%2Farxiv.2411.12736",
+    "https://api.datacite.org/dois/10.48550%2Farxiv.1812.08767",
+    "https://api.datacite.org/dois/10.48550%2Farxiv.2403.02965",
+    "https://api.openalex.org/works/https://doi.org/10.7554%2Felife.33468",
+    "https://api.openalex.org/works?search=Dendrites%20(G&per-page=5",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Dendrites%20(G&format=json&resultType=core&pageSize=5",
+    "https://openlibrary.org/search.json?q=Dendrites%20(G&limit=5&fields=key,title,author_name,first_publish_year",
+    "https://openlibrary.org/search.json?q=pp&limit=5&fields=key,title,author_name,first_publish_year",
+    "https://api.datacite.org/dois/10.48550%2Farxiv.1901.08746",
+    "https://api.datacite.org/dois/10.48550%2Farxiv.1904.11045",
+    "https://api.datacite.org/dois/10.48550%2Farxiv.2504.10487",
+    "https://api.datacite.org/dois/10.48550%2Farxiv.1804.06055"
+  ]
+}

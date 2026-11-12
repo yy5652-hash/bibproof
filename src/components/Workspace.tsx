@@ -2,7 +2,7 @@ import { retryable } from '../core/retry';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { VERDICTS, type Verdict } from '../core/types';
-import { SEVERITY, needsAction, primaryRecord, completionSummary } from '../core/decisions';
+import { SEVERITY, needsAction, primaryRecord, canUseRecord, completionSummary } from '../core/decisions';
 import { manuscriptEdits, editsNeeded } from '../core/repairs';
 import { csvReport, type CitationStyle } from '../core/format';
 import { download } from '../browser/files';
@@ -30,6 +30,7 @@ export default function Workspace({ s }: { s: Session }) {
   const [help, setHelp] = useState(false); const [bib, setBib] = useState(false); const [share, setShare] = useState(false);
   const [style, setStyle] = useState<CitationStyle>('apa');
   const [flash, setFlash] = useState('');
+  const opener = useRef<HTMLElement | null>(null);
   const scrollTo = useRef<((index: number) => void) | null>(null);
 
   const done = useMemo(() => rows.filter(r => r.state === 'done'), [rows]);
@@ -62,7 +63,7 @@ export default function Workspace({ s }: { s: Session }) {
   }, [selectedId, desktop, ordered, phase]);
   useEffect(() => { if (!rows.length) { picked.current = false; setSelectedId(null); setSheet(false); setFilter('all'); } }, [rows.length]);
 
-  const select = useCallback((id: number) => { picked.current = true; setSelectedId(id); if (!desktop) setSheet(true); }, [desktop]);
+  const select = useCallback((id: number) => { picked.current = true; setSelectedId(id); if (!desktop) {opener.current=document.querySelector<HTMLElement>(`.list-pane [data-id="${id}"] .row-btn`);setSheet(true);} }, [desktop]);
   const move = useCallback((delta: 1 | -1) => {
     picked.current = true;
     const here = ordered.findIndex(r => r.id === selectedId);
@@ -83,7 +84,7 @@ export default function Workspace({ s }: { s: Session }) {
   const decideSelected = useCallback((kind: 'record' | 'keep' | 'remove') => {
     const row = selectedId !== null ? rows[selectedId] : undefined; const res = row?.result; if (!row || !res) return;
     const now = decisions[row.id];
-    if (kind === 'record' && !primaryRecord(res)) { setFlash(res.alternatives?.length ? t('alt.lede') : t('dec.noRecord')); return; }
+    if (kind === 'record' && !primaryRecord(res)) { setFlash(canUseRecord(res) ? t('alt.lede') : t('dec.noRecord')); return; }
     setFlash('');
     const same = kind === 'record' ? now?.kind === 'record' && now.alt === undefined : now?.kind === kind;
     s.decide(row.id, same ? undefined : { kind } as never);
@@ -151,7 +152,7 @@ export default function Workspace({ s }: { s: Session }) {
       <div className="fix-row" role="group" aria-label={t('fix.group')}>
         <p className="fix-status" data-testid="fix-status" aria-live="polite">
           <strong>{t('fix.status', { made: decided, open: unresolved.length })}</strong>
-          <span>{t('repair.summary', { reviewed: decided, edits: editsNeeded(edits), unchecked: completion.unchecked })}</span>
+          <span>{t('repair.summary', { reviewed: decided, edits: editsNeeded(edits)+(citing?.ambiguous?.filter(a=>a.chosen===undefined).length??0), unchecked: completion.unchecked })}</span>
           <span className="muted">{flash || (finished && done.length && !unresolved.length && attention ? t('fix.allDone') : '')}</span>
         </p>
         <div className="fix-actions">
@@ -164,7 +165,9 @@ export default function Workspace({ s }: { s: Session }) {
         </div>
       </div>
 
-      {extraction?.fullDocument ? <CrossPanel extraction={extraction} /> : extraction && s.meta && <p className="muted note-line">{t('cross.listOnly')}</p>}
+      {citing?.ambiguous?.length ? <section className="panel ambiguous-citations" data-testid="ambiguous-citations"><h3>{t('cite.ambiguous')}</h3><p>{t('cite.pickNote')}</p>{citing.ambiguous.map(a=><label key={a.key}><p translate="no">{a.sentence}</p><span>{a.citation}</span><select aria-label={t('cite.pick')} value={a.chosen??''} onChange={e=>s.chooseCitation(a.key,e.target.value===''?undefined:Number(e.target.value))}><option value="">{t('cite.pick')}</option>{a.candidates.map(id=><option key={id} value={id}>{id+1}. {rows.find(r=>r.id===id)?.raw}</option>)}</select></label>)}</section>:null}
+
+      {extraction?.fullDocument ? <CrossPanel extraction={extraction} citing={citing} /> : extraction && s.meta && <p className="muted note-line">{t('cross.listOnly')}</p>}
 
       <div className="panes">
         <div className="list-pane">
@@ -176,7 +179,7 @@ export default function Workspace({ s }: { s: Session }) {
       <Dialog.Root open={sheet && !desktop && Boolean(detail)} onOpenChange={setSheet}>
         <Dialog.Portal>
           <Dialog.Overlay className="overlay" />
-          <Dialog.Content className="dialog sheet" aria-describedby={undefined}>
+          <Dialog.Content className="dialog sheet" aria-describedby={undefined} onCloseAutoFocus={e=>{e.preventDefault(); const row=opener.current?.isConnected?opener.current:document.querySelector<HTMLElement>(`.list-pane [data-id="${selectedId}"] .row-btn`);row?.focus();}}>
             <header className="dialog-head"><Dialog.Title>{t('ev.title')}{selected ? ` · ${selected.id + 1}` : ''}</Dialog.Title><Dialog.Close className="icon-button" aria-label={t('close')}><IconClose /></Dialog.Close></header>
             <div className="dialog-body">{detail}</div>
           </Dialog.Content>

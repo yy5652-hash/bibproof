@@ -20,7 +20,8 @@ export default function Bibliography({ open, onOpenChange, rows, decisions, styl
 }) {
   const { t } = useI18n();
   const userNotes = userEvidenceText(rows, t('user.badge'));
-  const manuscript = t('repair.title') + '\n' + edits.map(e => `#${e.id + 1} ${e.sentence}\n  ${t(`repair.${e.choice}`)}${e.labelChange ? ` · ${e.labelChange} · ${t(e.labelDone ? 'repair.labelDone' : 'repair.labelPending')}` : ''}${e.renumber ? ` · [${e.old}] → ${e.next === null ? t('dec.tag.remove') : `[${e.next}]`}` : ''}`).join('\n\n') + '\n' + (!citing ? t('repair.noDocument') : t('repair.manual'));
+  const ambiguous=citing?.ambiguous?.filter(a=>a.chosen===undefined)??[];
+  const manuscript = t('repair.title') + '\n' + edits.map(e => `#${e.id + 1} ${e.sentence}\n  ${t(`repair.${e.choice}`)}${e.labelChange ? ` · ${e.labelChange} · ${t(e.labelDone ? 'repair.labelDone' : 'repair.labelPending')}` : ''}${e.renumber ? ` · [${e.old}] → ${e.next === null ? t('dec.tag.remove') : `[${e.next}]`}` : ''}`).join('\n\n') + '\n' + ambiguous.map(a=>`${t('cite.ambiguous')}: ${a.citation} — ${a.sentence}`).join('\n') + '\n' + (!citing ? t('repair.noDocument') : t('repair.manual'));
   const mapText = citing?.style==='numeric' || citing?.style==='mixed' ? numberMapText(rows, decisions).replace('Numeric labels (old → new)', t('repair.map')).replaceAll('removed', t('dec.tag.remove')) : edits.flatMap(e=>e.labelChange ? [e.labelChange] : []).filter((v,i,a)=>a.indexOf(v)===i).join('\n');
 
   const { items, log } = useMemo(() => planBibliography(rows.map(r => ({ id: r.id, raw: r.raw, result: r.result })), decisions), [rows, decisions]);
@@ -68,13 +69,14 @@ export default function Bibliography({ open, onOpenChange, rows, decisions, styl
               </div>
               {verifiedLeft && <p><button className="button small" onClick={() => { onVerifiedAll(); setBulkDone(true); }}>{t('bib.verifiedAll')}</button></p>}
               {bulkDone && !verifiedLeft && <p className="ok-line" role="status">{t('bib.verifiedDone')}</p>}
-              <p>{t('repair.summary', { reviewed: Object.keys(decisions).length, edits: editsNeeded(edits), unchecked: rows.filter(r => !r.result).length })}</p>
+              <p>{t('repair.summary', { reviewed: Object.keys(decisions).length, edits: editsNeeded(edits)+ambiguous.length, unchecked: rows.filter(r => !r.result).length })}</p>
               <p className="warn-line">{t('bib.unresolved', { n: log.filter(l => l.kind === 'unresolved').length + rows.filter(r => !r.result).length })}</p>
               {kept.length ? <ol className="bib-list" data-testid="bib-list">{kept.map((i, n) => <li key={i.id}>
                 <span className="bib-text" translate="no">{lines[n]}</span>
                 <small className={i.action === 'record' ? (i.candidate ? 'tag cand' : 'tag rec') : 'tag'}>{i.action === 'record' ? (i.candidate ? t('bib.candidate') : t('dec.tag.record')) : t('bib.original')}</small>
               </li>)}</ol> : <p className="muted">{t('bib.empty')}</p>}
               <h3>{t('repair.title')}</h3>
+              {ambiguous.length>0 && <p>{t('cite.pickNote')}</p>}
               {citing ? <RepairSentences edits={edits} onReview={onReview} /> : <p>{t('repair.noDocument')}</p>}
               <button className="button small" onClick={() => download('bibproof-manuscript-edits.txt', manuscript + '\n\n' + mapText + '\n\n' + userNotes, 'text/plain;charset=utf-8')}>{t('repair.download')}</button>
               <pre className="number-map">{mapText}</pre>

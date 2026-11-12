@@ -4,12 +4,13 @@ export type Verdict = typeof VERDICTS[number];
 export type IndexName = 'Crossref' | 'DataCite' | 'OpenAlex' | 'Europe PMC' | 'Open Library';
 export interface Author { family: string; given?: string }
 export interface Work {
-  id: string; title: string; authors: Author[]; year?: number; venue?: string;
+  id: string; title: string; retrievalTitle?:string; authors: Author[]; year?: number; venue?: string;
   doi?: string; url: string; source: IndexName; retracted?: boolean; retractionUrls?: string[];
-  type?: string; volume?: string; issue?: string; pages?: string; publisher?: string;
+  type?: string; volume?: string; issue?: string; pages?: string; publisher?: string; isbn?: string[];
 }
 export interface ParsedReference {
   raw: string; label?: string; doi?: string; arxiv?: string; pmid?: string; url?: string;
+  authors?: Author[]; authorsTruncated?: boolean; publisher?: string; isbn?: string;
   year?: number; yearSuffix?: string; surnames: string[]; title: string; identityTitle?: string; venue?: string;
   kind: 'scholarly' | 'book' | 'unsupported' | 'unknown';
 }

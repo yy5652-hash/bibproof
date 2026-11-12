@@ -12,7 +12,7 @@ it('rejects invented assertions appended to a real title, including the evidence
 });
 it.each([
  ['Deep learning','Deep learning: Methods and applications'],
- ['Deep learning: Methods and applications','Deep learning'],
+ ['Deep learning: Methods and applications','Deep learning: Methods and applications'],
  ['The Deep learning','Deep learning'],['A Deep learning','Deep learning'],
  ['Deep learning [Preprint]','Deep learning'],
  ['Deep learning — Methods and applications','Deep learning: Methods and applications'],

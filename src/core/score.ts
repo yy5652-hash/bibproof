@@ -5,6 +5,7 @@ export function containment(needle: string, haystack: string): number {
 }
 const cleanTitle = (s:string) => s.replace(/^\s*(?:retracted|withdrawn)\s*:\s*/i,'')
     .replace(/\[(?:preprint|[^\]]*version)\]|\b(?:(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|revised)\s+(?:ed(?:ition)?\.?)|version\s+\d+(?:\.\d+)*)/gi,'')
+    .replace(/\blarge language models?\b/gi,'LLMs')
     .replace(/\b(behaviour|colour|favour|labour|centre|analyse|modelling|organis\w*)\b/gi, w => w.toLowerCase().replace('our','or').replace('centre','center').replace('analyse','analyze').replace('modelling','modeling').replace('organis','organiz'));
 function writtenIdentity(ref:ParsedReference,work:Work):string {
   let title=ref.identityTitle??'';
@@ -19,7 +20,7 @@ function writtenIdentity(ref:ParsedReference,work:Work):string {
 export function titleIdentityAgrees(ref: ParsedReference, work: Work): boolean {
   if(!ref.identityTitle)return false;
   const parts=(s:string)=>cleanTitle(s.replace(/^[A-Z][A-Z0-9]{1,12}:\s+/, '')).split(/:\s*|\?\s*|\s+[—–-]\s+/).filter(p=>tokens(p).length>0);
-  const both=parts(writtenIdentity(ref,work)).length>1&&parts(work.title).length>1;
+  const both=parts(writtenIdentity(ref,work)).length>1;
   const main=(s:string)=>tokens(both?cleanTitle(s):parts(s)[0]??'').sort().join(' ');
   return main(writtenIdentity(ref,work)).length>0 && main(writtenIdentity(ref,work))===main(work.title);
 }
@@ -37,12 +38,54 @@ export function titleIdentityDiffers(ref: ParsedReference, work: Work): boolean 
     return left.filter(w=>!right.some(v=>same(w,v))).length>=2 || right.filter(w=>!left.some(v=>same(w,v))).length>=2;
   };
   if(!a.length||!b.length)return false;
-  if((a.length>1)!==(b.length>1) && !compare(a[0],b[0])) return false;
+  if(a.length===1 && b.length>1 && !compare(a[0],b[0])) return false;
+  if(a.length>1 && b.length===1 && tokens(a.slice(1).join(' ')).some(w=>!tokens(b[0]).includes(w)))return true;
   if(!compare(a.join(' '),b.join(' ')))return false;
   return compare(cleanTitle(writtenIdentity(ref,work)),cleanTitle(work.title));
 }
+
+/** Compare only confidently parsed names, allowing abbreviated and incomplete lists. */
+export function authorIdentity(ref:ParsedReference,work:Work):'agree'|'differ'|'unknown' {
+  if(!ref.authors?.length || !work.authors.length)return 'unknown';
+  const first=(s?:string)=>s?.normalize('NFKD').replace(/\p{M}/gu,'').match(/\p{L}/u)?.[0]?.toLowerCase();
+  const written=ref.authors;
+  const sameName=(a:NonNullable<ParsedReference['authors']>[number],b:Work['authors'][number])=>{
+    const parts=(s:string)=>normalize(s).split(' ').filter(w=>!['van','von','de','del','der','den','da','di','la','le'].includes(w));
+    const x=parts(a.family),y=parts(b.family);
+    if(x.join(' ')===y.join(' '))return true;
+    if(x.at(-1)!==y.at(-1))return false;
+    const given=(s:string|undefined)=>normalize(s??'').split(' ');
+    const covered=(w:string,ws:string[])=>ws.some(v=>v===w || (v.length===1&&v===w[0]));
+    return x.filter(w=>!y.includes(w)).every(w=>covered(w,given(b.given))) && y.filter(w=>!x.includes(w)).every(w=>covered(w,given(a.given)));
+  };
+  for(const a of written){
+    const hits=work.authors.filter(b=>sameName(a,b));
+    if(!hits.length){if(!ref.authorsTruncated)return 'differ';continue;}
+    const initial=first(a.given);
+    if(initial && hits.every(b=>first(b.given) && first(b.given)!==initial))return 'differ';
+  }
+  return written.every(a=>work.authors.some(b=>sameName(a,b)))?'agree':'unknown';
+}
+export function venueIdentity(ref:ParsedReference,work:Work):'agree'|'differ'|'unknown' {
+  if(!ref.venue || !work.venue || ref.kind==='book' || /[:;|]|^Part\s+\d/i.test(ref.venue))return 'unknown';
+  const a=normalize(ref.venue), b=normalize(work.venue);
+  if(a===b)return 'agree';
+  const neural=(s:string)=>/^(?:neurips|nips)$/.test(s)||/advances in neural information processing systems/.test(s);
+  if(neural(a)&&neural(b))return 'agree';
+  // Abbreviated venues and preprint/published variants are not positive conflicts.
+  const words=(s:string)=>normalize(s).split(' ').filter(w=>!/^\d+$/.test(w) && !['of','the','on','and','in','for'].includes(w));
+  const x=words(ref.venue),y=words(work.venue);
+  const acronym=(s:string)=>words(s).filter(w=>!['of','the','on','and','in','for'].includes(w)).map(w=>w[0]).join('');
+  if(a.replace(/ /g,'')===acronym(work.venue)||b.replace(/ /g,'')===acronym(ref.venue))return 'agree';
+  if(x.every(w=>y.some(v=>v.startsWith(w)))||y.every(w=>x.some(v=>v.startsWith(w))))return 'agree';
+  if(/\.|arxiv|preprint|unpublished/i.test(ref.venue+' '+work.venue)||x.some(w=>w.length<3)||y.some(w=>w.length<3))return 'unknown';
+  const substantive=(ws:string[])=>ws.filter(w=>!['journal','proceedings','conference','international','ieee','acm','press','edition','annual'].includes(w));
+  const left=substantive(x),right=substantive(y);
+  return left.length && right.length && !left.some(w=>right.includes(w))?'differ':'unknown';
+}
+
 export function scoreCandidate(ref: ParsedReference, work: Work): Score {
-  const raw=normalize(ref.raw); const title=containment(work.title,ref.raw);
+  const raw=normalize(ref.raw); const title=containment(work.retrievalTitle??work.title,ref.raw);
   // Compare the index's surnames against the full reference. Avoid reliance on
   // an APA-only author parser; truncated author lists are common in MLA/IEEE.
   const names=work.authors.map(a=>normalize(a.family)).filter(Boolean);
@@ -61,10 +104,10 @@ export function scoreCandidate(ref: ParsedReference, work: Work): Score {
   // Display title identity separately from the retrieval containment score.
   const bareTitle=work.title.replace(/^\s*(?:retracted|withdrawn)\s*:\s*/i,'');
   const fields:FieldEvidence[]=[
-    {field:'Title',written:ref.identityTitle||ref.title||'Not isolated; checked against full entry',record:work.title,status:titleIdentityDiffers(ref,work)?'differ':titleIdentityAgrees(ref,work)?'agree':title<.65?'differ':ref.title&&(normalize(ref.title)===normalize(bareTitle)||(title>=.9&&containment(ref.title,bareTitle)>=.9))?'agree':'unknown'},
-    {field:'Authors',written:ref.surnames.join(', ')||'Not isolated; checked against full entry',record:work.authors.map(a=>a.family).join(', ')||'Not supplied',status:!names.length?'unknown':authors<.8?'differ':'agree'},
+    {field:'Title',written:ref.identityTitle||ref.title||'Not isolated; checked against full entry',record:work.title,status:!ref.identityTitle?'unknown':titleIdentityDiffers(ref,work)?'differ':titleIdentityAgrees(ref,work)?'agree':title<.65?'differ':ref.title&&(normalize(ref.title)===normalize(bareTitle)||(title>=.9&&containment(ref.title,bareTitle)>=.9))?'agree':'unknown'},
+    {field:'Authors',written:ref.authors?.map(a=>[a.family,a.given].filter(Boolean).join(', ')).join('; ')||ref.surnames.join(', ')||'Not isolated; checked against full entry',record:work.authors.map(a=>[a.family,a.given].filter(Boolean).join(', ')).join('; ')||'Not supplied',status:authorIdentity(ref,work)},
     {field:'Year',written:years.join(', ')||'Not supplied',record:String(work.year??'Not supplied'),status:!years.length||!work.year?'unknown':delta===0?'agree':delta===1?'tolerance':'differ'},
-    {field:'Venue',written:ref.venue || 'See original reference',record:work.venue||'Not supplied',status:!work.venue||!ref.venue?'unknown':normalize(ref.venue)===normalize(work.venue)?'agree':'unknown'},
+    {field:'Venue',written:ref.venue || 'See original reference',record:work.venue||'Not supplied',status:venueIdentity(ref,work)},
     {field:'DOI',written:ref.doi||'Not supplied',record:work.doi||'Not supplied',status:!ref.doi||!work.doi?'unknown':ref.doi===work.doi.toLowerCase()?'agree':'differ'}
   ];
   return {title,authors,year,venue,locator,total:.64*title+.26*authors+.07*year+.03*venue+(locator?.5:0),fields};
@@ -86,7 +129,7 @@ export function statedWords(ref: ParsedReference, work?: Work): number {
 
 /** Isolated title conflicts downgrade a match without changing absence rules. */
 export function matchingDetailsDiffer(ref: ParsedReference, work: Work, s: Score): boolean {
-  return titleIdentityDiffers(ref,work) || (s.title < .65 && !titleIdentityAgrees(ref,work)) || (work.authors.length > 0 && s.authors < .8) ||
+  return authorIdentity(ref,work)==='differ' || venueIdentity(ref,work)==='differ' || titleIdentityDiffers(ref,work) || (s.title < .65 && !titleIdentityAgrees(ref,work)) || (work.authors.length > 0 && s.authors < .8 && (authorIdentity(ref,work)!=='agree' || Boolean(ref.authorsTruncated))) ||
     (Boolean(ref.raw.replace(/10\.\d{4,9}\/\S+|https?:\/\/\S+/g, '').match(/\b(?:18|19|20)\d{2}\b/)) && Boolean(work.year) && s.year === 0) ||
     Boolean(ref.doi && work.doi && ref.doi !== work.doi.toLowerCase());
 }

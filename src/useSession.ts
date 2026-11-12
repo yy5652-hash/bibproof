@@ -1,5 +1,5 @@
 import { crossCheck } from './core/crosscheck';
-import { citingSentences, type Citing } from './core/citing';
+import { resolveCitation, citingSentences, type Citing } from './core/citing';
 import { retainSentenceReviews, type SentenceChoice, type SentenceReviews } from './core/repairs';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { extractReferences, needsExtractionPreview, type Extraction } from './core/extract';
@@ -68,6 +68,7 @@ export function useSession() {
     const next={...decisions,...patch};
     setReviews(prev=>retainSentenceReviews(checker.rows,decisions,next,prev)); setDecisions(next);
   }, [decisions,checker.rows]);
+  const chooseCitation=useCallback((key:string,id:number|undefined)=>{setCiting(prev=>prev?resolveCitation(prev,key,id,checker.rows.map(r=>r.raw)):prev);setReviews({});},[checker.rows]);
   const newCheck = useCallback(() => { checker.reset(); setPendingExtraction(null); setSavedExampleAt(null); setCiting(null); setReviews({}); setExtraction(null); setDecisions({}); setMeta(null); }, [checker.reset]);
 
   // A finished run is saved on this device. Later decisions update the same entry.
@@ -79,7 +80,7 @@ export function useSession() {
     return () => clearTimeout(h);
   }, [checker.phase, checker.rows, decisions, meta, citing, reviews, savedExampleAt, extraction]);
 
-  return useMemo(() => ({ ...checker, pendingExtraction, setPendingExtraction, extraction, decisions, citing, reviews, reviewSentence, savedExampleAt, loadSample, loadPaper, runLive, meta, text, setText, doi, setDoi, fileText, setFileText, imported, setImported, historyVersion, check, begin, recheck, reopen, loadFixture, decide, decideMany, newCheck }),
-    [checker, pendingExtraction, extraction, decisions, citing, reviews, reviewSentence, savedExampleAt, loadSample, loadPaper, runLive, meta, text, doi, fileText, imported, historyVersion, check, begin, recheck, reopen, loadFixture, decide, decideMany, newCheck]);
+  return useMemo(() => ({ ...checker, chooseCitation, pendingExtraction, setPendingExtraction, extraction, decisions, citing, reviews, reviewSentence, savedExampleAt, loadSample, loadPaper, runLive, meta, text, setText, doi, setDoi, fileText, setFileText, imported, setImported, historyVersion, check, begin, recheck, reopen, loadFixture, decide, decideMany, newCheck }),
+    [checker, chooseCitation, pendingExtraction, extraction, decisions, citing, reviews, reviewSentence, savedExampleAt, loadSample, loadPaper, runLive, meta, text, doi, fileText, imported, historyVersion, check, begin, recheck, reopen, loadFixture, decide, decideMany, newCheck]);
 }
 export type Session = ReturnType<typeof useSession>;

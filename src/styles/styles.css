@@ -466,3 +466,6 @@ thead th { font-size: .74rem; color: var(--ink-3); }
 .extraction-preview textarea { display: block; box-sizing: border-box; width: 100%; min-height: 6rem; margin: .5rem 0; resize: vertical; }
 .extraction-preview .button { margin: .25rem; white-space: normal; }
 .repair-sentences p, .number-map { overflow-wrap: anywhere; white-space: pre-wrap; }
+
+.ambiguous-citations label { display: block; min-width: 0; margin-block: 1rem; }
+.ambiguous-citations select { display: block; width: 100%; max-width: 100%; min-width: 0; }

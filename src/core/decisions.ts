@@ -1,3 +1,4 @@
+import {parseReference,normalize} from './parse';
 import type { CheckResult, Verdict, Work } from './types';
 
 /** Most serious first. This is the default order of the results list. */
@@ -14,16 +15,18 @@ export const stripLabel = (raw: string) => raw.replace(/^\s*(?:\[\d+\]\s*|\d+[.)
 
 /** The record that "Use record" adopts. Retracted entries get none: a retracted paper is kept or removed, never silently swapped. */
 export function primaryRecord(r: CheckResult): Work | undefined {
-  return r.verdict === 'Retracted' ? undefined : r.match;
+  const supplied=r.reference.doi??(r.reference.arxiv?`10.48550/arxiv.${r.reference.arxiv}`:undefined);
+  if(supplied && r.match?.doi?.toLowerCase()!==supplied.toLowerCase())return undefined;
+  return r.verdict === 'Retracted' ? undefined : correctionRecord(r,r.match);
 }
 export const needsAction = (r: CheckResult) => r.verdict !== 'Verified';
-export const canUseRecord = (r: CheckResult) => Boolean(primaryRecord(r)) || Boolean(r.alternatives?.length);
+export const canUseRecord = (r: CheckResult) => Boolean(primaryRecord(r)) || Boolean(alternativeRecords(r).length);
 /** A record that only came from the candidate list or from a conflicting entry has not been verified against what the person wrote. */
 export const isCandidate = (r: CheckResult, d?: Decision) => d?.kind === 'record' && (d.alt !== undefined || r.verdict === 'Identifier conflict');
 
 export function chosenRecord(r: CheckResult, d?: Decision): Work | undefined {
   if (d?.kind !== 'record') return undefined;
-  return d.alt !== undefined ? r.alternatives?.[d.alt] : primaryRecord(r);
+  return d.alt !== undefined ? correctionRecord(r,alternativeRecords(r)[d.alt]) : primaryRecord(r);
 }
 
 export function planBibliography(rows: PlanRow[], decisions: Decisions): { items: PlanItem[]; log: ChangeLine[] } {
@@ -78,4 +81,17 @@ export function numberMap(rows: PlanRow[], decisions: Decisions): NumberMap[] {
 }
 export function numberMapText(rows: PlanRow[], decisions: Decisions): string {
   return 'Numeric labels (old → new)\n' + numberMap(rows, decisions).map(m => `[${m.old}] → ${m.next === null ? 'removed' : `[${m.next}]`}`).join('\n');
+}
+
+/** Catalog metadata is evidence, not permission to add names or erase publishers. */
+export function correctionRecord(r:CheckResult,work?:Work):Work|undefined {
+  if(!work || work.source!=='Open Library')return work;
+  const ref=r.reference.authors?r.reference:parseReference(r.reference.raw);
+  return {...work,authors:ref.authors??work.authors.filter(a=>ref.surnames.some(n=>normalize(n)===normalize(a.family))),publisher:ref.publisher??work.publisher,venue:ref.publisher??work.venue};
+}
+
+/** Older saved runs may carry a different-version match without an alternatives list. */
+export function alternativeRecords(r:CheckResult):Work[] {
+  const alternatives=r.alternatives??[];
+  return r.match && r.verdict!=='Retracted' && !primaryRecord(r) && !alternatives.some(w=>w.id===r.match!.id) ? [r.match,...alternatives] : alternatives;
 }

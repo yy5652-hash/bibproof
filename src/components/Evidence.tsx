@@ -6,7 +6,7 @@ import type { ManuscriptEdit, SentenceChoice } from '../core/repairs';
 import { useEffect, useState } from 'react';
 import type { CheckResult, Work } from '../core/types';
 import { formatWork, registerStyle, type CitationStyle } from '../core/format';
-import { canUseRecord, isCandidate, needsAction, primaryRecord, stripLabel, type Decision } from '../core/decisions';
+import { alternativeRecords, canUseRecord, isCandidate, needsAction, primaryRecord, stripLabel, type Decision } from '../core/decisions';
 import { handCheckFor } from '../core/handcheck';
 import type { Citing } from '../core/citing';
 import { closeWording } from '../core/score';
@@ -31,11 +31,12 @@ export async function ensureStyle(style: CitationStyle) {
 export function SourceLink({ url, children }: { url: string; children: React.ReactNode }) {
   return /^https?:\/\//i.test(url) ? <a href={url} target="_blank" rel="noopener noreferrer">{children}<span aria-hidden="true"> ↗</span></a> : <span>{children}</span>;
 }
+function versionLabel(work:Work){return work.doi?.startsWith('10.48550/arxiv.') || /arxiv/i.test(work.venue??'')?'ev.versionPreprint':/journal-article|proceedings-article|book-chapter/i.test(work.type??'')?'ev.versionPublished':'ev.versionRecord';}
 export function authorsLine(work: Work) { return `${work.authors.slice(0, 6).map(a => a.family).join(', ')}${work.authors.length > 6 ? ' et al.' : ''}`; }
 
 function Record({ work, label }: { work: Work; label: string }) {
   const { t } = useI18n();
-  return <div className="record"><span className="eyebrow">{label}</span><p translate="no"><SourceLink url={work.url}>{work.title}</SourceLink></p><small translate="no">{authorsLine(work)} · {work.year ?? t('ev.noDoi')} · {work.source}</small></div>;
+  return <div className="record"><span className="eyebrow">{label}</span><p translate="no"><SourceLink url={work.url}>{work.title}</SourceLink></p><small translate="no">{t(versionLabel(work))} · {authorsLine(work)} · {work.year ?? t('ev.noDoi')} · {work.source}</small></div>;
 }
 
 export function DecisionBar({ result, decision, onDecide }: { result: CheckResult; decision?: Decision; onDecide: (d: Decision | undefined) => void }) {
@@ -65,10 +66,11 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
   const [corrected, setCorrected] = useState(''); const [error, setError] = useState(''); const [copied, setCopied] = useState(false);
   useEffect(() => {
     let active = true; setCorrected(''); setError(''); setCopied(false);
-    if (result.match) void ensureStyle(style).then(() => formatWork(result.match!, style)).then(text => { if (active) setCorrected(text); }).catch(() => { if (active) setError(t('ev.styleFail')); });
+    if (primaryRecord(result)) void ensureStyle(style).then(() => formatWork(primaryRecord(result)!, style)).then(text => { if (active) setCorrected(text); }).catch(() => { if (active) setError(t('ev.styleFail')); });
     return () => { active = false; };
   }, [result.match, style]);
   async function copy() { try { await navigator.clipboard.writeText(corrected); setCopied(true); } catch { setError(t('ev.clipboard')); } }
+  const alternatives=alternativeRecords(result);
   const problem = needsAction(result);
   // The nearest hit is only shown when its wording is close; otherwise it reads like a suggestion it is not.
   const lead = Boolean(result.nearest && closeWording(result.reference, result.nearest));
@@ -79,6 +81,8 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
     <div className="evidence" data-testid="evidence">
       <div className="ev-head"><span className="row-n">{index + 1}</span><VerdictBadge verdict={result.verdict} /></div>
       {retryable(result) && <div className="retry-row"><p>{t('retry.providers', { names: failedProviders(result).join(', ') })}</p><button className="button small" disabled={retryDisabled} onClick={onRetry}>{t('retry.one')}</button></div>}
+      {result.match?.source==='Open Library' && result.match.authors.length>result.reference.surnames.length && <p className="notice">{t('ev.catalogExtra')}</p>}
+      {result.reference.arxiv && <p className="fine-print">{t('ev.preprint')}</p>}
       <p className="verdict-explanation">{explain(result.explanation)}</p>
       <blockquote className="as-written"><span className="eyebrow">{t('ev.written')}</span><span translate="no">{stripLabel(raw)}</span></blockquote>
       <DecisionBar result={result} decision={decision} onDecide={onDecide} />
@@ -89,14 +93,14 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
       {!result.match && lead && <Record work={result.nearest!} label={t('ev.nearest')} />}
       {result.match?.retractionUrls?.map(url => <p key={url}><SourceLink url={url}>{t('ev.retraction')}</SourceLink></p>)}
 
-      {result.alternatives?.length ? (
+      {alternatives.length ? (
         <section className="alts" aria-labelledby="alts-h">
           <h4 id="alts-h">{t('alt.title')}</h4>
           <p className="muted">{t('alt.lede')}</p>
-          <ul>{result.alternatives.map((w, i) => {
+          <ul>{alternatives.map((w, i) => {
             const chosen = decision?.kind === 'record' && decision.alt === i;
             return <li key={w.id + i} className={chosen ? 'chosen' : ''}>
-              <div translate="no"><SourceLink url={w.url}>{w.title}</SourceLink><small>{authorsLine(w)} · {w.year ?? t('ev.noDoi')} · {w.source}{w.doi ? ` · ${w.doi}` : ''}</small></div>
+              <div translate="no"><SourceLink url={w.url}>{w.title}</SourceLink><small>{t(versionLabel(w))} · {authorsLine(w)} · {w.year ?? t('ev.noDoi')} · {w.source}{w.doi ? ` · ${w.doi}` : ''}</small></div>
               <button type="button" className="button small" aria-pressed={chosen} onClick={() => onDecide(chosen ? undefined : { kind: 'record', alt: i })}>{chosen ? t('alt.using') : t('alt.use')}</button>
             </li>;
           })}</ul>
@@ -142,7 +146,7 @@ export function Detail({ index, result, raw, decision, onDecide, style, onStyle,
         <p className="fine-print">{t('ev.checked', { date: date(result.checkedAt) })}</p>
       </details>
 
-      {result.match && (
+      {primaryRecord(result) && (
         <div className="correction">
           <div className="section-line">
             <h4>{t('ev.corrected')}</h4>

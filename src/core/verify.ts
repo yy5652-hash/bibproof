@@ -1,4 +1,4 @@
-import { matchingDetailsDiffer, titleIdentityAgrees } from './score';
+import { matchingDetailsDiffer, titleIdentityAgrees, authorIdentity } from './score';
 import type { CheckResult, IndexEvidence, IndexName, Work } from './types';
 import { parseReference } from './parse';
 import { scoreCandidate, strongMatch, settled, statedWords, containment, closeWording } from './score';
@@ -6,9 +6,9 @@ import { IndexClient, type HttpProgress } from './http';
 import { lookup, crossrefSearch, type Lookup } from './indexes';
 // Real records worth offering instead of a flagged entry.
 function alternativesFor(result:CheckResult,candidates:Work[]):Work[]{
-  if(result.verdict==='Verified')return [];
+  if(result.verdict==='Verified' && !result.reference.arxiv)return [];
   // A conflict that already has a same-title record offers that record, not looser look-alikes.
-  if(result.verdict==='Identifier conflict'&&result.match)return [];
+  if(result.verdict==='Identifier conflict'&&result.match && result.match.doi!==result.identifierRecord?.doi)return [result.match];
   const ref=result.reference;const seen=new Set([result.match?.doi??result.match?.id]);
   return candidates.map(work=>({work,score:scoreCandidate(ref,work)}))
     .filter(({work})=>closeWording(ref,work))
@@ -17,15 +17,17 @@ function alternativesFor(result:CheckResult,candidates:Work[]):Work[]{
     .slice(0,3).map(({work})=>work);
 }
 export interface CheckProgress extends HttpProgress { index:IndexName }
-export async function verifyReference(raw:string,client:IndexClient,onProgress?:(p:CheckProgress)=>void):Promise<CheckResult>{
+export interface VerifyOptions { /** Offline audit control; production leaves this false. */ retainRedundantOpenAlexSearch?:boolean }
+export async function verifyReference(raw:string,client:IndexClient,onProgress?:(p:CheckProgress)=>void,options:VerifyOptions={}):Promise<CheckResult>{
   const tracked=Object.create(client) as IndexClient;
   const providers:Record<string,IndexName>={'api.crossref.org':'Crossref','api.datacite.org':'DataCite','api.openalex.org':'OpenAlex','www.ebi.ac.uk':'Europe PMC','openlibrary.org':'Open Library'};
   tracked.request=url=>client.request(url,p=>onProgress?.({...p,index:providers[new URL(url).host]}));
-  const candidates:Work[]=[];const result=await decide(raw,tracked,candidates);
+  const candidates:Work[]=[];const result=await decide(raw,tracked,candidates,options);
+  if(result.match && !result.reference.identityTitle && result.verdict==='Verified' && !result.explanation.includes('no title') && !result.explanation.includes('no other details'))result.explanation='A record matches, but the title could not be isolated. Review the title in the original entry before relying on this result.';
   const alternatives=alternativesFor(result,candidates);
   return alternatives.length?{...result,alternatives}:result;
 }
-async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<CheckResult>{
+async function decide(raw:string,client:IndexClient,candidates:Work[],options:VerifyOptions):Promise<CheckResult>{
   const ref=parseReference(raw);const evidence:IndexEvidence[]=[];let identifierRecord:Work|undefined;
   const base={reference:ref,evidence,checkedAt:new Date().toISOString()};
   // Web pages, statutes and thin entries still get one Crossref search, but a miss proves nothing.
@@ -35,16 +37,27 @@ async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<C
   const doi=ref.doi??(ref.arxiv?`10.48550/arxiv.${ref.arxiv}`:undefined);
   // An entry that is only an identifier has nothing to search on or compare against.
   const bare=Boolean(doi||ref.pmid)&&ref.raw.replace(/https?:\/\/\S+|(?:doi:?\s*)?10\.\d{4,9}\/\S+|arxiv:\s*\S+|pmid:?\s*\d+/ig,'').replace(/^\s*(?:\[\d+\]|\d+[.)](?!\d))\s*/,'').replace(/[^\p{L}\p{N}]/gu,'').length<3;
-  if(ref.arxiv){identifierRecord=add(await lookup(client,'OpenAlex',`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi!)}`,true))[0];}
+  const idStart=evidence.length;
+  if(ref.arxiv){
+    identifierRecord=add(await lookup(client,'DataCite',`https://api.datacite.org/dois/${encodeURIComponent(doi!)}`,true))[0];
+    if(!identifierRecord)identifierRecord=add(await lookup(client,'OpenAlex',`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi!)}`,true)).find(w=>w.doi?.toLowerCase()===doi?.toLowerCase());
+  }
   else if(doi){
     identifierRecord=add(await lookup(client,'Crossref',`https://api.crossref.org/works/${encodeURIComponent(doi)}`,true))[0];
     if(!identifierRecord)identifierRecord=add(await lookup(client,'DataCite',`https://api.datacite.org/dois/${encodeURIComponent(doi)}`,true))[0];
   }
+  if(ref.isbn && !doi){
+    const books=add(await lookup(client,'Open Library',`https://openlibrary.org/search.json?isbn=${encodeURIComponent(ref.isbn)}&limit=5&fields=key,title,author_name,first_publish_year,isbn,publisher`));
+    identifierRecord=books.find(w=>w.isbn?.includes(ref.isbn!));
+  }
+  // Only an identifier lookup that actually answered can say the identifier is unconfirmed.
+  const idAnswered=evidence.slice(idStart).some(e=>e.status==='answered');
   if(ref.pmid && !identifierRecord)add(await lookup(client,'Europe PMC',`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent('EXT_ID:'+ref.pmid+' AND SRC:MED')}&format=json&resultType=core&pageSize=5`));
   if(!bare&&!rank().some(x=>settled(x.score)))add(await lookup(client,'Crossref',crossrefSearch(ref.raw)));
   // A same-titled record from the wrong year may be a reprint or duplicate, so keep looking for the right one.
   if(!bare&&!limited&&!rank().some(x=>settled(x.score)&&(identifierRecord||!ref.year||x.score.year>0))){
-    add(await lookup(client,'OpenAlex',`https://api.openalex.org/works?search=${encodeURIComponent(ref.title||ref.raw)}&per-page=5`));
+    const confident=rank().some(({work,score})=>['Crossref','DataCite'].includes(work.source) && score.title>=.88 && titleIdentityAgrees(ref,work) && (!ref.year || score.year>0));
+    if(!confident || options.retainRedundantOpenAlexSearch)add(await lookup(client,'OpenAlex',`https://api.openalex.org/works?search=${encodeURIComponent(ref.title||ref.raw)}&per-page=5`));
     add(await lookup(client,'Europe PMC',`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent(ref.title||ref.raw)}&format=json&resultType=core&pageSize=5`));
     if(ref.kind==='book')add(await lookup(client,'Open Library',`https://openlibrary.org/search.json?q=${encodeURIComponent(ref.title||ref.raw)}&limit=5&fields=key,title,author_name,first_publish_year`));
   }
@@ -65,10 +78,12 @@ async function decide(raw:string,client:IndexClient,candidates:Work[]):Promise<C
   }
   const idScore=identifierRecord?scoreCandidate(ref,identifierRecord):undefined;
   const conflict=Boolean(identifierRecord && idScore && !titleIdentityAgrees(ref,identifierRecord) && (idScore.title<.55 || (containment(ref.title,identifierRecord.title)<.55 && idScore.authors<.5)) && ref.title.split(/\s+/).length>=3);
+  if(identifierRecord && idScore && !conflict){const same=candidates.filter(w=>w.id===identifierRecord!.id || (w.doi && w.doi===identifierRecord!.doi));best={work:{...identifierRecord,retracted:same.some(w=>w.retracted),retractionUrls:same.flatMap(w=>w.retractionUrls??[])},score:idScore};}
   if(best?.work.retracted && (best.score.title>=.65||best.score.locator))return {...base,verdict:'Retracted',explanation:'The matched work is marked as retracted in index metadata. Read the retraction notice before citing it.',match:best.work,score:best.score,identifierRecord:conflict?identifierRecord:undefined};
   if(conflict&&idScore)idScore.fields=idScore.fields.map(f=>f.field==='Title'?{...f,status:'differ'}:f);
   if(conflict)return {...base,verdict:'Identifier conflict',explanation:'The supplied identifier resolves, but its title does not agree with this reference. Review the identifier record and any closer title match.',identifierRecord,match:best?.score.title>=.65?best.work:undefined,nearest:best?.work,score:idScore};
-  if(best && (strongMatch(best.score) || (titleIdentityAgrees(ref,best.work) && best.score.authors>=.7))){
+  if((doi || ref.isbn) && !identifierRecord && idAnswered && best && (strongMatch(best.score)||titleIdentityAgrees(ref,best.work)))return {...base,verdict:'Details differ',explanation:'The supplied identifier could not be confirmed. A similar record is a candidate only; it is not a correction to the supplied identity.',nearest:best.work,score:best.score};
+  if(best && (strongMatch(best.score) || (titleIdentityAgrees(ref,best.work) && (best.score.authors>=.7 || authorIdentity(ref,best.work)==='agree')))){
     const differ=matchingDetailsDiffer(ref,best.work,best.score);
     return {...base,verdict:differ?'Details differ':'Verified',explanation:differ?'A matching work exists, but the highlighted fields differ.':'The indexed title and authors agree. Publication year allows a one-year online-first difference.',match:best.work,score:best.score};
   }

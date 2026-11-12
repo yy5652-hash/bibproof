@@ -55,7 +55,7 @@ export default function App() {
 
   return (
     <>
-      <a className="skip" href="#main">{t('skip')}</a>
+      <a className="skip" href="#main" onClick={e=>{e.preventDefault();const main=document.getElementById('main');main?.focus();main?.scrollIntoView();}}>{t('skip')}</a>
       <header className="site-header no-print">
         <div className="wrap header-row">
           <a className="brand" href="#/" aria-label={t('brand.home')}>
@@ -74,7 +74,7 @@ export default function App() {
           </div>
         </div>
       </header>
-      <main id="main" className={`wrap${route.page === 'home' && hasRun ? ' wide' : ''}`}>
+      <main id="main" tabIndex={-1} className={`wrap${route.page === 'home' && hasRun ? ' wide' : ''}`}>
         {route.page === 'home' && (hasRun
           ? <><Workspace s={s} /><PrintReport rows={s.rows} extraction={s.extraction} /></>
           : <><Home s={s} /><div className="no-print"><HowItWorks /><Trust /><Privacy onClear={s.clearCache} /></div></>)}

@@ -5,6 +5,15 @@ export type Lang = 'en' | 'zh-CN';
 const KEY = 'bibproof-lang';
 
 export const en = {
+  'ev.catalogExtra': 'The catalog lists an extra name. Review it; corrections keep your written authors and publisher.',
+  'ev.preprint': 'The supplied arXiv identifier identifies a preprint. Other versions are labelled candidates, not automatic corrections.',
+  'ev.versionPreprint': 'Preprint',
+  'ev.versionPublished': 'Published version',
+  'ev.versionRecord': 'Indexed version; publication status not specified',
+  'cite.ambiguous': 'Ambiguous citations',
+  'cite.pickNote': 'Several references fit this citation. Pick its source before generating manuscript edits.',
+  'cite.pick': 'Choose a reference',
+
   'cta.paper': 'Try a paper',
   'paper.intro': 'Constructed teaching manuscript with deliberate citation errors. Saved reference evidence comes from the dated live sample run; the manuscript was assembled afterward.',
   'hero.figures': '{fa} false accusations in {total} formatting trials of {works} works; {freshFa} in {freshTotal} fresh references.',
@@ -231,6 +240,14 @@ export const en = {
 type Dict = Record<keyof typeof en, string>;
 
 export const zh: Dict = {
+  'ev.catalogExtra': '目录多列了一位作者，请核对；更正会保留你填写的作者和出版社。',
+  'ev.preprint': '你提供的 arXiv 标识符对应预印本。其他版本只作为明确标注的候选，不会自动用来更正。',
+  'ev.versionPreprint': '预印本',
+  'ev.versionPublished': '正式出版版本',
+  'ev.versionRecord': '索引版本；未注明出版状态',
+  'cite.ambiguous': '有歧义的正文引用',
+  'cite.pickNote': '多条参考文献符合这处引用。请先选择来源，再生成正文修改任务。',
+  'cite.pick': '选择参考文献',
   'cta.paper': '试用完整论文',
   'paper.intro': '含有刻意设置的引用错误的教学论文。保存的文献证据来自标注日期的真实在线示例核查；论文为随后编排。',
   'hero.figures': '{works} 篇作品的 {total} 次格式测试中误报 {fa} 次；另 {freshTotal} 条新文献中误报 {freshFa} 次。',
@@ -459,6 +476,8 @@ const EXACT: Record<string, string> = {
   // field-level text produced by the scorer
   'Not supplied': '未提供', 'Not isolated; checked against full entry': '未能单独提取，已对照整条原文检查', 'See original reference': '见原文', 'Only an identifier was given': '只提供了标识符', 'No title in this entry': '这条没有标题',
   'Identifier not registered in this index': '这个索引中没有登记该标识符', 'Unexpected response format; not evidence of absence.': '响应格式异常；这不能证明记录不存在。',
+  'A record matches, but the title could not be isolated. Review the title in the original entry before relying on this result.': '查到了匹配记录，但未能单独解析标题。使用此结果前，请核对原条目的标题。',
+  'The supplied identifier could not be confirmed. A similar record is a candidate only; it is not a correction to the supplied identity.': '未能确认你提供的标识符。相似记录仅供候选参考，不会作为这条文献的更正。',
   'Title': '标题', 'Authors': '作者', 'Year': '年份', 'Venue': '刊名', 'DOI': 'DOI',
 };
 const PATTERNS: [RegExp, (m: RegExpMatchArray) => string][] = [

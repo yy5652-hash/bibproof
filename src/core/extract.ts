@@ -1,12 +1,14 @@
+import { isBibtex, splitBibtex } from './structured';
 import type { CrossCheck } from './crosscheck';
-export interface Extraction { entries: string[]; body: string; fullDocument: boolean; warnings: string[]; cross?: CrossCheck }
-const heading = /^\s*(?:\d+[.\s]+)?(?:references|bibliography|works cited|literature cited|reference list|参考文献|参考资料|引用文献|文献)\s*[:：]?\s*$/im;
+export interface Extraction { entries: string[]; body: string; fullDocument: boolean; warnings: string[]; cross?: CrossCheck; uncertain?: boolean; headingFound?: boolean }
+const heading = /^\s*(?:\d+[.\s]+)?(?:references(?: and notes)?|notes and references|sources|literature(?: cited)?|bibliography(?: and notes)?|works cited|reference list|参考文献|参考资料|引用文献|文献)\s*[:：]?\s*$/im;
 export function extractReferences(input: string): Extraction {
   const normalized = input.replace(/\r\n?/g,'\n').replace(/\u00ad/g,'');
   const match = heading.exec(normalized);
   const body = match ? normalized.slice(0, match.index).trim() : '';
   let referenceText = match ? normalized.slice(match.index + match[0].length) : normalized;
   referenceText = referenceText.split(/\n\s*(?:appendi(?:x|ces)(?:\s+[A-Z\d])?|acknowledg(?:e)?ments|supplementary (?:material|information))\s*\n/i)[0].trim();
+  if(isBibtex(referenceText)){try{return {entries:splitBibtex(referenceText),body,fullDocument:Boolean(match&&body),headingFound:Boolean(match),uncertain:!referenceText.startsWith('@'),warnings:[]};}catch{return {entries:[referenceText],body,fullDocument:Boolean(match&&body),headingFound:Boolean(match),warnings:[],uncertain:true};}}
   const lines = referenceText.split('\n');
   const numbered = lines.some(l => /^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])\s*\S/.test(l));
   const blocks: string[] = []; let current = '';
@@ -21,18 +23,18 @@ export function extractReferences(input: string): Extraction {
     current = current.endsWith('-') && /^[a-z]/.test(trimmed) ? current.slice(0,-1)+trimmed : [current,trimmed].filter(Boolean).join(' ');
   }
   if(current) blocks.push(current);
-  return { entries:blocks.filter(x=>x.length>5), body, fullDocument:Boolean(match && body), warnings:match?[]:['No reference-section heading found. Treating the input as a reference list; in-text checks are unavailable.'] };
+  return { entries:blocks.filter(x=>x.length>5), body, fullDocument:Boolean(match && body), headingFound:Boolean(match), uncertain:!match && lines.some(line=>line.trim() && !looksLikeReference(line)), warnings:match?[]:['No reference-section heading found. Treating the input as a reference list; in-text checks are unavailable.'] };
 }
 /** Short, recognisable reference lists retain one-click checks. Ambiguous text never does. */
+function looksLikeReference(entry:string):boolean {
+  const text=entry.replace(/^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])\s*/, '').trim();
+  if(/^(?:https?:\/\/(?:dx\.)?doi\.org\/|doi:\s*)?10\.\d{4,9}\/\S+\s*$/i.test(text))return true;
+  const author=/^(?:[\p{Lu}][\p{L}’'-]+,\s*(?:\p{Lu}\.|\p{Lu}[\p{L}]+)|[\p{Lu}][\p{L}’'-]+ [A-Z]{1,4}[,. ]|(?:\p{Lu}\.\s*)+[\p{Lu}][\p{L}’'-]+|[\p{Script=Han}]{2,4}[，,、.．])/u.test(text);
+  if(/^[\p{Script=Han}]/u.test(text) && !/^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])/.test(entry) && !/\[[JMDBCR]\]/i.test(entry))return false;
+  return author && /\b(?:18|19|20)\d{2}\b/.test(text);
+}
 export function needsExtractionPreview(ex: Extraction): boolean {
-  return ex.fullDocument || ex.entries.some(entry => {
-    if(entry.length>800)return true;
-    if(/10\.\d{4,9}\//.test(entry))return false;
-    const text=entry.replace(/^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])\s*/, '');
-    const author=/^(?:[\p{Lu}][\p{L}’'-]+,\s*(?:\p{Lu}\.|\p{Lu}[\p{L}]+)|[\p{Lu}][\p{L}’'-]+ [A-Z]{1,4}[,. ]|(?:\p{Lu}\.\s*)+[\p{Lu}][\p{L}’'-]+|[\p{Script=Han}]{2,4}[，,、.．])/u.test(text);
-    const hanUnstructured=/^[\p{Script=Han}]/u.test(text) && !/^\s*(?:\[\d+\]|\d+[.)]|[（(]\d+[）)])/.test(entry) && !/\[[JMDBCR]\]/i.test(entry);
-    return !author || hanUnstructured || !/\b(?:18|19|20)\d{2}\b/.test(entry);
-  });
+  return Boolean(ex.fullDocument || ex.headingFound || ex.uncertain || ex.entries.some(entry => !isBibtex(entry) && (entry.length>800 || !looksLikeReference(entry))));
 }
 export interface PdfTextItem { str: string; transform: number[]; width: number; height: number }
 export function rebuildPdfPage(items: PdfTextItem[], pageWidth: number): string {
