@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "held-out",
-  "runAt": "2026-11-11T00:26:33.159Z",
+  "runAt": "2026-11-12T10:31:11.214Z",
   "seed": 88421,
   "tuningSeed": 1729,
   "heldOutSeed": 88421,
@@ -43,8 +43,8 @@
   "realisticGenuine": {
     "total": 56,
     "counts": {
-      "Verified": 50,
-      "Details differ": 6,
+      "Verified": 46,
+      "Details differ": 10,
       "Identifier conflict": 0,
       "Retracted": 0,
       "No record found": 0,
@@ -144,14 +144,14 @@
     "robotsUrl": "https://gptzero.me/robots.txt",
     "robotsAllowed": true,
     "retrievedAt": "2026-11-01T01:08:11.113Z",
-    "runAt": "2026-11-11T00:26:29.066Z",
+    "runAt": "2026-11-12T10:30:58.732Z",
     "total": 100,
     "detected": 98,
     "detectionRate": 0.98,
     "counts": {
       "Verified": 0,
-      "Details differ": 38,
-      "Identifier conflict": 16,
+      "Details differ": 39,
+      "Identifier conflict": 15,
       "Retracted": 0,
       "No record found": 44,
       "Could not check": 2

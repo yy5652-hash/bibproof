@@ -1,9 +1,9 @@
 {
-  "runAt": "2026-11-02T15:53:28.381Z",
+  "runAt": "2026-11-12T10:33:07.718Z",
   "total": 60,
   "counts": {
-    "Verified": 53,
-    "Details differ": 5,
+    "Verified": 52,
+    "Details differ": 6,
     "Identifier conflict": 0,
     "Retracted": 0,
     "No record found": 1,
