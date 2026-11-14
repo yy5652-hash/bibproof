@@ -8,7 +8,7 @@ import { lookup, crossrefSearch, type Lookup } from './indexes';
 function alternativesFor(result:CheckResult,candidates:Work[]):Work[]{
   if(result.verdict==='Verified' && !result.reference.arxiv)return [];
   // A conflict that already has a same-title record offers that record, not looser look-alikes.
-  if(result.verdict==='Identifier conflict'&&result.match && result.match.doi!==result.identifierRecord?.doi)return [result.match];
+  if(result.verdict==='Identifier conflict'&&result.match)return [];
   const ref=result.reference;const seen=new Set([result.match?.doi??result.match?.id]);
   return candidates.map(work=>({work,score:scoreCandidate(ref,work)}))
     .filter(({work})=>closeWording(ref,work))

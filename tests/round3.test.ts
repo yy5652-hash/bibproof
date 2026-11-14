@@ -123,3 +123,9 @@ it('3 stable repair keys survive sorting and persisted citation bindings',()=>{
  const first=manuscriptEdits(rows,{1:{kind:'remove'}},citing,{})[0];const restored=JSON.parse(JSON.stringify(citing));
  const second=manuscriptEdits([...rows].reverse(),{1:{kind:'remove'}},restored,{[first.key]:'keep'})[0];expect(second.key).toBe(first.key);expect(second.choice).toBe('keep');expect(second.id).toBe(1);
 });
+
+it('identifier conflict still lets the matching-title record replace the wrong DOI',()=>{
+ const work=(doi:string,title:string)=>({id:doi,doi,title,authors:[{family:'He'}],year:2016,source:'Crossref',url:'https://doi.org/'+doi}) as any;
+ const r={verdict:'Identifier conflict',reference:{raw:'',doi:'10.1038/nature14539',title:'Deep Residual Learning for Image Recognition',surnames:['He']},match:work('10.1109/cvpr.2016.90','Deep Residual Learning for Image Recognition'),identifierRecord:work('10.1038/nature14539','Deep learning'),evidence:[]} as any;
+ expect(primaryRecord(r)?.doi).toBe('10.1109/cvpr.2016.90');
+});

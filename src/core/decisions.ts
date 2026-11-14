@@ -16,7 +16,8 @@ export const stripLabel = (raw: string) => raw.replace(/^\s*(?:\[\d+\]\s*|\d+[.)
 /** The record that "Use record" adopts. Retracted entries get none: a retracted paper is kept or removed, never silently swapped. */
 export function primaryRecord(r: CheckResult): Work | undefined {
   const supplied=r.reference.doi??(r.reference.arxiv?`10.48550/arxiv.${r.reference.arxiv}`:undefined);
-  if(supplied && r.match?.doi?.toLowerCase()!==supplied.toLowerCase())return undefined;
+  // An identifier conflict already shows the supplied identifier belongs to another work, so the matching-title record may replace it.
+  if(supplied && r.verdict!=='Identifier conflict' && r.match?.doi?.toLowerCase()!==supplied.toLowerCase())return undefined;
   return r.verdict === 'Retracted' ? undefined : correctionRecord(r,r.match);
 }
 export const needsAction = (r: CheckResult) => r.verdict !== 'Verified';
