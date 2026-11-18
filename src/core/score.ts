@@ -44,6 +44,8 @@ export function titleIdentityDiffers(ref: ParsedReference, work: Work): boolean 
   return compare(cleanTitle(writtenIdentity(ref,work)),cleanTitle(work.title));
 }
 
+/** DOIs compare case-insensitively; an arXiv DOI with a version suffix (v1, v2) names the same work. */
+export function sameDoi(a:string,b:string):boolean{const n=(d:string)=>d.toLowerCase().replace(/^(10\.48550\/arxiv\.[^v\s]+)v\d+$/,'$1');return n(a)===n(b);}
 /** Compare only confidently parsed names, allowing abbreviated and incomplete lists. */
 export function authorIdentity(ref:ParsedReference,work:Work):'agree'|'differ'|'unknown' {
   if(!ref.authors?.length || !work.authors.length)return 'unknown';
@@ -60,17 +62,20 @@ export function authorIdentity(ref:ParsedReference,work:Work):'agree'|'differ'|'
   };
   for(const a of written){
     const hits=work.authors.filter(b=>sameName(a,b));
+    // Indexes sometimes swap given and family names, or file part of a compound surname as a given name.
+    const loose=!hits.length && normalize(a.family).length>=3 && work.authors.some(b=>normalize(`${b.given??''} ${b.family}`).split(' ').includes(normalize(a.family)));
+    if(loose)continue;
     if(!hits.length){if(!ref.authorsTruncated)return 'differ';continue;}
     const initial=first(a.given);
     if(initial && hits.every(b=>first(b.given) && first(b.given)!==initial))return 'differ';
   }
-  return written.every(a=>work.authors.some(b=>sameName(a,b)))?'agree':'unknown';
+  return written.every(a=>work.authors.some(b=>sameName(a,b)||normalize(`${b.given??''} ${b.family}`).split(' ').includes(normalize(a.family))))?'agree':'unknown';
 }
 export function venueIdentity(ref:ParsedReference,work:Work):'agree'|'differ'|'unknown' {
   if(!ref.venue || !work.venue || ref.kind==='book' || /[:;|]|^Part\s+\d/i.test(ref.venue))return 'unknown';
   const a=normalize(ref.venue), b=normalize(work.venue);
   if(a===b)return 'agree';
-  const neural=(s:string)=>/^(?:neurips|nips)$/.test(s)||/advances in neural information processing systems/.test(s);
+  const neural=(s:string)=>/^(?:neurips|nips)(?: \d{4})?$/.test(s)||/neural information processing systems/.test(s);
   if(neural(a)&&neural(b))return 'agree';
   // Abbreviated venues and preprint/published variants are not positive conflicts.
   const words=(s:string)=>normalize(s).split(' ').filter(w=>!/^\d+$/.test(w) && !['of','the','on','and','in','for'].includes(w));
@@ -78,6 +83,8 @@ export function venueIdentity(ref:ParsedReference,work:Work):'agree'|'differ'|'u
   const acronym=(s:string)=>words(s).filter(w=>!['of','the','on','and','in','for'].includes(w)).map(w=>w[0]).join('');
   if(a.replace(/ /g,'')===acronym(work.venue)||b.replace(/ /g,'')===acronym(ref.venue))return 'agree';
   if(x.every(w=>y.some(v=>v.startsWith(w)))||y.every(w=>x.some(v=>v.startsWith(w))))return 'agree';
+  // Repositories and aggregators name where a copy is held, not where the work was published.
+  if(/lirias|repec|research papers in economics|openreview|ssrn|zenodo|\bhal\b|dblp|\bcorr\b|repository|figshare/i.test(work.venue))return 'unknown';
   if(/\.|arxiv|preprint|unpublished/i.test(ref.venue+' '+work.venue)||x.some(w=>w.length<3)||y.some(w=>w.length<3))return 'unknown';
   const substantive=(ws:string[])=>ws.filter(w=>!['journal','proceedings','conference','international','ieee','acm','press','edition','annual'].includes(w));
   const left=substantive(x),right=substantive(y);
@@ -108,7 +115,7 @@ export function scoreCandidate(ref: ParsedReference, work: Work): Score {
     {field:'Authors',written:ref.authors?.map(a=>[a.family,a.given].filter(Boolean).join(', ')).join('; ')||ref.surnames.join(', ')||'Not isolated; checked against full entry',record:work.authors.map(a=>[a.family,a.given].filter(Boolean).join(', ')).join('; ')||'Not supplied',status:authorIdentity(ref,work)},
     {field:'Year',written:years.join(', ')||'Not supplied',record:String(work.year??'Not supplied'),status:!years.length||!work.year?'unknown':delta===0?'agree':delta===1?'tolerance':'differ'},
     {field:'Venue',written:ref.venue || 'See original reference',record:work.venue||'Not supplied',status:venueIdentity(ref,work)},
-    {field:'DOI',written:ref.doi||'Not supplied',record:work.doi||'Not supplied',status:!ref.doi||!work.doi?'unknown':ref.doi===work.doi.toLowerCase()?'agree':'differ'}
+    {field:'DOI',written:ref.doi||'Not supplied',record:work.doi||'Not supplied',status:!ref.doi||!work.doi?'unknown':sameDoi(ref.doi,work.doi)?'agree':'differ'}
   ];
   return {title,authors,year,venue,locator,total:.64*title+.26*authors+.07*year+.03*venue+(locator?.5:0),fields};
 }
@@ -131,5 +138,5 @@ export function statedWords(ref: ParsedReference, work?: Work): number {
 export function matchingDetailsDiffer(ref: ParsedReference, work: Work, s: Score): boolean {
   return authorIdentity(ref,work)==='differ' || venueIdentity(ref,work)==='differ' || titleIdentityDiffers(ref,work) || (s.title < .65 && !titleIdentityAgrees(ref,work)) || (work.authors.length > 0 && s.authors < .8 && (authorIdentity(ref,work)!=='agree' || Boolean(ref.authorsTruncated))) ||
     (Boolean(ref.raw.replace(/10\.\d{4,9}\/\S+|https?:\/\/\S+/g, '').match(/\b(?:18|19|20)\d{2}\b/)) && Boolean(work.year) && s.year === 0) ||
-    Boolean(ref.doi && work.doi && ref.doi !== work.doi.toLowerCase());
+    Boolean(ref.doi && work.doi && !sameDoi(ref.doi,work.doi));
 }

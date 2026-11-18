@@ -1,7 +1,7 @@
 import {expect,it} from 'vitest';
 import {extractReferences,needsExtractionPreview} from '../src/core/extract';
 import {parseReference} from '../src/core/parse';
-import {scoreCandidate} from '../src/core/score';
+import {scoreCandidate,authorIdentity,venueIdentity,sameDoi} from '../src/core/score';
 import {verifyReference} from '../src/core/verify';
 import {citingSentences,resolveCitation,referenceId} from '../src/core/citing';
 import {crossCheck} from '../src/core/crosscheck';
@@ -128,4 +128,16 @@ it('identifier conflict still lets the matching-title record replace the wrong D
  const work=(doi:string,title:string)=>({id:doi,doi,title,authors:[{family:'He'}],year:2016,source:'Crossref',url:'https://doi.org/'+doi}) as any;
  const r={verdict:'Identifier conflict',reference:{raw:'',doi:'10.1038/nature14539',title:'Deep Residual Learning for Image Recognition',surnames:['He']},match:work('10.1109/cvpr.2016.90','Deep Residual Learning for Image Recognition'),identifierRecord:work('10.1038/nature14539','Deep learning'),evidence:[]} as any;
  expect(primaryRecord(r)?.doi).toBe('10.1109/cvpr.2016.90');
+});
+
+it('benign author and venue variants from real BibTeX stay agreeing; invented authors still differ',()=>{
+ const work=(authors:[string,string][],venue:string)=>({id:'x',title:'T',authors:authors.map(([given,family])=>({given,family})),year:2022,venue,source:'Crossref',url:''}) as any;
+ const ref=(raw:string)=>parseReference(raw);
+ expect(authorIdentity(ref('Liu, R., Kim, Y. J., Muzio, A., & Hassan, H. (2022). Gating Dropout. ICML.'),work([['Rui','Liu'],['Young Jin','Kim'],['Alexandre','Muzio'],['Hany Hassan','Awadalla']],'ICML'))).not.toBe('differ');
+ expect(authorIdentity(ref('Khan, Z., & Fu, Y. (2023). Contrastive Alignment. ICLR.'),work([['Khan,','Zaid'],['Yun','Fu']],'ICLR'))).not.toBe('differ');
+ expect(authorIdentity(ref('LeCun, Y., Bengio, Y., Hinton, G., & Einstein, A. (2015). Deep learning. Nature.'),work([['Yann','LeCun'],['Yoshua','Bengio'],['Geoffrey','Hinton']],'Nature'))).toBe('differ');
+ expect(venueIdentity(ref('Hong, S. (2022). Handcrafted Backdoors. NeurIPS.'),work([['S','Hong']],'neural information processing systems'))).not.toBe('differ');
+ expect(venueIdentity(ref('Zhu, J. (2023). Private SGD. Journal of Machine Learning Research.'),work([['J','Zhu']],'Lirias'))).not.toBe('differ');
+ expect(sameDoi('10.48550/arxiv.2602.12274v1','10.48550/arXiv.2602.12274')).toBe(true);
+ expect(sameDoi('10.1038/nature14539','10.1038/nature14540')).toBe(false);
 });
