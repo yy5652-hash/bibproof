@@ -1,6 +1,28 @@
 # Bibproof × HALLMARK
 
-Completed **30-entry dev_public pilot**, not a full benchmark result. No full test run was started and no commit was created. Project changes for this task are confined to `scripts/hallmark/` and `eval/hallmark/`.
+Status (2026-11-18): a 30-entry `dev_public` pilot, a completed **pre-declared 400-entry `test_public` sample** on frozen build `a9b6fa1`, and a run on the **other 431 `test_public` entries** in progress on build `67abc39`.
+
+## 400-entry test sample (frozen build a9b6fa1)
+
+Selection: [`selections/test_public-sample400.json`](selections/test_public-sample400.json), written before the run (154 valid, 246 hallucinated, stratified by type). Results: [`results-test_public-sample400.md`](results-test_public-sample400.md) and JSON; predictions and audit: [`runs/test_public-sample400/`](runs/test_public-sample400/).
+
+| Tool, same 400 keys | DR | FPR | F1 | Tier-3 F1 | Coverage | FP | Uncertain (valid / hall) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Bibproof `a9b6fa1` | 87.1% | 35.1% | 83.3% | 64.8% | 97.8% | 53 | 3 / 6 |
+| Saved zero-shot GPT-5.1 | 82.1% | 46.8% | 77.7% | 58.8% | 100.0% | 72 | 0 / 0 |
+| Saved cascade GPT-5.1 variant | 97.6% | 5.2% | 97.2% | 93.3% | 100.0% | 8 | 0 / 0 |
+
+"Details differ" maps to HALLUCINATED, so FPR counts metadata warnings on genuine references, not only "No record found". Weakest types: partial_author_list (5/14), near_miss_title (11/19), nonexistent_venue (11/17).
+
+Run note: the run spanned 2026-11-12 to 11-18 within the daily anonymous OpenAlex budget. Between sessions the app gained commit `c21551e`, which changes which record a user may adopt in an identifier conflict but not any verdict; the last 50 entries were run from a worktree of `a9b6fa1` because the runner refuses code drift.
+
+Error analysis of these 400 found most false positives came from author names stored in a different order or split (for example "Hany Hassan Awadalla" cited as "Hassan"), lower-case NeurIPS venue strings, repository names such as Lirias given as venues, and arXiv DOIs with a version suffix. Commit `67abc39` fixes those causes. Because that analysis used these 400 labels, their replay on `67abc39` is diagnostic only and is not reported as a result.
+
+## Other 431 test entries (build 67abc39, in progress)
+
+Selection: [`selections/test_public-rest431.json`](selections/test_public-rest431.json), declared in `6ae8d61` before running: every `test_public` entry the 400 sample did not draw (153 valid, 278 hallucinated). 19 of them derive from the GPTZero NeurIPS list that Bibproof's own evaluation also uses, so results will be reported for all 431 and for the 412 without them.
+
+The earlier 30-entry pilot follows.
 
 ## Data and attribution
 

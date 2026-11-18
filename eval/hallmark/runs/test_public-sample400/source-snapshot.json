@@ -1,0 +1,155 @@
+{
+  "all_startup_hashes_verified": true,
+  "files": [
+    {
+      "path": "package-lock.json",
+      "sha256": "d378154441e265288f55b9cd190a394418f607fde2ca4b8f2542f0e0ed65f0b3",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/package-lock.json"
+    },
+    {
+      "path": "scripts/hallmark/client.ts",
+      "sha256": "a8ae6e4d5ffac64361048b71c6a4705b3446c2f1818b9989651946311bbc7f97",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/client.ts"
+    },
+    {
+      "path": "scripts/hallmark/common.ts",
+      "sha256": "ff9acc9951af0f47d0bfe45eebc45a1ef3e016ff75cd3a81c2c4061ed867804f",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/common.ts"
+    },
+    {
+      "path": "scripts/hallmark/convert.ts",
+      "sha256": "60161f5657e815aa1bb96b05868f49f7400d121da966743dcad9ffa22e666ba2",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/convert.ts"
+    },
+    {
+      "path": "scripts/hallmark/mapping.ts",
+      "sha256": "ffe7eeb432b2d3fead160bb5b208831e3d06323b88cadb7240c365e8214ff59f",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/mapping.ts"
+    },
+    {
+      "path": "scripts/hallmark/replay.ts",
+      "sha256": "9d5deb8fc457fa132067a39a980e2dbf9b065afbc862e37e144beef2d54a10cb",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/replay.ts"
+    },
+    {
+      "path": "scripts/hallmark/run.ts",
+      "sha256": "c83fb4aa312dacd5a87da2ec660aa6fd134356443d8d3a583261df2bdabefac4",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/run.ts"
+    },
+    {
+      "path": "scripts/hallmark/score.ts",
+      "sha256": "090f4c8f4e3d0f2bbbcca0544e60547a5fef77840e664bea4a954deef9ae60aa",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/score.ts"
+    },
+    {
+      "path": "scripts/hallmark/select.ts",
+      "sha256": "bd3ca57626bf917af17deb7dc74d99833f7e013446b9ce1b6107a251d9642d75",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/scripts/hallmark/select.ts"
+    },
+    {
+      "path": "src/core/citing.ts",
+      "sha256": "7c8ff0f4c8e9c1b26c172f9abe0cfa1af264afbd590c1176e6386e683df9c9b6",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/citing.ts"
+    },
+    {
+      "path": "src/core/crosscheck.ts",
+      "sha256": "d5b17d4f93e2224785f1ba03ffc5e260f92deb7eb828fe137eb3cece11dca65c",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/crosscheck.ts"
+    },
+    {
+      "path": "src/core/decisions.ts",
+      "sha256": "750feff9f9ca016dbe78a4eaa8644d71152a96cc9748028054076a573eaa853f",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/decisions.ts"
+    },
+    {
+      "path": "src/core/extract.ts",
+      "sha256": "043add77b3ac618c5247d03cc5d4892983abb6f77d4e3ef2320ef2642e1b01ab",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/extract.ts"
+    },
+    {
+      "path": "src/core/format.ts",
+      "sha256": "1cb14fce29e8faf1d92649ac87abe16640bdbd5a14eda1b0b523fe3a4af9ec70",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/format.ts"
+    },
+    {
+      "path": "src/core/handcheck.ts",
+      "sha256": "f3d072b54afe3866592f44131350628c399ac9ece2179dd8e054992c1ac3fdbf",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/handcheck.ts"
+    },
+    {
+      "path": "src/core/http.ts",
+      "sha256": "f5c7ee324840be6c87005d6e452e2e55333eba2d69740f8e57790c27acb3123f",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/http.ts"
+    },
+    {
+      "path": "src/core/indexes.ts",
+      "sha256": "de2430a21b8a58d52d5755e131add3d37924b9e2aea325f302255bc70d876214",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/indexes.ts"
+    },
+    {
+      "path": "src/core/paper-sample.ts",
+      "sha256": "c60d24763d0a9e40963b267584b20af65bf2b8f44f1e0161dcdecb0ce49e7ffe",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/paper-sample.ts"
+    },
+    {
+      "path": "src/core/paper-snapshot.json",
+      "sha256": "147e690ee9733c43adb77b92843d25b7febb62464844fca00eba345e8a7b1a9b",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/paper-snapshot.json"
+    },
+    {
+      "path": "src/core/parse.ts",
+      "sha256": "63cbf4de291668cb0310ad4747bfc26b4bcd85bbbf0195d3292f95570e2e0d26",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/parse.ts"
+    },
+    {
+      "path": "src/core/repairs.ts",
+      "sha256": "bc1ffcf615979dd9f3466dabf4e22fd43dd49fc2dfb69285b5d380e4cc4381c3",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/repairs.ts"
+    },
+    {
+      "path": "src/core/retry.ts",
+      "sha256": "20cb5d554e80feaddaae5de90b83062810bf30f2b6800aea3a60b2917b4cd280",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/retry.ts"
+    },
+    {
+      "path": "src/core/sample-snapshot.json",
+      "sha256": "601b7eaa39e638914583e1a9aa25a0e6e4c9cef4623de36c05760aa1d91ab182",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/sample-snapshot.json"
+    },
+    {
+      "path": "src/core/sample.ts",
+      "sha256": "16c8d4ead8f44f6e035a26d1211d74d31fcfbf721e122d22282478355c4aae7d",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/sample.ts"
+    },
+    {
+      "path": "src/core/score.ts",
+      "sha256": "1f814f95c336a666d866af20edf5f3f84df4eb509524d8f598b4f2d09106e84b",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/score.ts"
+    },
+    {
+      "path": "src/core/share.ts",
+      "sha256": "0a0d4d98c6f718444154500ac37d1e396f153dae046096e6c1ed8834cadeacf8",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/share.ts"
+    },
+    {
+      "path": "src/core/structured.ts",
+      "sha256": "6049486ff01bc7058e3b18100f7ef06b2bf5526423f398abbe13d28b01e71f0c",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/structured.ts"
+    },
+    {
+      "path": "src/core/types.ts",
+      "sha256": "4976e3135ae7711c19e7764a623b63785c3a813f84e909b0130b94349a5fd9ef",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/types.ts"
+    },
+    {
+      "path": "src/core/userEvidence.ts",
+      "sha256": "e65a8ed7fb1b94ace67a5f9d77898b334e3d91f843900798b3348e45a5ebe450",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/userEvidence.ts"
+    },
+    {
+      "path": "src/core/verify.ts",
+      "sha256": "949183b413e5b309e09d1f484ee816ebb5d461ace857c2d14f351a965ff28a85",
+      "snapshot": "eval/hallmark/runs/test_public-sample400/source/src/core/verify.ts"
+    }
+  ]
+}

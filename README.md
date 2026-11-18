@@ -4,11 +4,13 @@
 
 Paste a bibliography, drop in a paper, or enter a DOI. Bibproof checks each reference against the scholarly record, shows the evidence, and helps you fix what it finds. No account, nothing to install. No Bibproof usage cap; public-index limits apply. In English and Chinese.
 
-Live: https://yy5652-hash.github.io/bibproof/
+[Live demo](https://yy5652-hash.github.io/bibproof/) · [Demo video](https://youtu.be/ZbPiW93HFWw) · [Devpost](https://devpost.com/software/bibproof) · [Evaluation and limitations](#measured-accuracy)
+
+Try the full workflow: open the live app → **Try a paper** → select the He et al. reference → **Use the matching-title record** → **Review & export**. The example opens from a dated saved live run; **Run live checks** queries the indexes again.
 
 ## Why
 
-AI writing tools invent references, and the fakes are good. GPTZero found [100 hallucinated citations in accepted NeurIPS 2025 papers](https://gptzero.me/news/neurips/). The worst ones are chimeras: real authors on an invented title, or a real DOI that points at a different paper. Checking by hand is slow enough that nobody does it.
+AI writing tools invent references, and the fakes are good. GPTZero found [100 hallucinated citations in accepted NeurIPS 2025 papers](https://gptzero.me/news/neurips/). The worst ones are chimeras: real authors on an invented title, or a real DOI that points at a different paper. Checking a long bibliography manually is time-consuming.
 
 ## What it does
 
@@ -39,7 +41,7 @@ It also:
 
 ## Privacy
 
-Your file is read on your device and never uploaded. Only the text of individual references goes to the public scholarly indexes: Crossref, DataCite, OpenAlex, Europe PMC and Open Library. History, manual evidence and citing sentences stay in your browser and can be cleared in one click. The full document is not retained. A share link contains the reference text and any manual evidence notes, and the app warns you before copying it. There is no backend and no analytics.
+Your file is parsed on your device and never uploaded. You review the extracted entries before checking; only the approved reference text is sent to the public scholarly indexes: Crossref, DataCite, OpenAlex, Europe PMC and Open Library. History, manual evidence and citing sentences stay in your browser and can be cleared in one click. The full document is not retained. A share link contains the reference text and any manual evidence notes, and the app warns you before copying it. There is no backend and no analytics.
 
 ## How it works
 
@@ -54,13 +56,19 @@ Your file is read on your device and never uploaded. Only the text of individual
 
 | Test set | Result |
 | --- | --- |
-| 240 genuine references (60 works in 4 styles) | 0 false accusations, 240 accepted |
+| 240 formatting trials across 60 genuine works (4 styles each) | 0 false accusations, 240 accepted |
 | 56 genuine references as real authors typed them | 1 false accusation on the first held-out run; 0 after the fix below, all 56 matched |
 | 60 more typed references, drawn after the rules were frozen | 1 false accusation, 58 matched, 1 could not be checked |
 | 60 synthetic fabrications | 59 of 60 flagged for review (invented 15/15, chimera 15/15, bogus DOI 15/15, mutated 14/15; the other mutated entry could not be checked) |
 | 100 hallucinated citations from GPTZero's NeurIPS list | 98 flagged, 0 marked verified, 2 could not be checked |
 
 The one false accusation was a preprint cited under a title that differs from its record, although every author and the year matched. That pattern now returns "Details differ". Because the rule came from this set, the set no longer counts as unseen; the run before the fix is kept in [`eval/summary-first-heldout.json`](eval/summary-first-heldout.json), and the fix left the synthetic results unchanged and moved one GPTZero entry from "No record found" to "Details differ", still flagged. The newer batch of 60 is the unseen figure: its one false accusation is a book chapter cited only by its book title, and no rule has been changed for it. Its results are in [`eval/fresh-results.json`](eval/fresh-results.json).
+
+Two error measures are used and should not be mixed up. A **false accusation** here means a genuine reference that received "No record found". HALLMARK below also counts "Details differ" as a flag, so it reports metadata warnings on genuine references as false positives too.
+
+### External benchmark: HALLMARK
+
+On a pre-declared 400-entry sample of [HALLMARK](https://github.com/rpatrik96/hallmark) v1.2.4 `test_public` (MIT), frozen build `a9b6fa1` reached **87.1% detection, 35.1% false-positive rate, 83.3% F1 and 97.8% coverage**. "Details differ" counts as a flag; "Could not check" is an abstention excluded from these metrics. Most false positives were warnings on genuine references with variant author names, NeurIPS venue spellings and arXiv version suffixes; those causes were fixed in `67abc39`. A separate run on the other 431 `test_public` entries, which the error analysis did not use, is in progress on the fixed build and will be reported alongside (and also without the 19 entries derived from the GPTZero list). Details, predictions and protocol: [`eval/hallmark/`](eval/hallmark/README.md).
 
 These are measurements on these sets, not population-wide accuracy claims. The synthetic set is sampled from Crossref, the same index used for lookup, and the NeurIPS labels are GPTZero's own.
 

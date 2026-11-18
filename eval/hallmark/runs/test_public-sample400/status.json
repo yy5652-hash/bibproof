@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "selected": 400,
+  "completed": 400,
+  "completed_this_invocation": 50,
+  "daily_search_budget": 70,
+  "searches_reserved_today": 28,
+  "elapsed_seconds": 841.743,
+  "finished_at": "2026-11-18T13:47:34.987Z",
+  "source_changed_during_run": false
+}
