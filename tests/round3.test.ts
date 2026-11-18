@@ -3,7 +3,7 @@ import {extractReferences,needsExtractionPreview} from '../src/core/extract';
 import {parseReference} from '../src/core/parse';
 import {scoreCandidate,authorIdentity,venueIdentity,sameDoi} from '../src/core/score';
 import {verifyReference} from '../src/core/verify';
-import {citingSentences,resolveCitation,referenceId} from '../src/core/citing';
+import {citingSentences,resolveCitation,referenceId,splitSentences} from '../src/core/citing';
 import {crossCheck} from '../src/core/crosscheck';
 import {manuscriptEdits} from '../src/core/repairs';
 import {chosenRecord,primaryRecord} from '../src/core/decisions';
@@ -140,4 +140,10 @@ it('benign author and venue variants from real BibTeX stay agreeing; invented au
  expect(venueIdentity(ref('Zhu, J. (2023). Private SGD. Journal of Machine Learning Research.'),work([['J','Zhu']],'Lirias'))).not.toBe('differ');
  expect(sameDoi('10.48550/arxiv.2602.12274v1','10.48550/arXiv.2602.12274')).toBe(true);
  expect(sameDoi('10.1038/nature14539','10.1038/nature14540')).toBe(false);
+});
+
+it('a heading line is not merged into the sentence after it',()=>{
+ const s=splitSentences('Abstract\nThis is the abstract.\n\nDiscussion\nThe draft cites residual learning (He et al., 2016).\nA wrapped sentence that continues\non the next line (Smith, 2020).');
+ expect(s).toContain('The draft cites residual learning (He et al., 2016).');
+ expect(s).toContain('A wrapped sentence that continues on the next line (Smith, 2020).');
 });

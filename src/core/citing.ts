@@ -11,8 +11,18 @@ const BOUNDARY = new RegExp(`(?<=[.!?])${ABBREVIATION.source}\\s+(?=[\\p{Lu}\\p{
 const MAX_LEN = 320;
 const MAX_PER_ENTRY = 4;
 
+/** A short capitalised line after a paragraph end is a heading, not the start of the next sentence. */
+function markHeadings(body: string): string {
+  const lines = body.replace(/\r\n?/g, '\n').split('\n');
+  return lines.map((line, i) => {
+    const t = line.trim(), prev = lines[i - 1]?.trim() ?? '';
+    const heading = t.length > 0 && t.length <= 60 && t.split(/\s+/).length <= 6 && /^[\p{Lu}\p{N}]/u.test(t) && !/[.!?:;,。！？]$/.test(t) && (prev === '' || /[.!?。！？]$/.test(prev)) && /^[\p{Lu}\p{N}("“\[]/u.test(lines[i + 1]?.trim() ?? '');
+    return heading ? `\u0000${t}\u0000` : line;
+  }).join('\n');
+}
+
 export function splitSentences(body: string): string[] {
-  const flat = body.replace(/\s+/g, ' ').replace(/([。！？])/g, '$1\n').trim();
+  const flat = markHeadings(body).replace(/\s+/g, ' ').replace(/\u0000\s*/g, '\n').replace(/([。！？])/g, '$1\n').trim();
   return flat.split('\n').flatMap(chunk => chunk.split(BOUNDARY)).map(s => s.trim()).filter(s => s.length > 1);
 }
 
