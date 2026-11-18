@@ -12,13 +12,14 @@ export async function jsonl<T=any>(path:string):Promise<T[]>{return (await readF
 export async function optionalJsonl<T=any>(path:string):Promise<T[]>{try{return await jsonl<T>(path);}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return [];throw e;}}
 export async function save(path:string,value:unknown){await mkdir(path.slice(0,path.lastIndexOf('/')),{recursive:true});await writeFile(path+'.tmp',JSON.stringify(value,null,2)+'\n');await rename(path+'.tmp',path);}
 export function unique<T extends {bibtex_key:string}>(rows:T[]):Map<string,T>{const map=new Map<string,T>();for(const r of rows){if(map.has(r.bibtex_key))throw new Error(`Duplicate key ${r.bibtex_key}`);map.set(r.bibtex_key,r);}return map;}
-export interface Options {split:'dev_public'|'test_public';pilot?:number;sample?:number;excludeGptzero:boolean;budget:number;prepareOnly:boolean;selection?:string}
+export interface Options {split:'dev_public'|'test_public';pilot?:number;sample?:number;excludeGptzero:boolean;budget:number;prepareOnly:boolean;selection?:string;rest?:boolean}
 export function options(args=process.argv.slice(2)):Options {
  const out:Options={split:'dev_public',excludeGptzero:false,budget:80,prepareOnly:false};
- for(let i=0;i<args.length;i++){const a=args[i];if(a==='--exclude-gptzero')out.excludeGptzero=true;else if(a==='--prepare-only')out.prepareOnly=true;
+ for(let i=0;i<args.length;i++){const a=args[i];if(a==='--exclude-gptzero')out.excludeGptzero=true;else if(a==='--prepare-only')out.prepareOnly=true;else if(a==='--rest')out.rest=true;
  else if(['--split','--pilot','--sample','--openalex-budget','--selection'].includes(a)){const v=args[++i];if(!v||v.startsWith('--'))throw new Error(`Missing ${a}`);if(a==='--split'){if(!['dev_public','test_public'].includes(v))throw new Error('Unsupported split');out.split=v as Options['split'];}else if(a==='--selection')out.selection=v;else {const n=Number(v);if(!Number.isSafeInteger(n)||n<0)throw new Error(`Invalid ${a}`);if(a==='--pilot')out.pilot=n;else if(a==='--sample')out.sample=n;else out.budget=n;}}
  else throw new Error(`Unknown flag ${a}`);}
  if(out.pilot!==undefined&&(out.pilot!==30||out.split!=='dev_public'))throw new Error('Pilot requires --split dev_public --pilot 30');
  if(out.sample!==undefined&&(out.sample!==400||out.split!=='test_public'||out.pilot))throw new Error('Fallback requires --split test_public --sample 400');
+ if(out.rest&&(out.split!=='test_public'||out.sample!==undefined||out.pilot!==undefined))throw new Error('--rest requires --split test_public and no --sample');
  return out;
 }

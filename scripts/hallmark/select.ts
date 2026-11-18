@@ -26,7 +26,9 @@ export async function select(o:Options){
  let chosen=order(eligible);
  if(o.pilot){const q=apportion({VALID:eligible.filter(r=>r.label==='VALID').length,HALLUCINATED:eligible.filter(r=>r.label==='HALLUCINATED').length},o.pilot);chosen=stratified(eligible,q.VALID,q.HALLUCINATED);}
  if(o.sample)chosen=stratified(eligible,154,246);
- const name=`${o.split}${o.pilot?'-pilot30':o.sample?'-sample400':''}${o.excludeGptzero?'-no-gptzero':''}`;
+ // The entries the declared 400-entry sample did not draw: unseen during the error analysis of that sample.
+ if(o.rest){const seen=new Set(stratified(eligible,154,246).map(r=>r.bibtex_key));chosen=order(eligible).filter(r=>!seen.has(r.bibtex_key));}
+ const name=`${o.split}${o.pilot?'-pilot30':o.sample?'-sample400':o.rest?'-rest431':''}${o.excludeGptzero?'-no-gptzero':''}`;
  const manifest={schema_version:1,upstream_commit:PIN,split:o.split,name,method:'Hamilton largest remainder across labels (pilot) and hallucination types, ties lexical; SHA256(bibtex_key) ascending within strata and final run order.',exclude_gptzero:o.excludeGptzero,gptzero_identification:'source == gptzero_neurips2025 (public split keys are rehashed); union raw bibtex_key matches if any',gptzero_raw_key_matches:matched.length,gptzero_overlap_count:overlap.size,gptzero_exact_title_matches:source.filter(r=>gpt.some(g=>g.fields.title===r.fields.title)).length,gptzero_overlap_keys:[...overlap].sort(),counts:{total:chosen.length,valid:chosen.filter(r=>r.label==='VALID').length,hallucinated:chosen.filter(r=>r.label==='HALLUCINATED').length,types:Object.fromEntries([...new Set(chosen.map(r=>r.hallucination_type).filter(Boolean))].sort().map(t=>[t,chosen.filter(r=>r.hallucination_type===t).length]))},blind_sha256:sha(await readFile(`${ROOT}/data/${o.split}_blind.jsonl`)),labels_sha256:sha(await readFile(`${ROOT}/data/${o.split}.jsonl`)),keys:chosen.map(r=>r.bibtex_key)};
  const path=`${ROOT}/selections/${name}.json`;
  try{const old=await json(path);if(JSON.stringify(old)!==JSON.stringify(manifest))throw new Error(`Selection drift: ${path}`);}catch(e){if((e as NodeJS.ErrnoException).code!=='ENOENT')throw e;await save(path,manifest);}
